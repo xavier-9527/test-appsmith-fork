@@ -127,6 +127,7 @@ export interface DefaultDropDownValueNodeProps {
   showDropIcon?: boolean;
   optionWidth: string;
   hideSubText?: boolean;
+  enableSearch?: boolean;
 }
 
 export interface RenderDropdownOptionType {
@@ -612,6 +613,7 @@ function TooltipWrappedText(
 }
 
 function DefaultDropDownValueNode({
+  enableSearch,
   hasError,
   hideSubText,
   isMultiSelect,
@@ -671,7 +673,14 @@ function DefaultDropDownValueNode({
       className={renderNode ? "custom-render-option" : ""}
       enableScroll={isMultiSelect}
     >
-      {renderNode ? (
+      {enableSearch ? (
+        <SearchComponent
+          autoFocus
+          onSearch={() => console.log("searching")}
+          placeholder={""}
+          value={""}
+        />
+      ) : renderNode ? (
         renderNode({
           isSelectedNode: true,
           option: selected,
@@ -1152,6 +1161,7 @@ export default function Dropdown(props: DropdownProps) {
         selected={!!selected}
       >
         <SelectedValueNode
+          enableSearch={props.enableSearch}
           hasError={errorFlag}
           hideSubText={props.hideSubText}
           isMultiSelect={props.isMultiSelect}
