@@ -24,6 +24,7 @@ import { useTheme } from "styled-components";
 import { findIndex, isArray } from "lodash";
 import TooltipComponent from "components/ads/Tooltip";
 import { SubTextPosition } from "components/constants";
+import { HighlightText, HighlightTextProps } from "../utils/HighlightText";
 
 export type DropdownOnSelect = (value?: string, dropdownOption?: any) => void;
 
@@ -592,10 +593,11 @@ const scrollIntoViewOptions: ScrollIntoViewOptions = {
 
 function TooltipWrappedText(
   props: TextProps & {
+    searchValue?: string;
     label: string;
   },
 ) {
-  const { label, ...textProps } = props;
+  const { label, searchValue, ...textProps } = props;
   const targetRef = useRef<HTMLDivElement | null>(null);
   return (
     <Tooltip
@@ -605,7 +607,7 @@ function TooltipWrappedText(
       position={Position.TOP}
     >
       <StyledText ref={targetRef} {...textProps}>
-        {label}
+        <HighlightText highlight={searchValue || ""} text={label} />
       </StyledText>
     </Tooltip>
   );
@@ -857,28 +859,50 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                     <>
                       <TooltipWrappedText
                         label={option.label || ""}
+                        searchValue={searchValue}
                         type={TextType.P1}
                       />
                       {option.hasCustomBadge && props.customBadge}
                     </>
                   ) : (
                     <>
-                      <Text type={TextType.P1}>{option.label}</Text>
+                      <Text type={TextType.P1}>
+                        <HighlightText
+                          highlight={searchValue}
+                          text={option.value || ""}
+                        />
+                      </Text>
                       {option.hasCustomBadge && props.customBadge}
                     </>
                   )
                 ) : option.label && option.value ? (
                   <LabelWrapper className="label-container">
-                    <Text type={TextType.H5}>{option.value}</Text>
-                    <Text type={TextType.P1}>{option.label}</Text>
+                    <Text type={TextType.H5}>
+                      <HighlightText
+                        highlight={searchValue}
+                        text={option.value || ""}
+                      />
+                    </Text>
+                    <Text type={TextType.P1}>
+                      <HighlightText
+                        highlight={searchValue}
+                        text={option.value || ""}
+                      />
+                    </Text>
                   </LabelWrapper>
                 ) : props.truncateOption ? (
                   <TooltipWrappedText
                     label={option.value || ""}
+                    searchValue={searchValue}
                     type={TextType.P1}
                   />
                 ) : (
-                  <Text type={TextType.P1}>{option.value}</Text>
+                  <Text type={TextType.P1}>
+                    <HighlightText
+                      highlight={searchValue}
+                      text={option.value || ""}
+                    />
+                  </Text>
                 )}
                 {option.subText ? (
                   <StyledSubText
