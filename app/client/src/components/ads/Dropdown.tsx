@@ -743,6 +743,7 @@ interface DropdownOptionsProps extends DropdownProps, DropdownSearchProps {
   headerLabel?: string;
   highlightIndex?: number;
   selected: DropdownOption | DropdownOption[];
+  searchValue?: string;
   options: DropdownOption[];
   optionWidth: string;
   wrapperBgColor?: string;
@@ -752,7 +753,13 @@ interface DropdownOptionsProps extends DropdownProps, DropdownSearchProps {
 }
 
 export function RenderDropdownOptions(props: DropdownOptionsProps) {
-  const { optionClickHandler, options, optionWidth, renderOption } = props;
+  const {
+    optionClickHandler,
+    options,
+    optionWidth,
+    renderOption,
+    searchValue,
+  } = props;
 
   const theme = useTheme() as Theme;
 
@@ -865,7 +872,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                     <>
                       <Text type={TextType.P1}>
                         <HighlightText
-                          highlight={searchValue}
+                          highlight={searchValue || ""}
                           text={option.value || ""}
                         />
                       </Text>
@@ -876,13 +883,13 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                   <LabelWrapper className="label-container">
                     <Text type={TextType.H5}>
                       <HighlightText
-                        highlight={searchValue}
+                        highlight={searchValue || ""}
                         text={option.value || ""}
                       />
                     </Text>
                     <Text type={TextType.P1}>
                       <HighlightText
-                        highlight={searchValue}
+                        highlight={searchValue || ""}
                         text={option.value || ""}
                       />
                     </Text>
@@ -896,7 +903,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                 ) : (
                   <Text type={TextType.P1}>
                     <HighlightText
-                      highlight={searchValue}
+                      highlight={searchValue || ""}
                       text={option.value || ""}
                     />
                   </Text>
@@ -1269,6 +1276,7 @@ export default function Dropdown(props: DropdownProps) {
           optionWidth={dropdownOptionWidth}
           options={options}
           removeSelectedOptionClickHandler={removeSelectedOptionClickHandler}
+          searchValue={searchValue}
           selected={selected ? selected : { id: undefined, value: undefined }}
           wrapperBgColor={wrapperBgColor}
         />
