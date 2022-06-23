@@ -114,6 +114,7 @@ export type DropdownProps = CommonComponentProps &
     customBadge?: JSX.Element;
     selectedHighlightBg?: string;
   };
+
 export interface DefaultDropDownValueNodeProps {
   selected: DropdownOption | DropdownOption[];
   showLabelOnly?: boolean;
@@ -128,6 +129,11 @@ export interface DefaultDropDownValueNodeProps {
   optionWidth: string;
   hideSubText?: boolean;
   enableSearch?: boolean;
+  // TODO: how to reuse DropdownSearchProps here?
+  searchAutoFocus?: boolean;
+  onOptionSearch?: (value: any) => void;
+  searchPlaceholder?: string;
+  searchValue?: string;
 }
 
 export interface RenderDropdownOptionType {
@@ -618,10 +624,14 @@ function DefaultDropDownValueNode({
   hideSubText,
   isMultiSelect,
   labelRenderer,
+  onOptionSearch,
   optionWidth,
   placeholder,
   removeSelectedOptionClickHandler,
   renderNode,
+  searchAutoFocus,
+  searchPlaceholder,
+  searchValue,
   selected,
   showDropIcon,
   showLabelOnly,
@@ -674,12 +684,14 @@ function DefaultDropDownValueNode({
       enableScroll={isMultiSelect}
     >
       {enableSearch ? (
-        <SearchComponent
-          autoFocus
-          onSearch={() => console.log("searching")}
-          placeholder={""}
-          value={""}
-        />
+        <SearchComponentWrapper className="dropdown-search">
+          <SearchComponent
+            autoFocus={searchAutoFocus}
+            onSearch={onOptionSearch!}
+            placeholder={searchPlaceholder || ""}
+            value={searchValue!}
+          />
+        </SearchComponentWrapper>
       ) : renderNode ? (
         renderNode({
           isSelectedNode: true,
@@ -729,6 +741,7 @@ interface DropdownOptionsProps extends DropdownProps, DropdownSearchProps {
   headerLabel?: string;
   highlightIndex?: number;
   selected: DropdownOption | DropdownOption[];
+  options: DropdownOption[];
   optionWidth: string;
   wrapperBgColor?: string;
   isMultiSelect?: boolean;
@@ -737,23 +750,8 @@ interface DropdownOptionsProps extends DropdownProps, DropdownSearchProps {
 }
 
 export function RenderDropdownOptions(props: DropdownOptionsProps) {
-  const { onSearch, optionClickHandler, optionWidth, renderOption } = props;
-  const [options, setOptions] = useState<Array<DropdownOption>>(props.options);
-  const [searchValue, setSearchValue] = useState<string>("");
-  const onOptionSearch = (searchStr: string) => {
-    const search = searchStr.toLocaleUpperCase();
-    const filteredOptions: Array<DropdownOption> = props.options.filter(
-      (option: DropdownOption) => {
-        return (
-          option.label?.toLocaleUpperCase().includes(search) ||
-          option.searchText?.toLocaleUpperCase().includes(search)
-        );
-      },
-    );
-    setSearchValue(searchStr);
-    setOptions(filteredOptions);
-    onSearch && onSearch(searchStr);
-  };
+  const { optionClickHandler, options, optionWidth, renderOption } = props;
+
   const theme = useTheme() as Theme;
 
   if (!options.length) return null;
@@ -766,16 +764,6 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
       width={optionWidth}
       wrapperBgColor={props.wrapperBgColor}
     >
-      {props.enableSearch && (
-        <SearchComponentWrapper className="dropdown-search">
-          <SearchComponent
-            autoFocus={props.searchAutoFocus}
-            onSearch={onOptionSearch}
-            placeholder={props.searchPlaceholder || ""}
-            value={searchValue}
-          />
-        </SearchComponentWrapper>
-      )}
       {props.headerLabel && <HeaderWrapper>{props.headerLabel}</HeaderWrapper>}
       <DropdownOptionsWrapper
         height={props.dropdownHeight || "100%"}
@@ -913,6 +901,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
 
 export default function Dropdown(props: DropdownProps) {
   const {
+    onSearch,
     onSelect,
     showDropIcon = true,
     isLoading = false,
@@ -930,6 +919,28 @@ export default function Dropdown(props: DropdownProps) {
   const [selected, setSelected] = useState<DropdownOption | DropdownOption[]>(
     props.selected,
   );
+  const [options, setOptions] = useState<Array<DropdownOption>>(props.options);
+
+  // FIXME: This is a hack written because props are empty on first render
+  useEffect(() => {
+    setOptions(props.options);
+  }, [props.options]);
+
+  const [searchValue, setSearchValue] = useState<string>("");
+  const onOptionSearch = (searchStr: string) => {
+    const search = searchStr.toLocaleUpperCase();
+    const filteredOptions: Array<DropdownOption> = props.options.filter(
+      (option: DropdownOption) => {
+        return (
+          option.label?.toLocaleUpperCase().includes(search) ||
+          option.searchText?.toLocaleUpperCase().includes(search)
+        );
+      },
+    );
+    setSearchValue(searchStr);
+    setOptions(filteredOptions);
+    onSearch && onSearch(searchStr);
+  };
   const [highlight, setHighlight] = useState(-1);
 
   const closeIfOpen = () => {
@@ -1166,10 +1177,14 @@ export default function Dropdown(props: DropdownProps) {
           hideSubText={props.hideSubText}
           isMultiSelect={props.isMultiSelect}
           labelRenderer={props.labelRenderer}
+          onOptionSearch={onOptionSearch}
           optionWidth={dropdownOptionWidth}
           placeholder={placeholder}
           removeSelectedOptionClickHandler={removeSelectedOptionClickHandler}
           renderNode={renderOption}
+          searchAutoFocus={props.searchAutoFocus}
+          searchPlaceholder={props.searchPlaceholder || ""}
+          searchValue={searchValue}
           selected={selected}
           showDropIcon={showDropIcon}
           showLabelOnly={props.showLabelOnly}
@@ -1228,6 +1243,7 @@ export default function Dropdown(props: DropdownProps) {
           isOpen={isOpen}
           optionClickHandler={optionClickHandler}
           optionWidth={dropdownOptionWidth}
+          options={options}
           removeSelectedOptionClickHandler={removeSelectedOptionClickHandler}
           selected={selected ? selected : { id: undefined, value: undefined }}
           wrapperBgColor={wrapperBgColor}
