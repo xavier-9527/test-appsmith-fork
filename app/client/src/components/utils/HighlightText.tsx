@@ -4,6 +4,24 @@ import { Colors } from "constants/Colors";
 
 const TextHighlighter = styled.mark`
   background: ${Colors.GRAY_100};
+  height: 100%;
+  display: flex;
+  align-items: center;
+`;
+
+const TextNotHighlighted = styled.span`
+  height: 100%;
+  display: flex;
+  align-items: center;
+`;
+
+const TextWrapper = styled.span`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  &:first-child {
+    padding-left: ${(props) => props.theme.spaces[5]}px;
+  }
 `;
 
 export type HighlightTextProps = {
@@ -20,18 +38,18 @@ export function HighlightText(props: HighlightTextProps) {
   const parts: string[] = text.split(regex);
 
   return (
-    <span>
+    <TextWrapper>
       {parts.filter(String).map((part, i) => {
         return regex.test(part) ? (
           <TextHighlighter data-testid="t--highlighted-text" key={i}>
             {part}
           </TextHighlighter>
         ) : (
-          <span data-testid="t--non-highlighted-text" key={i}>
+          <TextNotHighlighted data-testid="t--non-highlighted-text" key={i}>
             {part}
-          </span>
+          </TextNotHighlighted>
         );
       })}
-    </span>
+    </TextWrapper>
   );
 }

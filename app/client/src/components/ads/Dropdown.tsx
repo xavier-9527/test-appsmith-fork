@@ -21,7 +21,7 @@ import Tooltip from "components/ads/Tooltip";
 import { isEllipsisActive } from "utils/helpers";
 import SegmentHeader from "components/ads/ListSegmentHeader";
 import { useTheme } from "styled-components";
-import { findIndex, isArray } from "lodash";
+import _, { findIndex, isArray } from "lodash";
 import TooltipComponent from "components/ads/Tooltip";
 import { SubTextPosition } from "components/constants";
 import { HighlightText, HighlightTextProps } from "../utils/HighlightText";
@@ -385,16 +385,20 @@ const StyledSubText = styled(Text)<{
 
 const OptionWrapper = styled.div<{
   disabled?: boolean;
+  hasSearchValue?: boolean;
   selected: boolean;
   subTextPosition?: SubTextPosition;
   selectedHighlightBg?: string;
 }>`
-  padding: ${(props) => props.theme.spaces[3] + 1}px
-    ${(props) => props.theme.spaces[5]}px;
+  padding: ${(props) =>
+    props.hasSearchValue
+      ? 0
+      : `${props.theme.spaces[3] + 1}px ${props.theme.spaces[5]}px`};
   ${(props) => (!props.disabled ? "cursor: pointer" : "")};
   display: flex;
   width: 100%;
   min-height: 36px;
+  height: 36px;
   flex-direction: ${(props) =>
     props.subTextPosition === SubTextPosition.BOTTOM ? "column" : "row"};
   align-items: ${(props) =>
@@ -466,6 +470,7 @@ const LabelWrapper = styled.div<{ label?: string }>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  height: 100%;
   span:last-child {
     margin-top: ${(props) => props.theme.spaces[2] - 1}px;
   }
@@ -571,6 +576,7 @@ const StyledText = styled(Text)`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  height: 100%;
 `;
 
 const ChipsWrapper = styled.div`
@@ -814,6 +820,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                 aria-selected={isSelected}
                 className={`t--dropdown-option ${isSelected ? "selected" : ""}`}
                 disabled={option.disabled}
+                hasSearchValue={!_.isEmpty(searchValue)}
                 key={index}
                 onClick={
                   // users should be able to unselect a selected option by clicking the option again.
@@ -866,7 +873,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                     </>
                   ) : (
                     <>
-                      <Text type={TextType.P1}>
+                      <Text fullHeight type={TextType.P1}>
                         <HighlightText
                           highlight={searchValue}
                           text={option.value || ""}
@@ -877,13 +884,13 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                   )
                 ) : option.label && option.value ? (
                   <LabelWrapper className="label-container">
-                    <Text type={TextType.H5}>
+                    <Text fullHeight type={TextType.H5}>
                       <HighlightText
                         highlight={searchValue}
                         text={option.value || ""}
                       />
                     </Text>
-                    <Text type={TextType.P1}>
+                    <Text fullHeight type={TextType.P1}>
                       <HighlightText
                         highlight={searchValue}
                         text={option.value || ""}
@@ -897,7 +904,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                     type={TextType.P1}
                   />
                 ) : (
-                  <Text type={TextType.P1}>
+                  <Text fullHeight type={TextType.P1}>
                     <HighlightText
                       highlight={searchValue}
                       text={option.value || ""}

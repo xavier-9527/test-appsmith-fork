@@ -41,6 +41,7 @@ export type TextProps = CommonComponentProps & {
   highlight?: boolean;
   textAlign?: string;
   color?: string;
+  fullHeight?: boolean;
 };
 
 const typeSelector = (props: TextProps & ThemeProp): string => {
@@ -112,6 +113,7 @@ const Text = styled.span.attrs<TextProps>(({ className, cypressSelector }) => ({
       : typeSelector(props)};
   text-transform: ${(props) => (props.case ? props.case : "none")};
   text-align: ${(props) => (props.textAlign ? props.textAlign : "normal")};
+  height: ${(props) => props.fullHeight && "100%"};
 `;
 
 export default Text;
