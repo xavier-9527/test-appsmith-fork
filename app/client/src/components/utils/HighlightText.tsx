@@ -19,6 +19,12 @@ const TextWrapper = styled.span`
   height: 100%;
   display: flex;
   align-items: center;
+
+  & mark:first-child {
+    padding-left: ${(props) => props.theme.spaces[5]}px;
+    margin-left: ${(props) => -props.theme.spaces[5]}px;
+  }
+
   &:first-child {
     padding-left: ${(props) => props.theme.spaces[5]}px;
   }
