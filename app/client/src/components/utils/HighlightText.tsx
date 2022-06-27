@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Colors } from "constants/Colors";
 
 const TextHighlighter = styled.mark`
-  background: ${Colors.FOCUS};
+  background: ${Colors.GRAY_100};
 `;
 
 export type HighlightTextProps = {
