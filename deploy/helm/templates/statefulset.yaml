@@ -43,6 +43,10 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      initContainers:
+      - name: redis-init-container
+        image: alpine
+        command: ['sh', '-c', "apk add redis; until redis-cli -h appsmith-redis-master.{{.Release.Namespace}}.svc.cluster.local ping; do echo waiting for redis; sleep 2; done"]
       containers:
         - name: {{ .Values.containerName }}
           securityContext:
@@ -70,7 +74,7 @@ spec:
               port: http
           readinessProbe:
             httpGet:
-              path: /
+              path: /api/v1/users/me
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
