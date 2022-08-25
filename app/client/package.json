@@ -313,5 +313,5 @@
     "react-error-overlay": "6.0.9",
     "focus-trap-react/**/tabbable": "5.2.1"
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://43.138.48.42:8080"
 }
