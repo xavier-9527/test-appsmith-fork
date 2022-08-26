@@ -1,3 +1,7 @@
+/**
+ * 1. 定义一个组件，可以在生成的应用中展示
+ * 2. 该组件中的事件方法用于处理生成的应用中，用户触发的事件
+ */
 import * as React from "react";
 import { Text } from "@blueprintjs/core";
 import styled from "styled-components";
@@ -94,6 +98,9 @@ const StyledIcon = styled(Icon)<{ backgroundColor?: string }>`
     props.backgroundColor ? props.backgroundColor : "transparent"};
 `;
 
+/**
+ * TextWidget的文本属性，来自于右侧表单面板
+ */
 export const StyledText = styled(Text)<{
   overflow: OverflowTypes;
   isTruncated: boolean;

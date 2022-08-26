@@ -1,6 +1,32 @@
 /**
  * 1. 配置小部件的右侧表单，包括表单的验证规则，绑定的属性名
- * 2. 定义右侧用户发出的动作函数，例如：shouldDisableLink
+ * 2. 定义右侧用户发出的动作函数或事件，例如：shouldDisableLink开关设置定义是否禁用超链接
+ * 3. 主要的行为事件有：
+ *    shouldDisableLink
+ *    executeAction
+ *    disableDrag
+ *    updateWidget
+ *    deleteWidgetProperty
+ *    batchUpdateWidgetProperty
+ *    updateWidgetProperty
+ *    resetChildrenMetaProperty
+ *    getComponentDimensions
+ *    calculateWidgetBounds
+ *    getLabelWidth
+ *    getErrorCount
+ *    makeResizable
+ *    showWidgetName
+ *
+ *    makeResizable
+ *    showWidgetName
+ *    makeDraggable
+ *    makeSnipeable
+ *    makePositioned
+ *    addErrorBoundary
+ *    addOverlayComments
+ *    addPreventInteractionOverlay
+ *    addPreviewModeWidget
+ *    getCanvasView
  */
 import React, { ReactNode } from "react";
 
@@ -16,6 +42,7 @@ import TextComponent, { TextAlign } from "../component";
 import { ContainerStyle } from "widgets/ContainerWidget/component";
 import { AutocompleteDataType } from "utils/autocomplete/TernServer";
 import { OverflowTypes } from "../constants";
+// 未知组件
 import WidgetStyleContainer from "components/designSystems/appsmith/WidgetStyleContainer";
 import { pick } from "lodash";
 
