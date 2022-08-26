@@ -1,3 +1,7 @@
+/**
+ * 1. 配置小部件的右侧表单，包括表单的验证规则，绑定的属性名
+ * 2. 定义右侧用户发出的动作函数，例如：shouldDisableLink
+ */
 import React, { ReactNode } from "react";
 
 import { TextSize } from "constants/WidgetConstants";
@@ -17,6 +21,7 @@ import { pick } from "lodash";
 
 const MAX_HTML_PARSING_LENGTH = 1000;
 class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
+  /* 与小部件相关的右侧表单配置 */
   static getPropertyPaneConfig() {
     return [
       {
