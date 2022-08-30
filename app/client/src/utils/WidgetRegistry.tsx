@@ -144,10 +144,14 @@ import VideoWidget, {
 import ProgressWidget, {
   CONFIG as PROGRESS_WIDGET_CONFIG,
 } from "widgets/ProgressWidget";
+import TextTestWidget, {
+  CONFIG as TEXT_TEST_WIDGET_CONFIG,
+} from "widgets/TextTestWidget";
 import { registerWidget } from "./WidgetRegisterHelpers";
 import { WidgetConfiguration } from "widgets/constants";
 
 export const ALL_WIDGETS_AND_CONFIG = [
+  [TextTestWidget, TEXT_TEST_WIDGET_CONFIG],
   [CanvasWidget, CANVAS_WIDGET_CONFIG],
   [SkeletonWidget, SKELETON_WIDGET_CONFIG],
   [ContainerWidget, CONTAINER_WIDGET_CONFIG],
