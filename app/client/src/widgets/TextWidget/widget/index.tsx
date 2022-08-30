@@ -1,4 +1,5 @@
 /**
+ * 包含小部件代码，它利用小部件开发 API 并让 Appsmith 平台知道如何呈现小部件
  * 1. 配置小部件的右侧表单，包括表单的验证规则，绑定的属性名
  * 2. 定义右侧用户发出的动作函数或事件，例如：shouldDisableLink开关设置定义是否禁用超链接
  * 3. 主要的行为事件有：
@@ -58,7 +59,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
             propertyName: "text",
             helpText: "Sets the text of the widget",
             label: "Text",
-            controlType: "INPUT_TEXT",
+            controlType: "INPUT_TEXT", // 控件的类型
             placeholderText: "Name:",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -95,7 +96,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
             helpText: "Controls the visibility of the widget",
             label: "Visible",
             controlType: "SWITCH",
-            isJSConvertible: true,
+            isJSConvertible: true, // 是否允许 Appsmith 开发人员使用 JS 按钮来允许绑定此属性。
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.BOOLEAN },
