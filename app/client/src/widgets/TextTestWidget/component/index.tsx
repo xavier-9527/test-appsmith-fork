@@ -2,12 +2,23 @@ import React from "react";
 import { ComponentProps } from "widgets/BaseComponent";
 
 function TextTestComponent(props: TextTestComponentProps) {
-  const { text } = props;
-  return <h3>{text}</h3>;
+  const { backgroundColor, text, textColor } = props;
+  return (
+    <h3
+      style={{
+        color: textColor,
+        backgroundColor,
+      }}
+    >
+      {text}
+    </h3>
+  );
 }
 
 export interface TextTestComponentProps extends ComponentProps {
-  text: string;
+  text?: string;
+  textColor: string;
+  backgroundColor?: string;
 }
 
 export default TextTestComponent;
