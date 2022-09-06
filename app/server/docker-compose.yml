@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   appsmith-internal-server:
-    image: appsmith/appsmith-server:release
+    image: appsmith/appsmith-server:v1.7.14
     env_file: envs/docker.env
     environment:
       APPSMITH_REDIS_URL: "redis://redis:6379"
