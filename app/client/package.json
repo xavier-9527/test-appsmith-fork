@@ -297,5 +297,5 @@
   "msw": {
     "workerDirectory": "public"
   },
-  "proxy": "http://47.108.133.196"
+  "proxy": "http://43.138.48.42:8080"
 }
