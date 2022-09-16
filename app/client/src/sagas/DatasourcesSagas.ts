@@ -617,6 +617,7 @@ function* testDatasourceSaga(actionPayload: ReduxAction<Datasource>) {
 function* createDatasourceFromFormSaga(
   actionPayload: ReduxAction<CreateDatasourceConfig>,
 ) {
+  console.log(createDatasourceFromFormSaga, actionPayload);
   try {
     const workspaceId: string = yield select(getCurrentWorkspaceId);
     yield call(
@@ -637,6 +638,7 @@ function* createDatasourceFromFormSaga(
     // @ts-expect-error: isConfigured does not exists on type Payload
     payload.isConfigured = false;
 
+    // 创建数据库
     const response: ApiResponse<Datasource> = yield DatasourcesApi.createDatasource(
       {
         ...payload,
