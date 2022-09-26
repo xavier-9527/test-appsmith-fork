@@ -494,6 +494,8 @@ function* evaluationChangeListenerSaga() {
     postEvalActions: Array<ReduxAction<unknown>>;
   } = yield take(FIRST_EVAL_REDUX_ACTIONS);
   yield fork(evaluateTreeSaga, initAction.postEvalActions); // fork, like call，type: ReduxActionTypes.EXECUTE_PAGE_LOAD_ACTIONS
+
+  // 缓存所有actions，直到EVALUATE_REDUX_ACTIONS中的action全部dispatch；包括请求pageActions 成功后执行的EXECUTE_PLUGIN_ACTION_SUCCESS
   const evtActionChannel: ActionPattern<Action<any>> = yield actionChannel(
     EVALUATE_REDUX_ACTIONS,
     evalQueueBuffer(),
