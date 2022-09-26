@@ -73,7 +73,7 @@ export default class AppViewerEngine extends AppEngine {
         fetchJSCollectionsForView({ applicationId }),
         fetchSelectedAppThemeAction(applicationId),
         fetchAppThemesAction(applicationId),
-        fetchPublishedPage(toLoadPageId, true, true),
+        fetchPublishedPage(toLoadPageId, true, true), // 更新pageActions
       ],
       [
         ReduxActionTypes.FETCH_ACTIONS_VIEW_MODE_SUCCESS,

@@ -124,11 +124,13 @@ export function* createActionSaga(
   try {
     let payload = actionPayload.payload;
     if (actionPayload.payload.pluginId) {
+      // Query Tab: entities.plugins.editorConfigs[pluginId]
       const editorConfig: any[] = yield select(
         getEditorConfig,
         actionPayload.payload.pluginId,
       );
 
+      // Settings Tab: entities.plugins.settingConfigs[pluginId]
       const settingConfig: any[] = yield select(
         getSettingConfig,
         actionPayload.payload.pluginId,

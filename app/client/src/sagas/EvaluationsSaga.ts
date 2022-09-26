@@ -493,7 +493,7 @@ function* evaluationChangeListenerSaga() {
   const initAction: {
     postEvalActions: Array<ReduxAction<unknown>>;
   } = yield take(FIRST_EVAL_REDUX_ACTIONS);
-  yield fork(evaluateTreeSaga, initAction.postEvalActions);
+  yield fork(evaluateTreeSaga, initAction.postEvalActions); // fork, like call，type: ReduxActionTypes.EXECUTE_PAGE_LOAD_ACTIONS
   const evtActionChannel: ActionPattern<Action<any>> = yield actionChannel(
     EVALUATE_REDUX_ACTIONS,
     evalQueueBuffer(),

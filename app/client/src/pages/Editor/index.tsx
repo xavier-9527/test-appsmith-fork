@@ -262,11 +262,14 @@ const mapStateToProps = (state: AppState) => ({
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
+    // startAppEngine Saga
     initEditor: (payload: InitializeEditorPayload) =>
       dispatch(initEditor(payload)),
     resetEditorRequest: () => dispatch(resetEditorRequest()),
     handlePathUpdated: (location: typeof window.location) =>
       dispatch(handlePathUpdated(location)),
+    // initCanvasLayout
+    // executePageLoadActions /api/v1/actions/execute 通过页面actions获取数据
     fetchPage: (pageId: string) => dispatch(fetchPage(pageId)),
     updateCurrentPage: (pageId: string) => dispatch(updateCurrentPage(pageId)),
     collabStartSharingPointerEvent: (pageId: string) =>

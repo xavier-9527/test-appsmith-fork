@@ -261,6 +261,12 @@ export const getCanvasWidgetDsl = createSelector(
     loadingEntities,
     mainCanvasProps,
   ): ContainerWidgetProps<WidgetProps> => {
+    console.log({
+      canvasWidgets,
+      evaluatedDataTree,
+      loadingEntities,
+      mainCanvasProps,
+    });
     const widgets: Record<string, DataTreeWidget> = {
       [MAIN_CONTAINER_WIDGET_ID]: getMainContainer(
         canvasWidgets,
@@ -268,6 +274,10 @@ export const getCanvasWidgetDsl = createSelector(
         mainCanvasProps,
       ),
     };
+
+    console.log({
+      widgets_getMainContainer: widgets,
+    });
     Object.keys(canvasWidgets)
       .filter((each) => each !== MAIN_CONTAINER_WIDGET_ID)
       .forEach((widgetKey) => {
