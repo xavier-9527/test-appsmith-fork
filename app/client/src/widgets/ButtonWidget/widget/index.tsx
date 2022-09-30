@@ -684,6 +684,7 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           callback: this.handleActionComplete,
         },
       });
+      // form表单中的onReset
     } else if (this.props.resetFormOnClick && this.props.onReset) {
       this.props.onReset();
     }

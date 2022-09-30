@@ -363,7 +363,7 @@ export function removeDynamicBindingProperties(
   dynamicBindingPathList: DynamicPath[],
 ) {
   /*
-  we are doing this because when you toggle js off we only 
+  we are doing this because when you toggle js off we only
   receive the  `primaryColumns.` properties not the `derivedColumns.`
   properties therefore we need just a hard-codded check.
   (TODO) - Arsalan remove this primaryColumns check when the Table widget v2 is live.
@@ -604,12 +604,16 @@ function* batchUpdateMultipleWidgetsPropertiesSaga(
 ) {
   const start = performance.now();
   const { updatesArray } = action.payload;
+  // 获取所有 canvasWidgets 中的组件
   const stateWidgets: CanvasWidgetsReduxState = yield select(getWidgets);
+  // 获取被更新的组件
   const updatedWidgets: WidgetProps[] = yield all(
     updatesArray.map((eachUpdate) => {
+      //
       return call(getPropertiesUpdatedWidget, eachUpdate);
     }),
   );
+  // 将被更新的组件与canvasWidgets中的组件合并
   const updatedStateWidgets = updatedWidgets.reduce(
     (allWidgets, eachUpdatedWidget) => {
       return {
