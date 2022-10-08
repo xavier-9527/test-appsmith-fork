@@ -113,6 +113,20 @@ interface FilterCategoryProps {
   selectedFilters: string[];
 }
 
+interface NameMapping {
+  datasources: string;
+  widgets: string;
+  useCases?: string;
+  functions?: string;
+}
+
+const FILTER_CATEGORY_NAME_MAPPING: NameMapping = {
+  datasources: "数据源",
+  widgets: "组件",
+  useCases: "使用场景",
+  functions: "功能",
+};
+
 function FilterItem({ item, onSelect, selected }: FilterItemProps) {
   const onClick = () => {
     const action = selected ? "remove" : "add";
@@ -169,7 +183,8 @@ function FilterCategory({
   return (
     <FilterCategoryWrapper>
       <StyledFilterCategory type={TextType.P4}>
-        {label.toLocaleUpperCase()}{" "}
+        {/* {label.toLocaleUpperCase()}{" "} */}
+        {FILTER_CATEGORY_NAME_MAPPING[label as keyof NameMapping]}{" "}
         {!!selectedFilters.length && `(${selectedFilters.length})`}
       </StyledFilterCategory>
       <ListWrapper>
