@@ -61,9 +61,7 @@ function UpdatesButton({ newReleasesCount }: { newReleasesCount: string }) {
     <StyledUpdatesButton data-cy="t--product-updates-btn">
       <div style={{ display: "flex", alignItems: "center" }}>
         <UpdatesIcon />
-        <UpdatesButtonTextContainer>
-          What&apos;s New?
-        </UpdatesButtonTextContainer>
+        <UpdatesButtonTextContainer>版本新特性</UpdatesButtonTextContainer>
       </div>
       {newReleasesCount && <StyledTag>{newReleasesCount}</StyledTag>}
     </StyledUpdatesButton>

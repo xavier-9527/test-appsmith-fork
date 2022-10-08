@@ -141,7 +141,7 @@ export default function ProfileDropdown(props: TagProps) {
             path: PROFILE,
           });
         }}
-        text="Edit Profile"
+        text="个人信息"
       />
       {user?.isSuperUser && user?.isConfigurable && (
         <StyledMenuItem
@@ -163,7 +163,7 @@ export default function ProfileDropdown(props: TagProps) {
             type: ReduxActionTypes.LOGOUT_USER_INIT,
           })
         }
-        text="Sign Out"
+        text="退出登录"
       />
     </Menu>
   );

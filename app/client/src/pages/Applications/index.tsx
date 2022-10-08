@@ -408,7 +408,7 @@ function LeftPane() {
                 submitCreateWorkspaceForm(
                   {
                     name: getNextEntityName(
-                      "Untitled workspace ",
+                      "应用组 ",
                       fetchedUserWorkspaces.map((el: any) => el.workspace.name),
                     ),
                   },
@@ -643,7 +643,7 @@ function ApplicationsSection(props: any) {
         <CreateNewLabel type={TextType.H4}>
           {createMessage(NO_APPS_FOUND)}
         </CreateNewLabel>
-        <NoSearchResultImg alt="No result found" src={NoSearchImage} />
+        <NoSearchResultImg alt="没有搜索到相关内容" src={NoSearchImage} />
       </CenteredWrapper>
     );
   } else {
@@ -672,7 +672,7 @@ function ApplicationsSection(props: any) {
                   canOutsideClickClose
                   isOpen={selectedWorkspaceId === workspace.id}
                   onClose={() => setSelectedWorkspaceId("")}
-                  title={`Invite Users to ${workspace.name}`}
+                  title={`邀请用户到 ${workspace.name}`}
                 >
                   <Form workspaceId={workspace.id} />
                 </Dialog>
@@ -697,14 +697,14 @@ function ApplicationsSection(props: any) {
                       <FormDialogComponent
                         Form={WorkspaceInviteUsersForm}
                         canOutsideClickClose
-                        title={`Invite Users to ${workspace.name}`}
+                        title={`邀请用户到应用组 ${workspace.name}`}
                         trigger={
                           <Button
                             category={Category.tertiary}
                             icon={"share-line"}
                             size={Size.medium}
                             tag="button"
-                            text={"Share"}
+                            text={"分享"}
                           />
                         }
                         workspaceId={workspace.id}
@@ -733,7 +733,7 @@ function ApplicationsSection(props: any) {
                             ) {
                               createNewApplication(
                                 getNextEntityName(
-                                  "Untitled application ",
+                                  "应用 ",
                                   applications.map((el: any) => el.name),
                                 ),
                                 workspace.id,
@@ -742,7 +742,7 @@ function ApplicationsSection(props: any) {
                           }}
                           size={Size.medium}
                           tag="button"
-                          text={"New"}
+                          text={"创建应用"}
                         />
                       )}
                     {(currentUser || isFetchingApplications) && !isMobile && (
@@ -788,7 +788,7 @@ function ApplicationsSection(props: any) {
                                 onBlur={(value: string) => {
                                   WorkspaceNameChange(value, workspace.id);
                                 }}
-                                placeholder="Workspace name"
+                                placeholder="应用组名称"
                                 savingState={
                                   isSavingWorkspaceInfo
                                     ? SavingState.STARTED
@@ -808,7 +808,7 @@ function ApplicationsSection(props: any) {
                                   },
                                 )
                               }
-                              text="Settings"
+                              text="配置"
                             />
                             {enableImportExport && (
                               <MenuItem
@@ -819,7 +819,7 @@ function ApplicationsSection(props: any) {
                                     workspace.id,
                                   )
                                 }
-                                text="Import"
+                                text="导入"
                               />
                             )}
                             <MenuItem
@@ -827,7 +827,7 @@ function ApplicationsSection(props: any) {
                               onSelect={() =>
                                 setSelectedWorkspaceId(workspace.id)
                               }
-                              text="Share"
+                              text="分享"
                             />
                             <MenuItem
                               icon="member"
@@ -839,7 +839,7 @@ function ApplicationsSection(props: any) {
                                   },
                                 )
                               }
-                              text="Members"
+                              text="成员"
                             />
                           </>
                         )}
@@ -853,8 +853,8 @@ function ApplicationsSection(props: any) {
                           }}
                           text={
                             !warnLeavingWorkspace
-                              ? "Leave Workspace"
-                              : "Are you sure?"
+                              ? "退出应用组"
+                              : "确定退出应用组吗？"
                           }
                           type={!warnLeavingWorkspace ? undefined : "warning"}
                         />
@@ -870,8 +870,8 @@ function ApplicationsSection(props: any) {
                               }}
                               text={
                                 !warnDeleteWorkspace
-                                  ? "Delete Workspace"
-                                  : "Are you sure?"
+                                  ? "删除应用组"
+                                  : "确定删除应用组吗？"
                               }
                               type={
                                 !warnDeleteWorkspace ? undefined : "warning"
@@ -902,7 +902,7 @@ function ApplicationsSection(props: any) {
               {applications.length === 0 && (
                 <NoAppsFound>
                   <NoAppsFoundIcon />
-                  <span>There’s nothing inside this workspace</span>
+                  <span>应用组是空的</span>
                   {/* below component is duplicate. This is because of cypress test were failing */}
                   {!isMobile && (
                     <Button
@@ -920,7 +920,7 @@ function ApplicationsSection(props: any) {
                         ) {
                           createNewApplication(
                             getNextEntityName(
-                              "Untitled application ",
+                              "应用 ",
                               applications.map((el: any) => el.name),
                             ),
                             workspace.id,
@@ -929,7 +929,7 @@ function ApplicationsSection(props: any) {
                       }}
                       size={Size.medium}
                       tag="button"
-                      text={"New"}
+                      text={"创建应用"}
                     />
                   )}
                 </NoAppsFound>
@@ -1001,7 +1001,7 @@ class Applications extends Component<
 
   public render() {
     return (
-      <PageWrapper displayName="Applications">
+      <PageWrapper displayName="应用管理">
         <LeftPane />
         <MediaQuery maxWidth={MOBILE_MAX_WIDTH}>
           {(matches: boolean) => (

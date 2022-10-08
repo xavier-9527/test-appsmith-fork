@@ -60,7 +60,7 @@ function LeftPaneBottomSection() {
         onSelect={() => {
           window.open("https://discord.gg/rBTTVJp", "_blank");
         }}
-        text={"Join our Discord"}
+        text={"加入我们的Discord"}
       />
       <MenuItem
         containerClassName={
@@ -90,9 +90,7 @@ function LeftPaneBottomSection() {
       <ProductUpdatesModal />
       <LeftPaneVersionData>
         <span>Appsmith {appVersion.id}</span>
-        {howMuchTimeBefore !== "" && (
-          <span>Released {howMuchTimeBefore} ago</span>
-        )}
+        {howMuchTimeBefore !== "" && <span>发布于 {howMuchTimeBefore} 前</span>}
       </LeftPaneVersionData>
     </Wrapper>
   );

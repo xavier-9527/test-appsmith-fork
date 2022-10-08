@@ -161,13 +161,12 @@ export const FORK_APP = () => `Fork App`;
 export const SIGN_IN = () => `Sign in`;
 
 // Homepage
-export const CREATE_NEW_APPLICATION = () => `Create new`;
-export const SEARCH_APPS = () => `Search for apps...`;
-export const GETTING_STARTED = () => `GETTING STARTED`;
-export const WORKSPACES_HEADING = () => `WORKSPACES`;
-export const WELCOME_TOUR = () => `Welcome Tour`;
-export const NO_APPS_FOUND = () =>
-  `Whale! Whale! This name doesn't ring a bell!`;
+export const CREATE_NEW_APPLICATION = () => `新建应用`;
+export const SEARCH_APPS = () => `搜索应用`;
+export const GETTING_STARTED = () => `马上开始`;
+export const WORKSPACES_HEADING = () => `应用组`;
+export const WELCOME_TOUR = () => `欢迎光临`;
+export const NO_APPS_FOUND = () => `没有发现相关应用`;
 
 // Lightning menu
 export const LIGHTNING_MENU_DATA_API = () => `Use data from an API`;
@@ -549,7 +548,7 @@ export const SNIPPET_EXECUTE = () => `Hit ⏎ to run`;
 export const APPLY_SEARCH_CATEGORY = () => `⏎ Jump`;
 
 // Git sync
-export const CONNECTED_TO_GIT = () => "Connected to Git";
+export const CONNECTED_TO_GIT = () => "已连接到 Git";
 
 export const GIT_DISCONNECT_POPUP_TITLE = () =>
   `This will disconnect the Git repository from this application`;
@@ -581,7 +580,7 @@ export const AUTHOR_EMAIL = () => "Author email";
 export const NAME_YOUR_NEW_BRANCH = () => "Name your new branch";
 export const SWITCH_BRANCHES = () => "Switch branches";
 
-export const DOCUMENTATION = () => "Documentation";
+export const DOCUMENTATION = () => "文档";
 export const DOCUMENTATION_TOOLTIP = () => "Open Docs in Omnibar";
 export const CONNECT = () => "Connect";
 export const LATEST_DP_TITLE = () => "Latest deployed preview";
@@ -987,7 +986,7 @@ export const CLONE_TOOLTIP = () => "Clone";
 export const DELETE_TOOLTIP = () => "Delete";
 export const SETTINGS_TOOLTIP = () => "Settings";
 //settings
-export const ADMIN_SETTINGS = () => "Admin Settings";
+export const ADMIN_SETTINGS = () => "管理员设置";
 export const RESTART_BANNER_BODY = () =>
   "Hang in there. This should be done soon.";
 export const RESTART_BANNER_HEADER = () => "Restarting your server";

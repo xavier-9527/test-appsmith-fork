@@ -237,7 +237,7 @@ export function ShareButtonComponent() {
   return (
     <ShareButton className="flex items-center t--application-share-btn header__application-share-btn">
       <StyledSharedIcon name="share-line" />
-      <StyledShareText>SHARE</StyledShareText>
+      <StyledShareText>共享应用</StyledShareText>
     </ShareButton>
   );
 }
@@ -528,7 +528,7 @@ export function EditorHeader(props: EditorHeaderProps) {
         </Suspense>
         {isSnipingMode && (
           <BindingBanner className="t--sniping-mode-banner">
-            Select a widget to bind
+            选择一个组件绑定
           </BindingBanner>
         )}
       </HeaderWrapper>

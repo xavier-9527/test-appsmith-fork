@@ -457,7 +457,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
     if (props.share) {
       moreActionItems.push({
         onSelect: shareApp,
-        text: "Share",
+        text: "分享",
         icon: "share",
         cypressSelector: "t--share",
       });
@@ -465,7 +465,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
     if (props.duplicate && hasEditPermission) {
       moreActionItems.push({
         onSelect: duplicateApp,
-        text: "Duplicate",
+        text: "复制到当前应用组",
         icon: "duplicate",
         cypressSelector: "t--duplicate",
       });
@@ -474,7 +474,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
     if (hasEditPermission) {
       moreActionItems.push({
         onSelect: forkApplicationInitiate,
-        text: "Fork",
+        text: "复制到任意应用组",
         icon: "fork-2",
         cypressSelector: "t--fork-app",
       });
@@ -482,7 +482,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
     if (!!props.enableImportExport && hasExportPermission) {
       moreActionItems.push({
         onSelect: exportApplicationAsJSONFile,
-        text: "Export",
+        text: "导出",
         icon: "download",
         cypressSelector: "t--export-app",
       });
@@ -542,7 +542,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
     }
     setIsMenuOpen(false);
     Toaster.show({
-      text: `Successfully exported ${props.application.name}`,
+      text: `成功导出 ${props.application.name}`,
       variant: Variant.success,
     });
   };
@@ -560,7 +560,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
     updatedActionItems.pop();
     updatedActionItems.push({
       onSelect: deleteApp,
-      text: "Are you sure?",
+      text: "确定删除吗？",
       icon: "delete-blank",
       type: "warning",
       cypressSelector: "t--delete",
@@ -577,7 +577,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
       }
       moreActionItems.push({
         onSelect: askForConfirmation,
-        text: "Delete",
+        text: "删除",
         icon: "delete-blank",
         cypressSelector: "t--delete-confirm",
       });
@@ -641,7 +641,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
             isError={isErroredSavingName}
             isInvalid={(value: string) => {
               if (!value) {
-                return "Name cannot be empty";
+                return "名字不能为空";
               } else {
                 return false;
               }
@@ -655,7 +655,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
             onTextChanged={(value: string) => {
               setLastUpdatedValue(value);
             }}
-            placeholder={"Edit text input"}
+            placeholder={"编辑名称"}
             savingState={
               isSavingName ? SavingState.STARTED : SavingState.NOT_STARTED
             }
@@ -718,8 +718,8 @@ export function ApplicationCard(props: ApplicationCardProps) {
 
     //assuming modifiedAt will be always available
     editedOn = howMuchTimeBeforeText(editedOn);
-    editedOn = editedOn !== "" ? editedOn + " ago" : "";
-    return editedBy + " edited " + editedOn;
+    editedOn = editedOn !== "" ? editedOn + " 前" : "";
+    return editedBy + " 编辑于 " + editedOn;
   };
 
   function setURLParams() {
@@ -850,7 +850,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
                       iconPosition={IconPositions.left}
                       onClick={editApp}
                       size={Size.medium}
-                      text="Edit"
+                      text="编辑"
                     />
                   )}
                   {!isMenuOpen && (
@@ -863,7 +863,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
                       iconPosition={IconPositions.left}
                       onClick={launchApp}
                       size={Size.medium}
-                      text="Launch"
+                      text="访问"
                     />
                   )}
                 </Control>

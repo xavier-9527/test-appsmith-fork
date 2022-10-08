@@ -120,7 +120,7 @@ function UpdatesModal({
                 size={IconSize.XXXL}
               />
             </StyledIconContainer>
-            <Text type={TextType.H1}>Product Updates</Text>
+            <Text type={TextType.H1}>产品更新</Text>
           </div>
           <Icon
             className="close-modal"

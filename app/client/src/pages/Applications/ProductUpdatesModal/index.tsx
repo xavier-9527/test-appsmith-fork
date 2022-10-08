@@ -123,7 +123,7 @@ function ProductUpdatesModal(props: ProductUpdatesModalProps) {
       maxHeight={"94vh"}
       onClose={onClose}
       onOpening={onOpening}
-      title="Product Updates"
+      title="产品更新"
       trigger={
         props.hideTrigger ? null : (
           <UpdatesButton newReleasesCount={newReleasesCount} />
@@ -139,7 +139,7 @@ function ProductUpdatesModal(props: ProductUpdatesModalProps) {
         {!showFull && (
           <WhiteOverlay id="white-overlay-product-updates">
             <span onClick={showFullUpdates}>
-              Show more
+              显示更多
               <Icon name="down-arrow" />
             </span>
           </WhiteOverlay>
@@ -154,14 +154,14 @@ function ProductUpdatesModal(props: ProductUpdatesModalProps) {
           data-cy="t--product-updates-close-btn"
           onClick={onClose}
           size={Size.large}
-          text="CANCEL"
+          text="取消"
         />
         <Button
           category={Category.primary}
           data-cy="t--product-updates-ok-btn"
           onClick={onClose}
           size={Size.large}
-          text="OK, THANKS"
+          text="好的, 谢谢"
         />
       </Footer>
       <ScrollIndicator containerRef={containerRef} />

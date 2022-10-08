@@ -114,7 +114,7 @@ export default function MobileSideBar(props: MobileSideBarProps) {
         </UserNameSection>
       </ProfileSection>
       <Section>
-        <h4>ACCOUNT</h4>
+        <h4>账户</h4>
         {user?.isSuperUser && user?.isConfigurable && (
           <StyledMenuItem
             className={`t--admin-settings-menu`}
@@ -135,7 +135,7 @@ export default function MobileSideBar(props: MobileSideBarProps) {
               type: ReduxActionTypes.LOGOUT_USER_INIT,
             })
           }
-          text="Sign Out"
+          text="退出登录"
         />
       </Section>
       <Section>
@@ -144,7 +144,7 @@ export default function MobileSideBar(props: MobileSideBarProps) {
           onSelect={() => {
             window.open("https://discord.gg/rBTTVJp", "_blank");
           }}
-          text={"Join our Discord"}
+          text={"加入我们的Discord"}
         />
         <StyledMenuItem
           icon="book"
@@ -156,9 +156,7 @@ export default function MobileSideBar(props: MobileSideBarProps) {
       </Section>
       <LeftPaneVersionData>
         <span>Appsmith {appVersion.id}</span>
-        {howMuchTimeBefore !== "" && (
-          <span>Released {howMuchTimeBefore} ago</span>
-        )}
+        {howMuchTimeBefore !== "" && <span>发布于 {howMuchTimeBefore} 前</span>}
       </LeftPaneVersionData>
     </MainContainer>
   );

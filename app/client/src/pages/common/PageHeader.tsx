@@ -137,17 +137,17 @@ export function PageHeader(props: PageHeaderProps) {
 
   const tabs = [
     {
-      title: "Apps",
+      title: "应用",
       path: APPLICATIONS_URL,
       matcher: matchApplicationPath,
     },
     {
-      title: "Templates",
+      title: "模板",
       path: TEMPLATES_PATH,
       matcher: matchTemplatesPath,
     },
     {
-      title: "Templates id",
+      title: "模板 id",
       path: TEMPLATES_ID_PATH,
       matcher: matchTemplatesIdPath,
     },
@@ -178,7 +178,7 @@ export function PageHeader(props: PageHeaderProps) {
               isSelected={matchApplicationPath(location.pathname)}
               onClick={() => history.push(APPLICATIONS_URL)}
             >
-              <div>Apps</div>
+              <div>应用</div>
             </TabName>
             <TemplatesTabItem>
               <TabName
@@ -189,7 +189,7 @@ export function PageHeader(props: PageHeaderProps) {
                 }
                 onClick={() => history.push(TEMPLATES_PATH)}
               >
-                <div>Templates</div>
+                <div>模板</div>
               </TabName>
             </TemplatesTabItem>
           </>
@@ -204,7 +204,7 @@ export function PageHeader(props: PageHeaderProps) {
               intent={"primary"}
               onClick={() => history.push(loginUrl)}
               size="small"
-              text="Sign In"
+              text="登录"
             />
           ) : (
             <ProfileDropdown
