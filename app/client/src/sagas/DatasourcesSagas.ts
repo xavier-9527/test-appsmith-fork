@@ -617,7 +617,6 @@ function* testDatasourceSaga(actionPayload: ReduxAction<Datasource>) {
 function* createDatasourceFromFormSaga(
   actionPayload: ReduxAction<CreateDatasourceConfig>,
 ) {
-  console.log(createDatasourceFromFormSaga, actionPayload);
   try {
     const workspaceId: string = yield select(getCurrentWorkspaceId);
     yield call(

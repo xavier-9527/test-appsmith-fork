@@ -38,10 +38,6 @@ function AppViewerPageContainer(props: AppViewerPageContainerProps) {
   const currentApplication = useSelector(getCurrentApplication);
   const { match } = props;
 
-  useMemo(() => {
-    console.log(widgets);
-  }, [widgets]);
-
   // get appsmith editr link
   const appsmithEditorLink = useMemo(() => {
     if (

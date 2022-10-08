@@ -758,9 +758,6 @@ function* executePageLoadAction(pageAction: PageAction) {
           isPageLoad: true,
         }),
       );
-      console.log("--------------executePluginActionSuccess-----------------", {
-        payload,
-      });
       yield take(ReduxActionTypes.SET_EVALUATED_TREE);
     }
   }
