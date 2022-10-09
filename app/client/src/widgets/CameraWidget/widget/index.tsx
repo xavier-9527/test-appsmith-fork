@@ -19,20 +19,20 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "mode",
-            label: "Mode",
+            label: "模式",
             controlType: "DROP_DOWN",
-            helpText: "Whether a picture is taken or a video is recorded",
+            helpText: "选择拍照模式还是录像模式",
             options: [
               {
-                label: "Image",
+                label: "拍照",
                 value: "CAMERA",
               },
               {
-                label: "Video",
+                label: "录像",
                 value: "VIDEO",
               },
             ],
@@ -47,9 +47,9 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables clicks to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -57,8 +57,8 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -67,8 +67,8 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
           },
           {
             propertyName: "isMirrored",
-            label: "Mirrored",
-            helpText: "Show camera preview and get the screenshot mirrored",
+            label: "显示镜像",
+            helpText: "是否显示镜像效果",
             controlType: "SWITCH",
             dependencies: ["mode"],
             isJSConvertible: true,
@@ -79,10 +79,10 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Actions",
+        sectionName: "动作",
         children: [
           {
-            helpText: "Triggers an action when the image is captured",
+            helpText: "拍照时触发",
             propertyName: "onImageCapture",
             label: "OnImageCapture",
             controlType: "ACTION_SELECTOR",
@@ -93,7 +93,7 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the image is saved",
+            helpText: "图片保存时触发",
             propertyName: "onImageSave",
             label: "OnImageSave",
             controlType: "ACTION_SELECTOR",
@@ -105,7 +105,7 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the video recording get started",
+            helpText: "录像开始时触发",
             propertyName: "onRecordingStart",
             label: "OnRecordingStart",
             controlType: "ACTION_SELECTOR",
@@ -116,7 +116,7 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the video recording stops",
+            helpText: "录像结束时触发",
             propertyName: "onRecordingStop",
             label: "OnRecordingStop",
             controlType: "ACTION_SELECTOR",
@@ -127,7 +127,7 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the video recording is saved",
+            helpText: "录像保存时触发",
             propertyName: "onVideoSave",
             label: "OnVideoSave",
             controlType: "ACTION_SELECTOR",
@@ -141,13 +141,12 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -156,9 +155,8 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -173,20 +171,20 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "mode",
-            label: "Mode",
+            label: "模式",
             controlType: "DROP_DOWN",
-            helpText: "Whether a picture is taken or a video is recorded",
+            helpText: "选择拍照模式还是录像模式",
             options: [
               {
-                label: "Image",
+                label: "拍照",
                 value: "CAMERA",
               },
               {
-                label: "Video",
+                label: "录像",
                 value: "VIDEO",
               },
             ],
@@ -201,8 +199,8 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -211,9 +209,9 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables clicks to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -221,8 +219,8 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
           },
           {
             propertyName: "isMirrored",
-            label: "Mirrored",
-            helpText: "Show camera preview and get the screenshot mirrored",
+            label: "显示镜像",
+            helpText: "是否显示镜像效果",
             controlType: "SWITCH",
             dependencies: ["mode"],
             isJSConvertible: true,
@@ -233,10 +231,10 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the image is captured",
+            helpText: "拍照时触发",
             propertyName: "onImageCapture",
             label: "OnImageCapture",
             controlType: "ACTION_SELECTOR",
@@ -247,7 +245,7 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the image is saved",
+            helpText: "图片保存时触发",
             propertyName: "onImageSave",
             label: "onImageCapture",
             controlType: "ACTION_SELECTOR",
@@ -259,7 +257,7 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the video recording get started",
+            helpText: "录像开始时触发",
             propertyName: "onRecordingStart",
             label: "OnRecordingStart",
             controlType: "ACTION_SELECTOR",
@@ -270,7 +268,7 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the video recording stops",
+            helpText: "录像结束时触发",
             propertyName: "onRecordingStop",
             label: "OnRecordingStop",
             controlType: "ACTION_SELECTOR",
@@ -281,7 +279,7 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the video recording is saved",
+            helpText: "录像保存时触发",
             propertyName: "onVideoSave",
             label: "onVideoSave",
             controlType: "ACTION_SELECTOR",
@@ -300,13 +298,12 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -315,9 +312,8 @@ class CameraWidget extends BaseWidget<CameraWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

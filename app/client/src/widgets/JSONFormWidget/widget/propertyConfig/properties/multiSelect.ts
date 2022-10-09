@@ -123,8 +123,8 @@ const PROPERTIES = {
   general: [
     {
       propertyName: "defaultValue",
-      helpText: "Selects the option with value by default",
-      label: "Default Value",
+      helpText: "默认选中这个值",
+      label: "默认值",
       controlType: "JSON_FORM_COMPUTE_VALUE",
       placeholderText: "[GREEN]",
       isBindProperty: true,
@@ -147,8 +147,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "placeholderText",
-      helpText: "Sets a Placeholder text",
-      label: "Placeholder",
+      helpText: "设置占位文本",
+      label: "占位符",
       controlType: "JSON_FORM_COMPUTE_VALUE",
       placeholderText: "Search",
       isBindProperty: true,
@@ -160,8 +160,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "isFilterable",
-      label: "Filterable",
-      helpText: "Makes the dropdown list filterable",
+      label: "支持过滤",
+      helpText: "让下拉列表支持数据过滤",
       controlType: "SWITCH",
       isJSConvertible: true,
       isBindProperty: true,
@@ -173,8 +173,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "serverSideFiltering",
-      helpText: "Enables server side filtering of the data",
-      label: "Server Side Filtering",
+      helpText: "开启服务端数据过滤",
+      label: "服务端过滤",
       controlType: "SWITCH",
       isJSConvertible: true,
       isBindProperty: true,
@@ -187,8 +187,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "allowSelectAll",
-      helpText: "Controls the visibility of select all option in dropdown.",
-      label: "Allow Select All",
+      helpText: "在下拉列表中显示全选选项",
+      label: "允许全选",
       controlType: "SWITCH",
       isJSConvertible: true,
       isBindProperty: true,
@@ -202,7 +202,7 @@ const PROPERTIES = {
   actions: [
     {
       propertyName: "onOptionChange",
-      helpText: "Triggers an action when a user selects an option",
+      helpText: "用户选中一个选项时触发",
       label: "onOptionChange",
       controlType: "ACTION_SELECTOR",
       isJSConvertible: true,
@@ -214,7 +214,7 @@ const PROPERTIES = {
         getSchemaItem(...args).fieldTypeNotMatches(FieldType.MULTISELECT),
     },
     {
-      helpText: "Trigger an action on change of filterText",
+      helpText: "过滤关键字更改时触发",
       propertyName: "onFilterUpdate",
       label: "onFilterUpdate",
       controlType: "ACTION_SELECTOR",
@@ -236,8 +236,8 @@ const PROPERTIES = {
     data: [
       {
         propertyName: "defaultValue",
-        helpText: "Selects the option with value by default",
-        label: "Default Selected Values",
+        helpText: "默认选中这个值",
+        label: "默认选中值",
         controlType: "JSON_FORM_COMPUTE_VALUE",
         placeholderText: "[GREEN]",
         isBindProperty: true,
@@ -262,8 +262,8 @@ const PROPERTIES = {
     general: [
       {
         propertyName: "placeholderText",
-        helpText: "Sets a Placeholder text",
-        label: "Placeholder",
+        helpText: "设置占位文本",
+        label: "占位符",
         controlType: "JSON_FORM_COMPUTE_VALUE",
         placeholderText: "Search",
         isBindProperty: true,
@@ -277,8 +277,8 @@ const PROPERTIES = {
     toggles: [
       {
         propertyName: "allowSelectAll",
-        helpText: "Controls the visibility of select all option in dropdown.",
-        label: "Allow Select All",
+        helpText: "在下拉列表中显示全选选项",
+        label: "允许全选",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -292,7 +292,7 @@ const PROPERTIES = {
     events: [
       {
         propertyName: "onOptionChange",
-        helpText: "Triggers an action when a user selects an option",
+        helpText: "用户选中一个选项时触发",
         label: "onOptionChange",
         controlType: "ACTION_SELECTOR",
         isJSConvertible: true,
@@ -307,8 +307,8 @@ const PROPERTIES = {
     searchAndFilters: [
       {
         propertyName: "isFilterable",
-        label: "Allow Searching",
-        helpText: "Makes the dropdown list filterable",
+        label: "允许搜索",
+        helpText: "让下拉列表支持数据过滤",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -320,8 +320,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "serverSideFiltering",
-        helpText: "Enables server side filtering of the data",
-        label: "Server Side Filtering",
+        helpText: "开启服务端数据过滤",
+        label: "服务端过滤",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -333,7 +333,7 @@ const PROPERTIES = {
           getSchemaItem(...args).fieldTypeNotMatches(FieldType.MULTISELECT),
       },
       {
-        helpText: "Trigger an action on change of filterText",
+        helpText: "过滤关键字更改时触发",
         propertyName: "onFilterUpdate",
         label: "onFilterUpdate",
         controlType: "ACTION_SELECTOR",

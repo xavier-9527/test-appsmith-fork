@@ -49,23 +49,22 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "label",
-            helpText: "Sets the label of a menu",
-            label: "Label",
+            helpText: "设置菜单文本",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Open",
+            placeholderText: "输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Menu items",
             propertyName: "menuItems",
             controlType: "MENU_ITEMS",
-            label: "Menu Items",
+            label: "菜单项",
             isBindProperty: false,
             isTriggerProperty: false,
             panelConfig: {
@@ -86,22 +85,21 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
               },
               children: [
                 {
-                  sectionName: "General",
+                  sectionName: "属性",
                   children: [
                     {
                       propertyName: "label",
-                      helpText: "Sets the label of a menu item",
-                      label: "Label",
+                      helpText: "菜单项文本",
+                      label: "文本",
                       controlType: "INPUT_TEXT",
-                      placeholderText: "Download",
+                      placeholderText: "输入文本",
                       isBindProperty: true,
                       isTriggerProperty: false,
                       validation: { type: ValidationTypes.TEXT },
                     },
                     {
                       propertyName: "isDisabled",
-                      helpText: "Disables input to the widget",
-                      label: "Disabled",
+                      label: "是否禁用",
                       controlType: "SWITCH",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -110,8 +108,7 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                     },
                     {
                       propertyName: "isVisible",
-                      helpText: "Controls the visibility of the widget",
-                      label: "Visible",
+                      label: "是否可见",
                       controlType: "SWITCH",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -121,22 +118,21 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                   ],
                 },
                 {
-                  sectionName: "Icon Options",
+                  sectionName: "图标配置",
                   children: [
                     {
                       propertyName: "iconName",
-                      label: "Icon",
-                      helpText: "Sets the icon to be used for a menu item",
+                      label: "图标",
+                      helpText: "菜单项图标",
                       controlType: "ICON_SELECT",
                       isBindProperty: false,
                       isTriggerProperty: false,
                       validation: { type: ValidationTypes.TEXT },
                     },
-
                     {
                       propertyName: "iconAlign",
-                      label: "Icon alignment",
-                      helpText: "Sets the icon alignment of a menu item",
+                      label: "图标对齐",
+                      helpText: "菜单项图标对齐方式",
                       controlType: "ICON_TABS",
                       options: [
                         {
@@ -155,11 +151,10 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                   ],
                 },
                 {
-                  sectionName: "Events",
+                  sectionName: "动作",
                   children: [
                     {
-                      helpText:
-                        "Triggers an action when the menu item is clicked",
+                      helpText: "点击菜单项时触发",
                       propertyName: "onClick",
                       label: "onClick",
                       controlType: "ACTION_SELECTOR",
@@ -170,28 +165,28 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                   ],
                 },
                 {
-                  sectionName: "Styles",
+                  sectionName: "样式",
                   children: [
                     {
                       propertyName: "iconColor",
-                      helpText: "Sets the icon color of a menu item",
-                      label: "Icon color",
+                      helpText: "设置菜单项图标颜色",
+                      label: "图标颜色",
                       controlType: "COLOR_PICKER",
                       isBindProperty: false,
                       isTriggerProperty: false,
                     },
                     {
                       propertyName: "backgroundColor",
-                      helpText: "Sets the background color of a menu item",
-                      label: "Background color",
+                      helpText: "设置菜单项背景颜色",
+                      label: "背景颜色",
                       controlType: "COLOR_PICKER",
                       isBindProperty: false,
                       isTriggerProperty: false,
                     },
                     {
                       propertyName: "textColor",
-                      helpText: "Sets the text color of a menu item",
-                      label: "Text color",
+                      helpText: "设置菜单项文本颜色",
+                      label: "文本颜色",
                       controlType: "COLOR_PICKER",
                       isBindProperty: false,
                       isTriggerProperty: false,
@@ -203,8 +198,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            helpText: "Disables input to the widget",
-            label: "Disabled",
+            helpText: "让组件不可交互",
+            label: "禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -213,8 +208,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            helpText: "Controls the visibility of the widget",
-            label: "Visible",
+            helpText: "控制组件的显示/隐藏",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -223,9 +218,9 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -234,8 +229,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "isCompact",
-            helpText: "Decides if menu items will consume lesser space",
-            label: "Compact",
+            helpText: "菜单项占用更少的空间",
+            label: "紧凑模式",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -245,12 +240,12 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "按钮图标",
         children: [
           {
             propertyName: "menuColor",
-            helpText: "Sets the style of the Menu button",
-            label: "Menu Color",
+            helpText: "设置菜单按钮颜色",
+            label: "菜单颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -259,20 +254,20 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "menuVariant",
-            label: "Menu Variant",
+            label: "菜单按钮类型",
             controlType: "DROP_DOWN",
-            helpText: "Sets the variant of the menu button",
+            helpText: "设置菜单按钮的风格类型",
             options: [
               {
-                label: "Primary",
+                label: "主按钮",
                 value: ButtonVariantTypes.PRIMARY,
               },
               {
-                label: "Secondary",
+                label: "次级按钮",
                 value: ButtonVariantTypes.SECONDARY,
               },
               {
-                label: "Tertiary",
+                label: "文本按钮",
                 value: ButtonVariantTypes.TERTIARY,
               },
             ],
@@ -293,9 +288,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -304,9 +298,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -315,8 +308,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "iconName",
-            label: "Icon",
-            helpText: "Sets the icon to be used for the menu button",
+            label: "图标",
+            helpText: "菜单按钮图标",
             controlType: "ICON_SELECT",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -341,20 +334,20 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "placement",
-            label: "Placement",
+            label: "排列方式",
             controlType: "DROP_DOWN",
-            helpText: "Sets the space between items",
+            helpText: "设置图标与标签的排列方式",
             options: [
               {
-                label: "Start",
+                label: "向前对齐",
                 value: ButtonPlacementTypes.START,
               },
               {
-                label: "Between",
+                label: "两边对齐",
                 value: ButtonPlacementTypes.BETWEEN,
               },
               {
-                label: "Center",
+                label: "居中对齐",
                 value: ButtonPlacementTypes.CENTER,
               },
             ],
@@ -376,8 +369,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "iconAlign",
-            label: "Icon Alignment",
-            helpText: "Sets the icon alignment of the menu button",
+            label: "图标对齐",
+            helpText: "菜单按钮图标对齐方式",
             controlType: "ICON_TABS",
             options: [
               {
@@ -406,12 +399,12 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Basic",
+        sectionName: "属性",
         children: [
           {
             propertyName: "label",
-            helpText: "Sets the label of a menu",
-            label: "Label",
+            helpText: "设置菜单标签",
+            label: "标签",
             controlType: "INPUT_TEXT",
             placeholderText: "Open",
             isBindProperty: true,
@@ -419,10 +412,10 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Menu items",
+            helpText: "菜单配置",
             propertyName: "menuItems",
             controlType: "MENU_ITEMS",
-            label: "Menu Items",
+            label: "菜单项",
             isBindProperty: false,
             isTriggerProperty: false,
             panelConfig: {
@@ -444,12 +437,12 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
               // TODO(aswathkk): Delete the following
               children: [
                 {
-                  sectionName: "General",
+                  sectionName: "属性",
                   children: [
                     {
                       propertyName: "label",
-                      helpText: "Sets the label of a menu item",
-                      label: "Label",
+                      helpText: "设置菜单项标签",
+                      label: "标签",
                       controlType: "INPUT_TEXT",
                       placeholderText: "Download",
                       isBindProperty: true,
@@ -458,8 +451,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                     },
                     {
                       propertyName: "isDisabled",
-                      helpText: "Disables input to the widget",
-                      label: "Disabled",
+                      helpText: "让组件不可交互",
+                      label: "禁用",
                       controlType: "SWITCH",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -468,8 +461,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                     },
                     {
                       propertyName: "isVisible",
-                      helpText: "Controls the visibility of the widget",
-                      label: "Visible",
+                      helpText: "控制组件的显示/隐藏",
+                      label: "是否显示",
                       controlType: "SWITCH",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -479,12 +472,12 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                   ],
                 },
                 {
-                  sectionName: "Icon Options",
+                  sectionName: "图标配置",
                   children: [
                     {
                       propertyName: "iconName",
-                      label: "Icon",
-                      helpText: "Sets the icon to be used for a menu item",
+                      label: "图标",
+                      helpText: "设置菜单项的图标",
                       controlType: "ICON_SELECT",
                       isBindProperty: false,
                       isTriggerProperty: false,
@@ -493,8 +486,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
 
                     {
                       propertyName: "iconAlign",
-                      label: "Icon alignment",
-                      helpText: "Sets the icon alignment of a menu item",
+                      label: "图标对齐",
+                      helpText: "设置菜单项图标对齐方向",
                       controlType: "ICON_TABS",
                       options: [
                         {
@@ -513,11 +506,10 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                   ],
                 },
                 {
-                  sectionName: "Events",
+                  sectionName: "事件",
                   children: [
                     {
-                      helpText:
-                        "Triggers an action when the menu item is clicked",
+                      helpText: "点击菜单项时触发",
                       propertyName: "onClick",
                       label: "onClick",
                       controlType: "ACTION_SELECTOR",
@@ -528,28 +520,28 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                   ],
                 },
                 {
-                  sectionName: "Styles",
+                  sectionName: "样式",
                   children: [
                     {
                       propertyName: "iconColor",
-                      helpText: "Sets the icon color of a menu item",
-                      label: "Icon color",
+                      helpText: "设置菜单项图标颜色",
+                      label: "图标颜色",
                       controlType: "COLOR_PICKER",
                       isBindProperty: false,
                       isTriggerProperty: false,
                     },
                     {
                       propertyName: "backgroundColor",
-                      helpText: "Sets the background color of a menu item",
-                      label: "Background color",
+                      helpText: "设置菜单项背景颜色",
+                      label: "背景颜色",
                       controlType: "COLOR_PICKER",
                       isBindProperty: false,
                       isTriggerProperty: false,
                     },
                     {
                       propertyName: "textColor",
-                      helpText: "Sets the text color of a menu item",
-                      label: "Text color",
+                      helpText: "设置菜单项文本颜色",
+                      label: "文本颜色",
                       controlType: "COLOR_PICKER",
                       isBindProperty: false,
                       isTriggerProperty: false,
@@ -559,12 +551,12 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
               ],
               contentChildren: [
                 {
-                  sectionName: "Basic",
+                  sectionName: "属性",
                   children: [
                     {
                       propertyName: "label",
-                      helpText: "Sets the label of a menu item",
-                      label: "Label",
+                      helpText: "设置菜单项标签",
+                      label: "标签",
                       controlType: "INPUT_TEXT",
                       placeholderText: "Download",
                       isBindProperty: true,
@@ -572,8 +564,7 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                       validation: { type: ValidationTypes.TEXT },
                     },
                     {
-                      helpText:
-                        "Triggers an action when the menu item is clicked",
+                      helpText: "点击菜单项时触发",
                       propertyName: "onClick",
                       label: "onClick",
                       controlType: "ACTION_SELECTOR",
@@ -584,12 +575,12 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                   ],
                 },
                 {
-                  sectionName: "General",
+                  sectionName: "属性",
                   children: [
                     {
                       propertyName: "isVisible",
-                      helpText: "Controls the visibility of the widget",
-                      label: "Visible",
+                      helpText: "控制组件的显示/隐藏",
+                      label: "是否显示",
                       controlType: "SWITCH",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -598,8 +589,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                     },
                     {
                       propertyName: "isDisabled",
-                      helpText: "Disables input to the widget",
-                      label: "Disabled",
+                      helpText: "让组件不可交互",
+                      label: "禁用",
                       controlType: "SWITCH",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -611,12 +602,12 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
               ],
               styleChildren: [
                 {
-                  sectionName: "Icon",
+                  sectionName: "图标配置",
                   children: [
                     {
                       propertyName: "iconName",
-                      label: "Icon",
-                      helpText: "Sets the icon to be used for a menu item",
+                      label: "图标",
+                      helpText: "设置菜单项的图标",
                       controlType: "ICON_SELECT",
                       isBindProperty: false,
                       isTriggerProperty: false,
@@ -624,8 +615,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                     },
                     {
                       propertyName: "iconAlign",
-                      label: "Position",
-                      helpText: "Sets the icon alignment of a menu item",
+                      label: "位置",
+                      helpText: "设置菜单项图标对齐方向",
                       controlType: "ICON_TABS",
                       options: [
                         {
@@ -644,28 +635,28 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
                   ],
                 },
                 {
-                  sectionName: "Color",
+                  sectionName: "颜色配置",
                   children: [
                     {
                       propertyName: "iconColor",
-                      helpText: "Sets the icon color of a menu item",
-                      label: "Icon color",
+                      helpText: "设置菜单项图标颜色",
+                      label: "图标颜色",
                       controlType: "COLOR_PICKER",
                       isBindProperty: false,
                       isTriggerProperty: false,
                     },
                     {
                       propertyName: "textColor",
-                      helpText: "Sets the text color of a menu item",
-                      label: "Text color",
+                      helpText: "设置菜单项文本颜色",
+                      label: "文本颜色",
                       controlType: "COLOR_PICKER",
                       isBindProperty: false,
                       isTriggerProperty: false,
                     },
                     {
                       propertyName: "backgroundColor",
-                      helpText: "Sets the background color of a menu item",
-                      label: "Background color",
+                      helpText: "设置菜单项背景颜色",
+                      label: "背景颜色",
                       controlType: "COLOR_PICKER",
                       isBindProperty: false,
                       isTriggerProperty: false,
@@ -678,12 +669,12 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "isVisible",
-            helpText: "Controls the visibility of the widget",
-            label: "Visible",
+            helpText: "控制组件的显示/隐藏",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -692,8 +683,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            helpText: "Disables input to the widget",
-            label: "Disabled",
+            helpText: "让组件不可交互",
+            label: "禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -702,9 +693,9 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -713,8 +704,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "isCompact",
-            helpText: "Decides if menu items will consume lesser space",
-            label: "Compact",
+            helpText: "菜单项占用更少的空间",
+            label: "紧凑模式",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -729,24 +720,24 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "menuVariant",
-            label: "Button Variant",
+            label: "按钮类型",
             controlType: "DROP_DOWN",
-            helpText: "Sets the variant of the menu button",
+            helpText: "设置菜单按钮的风格类型",
             options: [
               {
-                label: "Primary",
+                label: "主按钮",
                 value: ButtonVariantTypes.PRIMARY,
               },
               {
-                label: "Secondary",
+                label: "次级按钮",
                 value: ButtonVariantTypes.SECONDARY,
               },
               {
-                label: "Tertiary",
+                label: "文本按钮",
                 value: ButtonVariantTypes.TERTIARY,
               },
             ],
@@ -768,12 +759,12 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Icon",
+        sectionName: "图标配置",
         children: [
           {
             propertyName: "iconName",
-            label: "Icon",
-            helpText: "Sets the icon to be used for the menu button",
+            label: "图标",
+            helpText: "设置菜单按钮图标",
             controlType: "ICON_SELECT",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -798,8 +789,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "iconAlign",
-            label: "Position",
-            helpText: "Sets the icon alignment of the menu button",
+            label: "位置",
+            helpText: "设置菜单按钮图标对齐方式",
             controlType: "ICON_TABS",
             options: [
               {
@@ -822,20 +813,20 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "placement",
-            label: "Placement",
+            label: "排列方式",
             controlType: "DROP_DOWN",
-            helpText: "Sets the space between items",
+            helpText: "设置图标与标签的排列方式",
             options: [
               {
-                label: "Start",
+                label: "向前对齐",
                 value: ButtonPlacementTypes.START,
               },
               {
-                label: "Between",
+                label: "两边对齐",
                 value: ButtonPlacementTypes.BETWEEN,
               },
               {
-                label: "Center",
+                label: "居中对齐",
                 value: ButtonPlacementTypes.CENTER,
               },
             ],
@@ -858,12 +849,12 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [
           {
             propertyName: "menuColor",
-            helpText: "Sets the style of the Menu button",
-            label: "Button Color",
+            helpText: "设置菜单按钮颜色",
+            label: "按钮颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -873,13 +864,12 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -888,9 +878,8 @@ class MenuButtonWidget extends BaseWidget<MenuButtonWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

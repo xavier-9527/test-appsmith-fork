@@ -34,7 +34,7 @@ export function documentUrlValidation(value: unknown): ValidationResponse {
         return {
           isValid: false,
           parsed: "",
-          messages: ["Provided URL / Base64 is invalid."],
+          messages: ["填写的 URL / Base64 无效"],
         };
       }
     } else if (base64Regex.test(value as string)) {
@@ -48,7 +48,7 @@ export function documentUrlValidation(value: unknown): ValidationResponse {
       return {
         isValid: false,
         parsed: "",
-        messages: ["Provided URL / Base64 is invalid."],
+        messages: ["填写的 URL / Base64 无效"],
       };
     }
   }
@@ -67,13 +67,13 @@ class DocumentViewerWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             helpText:
-              "Document url for preview. for URL, supported extensions are txt, pdf, docx, ppt, pptx, xlsx. ppt is currently not supported by base64.",
+              "需要预览文档的链接。如果是 URL，支持的文件扩展名包括 txt、pdf、docx、ppt、pptx 和 xlsx；如果是 base64，不支持 ppt。",
             propertyName: "docUrl",
-            label: "Document Link",
+            label: "文档链接",
             controlType: "INPUT_TEXT",
             placeholderText: "URL / Base64",
             isBindProperty: true,
@@ -91,9 +91,9 @@ class DocumentViewerWidget extends BaseWidget<
             },
           },
           {
-            helpText: "Controls visibility of the widget",
+            helpText: "控制组件显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -102,9 +102,9 @@ class DocumentViewerWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -119,13 +119,13 @@ class DocumentViewerWidget extends BaseWidget<
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
             helpText:
-              "Document url for preview. for URL, supported extensions are txt, pdf, docx, ppt, pptx, xlsx. ppt is currently not supported by base64.",
+              "需要预览文档的链接。如果是 URL，支持的文件扩展名包括 txt、pdf、docx、ppt、pptx 和 xlsx；如果是 base64，不支持 ppt。",
             propertyName: "docUrl",
-            label: "Document Link",
+            label: "文档链接",
             controlType: "INPUT_TEXT",
             placeholderText: "URL / Base64",
             isBindProperty: true,
@@ -145,12 +145,12 @@ class DocumentViewerWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Controls visibility of the widget",
+            helpText: "控制组件显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -159,9 +159,9 @@ class DocumentViewerWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,

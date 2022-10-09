@@ -4,7 +4,7 @@ import Widget from "./widget";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "Rating",
+  name: "评分",
   iconSVG: IconSVG,
   needsMeta: true,
   searchTags: ["stars"],
@@ -20,7 +20,7 @@ export const CONFIG = {
     isRequired: false,
     isAllowHalf: false,
     isDisabled: false,
-    tooltips: ["Terrible", "Bad", "Neutral", "Good", "Great"],
+    tooltips: ["烂透了", "不好", "一般", "好", "好极了"],
     widgetName: "Rating",
   },
   properties: {

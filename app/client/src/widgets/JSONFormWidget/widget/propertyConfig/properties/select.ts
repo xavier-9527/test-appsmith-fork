@@ -79,8 +79,8 @@ const PROPERTIES = {
   general: [
     {
       propertyName: "defaultValue",
-      helpText: "Selects the option with value by default",
-      label: "Default Value",
+      helpText: "默认选中这个值",
+      label: "默认值",
       controlType: "JSON_FORM_COMPUTE_VALUE",
       placeholderText: '{ "label": "Option1", "value": "Option2" }',
       isBindProperty: true,
@@ -103,9 +103,9 @@ const PROPERTIES = {
     },
     {
       propertyName: "placeholderText",
-      label: "Placeholder",
+      label: "占位符",
       controlType: "JSON_FORM_COMPUTE_VALUE",
-      placeholderText: "Enter placeholder text",
+      placeholderText: "请输入占位文本",
       isBindProperty: true,
       isTriggerProperty: false,
       validation: { type: ValidationTypes.TEXT },
@@ -115,8 +115,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "isFilterable",
-      label: "Filterable",
-      helpText: "Makes the dropdown list filterable",
+      label: "支持过滤",
+      helpText: "让下拉列表支持数据过滤",
       controlType: "SWITCH",
       isJSConvertible: true,
       isBindProperty: true,
@@ -129,8 +129,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "serverSideFiltering",
-      helpText: "Enables server side filtering of the data",
-      label: "Server Side Filtering",
+      helpText: "开启服务端数据过滤",
+      label: "服务端过滤",
       controlType: "SWITCH",
       isJSConvertible: true,
       isBindProperty: true,
@@ -145,7 +145,7 @@ const PROPERTIES = {
   actions: [
     {
       propertyName: "onOptionChange",
-      helpText: "Triggers an action when a user selects an option",
+      helpText: "用户选中一个选项时触发",
       label: "onOptionChange",
       controlType: "ACTION_SELECTOR",
       isJSConvertible: true,
@@ -158,7 +158,7 @@ const PROPERTIES = {
     },
     {
       propertyName: "onFilterUpdate",
-      helpText: "Trigger an action on change of filterText",
+      helpText: "过滤关键字更改时触发",
       label: "onFilterUpdate",
       controlType: "ACTION_SELECTOR",
       isJSConvertible: true,
@@ -179,8 +179,8 @@ const PROPERTIES = {
     data: [
       {
         propertyName: "defaultValue",
-        helpText: "Selects the option with value by default",
-        label: "Default Selected Value",
+        helpText: "默认选中这个值",
+        label: "默认选中值",
         controlType: "JSON_FORM_COMPUTE_VALUE",
         placeholderText: '{ "label": "Option1", "value": "Option2" }',
         isBindProperty: true,
@@ -205,9 +205,9 @@ const PROPERTIES = {
     general: [
       {
         propertyName: "placeholderText",
-        label: "Placeholder",
+        label: "占位符",
         controlType: "JSON_FORM_COMPUTE_VALUE",
-        placeholderText: "Enter placeholder text",
+        placeholderText: "请输入占位文本",
         isBindProperty: true,
         isTriggerProperty: false,
         validation: { type: ValidationTypes.TEXT },
@@ -219,7 +219,7 @@ const PROPERTIES = {
     events: [
       {
         propertyName: "onOptionChange",
-        helpText: "Triggers an action when a user selects an option",
+        helpText: "用户选中一个选项时触发",
         label: "onOptionChange",
         controlType: "ACTION_SELECTOR",
         isJSConvertible: true,
@@ -234,8 +234,8 @@ const PROPERTIES = {
     searchAndFilters: [
       {
         propertyName: "isFilterable",
-        label: "Allow Searching",
-        helpText: "Makes the dropdown list filterable",
+        label: "允许搜索",
+        helpText: "让下拉列表支持数据过滤",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -248,8 +248,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "serverSideFiltering",
-        helpText: "Enables server side filtering of the data",
-        label: "Server Side Filtering",
+        helpText: "开启服务端数据过滤",
+        label: "服务端过滤",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -262,7 +262,7 @@ const PROPERTIES = {
       },
       {
         propertyName: "onFilterUpdate",
-        helpText: "Trigger an action on change of filterText",
+        helpText: "过滤关键字更改时触发",
         label: "onFilterUpdate",
         controlType: "ACTION_SELECTOR",
         isJSConvertible: true,

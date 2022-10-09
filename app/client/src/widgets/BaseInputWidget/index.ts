@@ -5,13 +5,13 @@ import { Alignment } from "@blueprintjs/core";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "Input",
+  name: "输入框",
   hideCard: true,
   iconSVG: IconSVG,
   needsMeta: true,
   defaults: {
     rows: 4,
-    label: "Label",
+    label: "标签",
     labelPosition: LabelPosition.Left,
     labelAlignment: Alignment.LEFT,
     labelTextSize: "0.875rem",

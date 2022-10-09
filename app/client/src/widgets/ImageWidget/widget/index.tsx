@@ -16,46 +16,45 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Sets the image to be displayed",
+            helpText: "图片地址或者 Base64 数据",
             propertyName: "image",
-            label: "Image",
+            label: "图片",
             controlType: "INPUT_TEXT",
-            placeholderText: "URL / Base64",
+            placeholderText: "输入图片 URL / Base64",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.IMAGE_URL },
           },
           {
-            helpText: "Sets the default image to be displayed when load fails",
+            helpText: "图片加载失败时显示的默认图片",
             propertyName: "defaultImage",
-            label: "Default Image",
+            label: "默认图片",
             controlType: "INPUT_TEXT",
-            placeholderText: "URL / Base64",
+            placeholderText: "输入图片 URL / Base64",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.IMAGE_URL },
           },
           {
-            helpText:
-              "Sets how the Image should be resized to fit its container.",
+            helpText: "设置图片填充父容器的方式",
             propertyName: "objectFit",
-            label: "Object Fit",
+            label: "图片填充方式",
             controlType: "DROP_DOWN",
             defaultValue: "contain",
             options: [
               {
-                label: "Contain",
+                label: "包含",
                 value: "contain",
               },
               {
-                label: "Cover",
+                label: "封面",
                 value: "cover",
               },
               {
-                label: "Auto",
+                label: "自动",
                 value: "auto",
               },
             ],
@@ -70,13 +69,13 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
             },
           },
           {
-            helpText: "Controls the max zoom of the widget",
+            helpText: "控制图片的最大拉伸倍数",
             propertyName: "maxZoomLevel",
-            label: "Max Zoom Level",
+            label: "最大缩放倍数",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "1x (No Zoom)",
+                label: "1x (原始尺寸)",
                 value: 1,
               },
               {
@@ -105,9 +104,9 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
             },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否可见",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -116,9 +115,9 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载状态",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -126,9 +125,9 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls if the image is allowed to rotate",
+            helpText: "是否允许旋转图片",
             propertyName: "enableRotation",
-            label: "Enable Rotation",
+            label: "允许旋转",
             controlType: "SWITCH",
             isJSConvertible: false,
             isBindProperty: true,
@@ -136,9 +135,9 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls if the image is allowed to download",
+            helpText: "是否允许下载图片",
             propertyName: "enableDownload",
-            label: "Enable Download",
+            label: "允许下载",
             controlType: "SWITCH",
             isJSConvertible: false,
             isBindProperty: true,
@@ -148,11 +147,10 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "动作",
         children: [
           {
-            helpText:
-              "Triggers an action when a user changes the selected option",
+            helpText: "当用户点击图片时触发",
             propertyName: "onClick",
             label: "onClick",
             controlType: "ACTION_SELECTOR",
@@ -163,13 +161,12 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -178,9 +175,8 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -195,24 +191,24 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
-            helpText: "Sets the image to be displayed",
+            helpText: "图片地址或者 Base64 数据",
             propertyName: "image",
-            label: "Image",
+            label: "图片",
             controlType: "INPUT_TEXT",
-            placeholderText: "URL / Base64",
+            placeholderText: "输入图片 URL / Base64",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.IMAGE_URL },
           },
           {
-            helpText: "Sets the default image to be displayed when load fails",
+            helpText: "图片加载失败时显示的默认图片",
             propertyName: "defaultImage",
-            label: "Default Image",
+            label: "默认图片",
             controlType: "INPUT_TEXT",
-            placeholderText: "URL / Base64",
+            placeholderText: "输入图片 URL / Base64",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.IMAGE_URL },
@@ -220,26 +216,25 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText:
-              "Sets how the Image should be resized to fit its container.",
+            helpText: "设置图片填充父容器的方式",
             propertyName: "objectFit",
-            label: "Object Fit",
+            label: "图片填充方式",
             controlType: "DROP_DOWN",
             defaultValue: "contain",
             options: [
               {
-                label: "Contain",
+                label: "包含",
                 value: "contain",
               },
               {
-                label: "Cover",
+                label: "封面",
                 value: "cover",
               },
               {
-                label: "Auto",
+                label: "自动",
                 value: "auto",
               },
             ],
@@ -254,13 +249,13 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
             },
           },
           {
-            helpText: "Controls the max zoom of the widget",
+            helpText: "控制图片的最大拉伸倍数",
             propertyName: "maxZoomLevel",
-            label: "Max Zoom Level",
+            label: "最大缩放倍数",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "1x (No Zoom)",
+                label: "1x (原始尺寸)",
                 value: 1,
               },
               {
@@ -289,9 +284,9 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
             },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -300,9 +295,9 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -310,9 +305,9 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls if the image is allowed to rotate",
+            helpText: "是否允许旋转图片",
             propertyName: "enableRotation",
-            label: "Enable Rotation",
+            label: "允许旋转",
             controlType: "SWITCH",
             isJSConvertible: false,
             isBindProperty: true,
@@ -320,9 +315,9 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls if the image is allowed to download",
+            helpText: "是否允许下载图片",
             propertyName: "enableDownload",
-            label: "Enable Download",
+            label: "允许下载",
             controlType: "SWITCH",
             isJSConvertible: false,
             isBindProperty: true,
@@ -332,11 +327,10 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText:
-              "Triggers an action when a user changes the selected option",
+            helpText: "当用户点击图片时触发",
             propertyName: "onClick",
             label: "onClick",
             controlType: "ACTION_SELECTOR",
@@ -352,13 +346,12 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -367,9 +360,8 @@ class ImageWidget extends BaseWidget<ImageWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

@@ -4,7 +4,7 @@ import Widget from "./widget";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "FormButton",
+  name: "表单按钮",
   iconSVG: IconSVG,
   hideCard: true,
   isDeprecated: true,
@@ -14,7 +14,7 @@ export const CONFIG = {
     rows: 4,
     columns: 12,
     widgetName: "FormButton",
-    text: "Submit",
+    text: "提交",
     isDefaultClickDisabled: true,
     recaptchaType: RecaptchaTypes.V3,
     version: 1,

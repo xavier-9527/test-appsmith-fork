@@ -10,8 +10,8 @@ const PROPERTIES = {
   general: [
     {
       propertyName: "defaultValue",
-      label: "Default Selected",
-      helpText: "Sets the default checked state of the field",
+      label: "默认选中",
+      helpText: "设置默认选中状态",
       controlType: "SWITCH",
       isJSConvertible: true,
       isBindProperty: true,
@@ -24,16 +24,16 @@ const PROPERTIES = {
     },
     {
       propertyName: "alignWidget",
-      helpText: "Sets the alignment of the field",
-      label: "Alignment",
+      helpText: "设置对齐方式",
+      label: "对齐",
       controlType: "DROP_DOWN",
       options: [
         {
-          label: "Left",
+          label: "左对齐",
           value: "LEFT",
         },
         {
-          label: "Right",
+          label: "右对齐",
           value: "RIGHT",
         },
       ],
@@ -46,7 +46,7 @@ const PROPERTIES = {
   ],
   actions: [
     {
-      helpText: "Triggers an action when the check state is changed",
+      helpText: "选中态改变时触发",
       propertyName: "onCheckChange",
       label: "onCheckChange",
       controlType: "ACTION_SELECTOR",
@@ -63,8 +63,8 @@ const PROPERTIES = {
     data: [
       {
         propertyName: "defaultValue",
-        label: "Default State",
-        helpText: "Sets the default checked state of the field",
+        label: "默认选中",
+        helpText: "设置默认选中状态",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -79,16 +79,16 @@ const PROPERTIES = {
     label: [
       {
         propertyName: "alignWidget",
-        helpText: "Sets the Position of the field",
-        label: "Position",
+        helpText: "设置字段对齐方式",
+        label: "对齐",
         controlType: "DROP_DOWN",
         options: [
           {
-            label: "Left",
+            label: "左对齐",
             value: "LEFT",
           },
           {
-            label: "Right",
+            label: "右对齐",
             value: "RIGHT",
           },
         ],

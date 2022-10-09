@@ -13,7 +13,7 @@ const RESET_BUTTON_DEFAULT_STYLES = {
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "JSON Form",
+  name: "JSON表单",
   iconSVG: IconSVG,
   needsMeta: true,
   defaults: {
@@ -26,18 +26,18 @@ export const CONFIG = {
     schema: {},
     scrollContents: true,
     showReset: true,
-    title: "Form",
+    title: "表单",
     version: 1,
     widgetName: "JSONForm",
     autoGenerateForm: true,
     fieldLimitExceeded: false,
     sourceData: {
-      name: "John",
+      name: "John Wick",
       date_of_birth: "20/02/1990",
       employee_id: 1001,
     },
-    submitButtonLabel: "Submit",
-    resetButtonLabel: "Reset",
+    submitButtonLabel: "提交",
+    resetButtonLabel: "重置",
     blueprint: {
       operations: [
         {

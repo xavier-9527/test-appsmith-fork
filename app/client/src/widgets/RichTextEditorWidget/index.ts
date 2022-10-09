@@ -5,12 +5,12 @@ import Widget from "./widget";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "Rich Text Editor",
+  name: "富文本编辑器",
   iconSVG: IconSVG,
   needsMeta: true,
   searchTags: ["input", "rte"],
   defaults: {
-    defaultText: "This is the initial <b>content</b> of the editor",
+    defaultText: "编辑器初始<b>内容</b>",
     rows: 20,
     columns: 24,
     animateLoading: true,
@@ -20,7 +20,7 @@ export const CONFIG = {
     widgetName: "RichTextEditor",
     isDefaultClickDisabled: true,
     inputType: "html",
-    labelText: "Label",
+    labelText: "标签",
     labelPosition: LabelPosition.Top,
     labelAlignment: Alignment.LEFT,
     labelWidth: 5,

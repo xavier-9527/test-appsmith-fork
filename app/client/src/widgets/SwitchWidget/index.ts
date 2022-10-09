@@ -5,12 +5,12 @@ import { AlignWidgetTypes } from "widgets/constants";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "Switch",
+  name: "开关",
   iconSVG: IconSVG,
   needsMeta: true,
   searchTags: ["boolean"],
   defaults: {
-    label: "Label",
+    label: "标签",
     rows: 4,
     columns: 12,
     defaultSwitchState: true,

@@ -25,32 +25,32 @@ class FormButtonWidget extends ButtonWidget {
   static getPropertyPaneConfig() {
     const buttonPropertyPaneConfig = super.getPropertyPaneConfig().slice(1);
     buttonPropertyPaneConfig.unshift({
-      sectionName: "General",
+      sectionName: "属性",
       children: [
         {
           propertyName: "text",
-          label: "Label",
-          helpText: "Sets the label of the button",
+          label: "标签",
+          helpText: "设置按钮标签",
           controlType: "INPUT_TEXT",
-          placeholderText: "Enter label text",
+          placeholderText: "请输入文本内容",
           isBindProperty: true,
           isTriggerProperty: false,
           validation: { type: ValidationTypes.TEXT },
         },
         {
-          helpText: "Show helper text with button on hover",
+          helpText: "鼠标交互时显示的提示信息",
           propertyName: "tooltip",
-          label: "Tooltip",
+          label: "提示",
           controlType: "INPUT_TEXT",
-          placeholderText: "Enter tooltip text",
+          placeholderText: "请输入提示信息",
           isBindProperty: true,
           isTriggerProperty: false,
           validation: { type: ValidationTypes.TEXT },
         },
         {
           propertyName: "isVisible",
-          label: "Visible",
-          helpText: "Controls the visibility of the widget",
+          label: "是否显示",
+          helpText: "控制组件的显示/隐藏",
           controlType: "SWITCH",
           isJSConvertible: true,
           isBindProperty: true,
@@ -59,9 +59,9 @@ class FormButtonWidget extends ButtonWidget {
         },
         {
           propertyName: "animateLoading",
-          label: "Animate Loading",
+          label: "加载时显示动画",
           controlType: "SWITCH",
-          helpText: "Controls the loading of the widget",
+          helpText: "组件依赖的数据加载时显示加载动画",
           defaultValue: true,
           isJSConvertible: true,
           isBindProperty: true,
@@ -71,18 +71,18 @@ class FormButtonWidget extends ButtonWidget {
         {
           propertyName: "googleRecaptchaKey",
           label: "Google Recaptcha Key",
-          helpText: "Sets Google Recaptcha v3 site key for button",
+          helpText: "给按钮设置 Google Recaptcha v3 site key",
           controlType: "INPUT_TEXT",
-          placeholderText: "Enter google recaptcha key",
+          placeholderText: "请输入 google recaptcha key",
           isBindProperty: true,
           isTriggerProperty: false,
           validation: { type: ValidationTypes.TEXT },
         },
         {
           propertyName: "recaptchaType",
-          label: "Google reCAPTCHA Version",
+          label: "Google reCAPTCHA 版本",
           controlType: "DROP_DOWN",
-          helpText: "Select reCAPTCHA version",
+          helpText: "请选择 reCAPTCHA 版本",
           options: [
             {
               label: "reCAPTCHA v3",

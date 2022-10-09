@@ -16,20 +16,20 @@ class ProgressBarWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Sets progress bar type",
+            helpText: "设置进度条类型",
             propertyName: "barType",
-            label: "Type",
+            label: "类型",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "Indeterminate",
+                label: "模糊",
                 value: BarType.INDETERMINATE,
               },
               {
-                label: "Determinate",
+                label: "明确",
                 value: BarType.DETERMINATE,
               },
             ],
@@ -38,11 +38,11 @@ class ProgressBarWidget extends BaseWidget<
             isTriggerProperty: false,
           },
           {
-            helpText: "Provide progress value",
+            helpText: "进度值",
             propertyName: "progress",
-            label: "Progress",
+            label: "进度",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter progress value",
+            placeholderText: "请输入进度值",
             isBindProperty: true,
             isTriggerProperty: false,
             isJSConvertible: true,
@@ -53,11 +53,11 @@ class ProgressBarWidget extends BaseWidget<
             },
           },
           {
-            helpText: "Sets a number of steps",
+            helpText: "整体进度分成若干步骤，设置步骤的数量",
             propertyName: "steps",
-            label: "Number of steps",
+            label: "步数",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter number of steps",
+            placeholderText: "请输入步数",
             isBindProperty: true,
             isTriggerProperty: false,
             isJSConvertible: true,
@@ -71,9 +71,9 @@ class ProgressBarWidget extends BaseWidget<
             dependencies: ["barType"],
           },
           {
-            helpText: "Controls the visibility of progress value",
+            helpText: "显示进度值",
             propertyName: "showResult",
-            label: "Show result",
+            label: "显示进度值",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -81,9 +81,9 @@ class ProgressBarWidget extends BaseWidget<
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -93,12 +93,12 @@ class ProgressBarWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
-            helpText: "Controls the progress color of progress bar",
+            helpText: "设置进度条的填充颜色",
             propertyName: "fillColor",
-            label: "Fill Color",
+            label: "填充颜色",
             controlType: "COLOR_PICKER",
             defaultColor: Colors.GREEN,
             isBindProperty: true,
@@ -113,9 +113,8 @@ class ProgressBarWidget extends BaseWidget<
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isBindProperty: true,
             isJSConvertible: true,

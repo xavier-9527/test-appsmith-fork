@@ -3,7 +3,7 @@ import { ColumnTypes, TableWidgetProps } from "widgets/TableWidgetV2/constants";
 import { hideByColumnType } from "../../propertyUtils";
 
 export default {
-  sectionName: "Menu Items",
+  sectionName: "菜单配置",
   hidden: (props: TableWidgetProps, propertyPath: string) => {
     return hideByColumnType(
       props,
@@ -14,7 +14,7 @@ export default {
   },
   children: [
     {
-      helpText: "Menu items",
+      helpText: "菜单配置",
       propertyName: "menuItems",
       controlType: "MENU_ITEMS",
       label: "",
@@ -28,14 +28,14 @@ export default {
         dependencies: ["primaryColumns", "columnOrder"],
         children: [
           {
-            sectionName: "General",
+            sectionName: "属性",
             children: [
               {
                 propertyName: "label",
-                helpText: "Sets the label of a menu item",
-                label: "Label",
+                helpText: "设置菜单项标签",
+                label: "标签",
                 controlType: "INPUT_TEXT",
-                placeholderText: "Enter label",
+                placeholderText: "请输入标签",
                 isBindProperty: true,
                 isTriggerProperty: false,
                 validation: { type: ValidationTypes.TEXT },
@@ -43,8 +43,8 @@ export default {
               },
               {
                 propertyName: "backgroundColor",
-                helpText: "Sets the background color of a menu item",
-                label: "Background color",
+                helpText: "设置菜单项背景颜色",
+                label: "背景颜色",
                 controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
                 customJSControl: "TABLE_COMPUTE_VALUE",
                 isJSConvertible: true,
@@ -63,8 +63,8 @@ export default {
               },
               {
                 propertyName: "textColor",
-                helpText: "Sets the text color of a menu item",
-                label: "Text color",
+                helpText: "设置菜单项文本颜色",
+                label: "文本颜色",
                 controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
                 customJSControl: "TABLE_COMPUTE_VALUE",
                 isJSConvertible: true,
@@ -83,8 +83,8 @@ export default {
               },
               {
                 propertyName: "isDisabled",
-                helpText: "Disables input to the widget",
-                label: "Disabled",
+                helpText: "让组件不可交互",
+                label: "禁用",
                 controlType: "SWITCH",
                 customJSControl: "TABLE_COMPUTE_VALUE",
                 isJSConvertible: true,
@@ -100,8 +100,8 @@ export default {
               },
               {
                 propertyName: "isVisible",
-                helpText: "Controls the visibility of the widget",
-                label: "Visible",
+                helpText: "控制组件的显示/隐藏",
+                label: "是否显示",
                 controlType: "SWITCH",
                 customJSControl: "TABLE_COMPUTE_VALUE",
                 isJSConvertible: true,
@@ -118,12 +118,12 @@ export default {
             ],
           },
           {
-            sectionName: "Icon Options",
+            sectionName: "图标配置",
             children: [
               {
                 propertyName: "iconName",
-                label: "Icon",
-                helpText: "Sets the icon to be used for a menu item",
+                label: "图标",
+                helpText: "设置菜单项的图标",
                 controlType: "ICON_SELECT",
                 isBindProperty: false,
                 isTriggerProperty: false,
@@ -132,8 +132,8 @@ export default {
               },
               {
                 propertyName: "iconColor",
-                helpText: "Sets the icon color of a menu item",
-                label: "Icon color",
+                helpText: "设置菜单项图标颜色",
+                label: "图标颜色",
                 controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
                 isBindProperty: false,
                 isTriggerProperty: false,
@@ -141,8 +141,8 @@ export default {
               },
               {
                 propertyName: "iconAlign",
-                label: "Icon alignment",
-                helpText: "Sets the icon alignment of a menu item",
+                label: "图标对齐",
+                helpText: "设置菜单项图标对齐方向",
                 controlType: "ICON_TABS",
                 options: [
                   {
@@ -162,10 +162,10 @@ export default {
             ],
           },
           {
-            sectionName: "Events",
+            sectionName: "事件",
             children: [
               {
-                helpText: "Triggers an action when the menu item is clicked",
+                helpText: "点击菜单项时触发",
                 propertyName: "onClick",
                 label: "onItemClick",
                 controlType: "ACTION_SELECTOR",

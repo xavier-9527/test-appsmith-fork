@@ -9,12 +9,12 @@ import { AutocompleteDataType } from "utils/autocomplete/TernServer";
 
 const PropertyPaneConfig = [
   {
-    sectionName: "General",
+    sectionName: "属性",
     children: [
       {
-        helpText: "Takes in an array of objects to display items in the list.",
+        helpText: "列表展示的数据对象",
         propertyName: "listData",
-        label: "Items",
+        label: "数据项",
         controlType: "INPUT_TEXT",
         placeholderText: '[{ "name": "John" }]',
         inputType: "ARRAY",
@@ -25,17 +25,17 @@ const PropertyPaneConfig = [
       },
       {
         helpText:
-          "Bind the List.pageNo property in your API and call it onPageChange",
+          "在你 API 中绑定当前页 List.pageNo，然后在换页的时候调用 API 即可",
         propertyName: "serverSidePaginationEnabled",
-        label: "Server Side Pagination",
+        label: "服务端分页",
         controlType: "SWITCH",
         isBindProperty: false,
         isTriggerProperty: false,
       },
       {
         propertyName: "isVisible",
-        label: "Visible",
-        helpText: "Controls the visibility of the widget",
+        label: "是否显示",
+        helpText: "控制组件的显示/隐藏",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -46,9 +46,9 @@ const PropertyPaneConfig = [
       },
       {
         propertyName: "animateLoading",
-        label: "Animate Loading",
+        label: "加载时显示动画",
         controlType: "SWITCH",
-        helpText: "Controls the loading of the widget",
+        helpText: "组件依赖的数据加载时显示加载动画",
         defaultValue: true,
         isJSConvertible: true,
         isBindProperty: true,
@@ -58,10 +58,10 @@ const PropertyPaneConfig = [
     ],
   },
   {
-    sectionName: "Events",
+    sectionName: "事件",
     children: [
       {
-        helpText: "Triggers an action when a grid list item is clicked",
+        helpText: "点击列表项时触发",
         propertyName: "onListItemClick",
         label: "onListItemClick",
         controlType: "ACTION_SELECTOR",
@@ -89,7 +89,7 @@ const PropertyPaneConfig = [
         dependencies: ["listData"],
       },
       {
-        helpText: "Triggers an action when a list page is changed",
+        helpText: "列表页切换时触发",
         propertyName: "onPageChange",
         label: "onPageChange",
         controlType: "ACTION_SELECTOR",
@@ -101,7 +101,7 @@ const PropertyPaneConfig = [
         dependencies: ["serverSidePaginationEnabled"],
       },
       {
-        helpText: "Triggers an action when a list page size is changed",
+        helpText: "列表页大小改变时触发",
         propertyName: "onPageSizeChange",
         label: "onPageSizeChange",
         controlType: "ACTION_SELECTOR",
@@ -115,11 +115,11 @@ const PropertyPaneConfig = [
     ],
   },
   {
-    sectionName: "Styles",
+    sectionName: "样式",
     children: [
       {
         propertyName: "backgroundColor",
-        label: "Background Color",
+        label: "背景颜色",
         controlType: "COLOR_PICKER",
         isJSConvertible: true,
         isBindProperty: true,
@@ -137,7 +137,7 @@ const PropertyPaneConfig = [
       },
       {
         propertyName: "itemBackgroundColor",
-        label: "Item Background Color",
+        label: "列表项背景颜色",
         controlType: "COLOR_PICKER",
         isJSConvertible: true,
         isBindProperty: true,
@@ -155,10 +155,10 @@ const PropertyPaneConfig = [
         },
       },
       {
-        helpText: "Spacing between items in Pixels",
+        helpText: "列表项之间的像素距离",
         placeholderText: "0",
         propertyName: "gridGap",
-        label: "Item Spacing (px)",
+        label: "列表项间距 (px)",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -167,8 +167,8 @@ const PropertyPaneConfig = [
       },
       {
         propertyName: "borderRadius",
-        label: "Border Radius",
-        helpText: "Rounds the corners of the icon button's outer border edge",
+        label: "边框圆角",
+        helpText: "边框圆角样式",
         controlType: "BORDER_RADIUS_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -177,9 +177,8 @@ const PropertyPaneConfig = [
       },
       {
         propertyName: "boxShadow",
-        label: "Box Shadow",
-        helpText:
-          "Enables you to cast a drop shadow from the frame of the widget",
+        label: "阴影",
+        helpText: "组件轮廓投影",
         controlType: "BOX_SHADOW_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -192,12 +191,12 @@ const PropertyPaneConfig = [
 
 export const PropertyPaneContentConfig = [
   {
-    sectionName: "Data",
+    sectionName: "数据",
     children: [
       {
-        helpText: "Takes in an array of objects to display items in the list.",
+        helpText: "列表展示的数据对象",
         propertyName: "listData",
-        label: "Items",
+        label: "数据项",
         controlType: "INPUT_TEXT",
         placeholderText: '[{ "name": "John" }]',
         inputType: "ARRAY",
@@ -209,19 +208,19 @@ export const PropertyPaneContentConfig = [
     ],
   },
   {
-    sectionName: "Pagination",
+    sectionName: "分页配置",
     children: [
       {
         helpText:
-          "Bind the List.pageNo property in your API and call it onPageChange",
+          "在你 API 中绑定当前页 List.pageNo，然后在换页的时候调用 API 即可",
         propertyName: "serverSidePaginationEnabled",
-        label: "Server Side Pagination",
+        label: "服务端分页",
         controlType: "SWITCH",
         isBindProperty: false,
         isTriggerProperty: false,
       },
       {
-        helpText: "Triggers an action when a list page is changed",
+        helpText: "列表页切换时触发",
         propertyName: "onPageChange",
         label: "onPageChange",
         controlType: "ACTION_SELECTOR",
@@ -233,7 +232,7 @@ export const PropertyPaneContentConfig = [
         dependencies: ["serverSidePaginationEnabled"],
       },
       {
-        helpText: "Triggers an action when a list page size is changed",
+        helpText: "列表页大小改变时触发",
         propertyName: "onPageSizeChange",
         label: "onPageSizeChange",
         controlType: "ACTION_SELECTOR",
@@ -247,12 +246,12 @@ export const PropertyPaneContentConfig = [
     ],
   },
   {
-    sectionName: "General",
+    sectionName: "属性",
     children: [
       {
         propertyName: "isVisible",
-        label: "Visible",
-        helpText: "Controls the visibility of the widget",
+        label: "是否显示",
+        helpText: "控制组件的显示/隐藏",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -263,9 +262,9 @@ export const PropertyPaneContentConfig = [
       },
       {
         propertyName: "animateLoading",
-        label: "Animate Loading",
+        label: "加载时显示动画",
         controlType: "SWITCH",
-        helpText: "Controls the loading of the widget",
+        helpText: "组件依赖的数据加载时显示加载动画",
         defaultValue: true,
         isJSConvertible: true,
         isBindProperty: true,
@@ -275,10 +274,10 @@ export const PropertyPaneContentConfig = [
     ],
   },
   {
-    sectionName: "Events",
+    sectionName: "事件",
     children: [
       {
-        helpText: "Triggers an action when a grid list item is clicked",
+        helpText: "点击列表项时触发",
         propertyName: "onListItemClick",
         label: "onListItemClick",
         controlType: "ACTION_SELECTOR",
@@ -311,13 +310,13 @@ export const PropertyPaneContentConfig = [
 
 export const PropertyPaneStyleConfig = [
   {
-    sectionName: "General",
+    sectionName: "属性",
     children: [
       {
-        helpText: "Spacing between items in Pixels",
+        helpText: "列表项之间的像素距离",
         placeholderText: "0",
         propertyName: "gridGap",
-        label: "Item Spacing (px)",
+        label: "列表项间距 (px)",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -327,11 +326,11 @@ export const PropertyPaneStyleConfig = [
     ],
   },
   {
-    sectionName: "Color",
+    sectionName: "颜色配置",
     children: [
       {
         propertyName: "itemBackgroundColor",
-        label: "Item Background Color",
+        label: "列表项背景颜色",
         controlType: "COLOR_PICKER",
         isJSConvertible: true,
         isBindProperty: true,
@@ -350,7 +349,7 @@ export const PropertyPaneStyleConfig = [
       },
       {
         propertyName: "backgroundColor",
-        label: "Background Color",
+        label: "背景颜色",
         controlType: "COLOR_PICKER",
         isJSConvertible: true,
         isBindProperty: true,
@@ -369,12 +368,12 @@ export const PropertyPaneStyleConfig = [
     ],
   },
   {
-    sectionName: "Border and Shadow",
+    sectionName: "轮廓样式",
     children: [
       {
         propertyName: "borderRadius",
-        label: "Border Radius",
-        helpText: "Rounds the corners of the icon button's outer border edge",
+        label: "边框圆角",
+        helpText: "边框圆角样式",
         controlType: "BORDER_RADIUS_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -383,9 +382,8 @@ export const PropertyPaneStyleConfig = [
       },
       {
         propertyName: "boxShadow",
-        label: "Box Shadow",
-        helpText:
-          "Enables you to cast a drop shadow from the frame of the widget",
+        label: "阴影",
+        helpText: "组件轮廓投影",
         controlType: "BOX_SHADOW_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,

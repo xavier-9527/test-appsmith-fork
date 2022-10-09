@@ -32,12 +32,12 @@ class ContainerWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件是否可见",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否可见",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -46,9 +46,9 @@ class ContainerWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载状态",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -56,9 +56,9 @@ class ContainerWidget extends BaseWidget<
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Enables scrolling for content inside the widget",
+            helpText: "允许组件内部内容滚动",
             propertyName: "shouldScrollContents",
-            label: "Scroll Contents",
+            label: "是否滚动内容",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -66,13 +66,13 @@ class ContainerWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
-            helpText: "Use a html color name, HEX, RGB or RGBA value",
+            helpText: "使用 html 颜色名称，HEX，RGB 或者 RGBA 值",
             placeholderText: "#FFFFFF / Gray / rgb(255, 99, 71)",
             propertyName: "backgroundColor",
-            label: "Background Color",
+            label: "背景颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -80,20 +80,20 @@ class ContainerWidget extends BaseWidget<
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Use a html color name, HEX, RGB or RGBA value",
+            helpText: "使用 html 颜色名称，HEX，RGB 或者 RGBA 值",
             placeholderText: "#FFFFFF / Gray / rgb(255, 99, 71)",
             propertyName: "borderColor",
-            label: "Border Color",
+            label: "边框颜色",
             controlType: "COLOR_PICKER",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Enter value for border width",
+            helpText: "输入边框宽度",
             propertyName: "borderWidth",
-            label: "Border Width",
-            placeholderText: "Enter value in px",
+            label: "边框厚度",
+            placeholderText: "以 px 为单位",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -101,9 +101,8 @@ class ContainerWidget extends BaseWidget<
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -112,9 +111,8 @@ class ContainerWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -129,12 +127,12 @@ class ContainerWidget extends BaseWidget<
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -142,18 +140,18 @@ class ContainerWidget extends BaseWidget<
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Enables scrolling for content inside the widget",
+            helpText: "允许组件内部内容滚动",
             propertyName: "shouldScrollContents",
-            label: "Scroll Contents",
+            label: "允许内容滚动",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -168,13 +166,13 @@ class ContainerWidget extends BaseWidget<
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [
           {
-            helpText: "Use a html color name, HEX, RGB or RGBA value",
+            helpText: "使用 html 颜色名称，HEX，RGB 或者 RGBA 值",
             placeholderText: "#FFFFFF / Gray / rgb(255, 99, 71)",
             propertyName: "backgroundColor",
-            label: "Background Color",
+            label: "背景颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -182,10 +180,10 @@ class ContainerWidget extends BaseWidget<
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Use a html color name, HEX, RGB or RGBA value",
+            helpText: "使用 html 颜色名称，HEX，RGB 或者 RGBA 值",
             placeholderText: "#FFFFFF / Gray / rgb(255, 99, 71)",
             propertyName: "borderColor",
-            label: "Border Color",
+            label: "边框颜色",
             controlType: "COLOR_PICKER",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -194,13 +192,13 @@ class ContainerWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
-            helpText: "Enter value for border width",
+            helpText: "输入边框宽度",
             propertyName: "borderWidth",
-            label: "Border Width",
-            placeholderText: "Enter value in px",
+            label: "边框宽度",
+            placeholderText: "以 px 为单位",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -208,9 +206,8 @@ class ContainerWidget extends BaseWidget<
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -219,9 +216,8 @@ class ContainerWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

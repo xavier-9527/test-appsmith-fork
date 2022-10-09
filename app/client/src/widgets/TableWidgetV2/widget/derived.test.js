@@ -131,11 +131,9 @@ describe("Validates getFilteredTableData Properties", () => {
       ],
     };
 
-    input.orderedTableColumns = Object.values(input.primaryColumns).sort(
-      (a, b) => {
-        return input.columnOrder[a.id] < input.columnOrder[b.id];
-      },
-    );
+    input.orderedTableColumns = Object.values(input.primaryColumns).sort((a, b) => {
+      return input.columnOrder[a.id] < input.columnOrder[b.id];
+    });
 
     const expected = [
       {
@@ -301,11 +299,9 @@ describe("Validates getFilteredTableData Properties", () => {
       ],
     };
 
-    input.orderedTableColumns = Object.values(input.primaryColumns).sort(
-      (a, b) => {
-        return input.columnOrder[a.id] < input.columnOrder[b.id];
-      },
-    );
+    input.orderedTableColumns = Object.values(input.primaryColumns).sort((a, b) => {
+      return input.columnOrder[a.id] < input.columnOrder[b.id];
+    });
 
     const expected = [
       {
@@ -460,11 +456,9 @@ describe("Validates getFilteredTableData Properties", () => {
       ],
     };
 
-    input.orderedTableColumns = Object.values(input.primaryColumns).sort(
-      (a, b) => {
-        return input.columnOrder[a.id] < input.columnOrder[b.id];
-      },
-    );
+    input.orderedTableColumns = Object.values(input.primaryColumns).sort((a, b) => {
+      return input.columnOrder[a.id] < input.columnOrder[b.id];
+    });
 
     const expected = [
       {
@@ -624,11 +618,9 @@ describe("Validates getFilteredTableData Properties", () => {
       ],
     };
 
-    input.orderedTableColumns = Object.values(input.primaryColumns).sort(
-      (a, b) => {
-        return input.columnOrder[a.id] < input.columnOrder[b.id];
-      },
-    );
+    input.orderedTableColumns = Object.values(input.primaryColumns).sort((a, b) => {
+      return input.columnOrder[a.id] < input.columnOrder[b.id];
+    });
 
     const expected = [
       {
@@ -795,11 +787,9 @@ describe("Validates getFilteredTableData Properties", () => {
       ],
     };
 
-    input.orderedTableColumns = Object.values(input.primaryColumns).sort(
-      (a, b) => {
-        return input.columnOrder[a.id] < input.columnOrder[b.id];
-      },
-    );
+    input.orderedTableColumns = Object.values(input.primaryColumns).sort((a, b) => {
+      return input.columnOrder[a.id] < input.columnOrder[b.id];
+    });
 
     const expected = [];
 
@@ -863,8 +853,8 @@ describe("Validates getFilteredTableData Properties", () => {
         "@user": "user 1",
         "@name": "name 1",
         ÜserÑame: "john",
-        __originalIndex__: 0,
-        __primaryKey__: undefined,
+        "__originalIndex__": 0,
+        "__primaryKey__": undefined,
       },
       {
         "1": "asd",
@@ -881,13 +871,13 @@ describe("Validates getFilteredTableData Properties", () => {
         "@user": "user 2",
         "@name": "name 2",
         ÜserÑame: "mike",
-        __originalIndex__: 1,
-        __primaryKey__: undefined,
+        "__originalIndex__": 1,
+        "__primaryKey__": undefined,
       },
     ];
 
     let result = getProcessedTableData(input, moment, _);
-
+  
     expect(result).toStrictEqual(expected);
   });
 });

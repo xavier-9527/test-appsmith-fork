@@ -5,11 +5,11 @@ import Widget from "./widget";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "Text",
+  name: "文本",
   iconSVG: IconSVG,
   searchTags: ["typography", "paragraph", "label"],
   defaults: {
-    text: "Label",
+    text: "文本",
     fontSize: DEFAULT_FONT_SIZE,
     fontStyle: "BOLD",
     textAlign: "LEFT",

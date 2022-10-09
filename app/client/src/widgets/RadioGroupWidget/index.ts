@@ -5,7 +5,7 @@ import { LabelPosition } from "components/constants";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "Radio Group",
+  name: "单选组",
   iconSVG: IconSVG,
   needsMeta: true,
   searchTags: ["choice"],
@@ -13,14 +13,14 @@ export const CONFIG = {
     rows: 4,
     columns: 20,
     animateLoading: true,
-    label: "Label",
+    label: "标签",
     labelPosition: LabelPosition.Left,
     labelAlignment: Alignment.LEFT,
     labelTextSize: "0.875rem",
     labelWidth: 5,
     options: [
-      { label: "Yes", value: "Y" },
-      { label: "No", value: "N" },
+      { label: "是", value: "Y" },
+      { label: "不是", value: "N" },
     ],
     defaultOptionValue: "Y",
     isRequired: false,

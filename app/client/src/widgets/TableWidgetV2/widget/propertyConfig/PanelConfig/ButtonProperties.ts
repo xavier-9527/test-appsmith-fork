@@ -13,7 +13,7 @@ const ICON_NAMES = Object.keys(IconNames).map(
 );
 
 export default {
-  sectionName: "Button Properties",
+  sectionName: "按钮属性",
   hidden: (props: TableWidgetProps, propertyPath: string) => {
     return hideByColumnType(
       props,
@@ -25,8 +25,8 @@ export default {
   children: [
     {
       propertyName: "iconName",
-      label: "Icon",
-      helpText: "Sets the icon to be used for the icon button",
+      label: "图标",
+      helpText: "设置按钮图标",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         return hideByColumnType(props, propertyPath, [ColumnTypes.ICON_BUTTON]);
       },
@@ -51,8 +51,8 @@ export default {
     },
     {
       propertyName: "menuButtoniconName",
-      label: "Icon",
-      helpText: "Sets the icon to be used for the menu button",
+      label: "图标",
+      helpText: "设置菜单按钮图标",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         return hideByColumnType(props, propertyPath, [ColumnTypes.MENU_BUTTON]);
       },
@@ -75,8 +75,8 @@ export default {
     },
     {
       propertyName: "iconAlign",
-      label: "Icon Alignment",
-      helpText: "Sets the icon alignment of the menu button",
+      label: "图标对齐",
+      helpText: "设置菜单按钮图标对齐方式",
       controlType: "ICON_TABS",
       options: [
         {
@@ -103,9 +103,9 @@ export default {
     },
     {
       propertyName: "buttonLabel",
-      label: "Label",
+      label: "标签",
       controlType: "TABLE_COMPUTE_VALUE",
-      defaultValue: "Action",
+      defaultValue: "动作",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         return hideByColumnType(props, propertyPath, [ColumnTypes.BUTTON]);
       },
@@ -115,9 +115,9 @@ export default {
     },
     {
       propertyName: "menuButtonLabel",
-      label: "Label",
+      label: "标签",
       controlType: "TABLE_COMPUTE_VALUE",
-      defaultValue: "Open Menu",
+      defaultValue: "打开菜单",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         return hideByColumnType(props, propertyPath, [ColumnTypes.MENU_BUTTON]);
       },
@@ -127,9 +127,9 @@ export default {
     },
     {
       propertyName: "buttonColor",
-      label: "Button Color",
+      label: "按钮颜色",
       controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
-      helpText: "Changes the color of the button",
+      helpText: "修改按钮颜色",
       isJSConvertible: true,
       customJSControl: "TABLE_COMPUTE_VALUE",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
@@ -153,11 +153,11 @@ export default {
     },
     {
       propertyName: "buttonVariant",
-      label: "Button Variant",
+      label: "按钮类型",
       controlType: "DROP_DOWN",
       customJSControl: "TABLE_COMPUTE_VALUE",
       isJSConvertible: true,
-      helpText: "Sets the variant",
+      helpText: "设置按钮类型",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         return hideByColumnType(props, propertyPath, [
           ColumnTypes.ICON_BUTTON,
@@ -167,15 +167,15 @@ export default {
       dependencies: ["primaryColumns", "columnOrder"],
       options: [
         {
-          label: "Primary",
+          label: "主按钮",
           value: ButtonVariantTypes.PRIMARY,
         },
         {
-          label: "Secondary",
+          label: "次级按钮",
           value: ButtonVariantTypes.SECONDARY,
         },
         {
-          label: "Tertiary",
+          label: "文本按钮",
           value: ButtonVariantTypes.TERTIARY,
         },
       ],
@@ -199,10 +199,10 @@ export default {
     },
     {
       propertyName: "borderRadius",
-      label: "Border Radius",
+      label: "边框圆角",
       customJSControl: "TABLE_COMPUTE_VALUE",
       isJSConvertible: true,
-      helpText: "Rounds the corners of the icon button's outer border edge",
+      helpText: "边框圆角样式",
       controlType: "BORDER_RADIUS_OPTIONS",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         return hideByColumnType(props, propertyPath, [
@@ -223,9 +223,8 @@ export default {
     },
     {
       propertyName: "boxShadow",
-      label: "Box Shadow",
-      helpText:
-        "Enables you to cast a drop shadow from the frame of the widget",
+      label: "阴影",
+      helpText: "组件轮廓投影",
       controlType: "BOX_SHADOW_OPTIONS",
       customJSControl: "TABLE_COMPUTE_VALUE",
       isJSConvertible: true,
@@ -249,8 +248,8 @@ export default {
     },
     {
       propertyName: "menuColor",
-      helpText: "Sets the custom color preset based on the menu button variant",
-      label: "Menu Color",
+      helpText: "自定义菜单按钮颜色",
+      label: "菜单颜色",
       controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
       customJSControl: "TABLE_COMPUTE_VALUE",
       isJSConvertible: true,
@@ -273,21 +272,21 @@ export default {
     },
     {
       propertyName: "menuVariant",
-      label: "Menu Variant",
+      label: "菜单按钮类型",
       controlType: "DROP_DOWN",
       customJSControl: "TABLE_COMPUTE_VALUE",
-      helpText: "Sets the variant of the menu button",
+      helpText: "设置菜单按钮的风格类型",
       options: [
         {
-          label: "Primary",
+          label: "主按钮",
           value: ButtonVariantTypes.PRIMARY,
         },
         {
-          label: "Secondary",
+          label: "次级按钮",
           value: ButtonVariantTypes.SECONDARY,
         },
         {
-          label: "Tertiary",
+          label: "文本按钮",
           value: ButtonVariantTypes.TERTIARY,
         },
       ],

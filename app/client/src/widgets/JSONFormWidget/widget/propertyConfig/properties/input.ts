@@ -180,12 +180,11 @@ export function maxValueValidation(
 const PROPERTIES = {
   general: [
     {
-      helpText:
-        "Sets the default text of the field. The text is updated if the default text changes",
+      helpText: "修改默认值会更新当前值",
       propertyName: "defaultValue",
-      label: "Default Value",
+      label: "默认值",
       controlType: "JSON_FORM_COMPUTE_VALUE",
-      placeholderText: "John Doe",
+      placeholderText: "John Wick",
       isBindProperty: true,
       isTriggerProperty: false,
       validation: {
@@ -205,8 +204,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "allowCurrencyChange",
-      label: "Allow currency change",
-      helpText: "Search by currency or country",
+      label: "允许修改货币",
+      helpText: "通过国家或者货币搜索",
       controlType: "SWITCH",
       isBindProperty: true,
       isTriggerProperty: false,
@@ -216,13 +215,13 @@ const PROPERTIES = {
       dependencies: ["schema"],
     },
     {
-      helpText: "Changes the type of currency",
+      helpText: "修改货币类型",
       propertyName: "currencyCountryCode",
-      label: "Currency",
+      label: "货币",
       enableSearch: true,
       dropdownHeight: "195px",
       controlType: "DROP_DOWN",
-      searchPlaceholderText: "Search by code or name",
+      searchPlaceholderText: "通过名称或者编号搜索",
       options: CurrencyDropdownOptions,
       hidden: (...args: HiddenFnParams) =>
         getSchemaItem(...args).fieldTypeNotMatches(FieldType.CURRENCY_INPUT),
@@ -231,9 +230,9 @@ const PROPERTIES = {
       isTriggerProperty: false,
     },
     {
-      helpText: "No. of decimals in currency input",
+      helpText: "货币精确到小数点后几位",
       propertyName: "decimalsInCurrency",
-      label: "Decimals",
+      label: "小数位",
       controlType: "DROP_DOWN",
       options: [
         {
@@ -257,8 +256,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "allowDialCodeChange",
-      label: "Allow country code change",
-      helpText: "Search by country",
+      label: "允许修改国家编码",
+      helpText: "使用国家名搜索",
       controlType: "SWITCH",
       isJSConvertible: false,
       isBindProperty: true,
@@ -271,13 +270,13 @@ const PROPERTIES = {
       validation: { type: ValidationTypes.BOOLEAN },
     },
     {
-      helpText: "Changes the country code",
+      helpText: "修改默认的电话国家编号",
       propertyName: "dialCode",
-      label: "Default Country Code",
+      label: "默认国家编号",
       enableSearch: true,
       dropdownHeight: "195px",
       controlType: "DROP_DOWN",
-      searchPlaceholderText: "Search by code or country name",
+      searchPlaceholderText: "通过国家名称或编号搜索",
       options: ISDCodeDropdownOptions,
       hidden: (...args: HiddenFnParams) =>
         getSchemaItem(...args).fieldTypeNotMatches(
@@ -288,9 +287,9 @@ const PROPERTIES = {
       isTriggerProperty: false,
     },
     {
-      helpText: "Sets maximum allowed text length",
+      helpText: "设置最大输入字符长度",
       propertyName: "maxChars",
-      label: "Max Chars",
+      label: "最大字符数",
       controlType: "JSON_FORM_COMPUTE_VALUE",
       placeholderText: "255",
       isBindProperty: true,
@@ -301,9 +300,9 @@ const PROPERTIES = {
       dependencies: ["schema"],
     },
     {
-      helpText: "Sets the minimum allowed value",
+      helpText: "设置最小输入长度",
       propertyName: "minNum",
-      label: "Min",
+      label: "最小输入长度",
       controlType: "INPUT_TEXT",
       placeholderText: "1",
       isBindProperty: true,
@@ -324,9 +323,9 @@ const PROPERTIES = {
       dependencies: ["schema"],
     },
     {
-      helpText: "Sets the maximum allowed value",
+      helpText: "设置最大输入长度",
       propertyName: "maxNum",
-      label: "Max",
+      label: "最大输入长度",
       controlType: "INPUT_TEXT",
       placeholderText: "100",
       isBindProperty: true,
@@ -347,10 +346,9 @@ const PROPERTIES = {
       dependencies: ["schema"],
     },
     {
-      helpText:
-        "Adds a validation to the input which displays an error on failure",
+      helpText: "对输入进行正则校验，校验失败时显示错误",
       propertyName: "regex",
-      label: "Regex",
+      label: "正则校验",
       controlType: "JSON_FORM_COMPUTE_VALUE",
       placeholderText: "^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$",
       inputType: "TEXT",
@@ -362,9 +360,9 @@ const PROPERTIES = {
       dependencies: ["schema"],
     },
     {
-      helpText: "Sets the input validity based on a JS expression",
+      helpText: "使用 JS 表达式来校验输入的是否合法",
       propertyName: "validation",
-      label: "Valid",
+      label: "普通校验",
       controlType: "JSON_FORM_COMPUTE_VALUE",
       placeholderText: "{{ Input1.text.length > 0 }}",
       inputType: "TEXT",
@@ -376,12 +374,11 @@ const PROPERTIES = {
       dependencies: ["schema"],
     },
     {
-      helpText:
-        "The error message to display if the regex or valid property check fails",
+      helpText: "普通校验或正则校验失败后显示的错误信息",
       propertyName: "errorMessage",
-      label: "Error Message",
+      label: "错误信息",
       controlType: "JSON_FORM_COMPUTE_VALUE",
-      placeholderText: "Not a valid email!",
+      placeholderText: "邮箱格式有误",
       inputType: "TEXT",
       isBindProperty: true,
       isTriggerProperty: false,
@@ -391,11 +388,11 @@ const PROPERTIES = {
       dependencies: ["schema"],
     },
     {
-      helpText: "Sets a placeholder text for the input",
+      helpText: "输入为空时显示的占位字符",
       propertyName: "placeholderText",
-      label: "Placeholder",
+      label: "占位符",
       controlType: "JSON_FORM_COMPUTE_VALUE",
-      placeholderText: "Placeholder",
+      placeholderText: "占位符",
       isBindProperty: true,
       isTriggerProperty: false,
       validation: { type: ValidationTypes.TEXT },
@@ -405,9 +402,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "isSpellCheck",
-      label: "Spellcheck",
-      helpText:
-        "Defines whether the text input may be checked for spelling errors",
+      label: "拼写检查",
+      helpText: "是否检查拼写错误",
       controlType: "SWITCH",
       isBindProperty: true,
       isTriggerProperty: false,
@@ -418,8 +414,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "iconName",
-      label: "Icon",
-      helpText: "Sets the icon to be used in input field",
+      label: "图标",
+      helpText: "设置输入框的图标",
       controlType: "ICON_SELECT",
       isBindProperty: true,
       isTriggerProperty: false,
@@ -441,8 +437,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "iconAlign",
-      label: "Icon alignment",
-      helpText: "Sets the icon alignment of input field",
+      label: "图标对齐",
+      helpText: "设置输入框图标的对齐方式",
       controlType: "ICON_TABS",
       options: [
         {
@@ -467,7 +463,7 @@ const PROPERTIES = {
   actions: [
     {
       propertyName: "onTextChanged",
-      helpText: "Triggers an action when the text is changed",
+      helpText: "文本输入改变时触发",
       label: "onTextChanged",
       controlType: "ACTION_SELECTOR",
       isJSConvertible: true,
@@ -480,7 +476,7 @@ const PROPERTIES = {
     },
     {
       propertyName: "onEnterKeyPress",
-      helpText: "Triggers an action on submit (when the enter key is pressed)",
+      helpText: "提交时触发（用户按了回车）",
       label: "onEnterKeyPress",
       controlType: "ACTION_SELECTOR",
       isJSConvertible: true,
@@ -497,11 +493,10 @@ const PROPERTIES = {
     data: [
       {
         propertyName: "defaultValue",
-        helpText:
-          "Sets the default text of the field. The text is updated if the default text changes",
-        label: "Default Value",
+        helpText: "修改默认值会更新当前值",
+        label: "默认值",
         controlType: "JSON_FORM_COMPUTE_VALUE",
-        placeholderText: "John Doe",
+        placeholderText: "John Wick",
         isBindProperty: true,
         isTriggerProperty: false,
         validation: {
@@ -521,12 +516,12 @@ const PROPERTIES = {
       },
       {
         propertyName: "dialCode",
-        helpText: "Changes the country code",
-        label: "Default Country Code",
+        helpText: "修改默认的电话国家编号",
+        label: "默认国家编号",
         enableSearch: true,
         dropdownHeight: "195px",
         controlType: "DROP_DOWN",
-        searchPlaceholderText: "Search by code or country name",
+        searchPlaceholderText: "通过国家名称或编号搜索",
         options: ISDCodeDropdownOptions,
         hidden: (...args: HiddenFnParams) =>
           getSchemaItem(...args).fieldTypeNotMatches(
@@ -538,12 +533,12 @@ const PROPERTIES = {
       },
       {
         propertyName: "currencyCountryCode",
-        helpText: "Changes the type of currency",
-        label: "Currency",
+        helpText: "修改货币类型",
+        label: "货币",
         enableSearch: true,
         dropdownHeight: "195px",
         controlType: "DROP_DOWN",
-        searchPlaceholderText: "Search by code or name",
+        searchPlaceholderText: "通过名称或者编号搜索",
         options: CurrencyDropdownOptions,
         hidden: (...args: HiddenFnParams) =>
           getSchemaItem(...args).fieldTypeNotMatches(FieldType.CURRENCY_INPUT),
@@ -553,8 +548,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "allowDialCodeChange",
-        label: "Allow Country Code Change",
-        helpText: "Search by country",
+        label: "允许修改国家编码",
+        helpText: "使用国家名搜索",
         controlType: "SWITCH",
         isJSConvertible: false,
         isBindProperty: true,
@@ -568,8 +563,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "allowCurrencyChange",
-        label: "Allow Currency Change",
-        helpText: "Search by currency or country",
+        label: "允许修改货币",
+        helpText: "通过国家或者货币搜索",
         controlType: "SWITCH",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -580,7 +575,7 @@ const PROPERTIES = {
       },
       {
         propertyName: "decimalsInCurrency",
-        helpText: "No. of decimals in currency input",
+        helpText: "货币精确到小数点后几位",
         label: "Decimals Allowed",
         controlType: "DROP_DOWN",
         options: [
@@ -607,10 +602,10 @@ const PROPERTIES = {
     general: [
       {
         propertyName: "placeholderText",
-        helpText: "Sets a placeholder text for the input",
-        label: "Placeholder",
+        helpText: "输入为空时显示的占位字符",
+        label: "占位符",
         controlType: "JSON_FORM_COMPUTE_VALUE",
-        placeholderText: "Placeholder",
+        placeholderText: "占位符",
         isBindProperty: true,
         isTriggerProperty: false,
         validation: { type: ValidationTypes.TEXT },
@@ -622,8 +617,8 @@ const PROPERTIES = {
     validation: [
       {
         propertyName: "isRequired",
-        label: "Required",
-        helpText: "Makes input to the widget mandatory",
+        label: "必填",
+        helpText: "强制用户填写",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -641,8 +636,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "maxChars",
-        helpText: "Sets maximum allowed text length",
-        label: "Max Chars",
+        helpText: "设置最大输入字符长度",
+        label: "最大字符数",
         controlType: "JSON_FORM_COMPUTE_VALUE",
         placeholderText: "255",
         isBindProperty: true,
@@ -654,8 +649,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "minNum",
-        helpText: "Sets the minimum allowed value",
-        label: "Min",
+        helpText: "设置最小输入长度",
+        label: "最小输入长度",
         controlType: "INPUT_TEXT",
         placeholderText: "1",
         isBindProperty: true,
@@ -677,8 +672,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "maxNum",
-        helpText: "Sets the maximum allowed value",
-        label: "Max",
+        helpText: "设置最大输入长度",
+        label: "最大输入长度",
         controlType: "INPUT_TEXT",
         placeholderText: "100",
         isBindProperty: true,
@@ -700,9 +695,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "regex",
-        helpText:
-          "Adds a validation to the input which displays an error on failure",
-        label: "Regex",
+        helpText: "对输入进行正则校验，校验失败时显示错误",
+        label: "正则校验",
         controlType: "JSON_FORM_COMPUTE_VALUE",
         placeholderText: "^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$",
         inputType: "TEXT",
@@ -715,8 +709,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "validation",
-        helpText: "Sets the input validity based on a JS expression",
-        label: "Valid",
+        helpText: "使用 JS 表达式来校验输入的是否合法",
+        label: "普通校验",
         controlType: "JSON_FORM_COMPUTE_VALUE",
         placeholderText: "{{ Input1.text.length > 0 }}",
         inputType: "TEXT",
@@ -732,11 +726,10 @@ const PROPERTIES = {
       },
       {
         propertyName: "errorMessage",
-        helpText:
-          "The error message to display if the regex or valid property check fails",
-        label: "Error Message",
+        helpText: "普通校验或正则校验失败后显示的错误信息",
+        label: "错误信息",
         controlType: "JSON_FORM_COMPUTE_VALUE",
-        placeholderText: "Not a valid email!",
+        placeholderText: "邮箱格式有误",
         inputType: "TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -747,9 +740,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "isSpellCheck",
-        label: "Spellcheck",
-        helpText:
-          "Defines whether the text input may be checked for spelling errors",
+        label: "拼写检查",
+        helpText: "是否检查拼写错误",
         controlType: "SWITCH",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -762,7 +754,7 @@ const PROPERTIES = {
     events: [
       {
         propertyName: "onTextChanged",
-        helpText: "Triggers an action when the text is changed",
+        helpText: "文本输入改变时触发",
         label: "onTextChanged",
         controlType: "ACTION_SELECTOR",
         isJSConvertible: true,
@@ -775,8 +767,7 @@ const PROPERTIES = {
       },
       {
         propertyName: "onEnterKeyPress",
-        helpText:
-          "Triggers an action on submit (when the enter key is pressed)",
+        helpText: "提交时触发（用户按了回车）",
         label: "onEnterKeyPress",
         controlType: "ACTION_SELECTOR",
         isJSConvertible: true,
@@ -793,8 +784,8 @@ const PROPERTIES = {
     icon: [
       {
         propertyName: "iconName",
-        label: "Icon",
-        helpText: "Sets the icon to be used in input field",
+        label: "图标",
+        helpText: "设置输入框的图标",
         controlType: "ICON_SELECT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -816,8 +807,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "iconAlign",
-        label: "Position",
-        helpText: "Sets the icon position of input field",
+        label: "图标对齐",
+        helpText: "设置图标对齐方式",
         controlType: "ICON_TABS",
         options: [
           {

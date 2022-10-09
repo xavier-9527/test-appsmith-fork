@@ -70,12 +70,12 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "maxCount",
-            helpText: "Sets the maximum allowed rating",
-            label: "Max Rating",
+            helpText: "设置总分",
+            label: "最大星星数",
             controlType: "INPUT_TEXT",
             placeholderText: "5",
             isBindProperty: true,
@@ -87,8 +87,8 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "defaultRate",
-            helpText: "Sets the default rating",
-            label: "Default Rating",
+            helpText: "设置默认评分",
+            label: "默认评分",
             controlType: "INPUT_TEXT",
             placeholderText: "2.5",
             isBindProperty: true,
@@ -106,13 +106,11 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
             },
             dependencies: ["maxCount", "isAllowHalf"],
           },
-
           {
             propertyName: "tooltips",
-            helpText: "Sets the tooltip contents of stars",
-            label: "Tooltips",
+            label: "提示气泡",
             controlType: "INPUT_TEXT",
-            placeholderText: '["Bad", "Neutral", "Good"]',
+            placeholderText: '["糟糕", "普通", "非常棒"]',
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -122,19 +120,19 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "size",
-            label: "Size",
+            label: "尺寸",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "Small",
+                label: "小",
                 value: "SMALL",
               },
               {
-                label: "Medium",
+                label: "中",
                 value: "MEDIUM",
               },
               {
-                label: "Large",
+                label: "大",
                 value: "LARGE",
               },
             ],
@@ -143,8 +141,8 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "isAllowHalf",
-            helpText: "Controls if user can submit half stars",
-            label: "Allow half stars",
+            helpText: "是否允许打半星",
+            label: "允许半星",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -153,8 +151,7 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            helpText: "Controls the visibility of the widget",
-            label: "Visible",
+            label: "是否可见",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -163,8 +160,7 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            helpText: "Disables input to the widget",
-            label: "Disabled",
+            label: "是否禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -173,9 +169,9 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -185,10 +181,10 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the rate is changed",
+            helpText: "评分变化时触发",
             propertyName: "onRateChanged",
             label: "onChange",
             controlType: "ACTION_SELECTOR",
@@ -199,11 +195,11 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "activeColor",
-            label: "Active color",
+            label: "评分颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -212,7 +208,7 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "inactiveColor",
-            label: "Inactive color",
+            label: "评分背景颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -227,12 +223,12 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
             propertyName: "maxCount",
-            helpText: "Sets the maximum allowed rating",
-            label: "Max Rating",
+            helpText: "设置总分",
+            label: "最大星星数",
             controlType: "INPUT_TEXT",
             placeholderText: "5",
             isBindProperty: true,
@@ -244,8 +240,8 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "defaultRate",
-            helpText: "Sets the default rating",
-            label: "Default Rating",
+            helpText: "设置默认评分",
+            label: "默认评分",
             controlType: "INPUT_TEXT",
             placeholderText: "2.5",
             isBindProperty: true,
@@ -265,10 +261,10 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "tooltips",
-            helpText: "Sets the tooltip contents of stars",
-            label: "Tooltips",
+            helpText: "提示气泡",
+            label: "提示气泡",
             controlType: "INPUT_TEXT",
-            placeholderText: '["Bad", "Neutral", "Good"]',
+            placeholderText: '["糟糕", "普通", "非常棒"]',
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -279,12 +275,12 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "isAllowHalf",
-            helpText: "Controls if user can submit half stars",
-            label: "Allow Half Stars",
+            helpText: "是否允许打半星",
+            label: "允许半星",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -293,8 +289,8 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            helpText: "Controls the visibility of the widget",
-            label: "Visible",
+            helpText: "控制组件的显示/隐藏",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -303,8 +299,8 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            helpText: "Disables input to the widget",
-            label: "Disabled",
+            helpText: "让组件不可交互",
+            label: "禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -313,9 +309,9 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -325,10 +321,10 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the rate is changed",
+            helpText: "评分变化时触发",
             propertyName: "onRateChanged",
             label: "onChange",
             controlType: "ACTION_SELECTOR",
@@ -344,23 +340,23 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "size",
-            label: "Star Size",
+            label: "尺寸",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "Small",
+                label: "小",
                 value: "SMALL",
               },
               {
-                label: "Medium",
+                label: "中",
                 value: "MEDIUM",
               },
               {
-                label: "Large",
+                label: "大",
                 value: "LARGE",
               },
             ],
@@ -370,11 +366,11 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [
           {
             propertyName: "activeColor",
-            label: "Active Color",
+            label: "评分颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -383,7 +379,7 @@ class RateWidget extends BaseWidget<RateWidgetProps, WidgetState> {
           },
           {
             propertyName: "inactiveColor",
-            label: "Inactive Color",
+            label: "评分背景颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,

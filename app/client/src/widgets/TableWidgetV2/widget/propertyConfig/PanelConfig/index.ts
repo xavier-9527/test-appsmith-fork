@@ -57,12 +57,12 @@ export default {
       },
       children: [
         {
-          sectionName: "Label",
+          sectionName: "标签",
           collapsible: false,
           children: [
             {
               propertyName: "saveActionLabel",
-              label: "Text",
+              label: "文本",
               controlType: "TABLE_COMPUTE_VALUE",
               dependencies: ["primaryColumns"],
               isBindProperty: true,
@@ -71,7 +71,7 @@ export default {
           ],
         },
         {
-          sectionName: "General",
+          sectionName: "属性",
           collapsible: false,
           children: [
             {
@@ -91,7 +91,7 @@ export default {
             {
               propertyName: "isSaveVisible",
               dependencies: ["primaryColumns"],
-              label: "Visible",
+              label: "是否显示",
               helpText: "Controls the visibility of the save button",
               defaultValue: true,
               controlType: "SWITCH",
@@ -108,7 +108,7 @@ export default {
             },
             {
               propertyName: "isSaveDisabled",
-              label: "Disabled",
+              label: "禁用",
               defaultValue: false,
               controlType: "SWITCH",
               customJSControl: "TABLE_COMPUTE_VALUE",
@@ -139,12 +139,12 @@ export default {
       },
       children: [
         {
-          sectionName: "Label",
+          sectionName: "标签",
           collapsible: false,
           children: [
             {
               propertyName: "discardActionLabel",
-              label: "Text",
+              label: "文本",
               controlType: "TABLE_COMPUTE_VALUE",
               dependencies: ["primaryColumns"],
               isBindProperty: true,
@@ -153,7 +153,7 @@ export default {
           ],
         },
         {
-          sectionName: "General",
+          sectionName: "属性",
           collapsible: false,
           children: [
             {
@@ -173,7 +173,7 @@ export default {
             {
               propertyName: "isDiscardVisible",
               dependencies: ["primaryColumns"],
-              label: "Visible",
+              label: "是否显示",
               helpText: "Controls the visibility of the discard button",
               defaultValue: true,
               controlType: "SWITCH",
@@ -190,7 +190,7 @@ export default {
             },
             {
               propertyName: "isDiscardDisabled",
-              label: "Disabled",
+              label: "禁用",
               defaultValue: false,
               controlType: "SWITCH",
               customJSControl: "TABLE_COMPUTE_VALUE",
@@ -210,7 +210,7 @@ export default {
       ],
     },
     {
-      sectionName: "Events",
+      sectionName: "事件",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         if (showByColumnType(props, propertyPath, [ColumnTypes.IMAGE], true)) {
           return false;
@@ -281,15 +281,15 @@ export default {
   ],
   styleChildren: [
     {
-      sectionName: "General",
+      sectionName: "属性",
       children: [
         {
           propertyName: "buttonVariant",
-          label: "Button Variant",
+          label: "按钮类型",
           controlType: "DROP_DOWN",
           customJSControl: "TABLE_COMPUTE_VALUE",
           isJSConvertible: true,
-          helpText: "Sets the variant",
+          helpText: "设置按钮类型",
           hidden: (props: TableWidgetProps, propertyPath: string) => {
             return hideByColumnType(props, propertyPath, [
               ColumnTypes.ICON_BUTTON,
@@ -299,15 +299,15 @@ export default {
           dependencies: ["primaryColumns", "columnOrder"],
           options: [
             {
-              label: "Primary",
+              label: "主按钮",
               value: ButtonVariantTypes.PRIMARY,
             },
             {
-              label: "Secondary",
+              label: "次级按钮",
               value: ButtonVariantTypes.SECONDARY,
             },
             {
-              label: "Tertiary",
+              label: "文本按钮",
               value: ButtonVariantTypes.TERTIARY,
             },
           ],
@@ -331,21 +331,21 @@ export default {
         },
         {
           propertyName: "menuVariant",
-          label: "Button Variant",
+          label: "按钮类型",
           controlType: "DROP_DOWN",
           customJSControl: "TABLE_COMPUTE_VALUE",
-          helpText: "Sets the variant of the menu button",
+          helpText: "设置菜单按钮的风格类型",
           options: [
             {
-              label: "Primary",
+              label: "主按钮",
               value: ButtonVariantTypes.PRIMARY,
             },
             {
-              label: "Secondary",
+              label: "次级按钮",
               value: ButtonVariantTypes.SECONDARY,
             },
             {
-              label: "Tertiary",
+              label: "文本按钮",
               value: ButtonVariantTypes.TERTIARY,
             },
           ],
@@ -377,12 +377,12 @@ export default {
       ],
     },
     {
-      sectionName: "Icon",
+      sectionName: "图标配置",
       children: [
         {
           propertyName: "menuButtoniconName",
-          label: "Icon",
-          helpText: "Sets the icon to be used for the menu button",
+          label: "图标",
+          helpText: "设置菜单按钮图标",
           hidden: (props: TableWidgetProps, propertyPath: string) => {
             return hideByColumnType(props, propertyPath, [
               ColumnTypes.MENU_BUTTON,
@@ -407,8 +407,8 @@ export default {
         },
         {
           propertyName: "iconAlign",
-          label: "Position",
-          helpText: "Sets the icon alignment of the menu button",
+          label: "位置",
+          helpText: "设置菜单按钮图标对齐方式",
           controlType: "ICON_TABS",
           options: [
             {
@@ -438,11 +438,11 @@ export default {
       ],
     },
     {
-      sectionName: "Text Formatting",
+      sectionName: "文本样式",
       children: [
         {
           propertyName: "textSize",
-          label: "Text Size",
+          label: "字体大小",
           controlType: "DROP_DOWN",
           isJSConvertible: true,
           customJSControl: "TABLE_COMPUTE_VALUE",
@@ -488,7 +488,7 @@ export default {
         },
         {
           propertyName: "fontStyle",
-          label: "Emphasis",
+          label: "强调",
           controlType: "BUTTON_TABS",
           options: [
             {
@@ -526,7 +526,7 @@ export default {
         },
         {
           propertyName: "horizontalAlignment",
-          label: "Text Align",
+          label: "文本对齐方式",
           controlType: "ICON_TABS",
           options: [
             {
@@ -568,7 +568,7 @@ export default {
         },
         {
           propertyName: "verticalAlignment",
-          label: "Vertical Alignment",
+          label: "垂直对齐",
           controlType: "ICON_TABS",
           options: [
             {
@@ -611,13 +611,13 @@ export default {
       ],
     },
     {
-      sectionName: "Color",
+      sectionName: "颜色配置",
       children: [
         {
           propertyName: "buttonColor",
-          label: "Button Color",
+          label: "按钮颜色",
           controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
-          helpText: "Changes the color of the button",
+          helpText: "修改按钮颜色",
           isJSConvertible: true,
           customJSControl: "TABLE_COMPUTE_VALUE",
           hidden: (props: TableWidgetProps, propertyPath: string) => {
@@ -641,9 +641,8 @@ export default {
         },
         {
           propertyName: "menuColor",
-          helpText:
-            "Sets the custom color preset based on the menu button variant",
-          label: "Button Color",
+          helpText: "自定义菜单按钮颜色",
+          label: "按钮颜色",
           controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
           customJSControl: "TABLE_COMPUTE_VALUE",
           isJSConvertible: true,
@@ -668,7 +667,7 @@ export default {
         },
         {
           propertyName: "cellBackground",
-          label: "Cell Background",
+          label: "单元格背景颜色",
           controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
           isJSConvertible: true,
           customJSControl: "TABLE_COMPUTE_VALUE",
@@ -687,7 +686,7 @@ export default {
         },
         {
           propertyName: "textColor",
-          label: "Text Color",
+          label: "文本颜色",
           controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
           isJSConvertible: true,
           customJSControl: "TABLE_COMPUTE_VALUE",
@@ -726,14 +725,14 @@ export default {
       },
       children: [
         {
-          sectionName: "General",
+          sectionName: "属性",
           collapsible: false,
           children: [
             {
               propertyName: "saveButtonColor",
-              label: "Button Color",
+              label: "按钮颜色",
               controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
-              helpText: "Changes the color of the button",
+              helpText: "修改按钮颜色",
               isJSConvertible: true,
               customJSControl: "TABLE_COMPUTE_VALUE",
               dependencies: ["primaryColumns"],
@@ -751,7 +750,7 @@ export default {
             },
             {
               propertyName: "saveButtonVariant",
-              label: "Button Variant",
+              label: "按钮类型",
               controlType: "DROP_DOWN",
               customJSControl: "TABLE_COMPUTE_VALUE",
               isJSConvertible: true,
@@ -759,15 +758,15 @@ export default {
               dependencies: ["primaryColumns"],
               options: [
                 {
-                  label: "Primary",
+                  label: "主按钮",
                   value: ButtonVariantTypes.PRIMARY,
                 },
                 {
-                  label: "Secondary",
+                  label: "次级按钮",
                   value: ButtonVariantTypes.SECONDARY,
                 },
                 {
-                  label: "Tertiary",
+                  label: "文本按钮",
                   value: ButtonVariantTypes.TERTIARY,
                 },
               ],
@@ -791,7 +790,7 @@ export default {
             },
             {
               propertyName: "saveBorderRadius",
-              label: "Border Radius",
+              label: "边框圆角",
               customJSControl: "TABLE_COMPUTE_VALUE",
               isJSConvertible: true,
               helpText:
@@ -810,12 +809,12 @@ export default {
           ],
         },
         {
-          sectionName: "Icon",
+          sectionName: "图标配置",
           collapsible: false,
           children: [
             {
               propertyName: "saveActionIconName",
-              label: "Icon",
+              label: "图标",
               helpText: "Sets the icon to be used for the save action button",
               dependencies: ["primaryColumns", "columnOrder"],
               controlType: "ICON_SELECT",
@@ -835,7 +834,7 @@ export default {
             },
             {
               propertyName: "saveIconAlign",
-              label: "Position",
+              label: "位置",
               helpText: "Sets the icon alignment of the save button",
               controlType: "ICON_TABS",
               defaultValue: "left",
@@ -875,14 +874,14 @@ export default {
       },
       children: [
         {
-          sectionName: "General",
+          sectionName: "属性",
           collapsible: false,
           children: [
             {
               propertyName: "discardButtonColor",
-              label: "Button Color",
+              label: "按钮颜色",
               controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
-              helpText: "Changes the color of the button",
+              helpText: "修改按钮颜色",
               isJSConvertible: true,
               customJSControl: "TABLE_COMPUTE_VALUE",
               dependencies: ["primaryColumns"],
@@ -900,7 +899,7 @@ export default {
             },
             {
               propertyName: "discardButtonVariant",
-              label: "Button Variant",
+              label: "按钮类型",
               controlType: "DROP_DOWN",
               customJSControl: "TABLE_COMPUTE_VALUE",
               isJSConvertible: true,
@@ -908,15 +907,15 @@ export default {
               dependencies: ["primaryColumns"],
               options: [
                 {
-                  label: "Primary",
+                  label: "主按钮",
                   value: ButtonVariantTypes.PRIMARY,
                 },
                 {
-                  label: "Secondary",
+                  label: "次级按钮",
                   value: ButtonVariantTypes.SECONDARY,
                 },
                 {
-                  label: "Tertiary",
+                  label: "文本按钮",
                   value: ButtonVariantTypes.TERTIARY,
                 },
               ],
@@ -940,7 +939,7 @@ export default {
             },
             {
               propertyName: "discardBorderRadius",
-              label: "Border Radius",
+              label: "边框圆角",
               customJSControl: "TABLE_COMPUTE_VALUE",
               isJSConvertible: true,
               helpText:
@@ -959,12 +958,12 @@ export default {
           ],
         },
         {
-          sectionName: "Icon",
+          sectionName: "图标配置",
           collapsible: false,
           children: [
             {
               propertyName: "discardActionIconName",
-              label: "Icon",
+              label: "图标",
               helpText:
                 "Sets the icon to be used for the discard action button",
               dependencies: ["primaryColumns", "columnOrder"],
@@ -985,7 +984,7 @@ export default {
             },
             {
               propertyName: "discardIconAlign",
-              label: "Position",
+              label: "位置",
               helpText: "Sets the icon alignment of the discard button",
               controlType: "ICON_TABS",
               defaultValue: "left",
@@ -1014,14 +1013,14 @@ export default {
       ],
     },
     {
-      sectionName: "Border and Shadow",
+      sectionName: "轮廓样式",
       children: [
         {
           propertyName: "borderRadius",
-          label: "Border Radius",
+          label: "边框圆角",
           customJSControl: "TABLE_COMPUTE_VALUE",
           isJSConvertible: true,
-          helpText: "Rounds the corners of the icon button's outer border edge",
+          helpText: "边框圆角样式",
           controlType: "BORDER_RADIUS_OPTIONS",
           hidden: (props: TableWidgetProps, propertyPath: string) => {
             return hideByColumnType(props, propertyPath, [
@@ -1042,9 +1041,8 @@ export default {
         },
         {
           propertyName: "boxShadow",
-          label: "Box Shadow",
-          helpText:
-            "Enables you to cast a drop shadow from the frame of the widget",
+          label: "阴影",
+          helpText: "组件轮廓投影",
           controlType: "BOX_SHADOW_OPTIONS",
           customJSControl: "TABLE_COMPUTE_VALUE",
           isJSConvertible: true,

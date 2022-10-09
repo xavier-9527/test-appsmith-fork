@@ -153,13 +153,12 @@ class DatePickerWidget extends BaseWidget<DatePickerWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "defaultDate",
-            label: "Default Date",
-            helpText:
-              "Sets the default date of the widget. The date is updated if the default date changes",
+            label: "默认日期",
+            helpText: "设置默认日期，默认日期修改后，组件当前日期会自动更新",
             controlType: "DATE_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -178,9 +177,9 @@ class DatePickerWidget extends BaseWidget<DatePickerWidgetProps, WidgetState> {
             dependencies: ["dateFormat"],
           },
           {
-            helpText: "Sets the format of the selected date",
+            helpText: "设置所选日期的格式",
             propertyName: "dateFormat",
-            label: "Date Format",
+            label: "日期格式",
             controlType: "DROP_DOWN",
             isJSConvertible: true,
             options: [
@@ -211,8 +210,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidgetProps, WidgetState> {
           },
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -221,8 +220,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -231,8 +230,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
-            helpText: "Disables input to this widget",
+            label: "禁用",
+            helpText: "让组件不可交互",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -241,9 +240,9 @@ class DatePickerWidget extends BaseWidget<DatePickerWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -252,8 +251,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidgetProps, WidgetState> {
           },
           {
             propertyName: "minDate",
-            label: "Min Date",
-            helpText: "Defines the min date for this widget",
+            label: "最小日期",
+            helpText: "设置组件最小日期",
             controlType: "DATE_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -273,8 +272,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidgetProps, WidgetState> {
           },
           {
             propertyName: "maxDate",
-            label: "Max Date",
-            helpText: "Defines the max date for this widget",
+            label: "最大日期",
+            helpText: "设置组件最大日期",
             controlType: "DATE_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -295,7 +294,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
             propertyName: "onDateSelected",

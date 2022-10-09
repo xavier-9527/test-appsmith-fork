@@ -26,7 +26,7 @@ export function selectedTabValidation(
   return {
     isValid: value === "" ? true : tabNames.includes(value as string),
     parsed: value,
-    messages: [`Tab name ${value} does not exist`],
+    messages: [`标签页 ${value} 不存在`],
   };
 }
 class TabsWidget extends BaseWidget<
@@ -36,12 +36,12 @@ class TabsWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "tabsObj",
             isJSConvertible: false,
-            label: "Tabs",
+            label: "标签页列表",
             controlType: "TABS_INPUT",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -88,12 +88,12 @@ class TabsWidget extends BaseWidget<
               },
               children: [
                 {
-                  sectionName: "Tab Control",
+                  sectionName: "标签页配置",
                   children: [
                     {
                       propertyName: "isVisible",
-                      label: "Visible",
-                      helpText: "Controls the visibility of the tab",
+                      label: "是否可见",
+                      helpText: "标签页是否可见",
                       controlType: "SWITCH",
                       useValidationMessage: true,
                       isJSConvertible: true,
@@ -108,9 +108,8 @@ class TabsWidget extends BaseWidget<
           },
           {
             propertyName: "defaultTab",
-            helpText: "Selects a tab name specified by default",
-            placeholderText: "Tab 1",
-            label: "Default Tab",
+            placeholderText: "输入标签页名称",
+            label: "默认标签页",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -119,7 +118,7 @@ class TabsWidget extends BaseWidget<
               params: {
                 fn: selectedTabValidation,
                 expected: {
-                  type: "Tab Name (string)",
+                  type: "标签页名称 (string)",
                   example: "Tab 1",
                   autocompleteDataType: AutocompleteDataType.STRING,
                 },
@@ -129,25 +128,23 @@ class TabsWidget extends BaseWidget<
           },
           {
             propertyName: "shouldShowTabs",
-            helpText:
-              "Hides the tabs so that different widgets can be displayed based on the default tab",
-            label: "Show Tabs",
+            helpText: "隐藏标签头后，标签页不可切换，只展示默认标签页",
+            label: "显示标签头",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
-            helpText: "Enables scrolling for content inside the widget",
+            helpText: "允许组件内部内容滚动",
             propertyName: "shouldScrollContents",
-            label: "Scroll Contents",
+            label: "滚动内容",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否可见",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -156,9 +153,9 @@ class TabsWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -168,10 +165,10 @@ class TabsWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "动作",
         children: [
           {
-            helpText: "Triggers an action when the button is clicked",
+            helpText: "选中标签页时触发",
             propertyName: "onTabSelected",
             label: "onTabSelected",
             controlType: "ACTION_SELECTOR",
@@ -183,13 +180,12 @@ class TabsWidget extends BaseWidget<
       },
 
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,
@@ -199,9 +195,8 @@ class TabsWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -216,12 +211,12 @@ class TabsWidget extends BaseWidget<
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
             propertyName: "tabsObj",
             isJSConvertible: false,
-            label: "Tabs",
+            label: "标签页列表",
             controlType: "TABS_INPUT",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -268,12 +263,12 @@ class TabsWidget extends BaseWidget<
               },
               children: [
                 {
-                  sectionName: "General",
+                  sectionName: "属性",
                   children: [
                     {
                       propertyName: "isVisible",
-                      label: "Visible",
-                      helpText: "Controls the visibility of the tab",
+                      label: "是否显示",
+                      helpText: "标签页是否可见",
                       controlType: "SWITCH",
                       useValidationMessage: true,
                       isJSConvertible: true,
@@ -288,9 +283,8 @@ class TabsWidget extends BaseWidget<
           },
           {
             propertyName: "defaultTab",
-            helpText: "Selects a tab name specified by default",
-            placeholderText: "Tab 1",
-            label: "Default Tab",
+            placeholderText: "输入标签页名称",
+            label: "默认标签页",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -299,7 +293,7 @@ class TabsWidget extends BaseWidget<
               params: {
                 fn: selectedTabValidation,
                 expected: {
-                  type: "Tab Name (string)",
+                  type: "标签页名称 (string)",
                   example: "Tab 1",
                   autocompleteDataType: AutocompleteDataType.STRING,
                 },
@@ -310,12 +304,12 @@ class TabsWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -323,18 +317,18 @@ class TabsWidget extends BaseWidget<
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Enables scrolling for content inside the widget",
+            helpText: "允许组件内部内容滚动",
             propertyName: "shouldScrollContents",
-            label: "Scroll Contents",
+            label: "允许内容滚动",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -343,9 +337,8 @@ class TabsWidget extends BaseWidget<
           },
           {
             propertyName: "shouldShowTabs",
-            helpText:
-              "Hides the tabs so that different widgets can be displayed based on the default tab",
-            label: "Show Tabs",
+            helpText: "隐藏标签头后，标签页不可切换，只展示默认标签页",
+            label: "显示标签头",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -353,10 +346,10 @@ class TabsWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the button is clicked",
+            helpText: "点击按钮时触发",
             propertyName: "onTabSelected",
             label: "onTabSelected",
             controlType: "ACTION_SELECTOR",
@@ -372,13 +365,12 @@ class TabsWidget extends BaseWidget<
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,
@@ -388,9 +380,8 @@ class TabsWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

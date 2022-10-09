@@ -20,14 +20,14 @@ class CircularProgressWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "progress",
-            helpText: "Sets the progress value of the widget",
-            label: "Progress",
+            helpText: "设置组件进度值",
+            label: "进度",
             controlType: "INPUT_TEXT",
-            placeholderText: "Value:",
+            placeholderText: "进度值：",
             isBindProperty: true,
             isTriggerProperty: false,
             isJSConvertible: true,
@@ -35,8 +35,8 @@ class CircularProgressWidget extends BaseWidget<
           },
           {
             propertyName: "counterClockwise",
-            helpText: "Counter clock wise",
-            label: "CounterClockWise",
+            helpText: "逆时针方向",
+            label: "逆时针",
             controlType: "SWITCH",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -44,8 +44,8 @@ class CircularProgressWidget extends BaseWidget<
           },
           {
             propertyName: "showResult",
-            helpText: "Controls the visibility of progress value",
-            label: "Show result",
+            helpText: "显示进度值",
+            label: "显示进度值",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -54,8 +54,8 @@ class CircularProgressWidget extends BaseWidget<
           },
           {
             propertyName: "isVisible",
-            helpText: "Controls the visibility of the widget",
-            label: "Visible",
+            helpText: "控制组件的显示/隐藏",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -65,11 +65,11 @@ class CircularProgressWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "fillColor",
-            label: "Fill Color",
+            label: "填充颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -79,7 +79,7 @@ class CircularProgressWidget extends BaseWidget<
               params: {
                 regex: /^((?![<|{{]).+){0,1}/,
                 expected: {
-                  type: "string (HTML color name or HEX value)",
+                  type: "string (HTML 颜色名称，HEX 值)",
                   example: `red | #9C0D38`,
                   autocompleteDataType: AutocompleteDataType.STRING,
                 },

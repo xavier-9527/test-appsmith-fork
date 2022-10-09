@@ -12,26 +12,26 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "Label",
+        sectionName: "属性",
         children: [
           {
             propertyName: "label",
-            label: "Label",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            helpText: "Displays a label next to the widget",
-            placeholderText: "I agree to the T&C",
+            helpText: "组件旁的标签",
+            placeholderText: "我同意这门亲事",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Right", value: LabelPosition.Right },
+              { label: "左", value: LabelPosition.Left },
+              { label: "右", value: LabelPosition.Right },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
@@ -39,8 +39,8 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "alignWidget",
-            helpText: "Sets the alignment of the widget",
-            label: "Alignment",
+            helpText: "设置组件对齐方式",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -59,12 +59,12 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "基本属性",
         children: [
           {
             propertyName: "defaultCheckedState",
-            label: "Default Selected",
-            helpText: "Sets the default checked state of the widget",
+            label: "默认选中",
+            helpText: "修改它会刷新组件状态",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -73,8 +73,8 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必须",
+            helpText: "是否必须填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -83,8 +83,8 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否可见",
+            helpText: "控制组件是否可见",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -93,9 +93,9 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "是否禁用",
             controlType: "SWITCH",
-            helpText: "Disables input to this widget",
+            helpText: "是否禁止用户操作",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -103,9 +103,9 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "显示加载动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "控制组件显示加载状态",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -115,10 +115,10 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the check state is changed",
+            helpText: "选中态改变时触发",
             propertyName: "onCheckChange",
             label: "onCheckChange",
             controlType: "ACTION_SELECTOR",
@@ -129,11 +129,11 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Text Color",
+            label: "文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -147,7 +147,7 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelTextSize",
-            label: "Text Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -189,7 +189,7 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelStyle",
-            label: "Label Font Style",
+            label: "字体样式",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -209,12 +209,12 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "accentColor",
-            helpText: "Sets the checked state color of the checkbox",
-            label: "Accent Color",
+            helpText: "设置勾选框选中态颜色",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -223,9 +223,8 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -240,26 +239,26 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
             propertyName: "label",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            helpText: "Displays a label next to the widget",
-            placeholderText: "I agree to the T&C",
+            helpText: "组件旁的标签",
+            placeholderText: "我同意这门亲事",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Right", value: LabelPosition.Right },
+              { label: "左", value: LabelPosition.Left },
+              { label: "右", value: LabelPosition.Right },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
@@ -267,8 +266,8 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "alignWidget",
-            helpText: "Sets the alignment of the widget",
-            label: "Alignment",
+            helpText: "设置组件对齐方式",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -287,12 +286,12 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Validations",
+        sectionName: "校验",
         children: [
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -302,12 +301,12 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "基本属性",
         children: [
           {
             propertyName: "defaultCheckedState",
-            label: "Default State",
-            helpText: "Sets the default checked state of the widget",
+            label: "默认选中",
+            helpText: "设置组件是否默认选中",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -316,8 +315,8 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -326,9 +325,9 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables input to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -336,9 +335,9 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -348,10 +347,10 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the check state is changed",
+            helpText: "选中态改变时触发",
             propertyName: "onCheckChange",
             label: "onCheckChange",
             controlType: "ACTION_SELECTOR",
@@ -367,11 +366,11 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Font Color",
+            label: "字体颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -385,7 +384,7 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelTextSize",
-            label: "Font Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -427,7 +426,7 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelStyle",
-            label: "Emphasis",
+            label: "强调",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -447,12 +446,12 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [
           {
             propertyName: "accentColor",
-            helpText: "Sets the checked state color of the checkbox",
-            label: "Accent Color",
+            helpText: "设置勾选框选中态颜色",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -462,13 +461,12 @@ class CheckboxWidget extends BaseWidget<CheckboxWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

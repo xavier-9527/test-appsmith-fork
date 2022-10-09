@@ -22,20 +22,20 @@ class ButtonGroupWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Controls widget orientation",
+            helpText: "设置组件排列方向",
             propertyName: "orientation",
-            label: "Orientation",
+            label: "排列方向",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "Horizontal",
+                label: "水平",
                 value: "horizontal",
               },
               {
-                label: "Vertical",
+                label: "垂直",
                 value: "vertical",
               },
             ],
@@ -44,9 +44,9 @@ class ButtonGroupWidget extends BaseWidget<
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -55,9 +55,9 @@ class ButtonGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables clicks to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -65,9 +65,9 @@ class ButtonGroupWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -77,10 +77,10 @@ class ButtonGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Buttons",
+        sectionName: "按钮",
         children: [
           {
-            helpText: "Group Buttons",
+            helpText: "按钮组",
             propertyName: "groupButtons",
             controlType: "GROUP_BUTTONS",
             label: "",
@@ -105,30 +105,30 @@ class ButtonGroupWidget extends BaseWidget<
               },
               children: [
                 {
-                  sectionName: "General",
+                  sectionName: "属性",
                   children: [
                     {
                       propertyName: "label",
-                      helpText: "Sets the label of a menu item",
-                      label: "Label",
+                      helpText: "设置菜单项标签",
+                      label: "标签",
                       controlType: "INPUT_TEXT",
-                      placeholderText: "Enter label",
+                      placeholderText: "请输入标签",
                       isBindProperty: true,
                       isTriggerProperty: false,
                       validation: { type: ValidationTypes.TEXT },
                     },
                     {
                       propertyName: "buttonType",
-                      label: "Button Type",
+                      label: "按钮类型",
                       controlType: "DROP_DOWN",
-                      helpText: "Sets button type",
+                      helpText: "设置按钮类型",
                       options: [
                         {
-                          label: "Simple",
+                          label: "普通按钮",
                           value: "SIMPLE",
                         },
                         {
-                          label: "Menu",
+                          label: "菜单按钮",
                           value: "MENU",
                         },
                       ],
@@ -144,8 +144,8 @@ class ButtonGroupWidget extends BaseWidget<
                     },
                     {
                       propertyName: "isDisabled",
-                      helpText: "Disables input to the widget",
-                      label: "Disabled",
+                      helpText: "让组件不可交互",
+                      label: "禁用",
                       controlType: "SWITCH",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -154,8 +154,8 @@ class ButtonGroupWidget extends BaseWidget<
                     },
                     {
                       propertyName: "isVisible",
-                      helpText: "Controls the visibility of the widget",
-                      label: "Visible",
+                      helpText: "控制组件的显示/隐藏",
+                      label: "是否显示",
                       controlType: "SWITCH",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -165,12 +165,12 @@ class ButtonGroupWidget extends BaseWidget<
                   ],
                 },
                 {
-                  sectionName: "Icon Options",
+                  sectionName: "图标配置",
                   children: [
                     {
                       propertyName: "iconName",
-                      label: "Icon",
-                      helpText: "Sets the icon to be used for a button",
+                      label: "图标",
+                      helpText: "选择按钮图标",
                       controlType: "ICON_SELECT",
                       isBindProperty: false,
                       isTriggerProperty: false,
@@ -178,20 +178,20 @@ class ButtonGroupWidget extends BaseWidget<
                     },
                     {
                       propertyName: "placement",
-                      label: "Placement",
+                      label: "排列方式",
                       controlType: "DROP_DOWN",
-                      helpText: "Sets the space between items",
+                      helpText: "设置图标与标签的排列方式",
                       options: [
                         {
-                          label: "Start",
+                          label: "向前对齐",
                           value: ButtonPlacementTypes.START,
                         },
                         {
-                          label: "Between",
+                          label: "两边对齐",
                           value: ButtonPlacementTypes.BETWEEN,
                         },
                         {
-                          label: "Center",
+                          label: "居中对齐",
                           value: ButtonPlacementTypes.CENTER,
                         },
                       ],
@@ -213,8 +213,8 @@ class ButtonGroupWidget extends BaseWidget<
                     },
                     {
                       propertyName: "iconAlign",
-                      label: "Icon alignment",
-                      helpText: "Sets the icon alignment of a button",
+                      label: "图标对齐",
+                      helpText: "设置按钮图标的对齐位置",
                       controlType: "ICON_TABS",
                       options: [
                         {
@@ -233,7 +233,7 @@ class ButtonGroupWidget extends BaseWidget<
                   ],
                 },
                 {
-                  sectionName: "Menu Items",
+                  sectionName: "菜单配置",
                   hidden: (
                     props: ButtonGroupWidgetProps,
                     propertyPath: string,
@@ -247,7 +247,7 @@ class ButtonGroupWidget extends BaseWidget<
                   },
                   children: [
                     {
-                      helpText: "Menu Items",
+                      helpText: "菜单配置",
                       propertyName: "menuItems",
                       controlType: "MENU_ITEMS",
                       label: "",
@@ -271,14 +271,14 @@ class ButtonGroupWidget extends BaseWidget<
                         },
                         children: [
                           {
-                            sectionName: "General",
+                            sectionName: "属性",
                             children: [
                               {
                                 propertyName: "label",
-                                helpText: "Sets the label of a menu item",
-                                label: "Label",
+                                helpText: "设置菜单项标签",
+                                label: "标签",
                                 controlType: "INPUT_TEXT",
-                                placeholderText: "Enter label",
+                                placeholderText: "请输入标签",
                                 isBindProperty: true,
                                 isTriggerProperty: false,
                                 validation: { type: ValidationTypes.TEXT },
@@ -286,8 +286,8 @@ class ButtonGroupWidget extends BaseWidget<
 
                               {
                                 propertyName: "isDisabled",
-                                helpText: "Disables menu item",
-                                label: "Disabled",
+                                helpText: "禁用菜单项",
+                                label: "禁用",
                                 controlType: "SWITCH",
                                 isJSConvertible: true,
                                 isBindProperty: true,
@@ -296,9 +296,8 @@ class ButtonGroupWidget extends BaseWidget<
                               },
                               {
                                 propertyName: "isVisible",
-                                helpText:
-                                  "Controls the visibility of menu item",
-                                label: "Visible",
+                                helpText: "控制菜单项是否显示",
+                                label: "是否显示",
                                 controlType: "SWITCH",
                                 isJSConvertible: true,
                                 isBindProperty: true,
@@ -308,13 +307,12 @@ class ButtonGroupWidget extends BaseWidget<
                             ],
                           },
                           {
-                            sectionName: "Icon Options",
+                            sectionName: "图标配置",
                             children: [
                               {
                                 propertyName: "iconName",
-                                label: "Icon",
-                                helpText:
-                                  "Sets the icon to be used for a menu item",
+                                label: "图标",
+                                helpText: "设置菜单项的图标",
                                 controlType: "ICON_SELECT",
                                 isBindProperty: false,
                                 isTriggerProperty: false,
@@ -323,9 +321,8 @@ class ButtonGroupWidget extends BaseWidget<
 
                               {
                                 propertyName: "iconAlign",
-                                label: "Icon alignment",
-                                helpText:
-                                  "Sets the icon alignment of a menu item",
+                                label: "图标对齐",
+                                helpText: "设置菜单项图标对齐方向",
                                 controlType: "ICON_TABS",
                                 options: [
                                   {
@@ -344,11 +341,10 @@ class ButtonGroupWidget extends BaseWidget<
                             ],
                           },
                           {
-                            sectionName: "Events",
+                            sectionName: "事件",
                             children: [
                               {
-                                helpText:
-                                  "Triggers an action when the menu item is clicked",
+                                helpText: "点击菜单项时触发",
                                 propertyName: "onClick",
                                 label: "onClick",
                                 controlType: "ACTION_SELECTOR",
@@ -359,21 +355,20 @@ class ButtonGroupWidget extends BaseWidget<
                             ],
                           },
                           {
-                            sectionName: "Style",
+                            sectionName: "样式",
                             children: [
                               {
                                 propertyName: "iconColor",
-                                helpText: "Sets the icon color of a menu item",
-                                label: "Icon color",
+                                helpText: "设置菜单项图标颜色",
+                                label: "图标颜色",
                                 controlType: "COLOR_PICKER",
                                 isBindProperty: false,
                                 isTriggerProperty: false,
                               },
                               {
                                 propertyName: "backgroundColor",
-                                helpText:
-                                  "Sets the background color of a menu item",
-                                label: "Background color",
+                                helpText: "设置菜单项背景颜色",
+                                label: "背景颜色",
                                 controlType: "COLOR_PICKER",
                                 isJSConvertible: true,
                                 isBindProperty: true,
@@ -382,8 +377,8 @@ class ButtonGroupWidget extends BaseWidget<
                               },
                               {
                                 propertyName: "textColor",
-                                helpText: "Sets the text color of a menu item",
-                                label: "Text color",
+                                helpText: "设置菜单项文本颜色",
+                                label: "文本颜色",
                                 controlType: "COLOR_PICKER",
                                 isBindProperty: false,
                                 isTriggerProperty: false,
@@ -396,7 +391,7 @@ class ButtonGroupWidget extends BaseWidget<
                   ],
                 },
                 {
-                  sectionName: "Events",
+                  sectionName: "事件",
                   hidden: (
                     props: ButtonGroupWidgetProps,
                     propertyPath: string,
@@ -410,7 +405,7 @@ class ButtonGroupWidget extends BaseWidget<
                   },
                   children: [
                     {
-                      helpText: "Triggers an action when the button is clicked",
+                      helpText: "点击按钮时触发",
                       propertyName: "onClick",
                       label: "onClick",
                       controlType: "ACTION_SELECTOR",
@@ -421,13 +416,13 @@ class ButtonGroupWidget extends BaseWidget<
                   ],
                 },
                 {
-                  sectionName: "Styles",
+                  sectionName: "样式",
                   children: [
                     {
                       getStylesheetValue,
                       propertyName: "buttonColor",
-                      helpText: "Changes the color of the button",
-                      label: "Button Color",
+                      helpText: "修改按钮颜色",
+                      label: "按钮颜色",
                       controlType: "COLOR_PICKER",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -442,24 +437,24 @@ class ButtonGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "buttonVariant",
-            label: "Button Variant",
+            label: "按钮类型",
             controlType: "DROP_DOWN",
-            helpText: "Sets the variant of the button",
+            helpText: "设置按钮类型",
             options: [
               {
-                label: "Primary",
+                label: "主按钮",
                 value: ButtonVariantTypes.PRIMARY,
               },
               {
-                label: "Secondary",
+                label: "次级按钮",
                 value: ButtonVariantTypes.SECONDARY,
               },
               {
-                label: "Tertiary",
+                label: "文本按钮",
                 value: ButtonVariantTypes.TERTIARY,
               },
             ],
@@ -480,9 +475,8 @@ class ButtonGroupWidget extends BaseWidget<
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -491,9 +485,8 @@ class ButtonGroupWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -508,13 +501,13 @@ class ButtonGroupWidget extends BaseWidget<
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
-            helpText: "Group Buttons",
+            helpText: "按钮组",
             propertyName: "groupButtons",
             controlType: "GROUP_BUTTONS",
-            label: "Buttons",
+            label: "按钮",
             isBindProperty: false,
             isTriggerProperty: false,
             dependencies: ["childStylesheet"],
@@ -536,20 +529,20 @@ class ButtonGroupWidget extends BaseWidget<
               },
               contentChildren: [
                 {
-                  sectionName: "Data",
+                  sectionName: "数据",
                   children: [
                     {
                       propertyName: "buttonType",
-                      label: "Button Type",
+                      label: "按钮类型",
                       controlType: "DROP_DOWN",
-                      helpText: "Sets button type",
+                      helpText: "设置按钮类型",
                       options: [
                         {
-                          label: "Simple",
+                          label: "普通按钮",
                           value: "SIMPLE",
                         },
                         {
-                          label: "Menu",
+                          label: "菜单按钮",
                           value: "MENU",
                         },
                       ],
@@ -576,10 +569,10 @@ class ButtonGroupWidget extends BaseWidget<
                         return buttonType !== "MENU";
                       },
                       dependencies: ["groupButtons"],
-                      helpText: "Menu Items",
+                      helpText: "菜单配置",
                       propertyName: "menuItems",
                       controlType: "MENU_ITEMS",
-                      label: "Menu Items",
+                      label: "菜单项",
                       isBindProperty: false,
                       isTriggerProperty: false,
                       panelConfig: {
@@ -600,14 +593,14 @@ class ButtonGroupWidget extends BaseWidget<
                         },
                         contentChildren: [
                           {
-                            sectionName: "Label",
+                            sectionName: "标签",
                             children: [
                               {
                                 propertyName: "label",
-                                helpText: "Sets the label of a menu item",
-                                label: "Text",
+                                helpText: "设置菜单项标签",
+                                label: "文本",
                                 controlType: "INPUT_TEXT",
-                                placeholderText: "Enter label",
+                                placeholderText: "请输入标签",
                                 isBindProperty: true,
                                 isTriggerProperty: false,
                                 validation: { type: ValidationTypes.TEXT },
@@ -615,13 +608,12 @@ class ButtonGroupWidget extends BaseWidget<
                             ],
                           },
                           {
-                            sectionName: "General",
+                            sectionName: "属性",
                             children: [
                               {
                                 propertyName: "isVisible",
-                                helpText:
-                                  "Controls the visibility of menu item",
-                                label: "Visible",
+                                helpText: "控制菜单项是否显示",
+                                label: "是否显示",
                                 controlType: "SWITCH",
                                 isJSConvertible: true,
                                 isBindProperty: true,
@@ -632,8 +624,8 @@ class ButtonGroupWidget extends BaseWidget<
                               },
                               {
                                 propertyName: "isDisabled",
-                                helpText: "Disables menu item",
-                                label: "Disabled",
+                                helpText: "禁用菜单项",
+                                label: "禁用",
                                 controlType: "SWITCH",
                                 isJSConvertible: true,
                                 isBindProperty: true,
@@ -645,11 +637,10 @@ class ButtonGroupWidget extends BaseWidget<
                             ],
                           },
                           {
-                            sectionName: "Events",
+                            sectionName: "事件",
                             children: [
                               {
-                                helpText:
-                                  "Triggers an action when the menu item is clicked",
+                                helpText: "点击菜单项时触发",
                                 propertyName: "onClick",
                                 label: "onClick",
                                 controlType: "ACTION_SELECTOR",
@@ -662,13 +653,12 @@ class ButtonGroupWidget extends BaseWidget<
                         ],
                         styleChildren: [
                           {
-                            sectionName: "Icon",
+                            sectionName: "图标配置",
                             children: [
                               {
                                 propertyName: "iconName",
-                                label: "Icon",
-                                helpText:
-                                  "Sets the icon to be used for a menu item",
+                                label: "图标",
+                                helpText: "设置菜单项的图标",
                                 controlType: "ICON_SELECT",
                                 isBindProperty: false,
                                 isTriggerProperty: false,
@@ -676,9 +666,8 @@ class ButtonGroupWidget extends BaseWidget<
                               },
                               {
                                 propertyName: "iconAlign",
-                                label: "Position",
-                                helpText:
-                                  "Sets the icon alignment of a menu item",
+                                label: "位置",
+                                helpText: "设置菜单项图标对齐方向",
                                 controlType: "ICON_TABS",
                                 options: [
                                   {
@@ -697,13 +686,12 @@ class ButtonGroupWidget extends BaseWidget<
                             ],
                           },
                           {
-                            sectionName: "Color",
+                            sectionName: "颜色配置",
                             children: [
                               {
                                 propertyName: "backgroundColor",
-                                helpText:
-                                  "Sets the background color of a menu item",
-                                label: "Background Color",
+                                helpText: "设置菜单项背景颜色",
+                                label: "背景颜色",
                                 controlType: "COLOR_PICKER",
                                 isJSConvertible: true,
                                 isBindProperty: true,
@@ -712,16 +700,16 @@ class ButtonGroupWidget extends BaseWidget<
                               },
                               {
                                 propertyName: "iconColor",
-                                helpText: "Sets the icon color of a menu item",
-                                label: "Icon Color",
+                                helpText: "设置菜单项图标颜色",
+                                label: "图标颜色",
                                 controlType: "COLOR_PICKER",
                                 isBindProperty: false,
                                 isTriggerProperty: false,
                               },
                               {
                                 propertyName: "textColor",
-                                helpText: "Sets the text color of a menu item",
-                                label: "Text Color",
+                                helpText: "设置菜单项文本颜色",
+                                label: "文本颜色",
                                 controlType: "COLOR_PICKER",
                                 isBindProperty: false,
                                 isTriggerProperty: false,
@@ -734,14 +722,14 @@ class ButtonGroupWidget extends BaseWidget<
                   ],
                 },
                 {
-                  sectionName: "Label",
+                  sectionName: "标签",
                   children: [
                     {
                       propertyName: "label",
-                      helpText: "Sets the label of a menu item",
-                      label: "Text",
+                      helpText: "设置菜单项标签",
+                      label: "文本",
                       controlType: "INPUT_TEXT",
-                      placeholderText: "Enter label",
+                      placeholderText: "请输入标签",
                       isBindProperty: true,
                       isTriggerProperty: false,
                       validation: { type: ValidationTypes.TEXT },
@@ -749,12 +737,12 @@ class ButtonGroupWidget extends BaseWidget<
                   ],
                 },
                 {
-                  sectionName: "General",
+                  sectionName: "属性",
                   children: [
                     {
                       propertyName: "isVisible",
-                      helpText: "Controls the visibility of the widget",
-                      label: "Visible",
+                      helpText: "控制组件的显示/隐藏",
+                      label: "是否显示",
                       controlType: "SWITCH",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -763,8 +751,8 @@ class ButtonGroupWidget extends BaseWidget<
                     },
                     {
                       propertyName: "isDisabled",
-                      helpText: "Disables input to the widget",
-                      label: "Disabled",
+                      helpText: "让组件不可交互",
+                      label: "禁用",
                       controlType: "SWITCH",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -774,7 +762,7 @@ class ButtonGroupWidget extends BaseWidget<
                   ],
                 },
                 {
-                  sectionName: "Events",
+                  sectionName: "事件",
                   hidden: (
                     props: ButtonGroupWidgetProps,
                     propertyPath: string,
@@ -788,7 +776,7 @@ class ButtonGroupWidget extends BaseWidget<
                   },
                   children: [
                     {
-                      helpText: "Triggers an action when the button is clicked",
+                      helpText: "点击按钮时触发",
                       propertyName: "onClick",
                       label: "onClick",
                       controlType: "ACTION_SELECTOR",
@@ -801,12 +789,12 @@ class ButtonGroupWidget extends BaseWidget<
               ],
               styleChildren: [
                 {
-                  sectionName: "Icon",
+                  sectionName: "图标配置",
                   children: [
                     {
                       propertyName: "iconName",
-                      label: "Icon",
-                      helpText: "Sets the icon to be used for a button",
+                      label: "图标",
+                      helpText: "选择按钮图标",
                       controlType: "ICON_SELECT",
                       isBindProperty: false,
                       isTriggerProperty: false,
@@ -814,8 +802,8 @@ class ButtonGroupWidget extends BaseWidget<
                     },
                     {
                       propertyName: "iconAlign",
-                      label: "Position",
-                      helpText: "Sets the icon alignment of a button",
+                      label: "位置",
+                      helpText: "设置按钮图标的对齐位置",
                       controlType: "ICON_TABS",
                       options: [
                         {
@@ -833,20 +821,20 @@ class ButtonGroupWidget extends BaseWidget<
                     },
                     {
                       propertyName: "placement",
-                      label: "Placement",
+                      label: "排列方式",
                       controlType: "DROP_DOWN",
-                      helpText: "Sets the space between items",
+                      helpText: "设置图标与标签的排列方式",
                       options: [
                         {
-                          label: "Start",
+                          label: "向前对齐",
                           value: ButtonPlacementTypes.START,
                         },
                         {
-                          label: "Between",
+                          label: "两边对齐",
                           value: ButtonPlacementTypes.BETWEEN,
                         },
                         {
-                          label: "Center",
+                          label: "居中对齐",
                           value: ButtonPlacementTypes.CENTER,
                         },
                       ],
@@ -869,13 +857,13 @@ class ButtonGroupWidget extends BaseWidget<
                   ],
                 },
                 {
-                  sectionName: "Color",
+                  sectionName: "颜色配置",
                   children: [
                     {
                       getStylesheetValue,
                       propertyName: "buttonColor",
-                      helpText: "Changes the color of the button",
-                      label: "Button Color",
+                      helpText: "修改按钮颜色",
+                      label: "按钮颜色",
                       controlType: "COLOR_PICKER",
                       isJSConvertible: true,
                       isBindProperty: true,
@@ -890,12 +878,12 @@ class ButtonGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -904,9 +892,9 @@ class ButtonGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables clicks to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -914,9 +902,9 @@ class ButtonGroupWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -931,24 +919,24 @@ class ButtonGroupWidget extends BaseWidget<
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "buttonVariant",
-            label: "Button Variant",
+            label: "按钮类型",
             controlType: "DROP_DOWN",
-            helpText: "Sets the variant of the button",
+            helpText: "设置按钮类型",
             options: [
               {
-                label: "Primary",
+                label: "主按钮",
                 value: ButtonVariantTypes.PRIMARY,
               },
               {
-                label: "Secondary",
+                label: "次级按钮",
                 value: ButtonVariantTypes.SECONDARY,
               },
               {
-                label: "Tertiary",
+                label: "文本按钮",
                 value: ButtonVariantTypes.TERTIARY,
               },
             ],
@@ -968,17 +956,17 @@ class ButtonGroupWidget extends BaseWidget<
             },
           },
           {
-            helpText: "Controls widget orientation",
+            helpText: "设置组件排列方向",
             propertyName: "orientation",
-            label: "Orientation",
+            label: "排列方向",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "Horizontal",
+                label: "水平",
                 value: "horizontal",
               },
               {
-                label: "Vertical",
+                label: "垂直",
                 value: "vertical",
               },
             ],
@@ -989,13 +977,12 @@ class ButtonGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -1004,9 +991,8 @@ class ButtonGroupWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

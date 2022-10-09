@@ -3,7 +3,7 @@ import { get } from "lodash";
 import { getBasePropertyPath, hideByColumnType } from "../../propertyUtils";
 
 export default {
-  sectionName: "Events",
+  sectionName: "事件",
   hidden: (props: TableWidgetProps, propertyPath: string) => {
     if (
       !hideByColumnType(
@@ -32,7 +32,7 @@ export default {
   children: [
     // Button, iconButton onClick
     {
-      helpText: "Triggers an action when the button is clicked",
+      helpText: "点击按钮时触发",
       propertyName: "onClick",
       label: "onClick",
       controlType: "ACTION_SELECTOR",

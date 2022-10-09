@@ -96,9 +96,8 @@ const PROPERTIES = {
   general: [
     {
       propertyName: "defaultValue",
-      label: "Default Date",
-      helpText:
-        "Sets the default date of the widget. The date is updated if the default date changes",
+      label: "默认日期",
+      helpText: "设置默认日期，默认日期修改后，组件当前日期会自动更新",
       controlType: "DATE_PICKER",
       placeholderText: "Enter Default Date",
       useValidationMessage: true,
@@ -112,9 +111,9 @@ const PROPERTIES = {
       dependencies: ["schema"],
     },
     {
-      helpText: "Sets the format of the selected date",
+      helpText: "设置所选日期的格式",
       propertyName: "dateFormat",
-      label: "Date Format",
+      label: "日期格式",
       controlType: "DROP_DOWN",
       isJSConvertible: true,
       customJSControl: "JSON_FORM_COMPUTE_VALUE",
@@ -130,21 +129,21 @@ const PROPERTIES = {
     },
     {
       propertyName: "timePrecision",
-      label: "Time precision",
+      label: "时间精度",
       controlType: "DROP_DOWN",
-      helpText: "Sets the different time picker or hide.",
+      helpText: "显示时间的精度",
       defaultValue: TimePrecision.MINUTE,
       options: [
         {
-          label: "None",
+          label: "无",
           value: TimePrecision.NONE,
         },
         {
-          label: "Minute",
+          label: "分钟",
           value: TimePrecision.MINUTE,
         },
         {
-          label: "Second",
+          label: "秒",
           value: TimePrecision.SECOND,
         },
       ],
@@ -168,8 +167,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "closeOnSelection",
-      label: "Close On Selection",
-      helpText: "Calender should close when a date is selected",
+      label: "选中后关闭",
+      helpText: "选中日期后自动关闭日期选择器",
       controlType: "SWITCH",
       isJSConvertible: false,
       isBindProperty: true,
@@ -182,8 +181,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "shortcuts",
-      label: "Show Shortcuts",
-      helpText: "Choose to show shortcut menu",
+      label: "显示快捷菜单",
+      helpText: "是否在日期选择器中显示快捷菜单",
       controlType: "SWITCH",
       isJSConvertible: false,
       isBindProperty: true,
@@ -196,9 +195,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "convertToISO",
-      label: "Convert to ISO format",
-      helpText:
-        "Enabling this always converts the value in ISO form in the formData irrespective of the 'Date Format' selected",
+      label: "转换成 ISO 格式",
+      helpText: "开启后日期都会转换成 ISO 格式",
       controlType: "SWITCH",
       isJSConvertible: false,
       isBindProperty: true,
@@ -211,8 +209,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "minDate",
-      label: "Min Date",
-      helpText: "Defines the min date for the field",
+      label: "最小日期",
+      helpText: "字段最小日期",
       controlType: "DATE_PICKER",
       useValidationMessage: true,
       isJSConvertible: true,
@@ -226,8 +224,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "maxDate",
-      label: "Max Date",
-      helpText: "Defines the max date for the field",
+      label: "最大日期",
+      helpText: "字段最大日期",
       controlType: "DATE_PICKER",
       useValidationMessage: true,
       isJSConvertible: true,
@@ -257,9 +255,9 @@ const PROPERTIES = {
   content: {
     data: [
       {
-        helpText: "Sets the format of the selected date",
+        helpText: "设置所选日期的格式",
         propertyName: "dateFormat",
-        label: "Date Format",
+        label: "日期格式",
         controlType: "DROP_DOWN",
         isJSConvertible: true,
         customJSControl: "JSON_FORM_COMPUTE_VALUE",
@@ -275,9 +273,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "defaultValue",
-        label: "Default Date",
-        helpText:
-          "Sets the default date of the widget. The date is updated if the default date changes",
+        label: "默认日期",
+        helpText: "设置默认日期，默认日期修改后，组件当前日期会自动更新",
         controlType: "DATE_PICKER",
         placeholderText: "Enter Default Date",
         useValidationMessage: true,
@@ -292,21 +289,21 @@ const PROPERTIES = {
       },
       {
         propertyName: "timePrecision",
-        label: "Time precision",
+        label: "时间精度",
         controlType: "DROP_DOWN",
-        helpText: "Sets the different time picker or hide.",
+        helpText: "显示时间的精度",
         defaultValue: TimePrecision.MINUTE,
         options: [
           {
-            label: "None",
+            label: "无",
             value: TimePrecision.NONE,
           },
           {
-            label: "Minute",
+            label: "分钟",
             value: TimePrecision.MINUTE,
           },
           {
-            label: "Second",
+            label: "秒",
             value: TimePrecision.SECOND,
           },
         ],
@@ -332,8 +329,8 @@ const PROPERTIES = {
     validation: [
       {
         propertyName: "minDate",
-        label: "Min Date",
-        helpText: "Defines the min date for the field",
+        label: "最小日期",
+        helpText: "字段最小日期",
         controlType: "DATE_PICKER",
         useValidationMessage: true,
         isJSConvertible: true,
@@ -347,8 +344,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "maxDate",
-        label: "Max Date",
-        helpText: "Defines the max date for the field",
+        label: "最大日期",
+        helpText: "字段最大日期",
         controlType: "DATE_PICKER",
         useValidationMessage: true,
         isJSConvertible: true,
@@ -364,9 +361,8 @@ const PROPERTIES = {
     general: [
       {
         propertyName: "convertToISO",
-        label: "Convert to ISO format",
-        helpText:
-          "Enabling this always converts the value in ISO form in the formData irrespective of the 'Date Format' selected",
+        label: "转换成 ISO 格式",
+        helpText: "开启后日期都会转换成 ISO 格式",
         controlType: "SWITCH",
         isJSConvertible: false,
         isBindProperty: true,
@@ -379,8 +375,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "shortcuts",
-        label: "Show Shortcuts",
-        helpText: "Choose to show shortcut menu",
+        label: "显示快捷菜单",
+        helpText: "是否在日期选择器中显示快捷菜单",
         controlType: "SWITCH",
         isJSConvertible: false,
         isBindProperty: true,
@@ -393,8 +389,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "closeOnSelection",
-        label: "Close On Selection",
-        helpText: "Calender should close when a date is selected",
+        label: "选中后关闭",
+        helpText: "选中日期后自动关闭日期选择器",
         controlType: "SWITCH",
         isJSConvertible: false,
         isBindProperty: true,

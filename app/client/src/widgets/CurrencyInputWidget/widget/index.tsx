@@ -100,12 +100,12 @@ class CurrencyInputWidget extends BaseInputWidget<
     return mergeWidgetConfig(
       [
         {
-          sectionName: "General",
+          sectionName: "属性",
           children: [
             {
               propertyName: "allowCurrencyChange",
-              label: "Allow currency change",
-              helpText: "Search by currency or country",
+              label: "允许修改货币",
+              helpText: "通过国家或者货币搜索",
               controlType: "SWITCH",
               isJSConvertible: false,
               isBindProperty: true,
@@ -113,13 +113,13 @@ class CurrencyInputWidget extends BaseInputWidget<
               validation: { type: ValidationTypes.BOOLEAN },
             },
             {
-              helpText: "Changes the type of currency",
+              helpText: "修改货币类型",
               propertyName: "defaultCurrencyCode",
-              label: "Currency",
+              label: "货币",
               enableSearch: true,
               dropdownHeight: "156px",
               controlType: "DROP_DOWN",
-              searchPlaceholderText: "Search by code or name",
+              searchPlaceholderText: "通过名称或者编号搜索",
               options: CurrencyDropdownOptions,
               isJSConvertible: true,
               isBindProperty: true,
@@ -129,9 +129,9 @@ class CurrencyInputWidget extends BaseInputWidget<
               },
             },
             {
-              helpText: "No. of decimals in currency input",
+              helpText: "货币精确到小数点后几位",
               propertyName: "decimals",
-              label: "Decimals",
+              label: "小数位",
               controlType: "DROP_DOWN",
               options: [
                 {
@@ -151,10 +151,9 @@ class CurrencyInputWidget extends BaseInputWidget<
               isTriggerProperty: false,
             },
             {
-              helpText:
-                "Sets the default text of the widget. The text is updated if the default text changes",
+              helpText: "设置组件默认值，当默认值改变后，组件当前值会自动更新",
               propertyName: "defaultText",
-              label: "Default Text",
+              label: "默认值",
               controlType: "INPUT_TEXT",
               placeholderText: "100",
               isBindProperty: true,
@@ -183,13 +182,12 @@ class CurrencyInputWidget extends BaseInputWidget<
     return mergeWidgetConfig(
       [
         {
-          sectionName: "Data",
+          sectionName: "数据",
           children: [
             {
-              helpText:
-                "Sets the default text of the widget. The text is updated if the default text changes",
+              helpText: "设置组件默认值，当默认值改变后，组件当前值会自动更新",
               propertyName: "defaultText",
-              label: "Default Value",
+              label: "默认值",
               controlType: "INPUT_TEXT",
               placeholderText: "100",
               isBindProperty: true,
@@ -208,13 +206,13 @@ class CurrencyInputWidget extends BaseInputWidget<
               dependencies: ["decimals"],
             },
             {
-              helpText: "Changes the type of currency",
+              helpText: "修改货币类型",
               propertyName: "defaultCurrencyCode",
-              label: "Currency",
+              label: "货币",
               enableSearch: true,
               dropdownHeight: "156px",
               controlType: "DROP_DOWN",
-              searchPlaceholderText: "Search by code or name",
+              searchPlaceholderText: "通过名称或者编号搜索",
               options: CurrencyDropdownOptions,
               isJSConvertible: true,
               isBindProperty: true,
@@ -225,8 +223,8 @@ class CurrencyInputWidget extends BaseInputWidget<
             },
             {
               propertyName: "allowCurrencyChange",
-              label: "Allow Currency Change",
-              helpText: "Search by currency or country",
+              label: "允许修改货币",
+              helpText: "通过国家或者货币搜索",
               controlType: "SWITCH",
               isJSConvertible: false,
               isBindProperty: true,
@@ -234,7 +232,7 @@ class CurrencyInputWidget extends BaseInputWidget<
               validation: { type: ValidationTypes.BOOLEAN },
             },
             {
-              helpText: "No. of decimals in currency input",
+              helpText: "货币精确到小数点后几位",
               propertyName: "decimals",
               label: "Decimals Allowed",
               controlType: "DROP_DOWN",
@@ -258,16 +256,16 @@ class CurrencyInputWidget extends BaseInputWidget<
           ],
         },
         {
-          sectionName: "Label",
+          sectionName: "标签",
           children: [],
         },
         {
-          sectionName: "Validation",
+          sectionName: "校验",
           children: [
             {
               propertyName: "isRequired",
-              label: "Required",
-              helpText: "Makes input to the widget mandatory",
+              label: "必填",
+              helpText: "强制用户填写",
               controlType: "SWITCH",
               isJSConvertible: true,
               isBindProperty: true,

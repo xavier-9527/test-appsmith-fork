@@ -3,7 +3,7 @@ import { ColumnTypes, TableWidgetProps } from "widgets/TableWidgetV2/constants";
 import { hideByColumnType } from "../../propertyUtils";
 
 export default {
-  sectionName: "Styles",
+  sectionName: "样式",
   hidden: (props: TableWidgetProps, propertyPath: string) => {
     return hideByColumnType(
       props,
@@ -16,7 +16,7 @@ export default {
   children: [
     {
       propertyName: "horizontalAlignment",
-      label: "Text Align",
+      label: "文本对齐方式",
       controlType: "ICON_TABS",
       options: [
         {
@@ -58,7 +58,7 @@ export default {
     },
     {
       propertyName: "textSize",
-      label: "Text Size",
+      label: "字体大小",
       controlType: "DROP_DOWN",
       isJSConvertible: true,
       customJSControl: "TABLE_COMPUTE_VALUE",
@@ -104,7 +104,7 @@ export default {
     },
     {
       propertyName: "fontStyle",
-      label: "Font Style",
+      label: "字体样式",
       controlType: "BUTTON_TABS",
       options: [
         {
@@ -142,7 +142,7 @@ export default {
     },
     {
       propertyName: "verticalAlignment",
-      label: "Vertical Alignment",
+      label: "垂直对齐",
       controlType: "ICON_TABS",
       options: [
         {
@@ -185,7 +185,7 @@ export default {
     },
     {
       propertyName: "textColor",
-      label: "Text Color",
+      label: "文本颜色",
       controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
       isJSConvertible: true,
       customJSControl: "TABLE_COMPUTE_VALUE",
@@ -212,7 +212,7 @@ export default {
     },
     {
       propertyName: "cellBackground",
-      label: "Cell Background",
+      label: "单元格背景颜色",
       controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
       isJSConvertible: true,
       customJSControl: "TABLE_COMPUTE_VALUE",

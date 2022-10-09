@@ -11,13 +11,13 @@ import { isColumnTypeEditable } from "../../utilities";
 import { composePropertyUpdateHook } from "widgets/WidgetUtils";
 
 export default {
-  sectionName: "General",
+  sectionName: "属性",
   children: [
     {
       propertyName: "isCellVisible",
       dependencies: ["primaryColumns", "columnType"],
-      label: "Visible",
-      helpText: "Controls the visibility of the cell in the column",
+      label: "是否显示",
+      helpText: "控制当前列是否显示",
       defaultValue: true,
       controlType: "SWITCH",
       customJSControl: "TABLE_COMPUTE_VALUE",
@@ -33,7 +33,7 @@ export default {
     },
     {
       propertyName: "isDisabled",
-      label: "Disabled",
+      label: "禁用",
       defaultValue: false,
       controlType: "SWITCH",
       customJSControl: "TABLE_COMPUTE_VALUE",
@@ -57,8 +57,8 @@ export default {
     },
     {
       propertyName: "isCompact",
-      helpText: "Decides if menu items will consume lesser space",
-      label: "Compact",
+      helpText: "菜单项占用更少的空间",
+      label: "紧凑模式",
       controlType: "SWITCH",
       customJSControl: "TABLE_COMPUTE_VALUE",
       isJSConvertible: true,
@@ -78,8 +78,8 @@ export default {
     {
       propertyName: "allowCellWrapping",
       dependencies: ["primaryColumns", "columnType"],
-      label: "Cell Wrapping",
-      helpText: "Allows content of the cell to be wrapped",
+      label: "单元格换行",
+      helpText: "允许单元格内容换行",
       defaultValue: true,
       controlType: "SWITCH",
       customJSControl: "TABLE_COMPUTE_VALUE",
@@ -110,8 +110,8 @@ export default {
         "childStylesheet",
         "inlineEditingSaveOption",
       ],
-      label: "Editable",
-      helpText: "Controls the cell's editablity",
+      label: "支持编辑",
+      helpText: "让表格单元格可以编辑",
       defaultValue: false,
       controlType: "SWITCH",
       customJSControl: "TABLE_COMPUTE_VALUE",

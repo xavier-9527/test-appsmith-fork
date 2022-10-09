@@ -29,13 +29,12 @@ class RichTextEditorWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "inputType",
-            helpText:
-              "Sets the input type of the default text property in widget.",
-            label: "Input Type",
+            helpText: "内容输入方式，支持HTML和Markdown",
+            label: "输入格式",
             controlType: "DROP_DOWN",
             options: [
               {
@@ -52,9 +51,7 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "defaultText",
-            helpText:
-              "Sets the default text of the widget. The text is updated if the default text changes",
-            label: "Default text",
+            label: "默认文本",
             controlType: "INPUT_TEXT",
             placeholderText: "<b>Hello World</b>",
             isBindProperty: true,
@@ -63,8 +60,7 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必须",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -73,8 +69,7 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否可见",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -83,8 +78,7 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            label: "Disable",
-            helpText: "Disables input to this widget",
+            label: "是否禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -93,9 +87,9 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -104,8 +98,8 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "isToolbarHidden",
-            label: "Hide toolbar",
-            helpText: "Controls the visibility of the toolbar",
+            label: "隐藏工具栏",
+            helpText: "设置是否隐藏工具栏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -115,36 +109,36 @@ class RichTextEditorWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "labelText",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter label text",
+            placeholderText: "请输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -164,10 +158,9 @@ class RichTextEditorWidget extends BaseWidget<
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -186,11 +179,11 @@ class RichTextEditorWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Text Color",
+            label: "文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -199,7 +192,7 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "labelTextSize",
-            label: "Text Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -239,7 +232,7 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "labelStyle",
-            label: "Label Font Style",
+            label: "字体样式",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -259,10 +252,10 @@ class RichTextEditorWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the text is changed",
+            helpText: "文本变化时触发",
             propertyName: "onTextChange",
             label: "onTextChange",
             controlType: "ACTION_SELECTOR",
@@ -273,13 +266,12 @@ class RichTextEditorWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,
@@ -289,9 +281,8 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -306,13 +297,12 @@ class RichTextEditorWidget extends BaseWidget<
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
             propertyName: "inputType",
-            helpText:
-              "Sets the input type of the default text property in widget.",
-            label: "Input Type",
+            helpText: "内容输入方式，支持HTML和Markdown",
+            label: "输入格式",
             controlType: "DROP_DOWN",
             options: [
               {
@@ -329,9 +319,8 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "defaultText",
-            helpText:
-              "Sets the default text of the widget. The text is updated if the default text changes",
-            label: "Default Value",
+            helpText: "设置组件默认值，当默认值改变后，组件当前值会自动更新",
+            label: "默认值",
             controlType: "INPUT_TEXT",
             placeholderText: "<b>Hello World</b>",
             isBindProperty: true,
@@ -341,36 +330,36 @@ class RichTextEditorWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "labelText",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter label text",
+            placeholderText: "请输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -390,10 +379,9 @@ class RichTextEditorWidget extends BaseWidget<
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -412,12 +400,12 @@ class RichTextEditorWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Validations",
+        sectionName: "校验",
         children: [
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -427,12 +415,12 @@ class RichTextEditorWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -441,8 +429,8 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
-            helpText: "Disables input to this widget",
+            label: "禁用",
+            helpText: "让组件不可交互",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -451,9 +439,9 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -462,8 +450,8 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "isToolbarHidden",
-            label: "Hide toolbar",
-            helpText: "Controls the visibility of the toolbar",
+            label: "隐藏工具栏",
+            helpText: "设置是否隐藏工具栏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -473,10 +461,10 @@ class RichTextEditorWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the text is changed",
+            helpText: "文本输入改变时触发",
             propertyName: "onTextChange",
             label: "onTextChanged",
             controlType: "ACTION_SELECTOR",
@@ -492,11 +480,11 @@ class RichTextEditorWidget extends BaseWidget<
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Font Color",
+            label: "字体颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -505,7 +493,7 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "labelTextSize",
-            label: "Font Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -545,7 +533,7 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "labelStyle",
-            label: "Emphasis",
+            label: "强调",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -565,13 +553,12 @@ class RichTextEditorWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,
@@ -581,9 +568,8 @@ class RichTextEditorWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

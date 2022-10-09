@@ -109,36 +109,36 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Changes the type of data captured in the input",
+            helpText: "输入的数据类型",
             propertyName: "inputType",
-            label: "Data Type",
+            label: "数据类型",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "Text",
+                label: "文本",
                 value: "TEXT",
               },
               {
-                label: "Number",
+                label: "数字",
                 value: "NUMBER",
               },
               {
-                label: "Password",
+                label: "密码",
                 value: "PASSWORD",
               },
               {
-                label: "Email",
+                label: "邮箱",
                 value: "EMAIL",
               },
               {
-                label: "Currency",
+                label: "货币",
                 value: "CURRENCY",
               },
               {
-                label: "Phone Number",
+                label: "手机号",
                 value: "PHONE_NUMBER",
               },
             ],
@@ -147,8 +147,8 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
           },
           {
             propertyName: "allowCurrencyChange",
-            label: "Allow currency change",
-            helpText: "Search by currency or country",
+            label: "允许修改货币",
+            helpText: "通过国家或者货币搜索",
             controlType: "SWITCH",
             isJSConvertible: false,
             isBindProperty: true,
@@ -160,13 +160,13 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             dependencies: ["inputType"],
           },
           {
-            helpText: "Changes the country code",
+            helpText: "修改默认的电话国家编号",
             propertyName: "phoneNumberCountryCode",
-            label: "Default Country Code",
+            label: "默认国家编号",
             enableSearch: true,
             dropdownHeight: "195px",
             controlType: "DROP_DOWN",
-            searchPlaceholderText: "Search by code or country name",
+            searchPlaceholderText: "通过国家名称或编号搜索",
             options: ISDCodeDropdownOptions,
             hidden: (props: InputWidgetProps) => {
               return props.inputType !== InputTypes.PHONE_NUMBER;
@@ -176,13 +176,13 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             isTriggerProperty: false,
           },
           {
-            helpText: "Changes the type of currency",
+            helpText: "修改货币类型",
             propertyName: "currencyCountryCode",
-            label: "Currency",
+            label: "货币",
             enableSearch: true,
             dropdownHeight: "195px",
             controlType: "DROP_DOWN",
-            searchPlaceholderText: "Search by code or name",
+            searchPlaceholderText: "通过名称或者编号搜索",
             options: CurrencyDropdownOptions,
             hidden: (props: InputWidgetProps) => {
               return props.inputType !== InputTypes.CURRENCY;
@@ -192,9 +192,9 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             isTriggerProperty: false,
           },
           {
-            helpText: "No. of decimals in currency input",
+            helpText: "货币精确到小数点后几位",
             propertyName: "decimalsInCurrency",
-            label: "Decimals",
+            label: "小数位",
             controlType: "DROP_DOWN",
             options: [
               {
@@ -214,9 +214,9 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             isTriggerProperty: false,
           },
           {
-            helpText: "Sets maximum allowed text length",
+            helpText: "设置最大输入字符长度",
             propertyName: "maxChars",
-            label: "Max Chars",
+            label: "最大字符数",
             controlType: "INPUT_TEXT",
             placeholderText: "255",
             isBindProperty: true,
@@ -228,12 +228,11 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             dependencies: ["inputType"],
           },
           {
-            helpText:
-              "Sets the default text of the widget. The text is updated if the default text changes",
+            helpText: "设置组件默认值，当默认值改变后，组件当前值会自动更新",
             propertyName: "defaultText",
-            label: "Default Text",
+            label: "默认值",
             controlType: "INPUT_TEXT",
-            placeholderText: "John Doe",
+            placeholderText: "John Wick",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -250,10 +249,9 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             dependencies: ["inputType"],
           },
           {
-            helpText:
-              "Adds a validation to the input which displays an error on failure",
+            helpText: "对输入进行正则校验，校验失败时显示错误",
             propertyName: "regex",
-            label: "Regex",
+            label: "正则校验",
             controlType: "INPUT_TEXT",
             placeholderText: "^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$",
             inputType: "TEXT",
@@ -262,9 +260,9 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.REGEX },
           },
           {
-            helpText: "Sets the input validity based on a JS expression",
+            helpText: "使用 JS 表达式来校验输入的是否合法",
             propertyName: "validation",
-            label: "Valid",
+            label: "普通校验",
             controlType: "INPUT_TEXT",
             placeholderText: "{{ Input1.text.length > 0 }}",
             inputType: "TEXT",
@@ -273,41 +271,40 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText:
-              "The error message to display if the regex or valid property check fails",
+            helpText: "普通校验或正则校验失败后显示的错误信息",
             propertyName: "errorMessage",
-            label: "Error Message",
+            label: "错误信息",
             controlType: "INPUT_TEXT",
-            placeholderText: "Not a valid email!",
+            placeholderText: "邮箱格式有误",
             inputType: "TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets a placeholder text for the input",
+            helpText: "输入为空时显示的占位字符",
             propertyName: "placeholderText",
-            label: "Placeholder",
+            label: "占位符",
             controlType: "INPUT_TEXT",
-            placeholderText: "Placeholder",
+            placeholderText: "占位符",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Show help text or details about current input",
+            helpText: "显示帮助信息或者当前输入的详情",
             propertyName: "tooltip",
-            label: "Tooltip",
+            label: "提示",
             controlType: "INPUT_TEXT",
-            placeholderText: "Passwords must be atleast 6 chars",
+            placeholderText: "密码不少于6位",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -315,9 +312,9 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -325,9 +322,9 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Disables input to this widget",
+            helpText: "让组件不可交互",
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -336,9 +333,9 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -346,9 +343,9 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Clears the input value after submit",
+            helpText: "提交后清空输入信息",
             propertyName: "resetOnSubmit",
-            label: "Reset on submit",
+            label: "提交后重置",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -356,9 +353,9 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Focus input automatically on load",
+            helpText: "加载后自动聚焦到输入框",
             propertyName: "autoFocus",
-            label: "Auto Focus",
+            label: "自动聚焦",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -367,9 +364,8 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
           },
           {
             propertyName: "isSpellCheck",
-            label: "Spellcheck",
-            helpText:
-              "Defines whether the text input may be checked for spelling errors",
+            label: "拼写检查",
+            helpText: "是否检查拼写错误",
             controlType: "SWITCH",
             isJSConvertible: false,
             isBindProperty: true,
@@ -383,36 +379,36 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "label",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Name:",
+            placeholderText: "名称：",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -432,10 +428,9 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -454,10 +449,10 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the text is changed",
+            helpText: "文本输入改变时触发",
             propertyName: "onTextChanged",
             label: "onTextChanged",
             controlType: "ACTION_SELECTOR",
@@ -466,8 +461,7 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText:
-              "Triggers an action on submit (when the enter key is pressed)",
+            helpText: "提交时触发（用户按了回车）",
             propertyName: "onSubmit",
             label: "onSubmit",
             controlType: "ACTION_SELECTOR",
@@ -478,11 +472,11 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Text Color",
+            label: "文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -496,7 +490,7 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelTextSize",
-            label: "Text Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -538,7 +532,7 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelStyle",
-            label: "Label Font Style",
+            label: "字体样式",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -558,7 +552,7 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Icon Options",
+        sectionName: "图标配置",
         hidden: (props: InputWidgetProps) => {
           const { inputType } = props;
           return inputType === "CURRENCY" || inputType === "PHONE_NUMBER";
@@ -567,8 +561,8 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
         children: [
           {
             propertyName: "iconName",
-            label: "Icon",
-            helpText: "Sets the icon to be used in input field",
+            label: "图标",
+            helpText: "设置输入框的图标",
             controlType: "ICON_SELECT",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -576,8 +570,8 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
           },
           {
             propertyName: "iconAlign",
-            label: "Icon alignment",
-            helpText: "Sets the icon alignment of input field",
+            label: "图标对齐",
+            helpText: "设置输入框图标的对齐方式",
             controlType: "ICON_TABS",
             options: [
               {
@@ -598,12 +592,12 @@ class InputWidget extends BaseWidget<InputWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "backgroundColor",
-            helpText: "Sets the background color of the widget",
-            label: "Background color",
+            helpText: "设置组件背景颜色",
+            label: "背景颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,

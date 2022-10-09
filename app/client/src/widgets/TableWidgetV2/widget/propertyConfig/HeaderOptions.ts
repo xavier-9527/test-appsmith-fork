@@ -2,12 +2,12 @@ import { ValidationTypes } from "constants/WidgetValidation";
 import { TableWidgetProps } from "widgets/TableWidgetV2/constants";
 
 export default {
-  sectionName: "Header options",
+  sectionName: "标题配置",
   children: [
     {
       propertyName: "isVisibleSearch",
-      helpText: "Toggle visibility of the search box",
-      label: "Search",
+      helpText: "是否显示的搜索框",
+      label: "搜索",
       controlType: "SWITCH",
       isJSConvertible: true,
       isBindProperty: true,
@@ -16,8 +16,8 @@ export default {
     },
     {
       propertyName: "isVisibleFilters",
-      helpText: "Toggle visibility of the filters",
-      label: "Filters",
+      helpText: "是否显示过滤器",
+      label: "过滤",
       controlType: "SWITCH",
       isJSConvertible: true,
       isBindProperty: true,
@@ -26,8 +26,8 @@ export default {
     },
     {
       propertyName: "isVisibleDownload",
-      helpText: "Toggle visibility of the data download",
-      label: "Download",
+      helpText: "是否显示下载按钮",
+      label: "下载",
       controlType: "SWITCH",
       isJSConvertible: true,
       isBindProperty: true,
@@ -36,8 +36,8 @@ export default {
     },
     {
       propertyName: "isVisiblePagination",
-      helpText: "Toggle visibility of the pagination",
-      label: "Pagination",
+      helpText: "是否显示分页器",
+      label: "分页",
       controlType: "SWITCH",
       isJSConvertible: true,
       isBindProperty: true,
@@ -46,10 +46,10 @@ export default {
     },
     {
       propertyName: "delimiter",
-      label: "CSV Separator",
+      label: "CSV 分隔符",
       controlType: "INPUT_TEXT",
-      placeholderText: "Enter CSV separator",
-      helpText: "The character used for separating the CSV download file.",
+      placeholderText: "输入 CSV 分隔符",
+      helpText: "用于分隔 CSV 下载文件的字符",
       isBindProperty: true,
       isTriggerProperty: false,
       defaultValue: ",",

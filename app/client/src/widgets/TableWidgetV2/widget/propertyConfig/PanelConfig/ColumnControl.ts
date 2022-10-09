@@ -21,15 +21,15 @@ import { isColumnTypeEditable } from "../../utilities";
 import { composePropertyUpdateHook } from "widgets/WidgetUtils";
 
 export default {
-  sectionName: "Column Control",
+  sectionName: "列控件",
   children: [
     {
       propertyName: "columnType",
-      label: "Column Type",
+      label: "列类型",
       controlType: "DROP_DOWN",
       options: [
         {
-          label: "Plain Text",
+          label: "文本",
           value: "text",
         },
         {
@@ -37,31 +37,31 @@ export default {
           value: "url",
         },
         {
-          label: "Number",
+          label: "数字",
           value: "number",
         },
         {
-          label: "Image",
+          label: "图片",
           value: "image",
         },
         {
-          label: "Video",
+          label: "视频",
           value: "video",
         },
         {
-          label: "Date",
+          label: "日期",
           value: "date",
         },
         {
-          label: "Button",
+          label: "按钮",
           value: "button",
         },
         {
-          label: "Menu Button",
+          label: "菜单按钮",
           value: "menuButton",
         },
         {
-          label: "Icon Button",
+          label: "图标按钮",
           value: "iconButton",
         },
       ],
@@ -80,7 +80,7 @@ export default {
     },
     {
       propertyName: "displayText",
-      label: "Display Text",
+      label: "显示文本",
       controlType: "TABLE_COMPUTE_VALUE",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         const baseProperty = getBasePropertyPath(propertyPath);
@@ -92,9 +92,9 @@ export default {
       isTriggerProperty: false,
     },
     {
-      helpText: "The alias that you use in selectedrow",
+      helpText: "在 selectedrow 中使用的别名",
       propertyName: "alias",
-      label: "Property name",
+      label: "别名",
       controlType: "INPUT_TEXT",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         const columnId = propertyPath.match(/primaryColumns\.(.*)\.alias/);
@@ -133,9 +133,9 @@ export default {
     },
     {
       helpText:
-        "The value computed & shown in each cell. Use {{currentRow}} to reference each row in the table. This property is not accessible outside the column settings.",
+        "每个单元格计算后的值，使用 {{currentRow}} 引用当前行数据，这个属性不能在这个列之外访问到",
       propertyName: "computedValue",
-      label: "Computed Value",
+      label: "计算值",
       controlType: "TABLE_COMPUTE_VALUE",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         return hideByColumnType(props, propertyPath, [
@@ -154,8 +154,8 @@ export default {
     {
       propertyName: "isCellVisible",
       dependencies: ["primaryColumns", "columnType"],
-      label: "Visible",
-      helpText: "Controls the visibility of the cell in the column",
+      label: "是否显示",
+      helpText: "控制当前列是否显示",
       defaultValue: true,
       controlType: "SWITCH",
       customJSControl: "TABLE_COMPUTE_VALUE",
@@ -172,8 +172,8 @@ export default {
     {
       propertyName: "allowCellWrapping",
       dependencies: ["primaryColumns", "columnType"],
-      label: "Cell Wrapping",
-      helpText: "Allows content of the cell to be wrapped",
+      label: "单元格换行",
+      helpText: "允许单元格内容换行",
       defaultValue: true,
       controlType: "SWITCH",
       customJSControl: "TABLE_COMPUTE_VALUE",
@@ -204,8 +204,8 @@ export default {
         "childStylesheet",
         "inlineEditingSaveOption",
       ],
-      label: "Editable",
-      helpText: "Controls the cell's editablity",
+      label: "支持编辑",
+      helpText: "让表格单元格可以编辑",
       defaultValue: false,
       controlType: "SWITCH",
       customJSControl: "TABLE_COMPUTE_VALUE",
@@ -231,7 +231,7 @@ export default {
     },
     {
       propertyName: "isDisabled",
-      label: "Disabled",
+      label: "禁用",
       defaultValue: false,
       controlType: "SWITCH",
       customJSControl: "TABLE_COMPUTE_VALUE",
@@ -255,8 +255,8 @@ export default {
     },
     {
       propertyName: "isCompact",
-      helpText: "Decides if menu items will consume lesser space",
-      label: "Compact",
+      helpText: "菜单项占用更少的空间",
+      label: "紧凑模式",
       controlType: "SWITCH",
       customJSControl: "TABLE_COMPUTE_VALUE",
       isJSConvertible: true,
@@ -275,8 +275,8 @@ export default {
     },
     {
       propertyName: "selectOptions",
-      helpText: "Options to be shown on the select dropdown",
-      label: "Select Options",
+      helpText: "下拉选择框的可选选项",
+      label: "选项",
       controlType: "INPUT_TEXT",
       isJSConvertible: false,
       isBindProperty: true,
@@ -294,15 +294,15 @@ export default {
     },
     {
       propertyName: "inputFormat",
-      label: "Original Date Format",
+      label: "原始日期类型",
       controlType: "DROP_DOWN",
       options: [
         {
-          label: "UNIX timestamp (s)",
+          label: "UNIX 时间戳 (s)",
           value: DateInputFormat.EPOCH,
         },
         {
-          label: "UNIX timestamp (ms)",
+          label: "UNIX 时间戳 (ms)",
           value: DateInputFormat.MILLISECONDS,
         },
         {
@@ -422,17 +422,17 @@ export default {
     },
     {
       propertyName: "outputFormat",
-      label: "Display Date Format",
+      label: "展示日期格式",
       controlType: "DROP_DOWN",
       customJSControl: "TABLE_COMPUTE_VALUE",
       isJSConvertible: true,
       options: [
         {
-          label: "UNIX timestamp (s)",
+          label: "UNIX 时间戳 (s)",
           value: DateInputFormat.EPOCH,
         },
         {
-          label: "UNIX timestamp (ms)",
+          label: "UNIX 时间戳 (ms)",
           value: DateInputFormat.MILLISECONDS,
         },
         {

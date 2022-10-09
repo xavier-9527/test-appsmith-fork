@@ -16,7 +16,7 @@ import { THEMEING_TEXT_SIZES } from "constants/ThemeConstants";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "Modal",
+  name: "弹窗",
   iconSVG: IconSVG,
   needsMeta: true,
   isCanvas: true,
@@ -75,7 +75,7 @@ export const CONFIG = {
                     cols: 40,
                   },
                   props: {
-                    text: "Modal Title",
+                    text: "弹窗标题",
                     fontSize: THEMEING_TEXT_SIZES.lg,
                     version: 1,
                   },
@@ -91,7 +91,7 @@ export const CONFIG = {
                     cols: 16,
                   },
                   props: {
-                    text: "Close",
+                    text: "关闭",
                     buttonStyle: "PRIMARY",
                     buttonVariant: ButtonVariantTypes.SECONDARY,
                     version: 1,
@@ -108,7 +108,7 @@ export const CONFIG = {
                     cols: 16,
                   },
                   props: {
-                    text: "Confirm",
+                    text: "确定",
                     buttonStyle: "PRIMARY_BUTTON",
                     version: 1,
                   },

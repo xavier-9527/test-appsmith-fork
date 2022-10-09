@@ -6,46 +6,46 @@ import { isLabelOrientationApplicableFor } from "../component";
 
 export default [
   {
-    sectionName: "General",
+    sectionName: "属性",
     children: [
       {
-        helpText: "Adds a title to the chart",
-        placeholderText: "Sales Report",
+        helpText: "给图表添加标题",
+        placeholderText: "销售报告",
         propertyName: "chartName",
-        label: "Title",
+        label: "标题",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
         validation: { type: ValidationTypes.TEXT },
       },
       {
-        helpText: "Changes the visualisation of the chart data",
+        helpText: "修改图表数据展示形态",
         propertyName: "chartType",
-        label: "Chart Type",
+        label: "图表类型",
         controlType: "DROP_DOWN",
         options: [
           {
-            label: "Line Chart",
+            label: "折线图",
             value: "LINE_CHART",
           },
           {
-            label: "Bar Chart",
+            label: "水平柱状图",
             value: "BAR_CHART",
           },
           {
-            label: "Pie Chart",
+            label: "饼图",
             value: "PIE_CHART",
           },
           {
-            label: "Column Chart",
+            label: "垂直柱状图",
             value: "COLUMN_CHART",
           },
           {
-            label: "Area Chart",
+            label: "面积图",
             value: "AREA_CHART",
           },
           {
-            label: "Custom Chart",
+            label: "自定义图表",
             value: "CUSTOM_FUSION_CHART",
           },
         ],
@@ -67,10 +67,10 @@ export default [
         },
       },
       {
-        helpText: "Configure a Custom FusionChart see docs.appsmith.com",
-        placeholderText: `Fusion Chart Config`,
+        helpText: "完整配置请查阅 Fusion 官方文档",
+        placeholderText: `Fusion 图表配置`,
         propertyName: "customFusionChartConfig",
-        label: "Custom Fusion Chart",
+        label: "自定义 Fusion 图表",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -143,10 +143,10 @@ export default [
         evaluationSubstitutionType: EvaluationSubstitutionType.SMART_SUBSTITUTE,
       },
       {
-        helpText: "Populates the chart with the data",
+        helpText: "给图表添加数据",
         propertyName: "chartData",
         placeholderText: '[{ "x": "2021", "y": "94000" }]',
-        label: "Chart Series",
+        label: "图表序列",
         controlType: "CHART_DATA",
         isBindProperty: false,
         isTriggerProperty: false,
@@ -157,7 +157,7 @@ export default [
           {
             helpText: "Series data",
             propertyName: "data",
-            label: "Series Data",
+            label: "序列数据",
             controlType: "INPUT_TEXT_AREA",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -196,7 +196,7 @@ export default [
           {
             helpText: "Series Name",
             propertyName: "seriesName",
-            label: "Series Name",
+            label: "序列名称",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -206,8 +206,8 @@ export default [
       },
       {
         propertyName: "isVisible",
-        label: "Visible",
-        helpText: "Controls the visibility of the widget",
+        label: "是否显示",
+        helpText: "控制组件的显示/隐藏",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -216,9 +216,9 @@ export default [
       },
       {
         propertyName: "animateLoading",
-        label: "Animate Loading",
+        label: "加载时显示动画",
         controlType: "SWITCH",
-        helpText: "Controls the loading of the widget",
+        helpText: "组件依赖的数据加载时显示加载动画",
         defaultValue: true,
         isJSConvertible: true,
         isBindProperty: true,
@@ -226,9 +226,9 @@ export default [
         validation: { type: ValidationTypes.BOOLEAN },
       },
       {
-        helpText: "Enables scrolling inside the chart",
+        helpText: "允许图表内部滚动",
         propertyName: "allowScroll",
-        label: "Allow scroll",
+        label: "允许滚动",
         controlType: "SWITCH",
         isBindProperty: false,
         isTriggerProperty: false,
@@ -239,13 +239,13 @@ export default [
     ],
   },
   {
-    sectionName: "Axis",
+    sectionName: "坐标轴配置",
     children: [
       {
-        helpText: "Specifies the label of the x-axis",
+        helpText: "设置x轴标签",
         propertyName: "xAxisName",
-        placeholderText: "Dates",
-        label: "x-axis Label",
+        placeholderText: "日期",
+        label: "x轴标签",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -254,10 +254,10 @@ export default [
         dependencies: ["chartType"],
       },
       {
-        helpText: "Specifies the label of the y-axis",
+        helpText: "设置y轴标签",
         propertyName: "yAxisName",
-        placeholderText: "Revenue",
-        label: "y-axis Label",
+        placeholderText: "收入",
+        label: "y轴标签",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -266,9 +266,9 @@ export default [
         dependencies: ["chartType"],
       },
       {
-        helpText: "Changes the x-axis label orientation",
+        helpText: "修改x轴标签方向",
         propertyName: "labelOrientation",
-        label: "x-axis Label Orientation",
+        label: "x轴标签方向",
         hidden: (x: ChartWidgetProps) =>
           !isLabelOrientationApplicableFor(x.chartType),
         isBindProperty: false,
@@ -277,27 +277,27 @@ export default [
         controlType: "DROP_DOWN",
         options: [
           {
-            label: "Auto",
+            label: "自动",
             value: LabelOrientation.AUTO,
           },
           {
-            label: "Slant",
+            label: "倾斜",
             value: LabelOrientation.SLANT,
           },
           {
-            label: "Rotate",
+            label: "旋转",
             value: LabelOrientation.ROTATE,
           },
           {
-            label: "Stagger",
+            label: "交错",
             value: LabelOrientation.STAGGER,
           },
         ],
       },
       {
         propertyName: "setAdaptiveYMin",
-        label: "Adaptive Axis",
-        helpText: "Define the minimum scale for X/Y axis",
+        label: "自适应坐标轴",
+        helpText: "定义坐标轴最小刻度",
         controlType: "SWITCH",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -306,10 +306,10 @@ export default [
     ],
   },
   {
-    sectionName: "Events",
+    sectionName: "事件",
     children: [
       {
-        helpText: "Triggers an action when the chart data point is clicked",
+        helpText: "点击数据点时触发",
         propertyName: "onDataPointClick",
         label: "onDataPointClick",
         controlType: "ACTION_SELECTOR",
@@ -320,12 +320,12 @@ export default [
     ],
   },
   {
-    sectionName: "Styles",
+    sectionName: "样式",
     children: [
       {
         propertyName: "borderRadius",
-        label: "Border Radius",
-        helpText: "Rounds the corners of the icon button's outer border edge",
+        label: "边框圆角",
+        helpText: "边框圆角样式",
         controlType: "BORDER_RADIUS_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -334,9 +334,8 @@ export default [
       },
       {
         propertyName: "boxShadow",
-        label: "Box Shadow",
-        helpText:
-          "Enables you to cast a drop shadow from the frame of the widget",
+        label: "阴影",
+        helpText: "组件轮廓投影",
         controlType: "BOX_SHADOW_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -349,36 +348,36 @@ export default [
 
 export const contentConfig = [
   {
-    sectionName: "Data",
+    sectionName: "数据",
     children: [
       {
-        helpText: "Changes the visualisation of the chart data",
+        helpText: "修改图表数据展示形态",
         propertyName: "chartType",
-        label: "Chart Type",
+        label: "图表类型",
         controlType: "DROP_DOWN",
         options: [
           {
-            label: "Line Chart",
+            label: "折线图",
             value: "LINE_CHART",
           },
           {
-            label: "Bar Chart",
+            label: "水平柱状图",
             value: "BAR_CHART",
           },
           {
-            label: "Pie Chart",
+            label: "饼图",
             value: "PIE_CHART",
           },
           {
-            label: "Column Chart",
+            label: "垂直柱状图",
             value: "COLUMN_CHART",
           },
           {
-            label: "Area Chart",
+            label: "面积图",
             value: "AREA_CHART",
           },
           {
-            label: "Custom Chart",
+            label: "自定义图表",
             value: "CUSTOM_FUSION_CHART",
           },
         ],
@@ -400,10 +399,10 @@ export const contentConfig = [
         },
       },
       {
-        helpText: "Configure a Custom FusionChart see docs.appsmith.com",
-        placeholderText: `Fusion Chart Config`,
+        helpText: "完整配置请查阅 Fusion 官方文档",
+        placeholderText: `Fusion 图表配置`,
         propertyName: "customFusionChartConfig",
-        label: "Custom Fusion Chart",
+        label: "自定义 Fusion 图表",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -476,10 +475,10 @@ export const contentConfig = [
         evaluationSubstitutionType: EvaluationSubstitutionType.SMART_SUBSTITUTE,
       },
       {
-        helpText: "Populates the chart with the data",
+        helpText: "给图表添加数据",
         propertyName: "chartData",
         placeholderText: '[{ "x": "2021", "y": "94000" }]',
-        label: "Chart Series",
+        label: "图表序列",
         controlType: "CHART_DATA",
         isBindProperty: false,
         isTriggerProperty: false,
@@ -490,7 +489,7 @@ export const contentConfig = [
           {
             helpText: "Series data",
             propertyName: "data",
-            label: "Series Data",
+            label: "序列数据",
             controlType: "INPUT_TEXT_AREA",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -529,7 +528,7 @@ export const contentConfig = [
           {
             helpText: "Series Name",
             propertyName: "seriesName",
-            label: "Series Name",
+            label: "序列名称",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -540,13 +539,13 @@ export const contentConfig = [
     ],
   },
   {
-    sectionName: "General",
+    sectionName: "属性",
     children: [
       {
-        helpText: "Adds a title to the chart",
-        placeholderText: "Sales Report",
+        helpText: "给图表添加标题",
+        placeholderText: "销售报告",
         propertyName: "chartName",
-        label: "Title",
+        label: "标题",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -554,8 +553,8 @@ export const contentConfig = [
       },
       {
         propertyName: "isVisible",
-        label: "Visible",
-        helpText: "Controls the visibility of the widget",
+        label: "是否显示",
+        helpText: "控制组件的显示/隐藏",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -564,9 +563,9 @@ export const contentConfig = [
       },
       {
         propertyName: "animateLoading",
-        label: "Animate Loading",
+        label: "加载时显示动画",
         controlType: "SWITCH",
-        helpText: "Controls the loading of the widget",
+        helpText: "组件依赖的数据加载时显示加载动画",
         defaultValue: true,
         isJSConvertible: true,
         isBindProperty: true,
@@ -574,9 +573,9 @@ export const contentConfig = [
         validation: { type: ValidationTypes.BOOLEAN },
       },
       {
-        helpText: "Enables scrolling inside the chart",
+        helpText: "允许图表内部滚动",
         propertyName: "allowScroll",
-        label: "Allow scroll",
+        label: "允许滚动",
         controlType: "SWITCH",
         isBindProperty: false,
         isTriggerProperty: false,
@@ -587,22 +586,22 @@ export const contentConfig = [
     ],
   },
   {
-    sectionName: "Axis",
+    sectionName: "坐标轴配置",
     children: [
       {
         propertyName: "setAdaptiveYMin",
-        label: "Adaptive Axis",
-        helpText: "Define the minimum scale for X/Y axis",
+        label: "自适应坐标轴",
+        helpText: "定义坐标轴最小刻度",
         controlType: "SWITCH",
         isBindProperty: true,
         isTriggerProperty: false,
         validation: { type: ValidationTypes.BOOLEAN },
       },
       {
-        helpText: "Specifies the label of the x-axis",
+        helpText: "设置x轴标签",
         propertyName: "xAxisName",
-        placeholderText: "Dates",
-        label: "x-axis Label",
+        placeholderText: "日期",
+        label: "x轴标签",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -611,10 +610,10 @@ export const contentConfig = [
         dependencies: ["chartType"],
       },
       {
-        helpText: "Specifies the label of the y-axis",
+        helpText: "设置y轴标签",
         propertyName: "yAxisName",
-        placeholderText: "Revenue",
-        label: "y-axis Label",
+        placeholderText: "收入",
+        label: "y轴标签",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -623,9 +622,9 @@ export const contentConfig = [
         dependencies: ["chartType"],
       },
       {
-        helpText: "Changes the x-axis label orientation",
+        helpText: "修改x轴标签方向",
         propertyName: "labelOrientation",
-        label: "x-axis Label Orientation",
+        label: "x轴标签方向",
         hidden: (x: ChartWidgetProps) =>
           !isLabelOrientationApplicableFor(x.chartType),
         isBindProperty: false,
@@ -634,19 +633,19 @@ export const contentConfig = [
         controlType: "DROP_DOWN",
         options: [
           {
-            label: "Auto",
+            label: "自动",
             value: LabelOrientation.AUTO,
           },
           {
-            label: "Slant",
+            label: "倾斜",
             value: LabelOrientation.SLANT,
           },
           {
-            label: "Rotate",
+            label: "旋转",
             value: LabelOrientation.ROTATE,
           },
           {
-            label: "Stagger",
+            label: "交错",
             value: LabelOrientation.STAGGER,
           },
         ],
@@ -654,10 +653,10 @@ export const contentConfig = [
     ],
   },
   {
-    sectionName: "Events",
+    sectionName: "事件",
     children: [
       {
-        helpText: "Triggers an action when the chart data point is clicked",
+        helpText: "点击数据点时触发",
         propertyName: "onDataPointClick",
         label: "onDataPointClick",
         controlType: "ACTION_SELECTOR",
@@ -671,12 +670,12 @@ export const contentConfig = [
 
 export const styleConfig = [
   {
-    sectionName: "Border and Shadow",
+    sectionName: "轮廓样式",
     children: [
       {
         propertyName: "borderRadius",
-        label: "Border Radius",
-        helpText: "Rounds the corners of the icon button's outer border edge",
+        label: "边框圆角",
+        helpText: "边框圆角样式",
         controlType: "BORDER_RADIUS_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -685,9 +684,8 @@ export const styleConfig = [
       },
       {
         propertyName: "boxShadow",
-        label: "Box Shadow",
-        helpText:
-          "Enables you to cast a drop shadow from the frame of the widget",
+        label: "阴影",
+        helpText: "组件轮廓投影",
         controlType: "BOX_SHADOW_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,

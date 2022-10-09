@@ -48,11 +48,11 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "mapCenter",
-            label: "Initial location",
+            label: "初始位置",
             isJSConvertible: true,
             controlType: "LOCATION_SEARCH",
             isBindProperty: true,
@@ -87,10 +87,10 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
           },
           {
             propertyName: "defaultMarkers",
-            label: "Default markers",
+            label: "默认标记",
             controlType: "INPUT_TEXT",
             inputType: "ARRAY",
-            helpText: "Sets the default markers on the map",
+            helpText: "设置地图的默认标记",
             placeholderText: '[{ "lat": "val1", "long": "val2" }]',
             isBindProperty: true,
             isTriggerProperty: false,
@@ -140,41 +140,40 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
           },
           {
             propertyName: "isClickedMarkerCentered",
-            label: "Map & Marker centering",
-            helpText:
-              "Controls whether the clicked marker is centered on the map",
+            label: "居中标记",
+            helpText: "是否将选中的标记在地图上居中显示",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "enableSearch",
-            label: "Enable search location",
-            helpText: "Allows a user to search for a location",
+            label: "允许搜索位置",
+            helpText: "允许用户搜索位置",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "enablePickLocation",
-            label: "Enable pick location",
-            helpText: "Allows a user to pick their location",
+            label: "允许选中位置",
+            helpText: "允许用户选中位置",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "enableCreateMarker",
-            label: "Create new marker",
-            helpText: "Allows users to mark locations on the map",
+            label: "允许标记",
+            helpText: "允许用户在地图上创建标记",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -183,9 +182,9 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -194,9 +193,9 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
           },
           {
             propertyName: "zoomLevel",
-            label: "Zoom Level",
+            label: "缩放比例",
             controlType: "STEP",
-            helpText: "Changes the default zoom of the map",
+            helpText: "设置地图默认缩放比例",
             stepType: "ZOOM_PERCENTAGE",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -204,7 +203,7 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
             propertyName: "onMarkerClick",
@@ -226,13 +225,12 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
       },
 
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,
@@ -242,9 +240,8 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -259,11 +256,11 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
             propertyName: "mapCenter",
-            label: "Initial location",
+            label: "初始位置",
             isJSConvertible: true,
             controlType: "LOCATION_SEARCH",
             isBindProperty: true,
@@ -298,10 +295,10 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
           },
           {
             propertyName: "defaultMarkers",
-            label: "Default markers",
+            label: "默认标记",
             controlType: "INPUT_TEXT",
             inputType: "ARRAY",
-            helpText: "Sets the default markers on the map",
+            helpText: "设置地图的默认标记",
             placeholderText: '[{ "lat": "val1", "long": "val2" }]',
             isBindProperty: true,
             isTriggerProperty: false,
@@ -352,21 +349,21 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "zoomLevel",
-            label: "Zoom Level",
+            label: "缩放比例",
             controlType: "STEP",
-            helpText: "Changes the default zoom of the map",
+            helpText: "设置地图默认缩放比例",
             stepType: "ZOOM_PERCENTAGE",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -375,9 +372,9 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -386,25 +383,24 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
           },
           {
             propertyName: "enablePickLocation",
-            label: "Enable pick location",
-            helpText: "Allows a user to pick their location",
+            label: "允许选中位置",
+            helpText: "允许用户选中位置",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "isClickedMarkerCentered",
-            label: "Map & Marker centering",
-            helpText:
-              "Controls whether the clicked marker is centered on the map",
+            label: "居中标记",
+            helpText: "是否将选中的标记在地图上居中显示",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "enableSearch",
-            label: "Enable search location",
-            helpText: "Allows a user to search for a location",
+            label: "允许搜索位置",
+            helpText: "允许用户搜索位置",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -416,8 +412,8 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
         children: [
           {
             propertyName: "enableCreateMarker",
-            label: "Create new marker",
-            helpText: "Allows users to mark locations on the map",
+            label: "允许标记",
+            helpText: "允许用户在地图上创建标记",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -437,7 +433,7 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
             propertyName: "onMarkerClick",
@@ -455,13 +451,12 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,
@@ -471,9 +466,8 @@ class MapWidget extends BaseWidget<MapWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

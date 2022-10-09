@@ -28,15 +28,13 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "defaultDate",
-            label: "Default Date",
-            helpText:
-              "Sets the default date of the widget. The date is updated if the default date changes",
+            label: "默认日期",
             controlType: "DATE_PICKER",
-            placeholderText: "Enter Default Date",
+            placeholderText: "输入默认日期",
             useValidationMessage: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -44,9 +42,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
             validation: { type: ValidationTypes.DATE_ISO_STRING },
           },
           {
-            helpText: "Sets the format of the selected date",
             propertyName: "dateFormat",
-            label: "Date Format",
+            label: "日期格式",
             controlType: "DROP_DOWN",
             isJSConvertible: true,
             optionWidth: "340px",
@@ -58,21 +55,21 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "timePrecision",
-            label: "Time precision",
+            label: "时间精度",
             controlType: "DROP_DOWN",
-            helpText: "Sets the different time picker or hide.",
+            helpText: "显示时间的精度",
             defaultValue: TimePrecision.MINUTE,
             options: [
               {
-                label: "None",
+                label: "无",
                 value: TimePrecision.NONE,
               },
               {
-                label: "Minute",
+                label: "分钟",
                 value: TimePrecision.MINUTE,
               },
               {
-                label: "Second",
+                label: "秒",
                 value: TimePrecision.SECOND,
               },
             ],
@@ -93,8 +90,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "是否必须",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -103,8 +99,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否可见",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -113,8 +108,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
-            helpText: "Disables input to this widget",
+            label: "是否禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -123,9 +117,9 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -134,8 +128,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "closeOnSelection",
-            label: "Close On Selection",
-            helpText: "Calender should close when a date is selected",
+            label: "选中日期后关闭",
             controlType: "SWITCH",
             defaultValue: true,
             isJSConvertible: false,
@@ -145,8 +138,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "shortcuts",
-            label: "Show Shortcuts",
-            helpText: "Choose to show shortcut menu",
+            label: "显示快捷菜单",
             controlType: "SWITCH",
             isJSConvertible: false,
             isBindProperty: true,
@@ -155,8 +147,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "minDate",
-            label: "Min Date",
-            helpText: "Defines the min date for this widget",
+            label: "最小日期",
             controlType: "DATE_PICKER",
             useValidationMessage: true,
             isJSConvertible: true,
@@ -166,8 +157,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "maxDate",
-            label: "Max Date",
-            helpText: "Defines the max date for this widget",
+            label: "最大日期",
             controlType: "DATE_PICKER",
             useValidationMessage: true,
             isJSConvertible: true,
@@ -177,8 +167,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "firstDayOfWeek",
-            label: "First Day Of Week",
-            helpText: "Defines the first day of the week for calendar",
+            label: "每周第一天",
+            helpText: "设置每周的第一天是星期几",
             controlType: "INPUT_TEXT",
             defaultValue: "0",
             inputType: "INTEGER",
@@ -191,7 +181,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
                 fn: allowedRange,
                 expected: {
                   type:
-                    "0 : sunday\n1 : monday\n2 : tuesday\n3 : wednesday\n4 : thursday\n5 : friday\n6 : saturday",
+                    "0 : 星期天\n1 : 星期一\n2 : 星期二\n3 : 星期三\n4 : 星期四\n5 : 星期五\n6 : 星期六",
                   example: "0",
                   autocompleteDataType: AutocompleteDataType.STRING,
                 },
@@ -201,36 +191,36 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "label",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter label text",
+            placeholderText: "请输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -250,10 +240,9 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -272,11 +261,11 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Label Text Color",
+            label: "标签文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -285,7 +274,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "labelTextSize",
-            label: "Label Text Size",
+            label: "标签文本大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -327,7 +316,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "labelStyle",
-            label: "Label Font Style",
+            label: "字体样式",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -347,7 +336,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
             propertyName: "onDateSelected",
@@ -361,11 +350,11 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
       },
 
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "accentColor",
-            label: "Accent Color",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -375,9 +364,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -386,9 +374,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -403,12 +390,12 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
-            helpText: "Sets the format of the selected date",
+            helpText: "设置所选日期的格式",
             propertyName: "dateFormat",
-            label: "Date Format",
+            label: "日期格式",
             controlType: "DROP_DOWN",
             isJSConvertible: true,
             optionWidth: "340px",
@@ -420,9 +407,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "defaultDate",
-            label: "Default Date",
-            helpText:
-              "Sets the default date of the widget. The date is updated if the default date changes",
+            label: "默认日期",
+            helpText: "设置默认日期，默认日期修改后，组件当前日期会自动更新",
             controlType: "DATE_PICKER",
             placeholderText: "Enter Default Date",
             useValidationMessage: true,
@@ -433,8 +419,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "firstDayOfWeek",
-            label: "First Day Of Week",
-            helpText: "Defines the first day of the week for calendar",
+            label: "每周第一天",
+            helpText: "设置每周的第一天是星期几",
             controlType: "INPUT_TEXT",
             defaultValue: "0",
             inputType: "INTEGER",
@@ -447,7 +433,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
                 fn: allowedRange,
                 expected: {
                   type:
-                    "0 : sunday\n1 : monday\n2 : tuesday\n3 : wednesday\n4 : thursday\n5 : friday\n6 : saturday",
+                    "0 : 星期天\n1 : 星期一\n2 : 星期二\n3 : 星期三\n4 : 星期四\n5 : 星期五\n6 : 星期六",
                   example: "0",
                   autocompleteDataType: AutocompleteDataType.STRING,
                 },
@@ -456,21 +442,21 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "timePrecision",
-            label: "Time Precision",
+            label: "时间精度",
             controlType: "DROP_DOWN",
-            helpText: "Sets the different time picker or hide.",
+            helpText: "显示时间的精度",
             defaultValue: TimePrecision.MINUTE,
             options: [
               {
-                label: "None",
+                label: "无",
                 value: TimePrecision.NONE,
               },
               {
-                label: "Minute",
+                label: "分钟",
                 value: TimePrecision.MINUTE,
               },
               {
-                label: "Second",
+                label: "秒",
                 value: TimePrecision.SECOND,
               },
             ],
@@ -492,36 +478,36 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "label",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter label text",
+            placeholderText: "请输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -541,10 +527,9 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -563,12 +548,12 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
         ],
       },
       {
-        sectionName: "Validation",
+        sectionName: "校验",
         children: [
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -577,8 +562,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "minDate",
-            label: "Min Date",
-            helpText: "Defines the min date for this widget",
+            label: "最小日期",
+            helpText: "设置组件最小日期",
             controlType: "DATE_PICKER",
             useValidationMessage: true,
             isJSConvertible: true,
@@ -588,8 +573,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "maxDate",
-            label: "Max Date",
-            helpText: "Defines the max date for this widget",
+            label: "最大日期",
+            helpText: "设置组件最大日期",
             controlType: "DATE_PICKER",
             useValidationMessage: true,
             isJSConvertible: true,
@@ -600,12 +585,12 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -614,8 +599,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
-            helpText: "Disables input to this widget",
+            label: "禁用",
+            helpText: "让组件不可交互",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -624,9 +609,9 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -635,8 +620,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "shortcuts",
-            label: "Show Shortcuts",
-            helpText: "Choose to show shortcut menu",
+            label: "显示快捷菜单",
+            helpText: "是否在日期选择器中显示快捷菜单",
             controlType: "SWITCH",
             isJSConvertible: false,
             isBindProperty: true,
@@ -645,8 +630,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "closeOnSelection",
-            label: "Close On Selection",
-            helpText: "Calender should close when a date is selected",
+            label: "选中后关闭",
+            helpText: "选中日期后自动关闭日期选择器",
             controlType: "SWITCH",
             defaultValue: true,
             isJSConvertible: false,
@@ -657,7 +642,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
             propertyName: "onDateSelected",
@@ -675,11 +660,11 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Font Color",
+            label: "字体颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -688,7 +673,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "labelTextSize",
-            label: "Font Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -730,7 +715,7 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "labelStyle",
-            label: "Emphasis",
+            label: "强调",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -750,11 +735,11 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "accentColor",
-            label: "Accent Color",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -764,9 +749,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -775,9 +759,8 @@ class DatePickerWidget extends BaseWidget<DatePickerWidget2Props, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

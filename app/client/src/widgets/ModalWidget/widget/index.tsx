@@ -22,29 +22,29 @@ export class ModalWidget extends BaseWidget<ModalWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Enables scrolling for content inside the widget",
+            helpText: "允许组件内部内容滚动",
             propertyName: "shouldScrollContents",
-            label: "Scroll Contents",
+            label: "允许内容滚动",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "canOutsideClickClose",
-            label: "Quick Dismiss",
-            helpText: "Allows dismissing the modal when user taps outside",
+            label: "点击背景关闭",
+            helpText: "点击背景时关闭弹窗",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -54,10 +54,10 @@ export class ModalWidget extends BaseWidget<ModalWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the modal is closed",
+            helpText: "弹窗关闭后触发",
             propertyName: "onClose",
             label: "onClose",
             controlType: "ACTION_SELECTOR",
@@ -69,12 +69,12 @@ export class ModalWidget extends BaseWidget<ModalWidgetProps, WidgetState> {
       },
 
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "backgroundColor",
-            helpText: "Sets the background color of the widget",
-            label: "Background color",
+            helpText: "设置组件背景颜色",
+            label: "背景颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -83,9 +83,8 @@ export class ModalWidget extends BaseWidget<ModalWidgetProps, WidgetState> {
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,
@@ -101,21 +100,21 @@ export class ModalWidget extends BaseWidget<ModalWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Enables scrolling for content inside the widget",
+            helpText: "允许组件内部内容滚动",
             propertyName: "shouldScrollContents",
-            label: "Scroll Contents",
+            label: "允许内容滚动",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -124,8 +123,8 @@ export class ModalWidget extends BaseWidget<ModalWidgetProps, WidgetState> {
           },
           {
             propertyName: "canOutsideClickClose",
-            label: "Quick Dismiss",
-            helpText: "Allows dismissing the modal when user taps outside",
+            label: "点击背景关闭",
+            helpText: "点击背景时关闭弹窗",
             controlType: "SWITCH",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -133,10 +132,10 @@ export class ModalWidget extends BaseWidget<ModalWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the modal is closed",
+            helpText: "弹窗关闭后触发",
             propertyName: "onClose",
             label: "onClose",
             controlType: "ACTION_SELECTOR",
@@ -152,12 +151,12 @@ export class ModalWidget extends BaseWidget<ModalWidgetProps, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [
           {
             propertyName: "backgroundColor",
-            helpText: "Sets the background color of the widget",
-            label: "Background Color",
+            helpText: "设置组件背景颜色",
+            label: "背景颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -167,13 +166,12 @@ export class ModalWidget extends BaseWidget<ModalWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,

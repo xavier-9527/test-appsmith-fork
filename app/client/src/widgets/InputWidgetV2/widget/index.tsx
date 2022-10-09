@@ -177,28 +177,28 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
     return mergeWidgetConfig(
       [
         {
-          sectionName: "General",
+          sectionName: "属性",
           children: [
             {
-              helpText: "Changes the type of data captured in the input",
+              helpText: "输入的数据类型",
               propertyName: "inputType",
-              label: "Data Type",
+              label: "数据类型",
               controlType: "DROP_DOWN",
               options: [
                 {
-                  label: "Text",
+                  label: "文本",
                   value: "TEXT",
                 },
                 {
-                  label: "Number",
+                  label: "数字",
                   value: "NUMBER",
                 },
                 {
-                  label: "Password",
+                  label: "密码",
                   value: "PASSWORD",
                 },
                 {
-                  label: "Email",
+                  label: "邮箱",
                   value: "EMAIL",
                 },
               ],
@@ -206,9 +206,9 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
               isTriggerProperty: false,
             },
             {
-              helpText: "Sets maximum allowed text length",
+              helpText: "设置最大输入字符长度",
               propertyName: "maxChars",
-              label: "Max Chars",
+              label: "最大字符数",
               controlType: "INPUT_TEXT",
               placeholderText: "255",
               isBindProperty: true,
@@ -223,12 +223,11 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
               dependencies: ["inputType"],
             },
             {
-              helpText:
-                "Sets the default text of the widget. The text is updated if the default text changes",
+              helpText: "设置组件默认值，当默认值改变后，组件当前值会自动更新",
               propertyName: "defaultText",
-              label: "Default Text",
+              label: "默认值",
               controlType: "INPUT_TEXT",
-              placeholderText: "John Doe",
+              placeholderText: "John Wick",
               isBindProperty: true,
               isTriggerProperty: false,
               validation: {
@@ -245,9 +244,9 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
               dependencies: ["inputType"],
             },
             {
-              helpText: "Sets the minimum allowed value",
+              helpText: "设置最小输入长度",
               propertyName: "minNum",
-              label: "Min",
+              label: "最小输入长度",
               controlType: "INPUT_TEXT",
               placeholderText: "1",
               isBindProperty: true,
@@ -269,9 +268,9 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
               dependencies: ["inputType"],
             },
             {
-              helpText: "Sets the maximum allowed value",
+              helpText: "设置最大输入长度",
               propertyName: "maxNum",
-              label: "Max",
+              label: "最大输入长度",
               controlType: "INPUT_TEXT",
               placeholderText: "100",
               isBindProperty: true,
@@ -295,12 +294,12 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
           ],
         },
         {
-          sectionName: "Icon Options",
+          sectionName: "图标配置",
           children: [
             {
               propertyName: "iconName",
-              label: "Icon",
-              helpText: "Sets the icon to be used in input field",
+              label: "图标",
+              helpText: "设置输入框的图标",
               controlType: "ICON_SELECT",
               isBindProperty: true,
               isTriggerProperty: false,
@@ -314,8 +313,8 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
             },
             {
               propertyName: "iconAlign",
-              label: "Icon alignment",
-              helpText: "Sets the icon alignment of input field",
+              label: "图标对齐",
+              helpText: "设置输入框图标的对齐方式",
               controlType: "ICON_TABS",
               options: [
                 {
@@ -344,28 +343,28 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
     return mergeWidgetConfig(
       [
         {
-          sectionName: "Data",
+          sectionName: "数据",
           children: [
             {
-              helpText: "Changes the type of data captured in the input",
+              helpText: "输入的数据类型",
               propertyName: "inputType",
-              label: "Data Type",
+              label: "数据类型",
               controlType: "DROP_DOWN",
               options: [
                 {
-                  label: "Text",
+                  label: "文本",
                   value: "TEXT",
                 },
                 {
-                  label: "Number",
+                  label: "数字",
                   value: "NUMBER",
                 },
                 {
-                  label: "Password",
+                  label: "密码",
                   value: "PASSWORD",
                 },
                 {
-                  label: "Email",
+                  label: "邮箱",
                   value: "EMAIL",
                 },
               ],
@@ -373,12 +372,11 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
               isTriggerProperty: false,
             },
             {
-              helpText:
-                "Sets the default text of the widget. The text is updated if the default text changes",
+              helpText: "设置组件默认值，当默认值改变后，组件当前值会自动更新",
               propertyName: "defaultText",
-              label: "Default Value",
+              label: "默认值",
               controlType: "INPUT_TEXT",
-              placeholderText: "John Doe",
+              placeholderText: "John Wick",
               isBindProperty: true,
               isTriggerProperty: false,
               validation: {
@@ -397,16 +395,16 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
           ],
         },
         {
-          sectionName: "Label",
+          sectionName: "标签",
           children: [],
         },
         {
-          sectionName: "Validation",
+          sectionName: "校验",
           children: [
             {
               propertyName: "isRequired",
-              label: "Required",
-              helpText: "Makes input to the widget mandatory",
+              label: "必填",
+              helpText: "强制用户填写",
               controlType: "SWITCH",
               isJSConvertible: true,
               isBindProperty: true,
@@ -414,9 +412,9 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
               validation: { type: ValidationTypes.BOOLEAN },
             },
             {
-              helpText: "Sets maximum allowed text length",
+              helpText: "设置最大输入字符长度",
               propertyName: "maxChars",
-              label: "Max Characters",
+              label: "最大输入长度",
               controlType: "INPUT_TEXT",
               placeholderText: "255",
               isBindProperty: true,
@@ -431,9 +429,9 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
               dependencies: ["inputType"],
             },
             {
-              helpText: "Sets the minimum allowed value",
+              helpText: "设置最小输入长度",
               propertyName: "minNum",
-              label: "Min",
+              label: "最小输入长度",
               controlType: "INPUT_TEXT",
               placeholderText: "1",
               isBindProperty: true,
@@ -455,9 +453,9 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
               dependencies: ["inputType"],
             },
             {
-              helpText: "Sets the maximum allowed value",
+              helpText: "设置最大输入长度",
               propertyName: "maxNum",
-              label: "Max",
+              label: "最大输入长度",
               controlType: "INPUT_TEXT",
               placeholderText: "100",
               isBindProperty: true,
@@ -489,12 +487,12 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
     return mergeWidgetConfig(
       [
         {
-          sectionName: "Icon",
+          sectionName: "图标配置",
           children: [
             {
               propertyName: "iconName",
-              label: "Icon",
-              helpText: "Sets the icon to be used in input field",
+              label: "图标",
+              helpText: "设置输入框的图标",
               controlType: "ICON_SELECT",
               isBindProperty: true,
               isTriggerProperty: false,
@@ -508,8 +506,8 @@ class InputWidget extends BaseInputWidget<InputWidgetProps, WidgetState> {
             },
             {
               propertyName: "iconAlign",
-              label: "Position",
-              helpText: "Sets the icon alignment of input field",
+              label: "位置",
+              helpText: "设置输入框图标的对齐方式",
               controlType: "ICON_TABS",
               options: [
                 {

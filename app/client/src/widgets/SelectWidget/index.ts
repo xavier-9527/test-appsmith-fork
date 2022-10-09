@@ -5,22 +5,22 @@ import { Alignment } from "@blueprintjs/core";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "Select",
+  name: "下拉单选",
   iconSVG: IconSVG,
   needsMeta: true,
   searchTags: ["dropdown"],
   defaults: {
     rows: 4,
     columns: 20,
-    placeholderText: "Select option",
-    labelText: "Label",
+    placeholderText: "请选择",
+    labelText: "标签",
     labelPosition: LabelPosition.Left,
     labelAlignment: Alignment.LEFT,
     labelWidth: 5,
     options: [
-      { label: "Blue", value: "BLUE" },
-      { label: "Green", value: "GREEN" },
-      { label: "Red", value: "RED" },
+      { label: "蓝", value: "BLUE" },
+      { label: "绿", value: "GREEN" },
+      { label: "红", value: "RED" },
     ],
     serverSideFiltering: false,
     widgetName: "Select",

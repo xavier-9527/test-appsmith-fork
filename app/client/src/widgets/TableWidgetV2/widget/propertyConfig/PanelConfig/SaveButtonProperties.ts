@@ -21,7 +21,7 @@ export default {
     {
       propertyName: "isSaveVisible",
       dependencies: ["primaryColumns"],
-      label: "Visible",
+      label: "是否显示",
       helpText: "Controls the visibility of the save button",
       defaultValue: true,
       controlType: "SWITCH",
@@ -38,7 +38,7 @@ export default {
     },
     {
       propertyName: "isSaveDisabled",
-      label: "Disabled",
+      label: "禁用",
       defaultValue: false,
       controlType: "SWITCH",
       customJSControl: "TABLE_COMPUTE_VALUE",
@@ -63,9 +63,9 @@ export default {
     },
     {
       propertyName: "saveButtonColor",
-      label: "Button Color",
+      label: "按钮颜色",
       controlType: "PRIMARY_COLUMNS_COLOR_PICKER_V2",
-      helpText: "Changes the color of the button",
+      helpText: "修改按钮颜色",
       isJSConvertible: true,
       customJSControl: "TABLE_COMPUTE_VALUE",
       dependencies: ["primaryColumns"],
@@ -83,7 +83,7 @@ export default {
     },
     {
       propertyName: "saveButtonVariant",
-      label: "Button Variant",
+      label: "按钮类型",
       controlType: "DROP_DOWN",
       customJSControl: "TABLE_COMPUTE_VALUE",
       isJSConvertible: true,
@@ -91,15 +91,15 @@ export default {
       dependencies: ["primaryColumns"],
       options: [
         {
-          label: "Primary",
+          label: "主按钮",
           value: ButtonVariantTypes.PRIMARY,
         },
         {
-          label: "Secondary",
+          label: "次级按钮",
           value: ButtonVariantTypes.SECONDARY,
         },
         {
-          label: "Tertiary",
+          label: "文本按钮",
           value: ButtonVariantTypes.TERTIARY,
         },
       ],
@@ -123,7 +123,7 @@ export default {
     },
     {
       propertyName: "saveBorderRadius",
-      label: "Border Radius",
+      label: "边框圆角",
       customJSControl: "TABLE_COMPUTE_VALUE",
       isJSConvertible: true,
       helpText: "Rounds the corners of the save button's outer border edge",
@@ -160,7 +160,7 @@ export default {
     },
     {
       propertyName: "saveIconAlign",
-      label: "Icon Alignment",
+      label: "图标对齐",
       helpText: "Sets the icon alignment of the save button",
       controlType: "ICON_TABS",
       defaultValue: "left",

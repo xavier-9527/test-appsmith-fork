@@ -20,15 +20,14 @@ class SwitchGroupWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText:
-              "Displays a list of options for a user to select. Values must be unique",
+            helpText: "选项值唯一的选项数组",
             propertyName: "options",
-            label: "Options",
+            label: "选项",
             controlType: "INPUT_TEXT",
-            placeholderText: '[{ "label": "Option1", "value": "Option2" }]',
+            placeholderText: '[{ "label": "选项1", "value": "选项2" }]',
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -64,11 +63,10 @@ class SwitchGroupWidget extends BaseWidget<
               EvaluationSubstitutionType.SMART_SUBSTITUTE,
           },
           {
-            helpText:
-              "Selects values of the options checked by default. Enter comma separated values for multiple selected",
+            helpText: "默认选中项，多选用逗号分隔",
             propertyName: "defaultSelectedValues",
-            label: "Default Selected Values",
-            placeholderText: "Enter option values",
+            label: "默认选中值",
+            placeholderText: "请输入选中项的值",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -85,9 +83,8 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isInline",
-            helpText:
-              "Whether switches are to be displayed inline horizontally",
-            label: "Inline",
+            helpText: "是否水平排列",
+            label: "行排列",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -96,8 +93,8 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -106,8 +103,8 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isVisible",
-            helpText: "Controls the visibility of the widget",
-            label: "Visible",
+            helpText: "控制组件的显示/隐藏",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -116,8 +113,8 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            helpText: "Disables input to the widget",
-            label: "Disabled",
+            helpText: "让组件不可交互",
+            label: "禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -126,9 +123,9 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -137,18 +134,18 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "alignment",
-            helpText: "Sets the alignment of the widget",
-            label: "Alignment",
+            helpText: "设置组件对齐方式",
+            label: "对齐",
             controlType: "DROP_DOWN",
             isBindProperty: true,
             isTriggerProperty: false,
             options: [
               {
-                label: "Left",
+                label: "左对齐",
                 value: Alignment.LEFT,
               },
               {
-                label: "Right",
+                label: "右对齐",
                 value: Alignment.RIGHT,
               },
             ],
@@ -156,36 +153,36 @@ class SwitchGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "labelText",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter label text",
+            placeholderText: "请输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -205,10 +202,9 @@ class SwitchGroupWidget extends BaseWidget<
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -227,11 +223,11 @@ class SwitchGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Label Text Color",
+            label: "标签文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -240,7 +236,7 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "labelTextSize",
-            label: "Label Text Size",
+            label: "标签文本大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -282,7 +278,7 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "labelStyle",
-            label: "Label Font Style",
+            label: "字体样式",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -301,8 +297,8 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "accentColor",
-            helpText: "Sets the background color of the widget",
-            label: "Accent color",
+            helpText: "设置组件背景颜色",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -312,11 +308,10 @@ class SwitchGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Actions",
+        sectionName: "动作",
         children: [
           {
-            helpText:
-              "Triggers an action when a switch state inside the group is changed",
+            helpText: "开关变化时触发",
             propertyName: "onSelectionChange",
             label: "onSelectionChange",
             controlType: "ACTION_SELECTOR",
@@ -332,15 +327,14 @@ class SwitchGroupWidget extends BaseWidget<
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
-            helpText:
-              "Displays a list of options for a user to select. Values must be unique",
+            helpText: "选项值唯一的选项数组",
             propertyName: "options",
-            label: "Options",
+            label: "选项",
             controlType: "INPUT_TEXT",
-            placeholderText: '[{ "label": "Option1", "value": "Option2" }]',
+            placeholderText: '[{ "label": "选项1", "value": "选项2" }]',
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -376,11 +370,10 @@ class SwitchGroupWidget extends BaseWidget<
               EvaluationSubstitutionType.SMART_SUBSTITUTE,
           },
           {
-            helpText:
-              "Selects values of the options checked by default. Enter comma separated values for multiple selected",
+            helpText: "默认选中项，多选用逗号分隔",
             propertyName: "defaultSelectedValues",
-            label: "Default Selected Values",
-            placeholderText: "Enter option values",
+            label: "默认选中值",
+            placeholderText: "请输入选中项的值",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -398,36 +391,36 @@ class SwitchGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "labelText",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter label text",
+            placeholderText: "请输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -447,10 +440,9 @@ class SwitchGroupWidget extends BaseWidget<
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -469,12 +461,12 @@ class SwitchGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Validations",
+        sectionName: "校验",
         children: [
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -484,12 +476,12 @@ class SwitchGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "isVisible",
-            helpText: "Controls the visibility of the widget",
-            label: "Visible",
+            helpText: "控制组件的显示/隐藏",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -498,8 +490,8 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            helpText: "Disables input to the widget",
-            label: "Disabled",
+            helpText: "让组件不可交互",
+            label: "禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -508,9 +500,8 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isInline",
-            helpText:
-              "Whether switches are to be displayed inline horizontally",
-            label: "Inline",
+            helpText: "是否水平排列",
+            label: "行排列",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -519,9 +510,9 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -531,11 +522,10 @@ class SwitchGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText:
-              "Triggers an action when a switch state inside the group is changed",
+            helpText: "开关变化时触发",
             propertyName: "onSelectionChange",
             label: "onSelectionChange",
             controlType: "ACTION_SELECTOR",
@@ -551,11 +541,11 @@ class SwitchGroupWidget extends BaseWidget<
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Font Color",
+            label: "字体颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -564,7 +554,7 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "labelTextSize",
-            label: "Font Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -606,7 +596,7 @@ class SwitchGroupWidget extends BaseWidget<
           },
           {
             propertyName: "labelStyle",
-            label: "Emphasis",
+            label: "强调",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -626,22 +616,22 @@ class SwitchGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "alignment",
-            helpText: "Sets the alignment of the widget",
-            label: "Alignment",
+            helpText: "设置组件对齐方式",
+            label: "对齐",
             controlType: "DROP_DOWN",
             isBindProperty: true,
             isTriggerProperty: false,
             options: [
               {
-                label: "Left",
+                label: "左对齐",
                 value: Alignment.LEFT,
               },
               {
-                label: "Right",
+                label: "右对齐",
                 value: Alignment.RIGHT,
               },
             ],
@@ -649,12 +639,12 @@ class SwitchGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [
           {
             propertyName: "accentColor",
-            helpText: "Sets the background color of the widget",
-            label: "Accent Color",
+            helpText: "设置组件背景颜色",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,

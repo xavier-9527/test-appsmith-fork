@@ -7,7 +7,7 @@ import Widget from "./widget";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "DatePicker",
+  name: "日期选择器",
   iconSVG: IconSVG,
   needsMeta: true,
   searchTags: ["calendar"],
@@ -15,7 +15,7 @@ export const CONFIG = {
     isDisabled: false,
     datePickerType: "DATE_PICKER",
     rows: 4,
-    label: "Label",
+    label: "标签",
     labelPosition: LabelPosition.Left,
     labelAlignment: Alignment.LEFT,
     labelWidth: 5,

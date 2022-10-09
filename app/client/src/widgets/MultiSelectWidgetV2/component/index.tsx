@@ -248,7 +248,7 @@ function MultiSelectComponent({
             leftIcon="search"
             onChange={onQueryChange}
             onKeyDown={onKeyDown}
-            placeholder="Filter..."
+            placeholder="过滤"
             // ref={inputRef}
             rightElement={clearButton as JSX.Element}
             small
@@ -263,7 +263,7 @@ function MultiSelectComponent({
               alignIndicator="left"
               checked={isSelectAll}
               className={`all-options ${isSelectAll ? "selected" : ""}`}
-              label="Select all"
+              label="全选"
               onChange={handleSelectAll}
             />
           ) : null}

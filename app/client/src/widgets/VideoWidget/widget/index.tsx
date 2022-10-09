@@ -22,13 +22,13 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "url",
-            label: "URL",
+            label: "URL地址",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter URL",
+            placeholderText: "请输入视频地址",
             inputType: "TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -46,9 +46,7 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
           },
           {
             propertyName: "autoPlay",
-            label: "Auto Play",
-            helpText:
-              "Video will be automatically played, by enabling this feature, video will be muted by default.",
+            label: "自动播放",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -56,9 +54,8 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls the visibility of the widget",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否可见",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -67,9 +64,9 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -79,10 +76,10 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the video is played",
+            helpText: "视频开始播放后触发",
             propertyName: "onPlay",
             label: "onPlay",
             controlType: "ACTION_SELECTOR",
@@ -91,7 +88,7 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the video is paused",
+            helpText: "视频暂停后触发",
             propertyName: "onPause",
             label: "onPause",
             controlType: "ACTION_SELECTOR",
@@ -100,7 +97,7 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the video ends",
+            helpText: "视频播放结束后触发",
             propertyName: "onEnd",
             label: "onEnd",
             controlType: "ACTION_SELECTOR",
@@ -111,12 +108,12 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "backgroundColor",
-            helpText: "Sets the background color of the widget",
-            label: "Background color",
+            helpText: "设置组件背景颜色",
+            label: "背景颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -125,9 +122,8 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -136,9 +132,8 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -153,13 +148,13 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
             propertyName: "url",
-            label: "URL",
+            label: "URL地址",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter URL",
+            placeholderText: "请输入视频地址",
             inputType: "TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -178,13 +173,11 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "autoPlay",
-            label: "Autoplay",
-            helpText:
-              "Video will be automatically played, by enabling this feature, video will be muted by default.",
+            label: "自动播放",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -192,9 +185,9 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -203,9 +196,9 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -215,10 +208,10 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the video is played",
+            helpText: "视频开始播放后触发",
             propertyName: "onPlay",
             label: "onPlay",
             controlType: "ACTION_SELECTOR",
@@ -227,7 +220,7 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the video is paused",
+            helpText: "视频暂停后触发",
             propertyName: "onPause",
             label: "onPause",
             controlType: "ACTION_SELECTOR",
@@ -236,7 +229,7 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the video ends",
+            helpText: "视频播放结束后触发",
             propertyName: "onEnd",
             label: "onEnd",
             controlType: "ACTION_SELECTOR",
@@ -252,12 +245,12 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [
           {
             propertyName: "backgroundColor",
-            helpText: "Sets the background color of the widget",
-            label: "Background Color",
+            helpText: "设置组件背景颜色",
+            label: "背景颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -267,13 +260,12 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -282,9 +274,8 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

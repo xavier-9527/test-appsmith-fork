@@ -35,20 +35,20 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Basic",
+        sectionName: "属性",
         children: [
           {
             propertyName: "text",
-            label: "Label",
-            helpText: "Sets the label of the button",
+            label: "标签",
+            helpText: "设置按钮标签",
             controlType: "INPUT_TEXT",
-            placeholderText: "Submit",
+            placeholderText: "提交",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Triggers an action when the button is clicked",
+            helpText: "点击按钮时触发",
             propertyName: "onClick",
             label: "onClick",
             controlType: "ACTION_SELECTOR",
@@ -59,22 +59,22 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Show helper text with button on hover",
+            helpText: "鼠标交互时显示的提示信息",
             propertyName: "tooltip",
-            label: "Tooltip",
+            label: "提示",
             controlType: "INPUT_TEXT",
-            placeholderText: "Submits Form",
+            placeholderText: "提交表单",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -83,9 +83,9 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables clicks to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -93,9 +93,9 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -105,12 +105,12 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
         ],
       },
       {
-        sectionName: "Validation",
+        sectionName: "校验",
         children: [
           {
             propertyName: "googleRecaptchaKey",
-            label: "Google reCAPTCHA Key",
-            helpText: "Sets Google reCAPTCHA site key for the button",
+            label: "Google reCAPTCHA 键值",
+            helpText: "为按钮设置 Google reCAPTCHA 键值",
             controlType: "INPUT_TEXT",
             placeholderText: "reCAPTCHA Key",
             isBindProperty: true,
@@ -119,9 +119,9 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "recaptchaType",
-            label: "Google reCAPTCHA Version",
+            label: "Google reCAPTCHA 版本",
             controlType: "DROP_DOWN",
-            helpText: "Select reCAPTCHA version",
+            helpText: "选择 reCAPTCHA 版本",
             options: [
               {
                 label: "reCAPTCHA v3",
@@ -146,7 +146,7 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
       },
       // TODO: refactor widgetParentProps implementation when we address #10659
       {
-        sectionName: "Form Settings",
+        sectionName: "表单设置",
         hidden: (
           props: ButtonWidgetProps,
           propertyPath: string,
@@ -154,10 +154,9 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
         ) => widgetParentProps?.type !== FormWidget.getWidgetType(),
         children: [
           {
-            helpText:
-              "Disabled if the form is invalid, if this widget exists directly within a Form widget.",
+            helpText: "当按钮位于表单下，表单必须校验成功时按钮才可以点击",
             propertyName: "disabledWhenInvalid",
-            label: "Disabled Invalid Forms",
+            label: "表单校验不成功时禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -165,10 +164,9 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText:
-              "Resets the fields of the form, on click, if this widget exists directly within a Form widget.",
+            helpText: "当按钮位于表单下，表单提交成功后重置表单",
             propertyName: "resetFormOnClick",
-            label: "Reset Form on Success",
+            label: "提交成功后重置表单",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -183,24 +181,24 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "buttonVariant",
-            label: "Button Variant",
+            label: "按钮类型",
             controlType: "DROP_DOWN",
-            helpText: "Sets the variant of the icon button",
+            helpText: "设置图标按钮类型",
             options: [
               {
-                label: "Primary",
+                label: "主按钮",
                 value: ButtonVariantTypes.PRIMARY,
               },
               {
-                label: "Secondary",
+                label: "次级按钮",
                 value: ButtonVariantTypes.SECONDARY,
               },
               {
-                label: "Tertiary",
+                label: "文本按钮",
                 value: ButtonVariantTypes.TERTIARY,
               },
             ],
@@ -222,12 +220,12 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
         ],
       },
       {
-        sectionName: "Icon",
+        sectionName: "图标配置",
         children: [
           {
             propertyName: "iconName",
-            label: "Select Icon",
-            helpText: "Sets the icon to be used for the button",
+            label: "选择图标",
+            helpText: "设置按钮图标",
             controlType: "ICON_SELECT",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -252,8 +250,8 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "iconAlign",
-            label: "Position",
-            helpText: "Sets the icon alignment of the button",
+            label: "位置",
+            helpText: "设置按钮图标对齐方向",
             controlType: "ICON_TABS",
             options: [
               {
@@ -276,20 +274,20 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "placement",
-            label: "Placement",
+            label: "排列方式",
             controlType: "DROP_DOWN",
-            helpText: "Sets the space between items",
+            helpText: "设置图标与标签的排列方式",
             options: [
               {
-                label: "Start",
+                label: "向前对齐",
                 value: ButtonPlacementTypes.START,
               },
               {
-                label: "Between",
+                label: "两边对齐",
                 value: ButtonPlacementTypes.BETWEEN,
               },
               {
-                label: "Center",
+                label: "居中对齐",
                 value: ButtonPlacementTypes.CENTER,
               },
             ],
@@ -312,12 +310,12 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
         ],
       },
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [
           {
             propertyName: "buttonColor",
-            helpText: "Changes the color of the button",
-            label: "Button Color",
+            helpText: "修改按钮颜色",
+            label: "按钮颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -327,13 +325,12 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isBindProperty: true,
             isJSConvertible: true,
@@ -344,9 +341,8 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -361,32 +357,32 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "text",
-            label: "Label",
-            helpText: "Sets the label of the button",
+            label: "标签",
+            helpText: "设置按钮标签",
             controlType: "INPUT_TEXT",
-            placeholderText: "Submit",
+            placeholderText: "提交",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Show helper text with button on hover",
+            helpText: "鼠标交互时显示的提示信息",
             propertyName: "tooltip",
-            label: "Tooltip",
+            label: "提示",
             controlType: "INPUT_TEXT",
-            placeholderText: "Submits Form",
+            placeholderText: "提交表单",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
             propertyName: "googleRecaptchaKey",
-            label: "Google reCAPTCHA Key",
-            helpText: "Sets Google reCAPTCHA site key for the button",
+            label: "Google reCAPTCHA 键值",
+            helpText: "为按钮设置 Google reCAPTCHA 键值",
             controlType: "INPUT_TEXT",
             placeholderText: "reCAPTCHA Key",
             isBindProperty: true,
@@ -395,9 +391,9 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "recaptchaType",
-            label: "Google reCAPTCHA Version",
+            label: "Google reCAPTCHA 版本",
             controlType: "DROP_DOWN",
-            helpText: "Select reCAPTCHA version",
+            helpText: "Select reCAPTCHA 版本",
             options: [
               {
                 label: "reCAPTCHA v3",
@@ -420,8 +416,8 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -430,9 +426,9 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables clicks to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -440,9 +436,9 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -453,7 +449,7 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
       },
       // TODO: refactor widgetParentProps implementation when we address #10659
       {
-        sectionName: "Form options",
+        sectionName: "表单配置",
         hidden: (
           props: ButtonWidgetProps,
           propertyPath: string,
@@ -461,10 +457,9 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
         ) => widgetParentProps?.type !== FormWidget.getWidgetType(),
         children: [
           {
-            helpText:
-              "Disabled if the form is invalid, if this widget exists directly within a Form widget.",
+            helpText: "当按钮位于表单下，表单必须校验成功时按钮才可以点击",
             propertyName: "disabledWhenInvalid",
-            label: "Disabled Invalid Forms",
+            label: "表单校验不成功时禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -472,10 +467,9 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText:
-              "Resets the fields of the form, on click, if this widget exists directly within a Form widget.",
+            helpText: "当按钮位于表单下，表单提交成功后重置表单",
             propertyName: "resetFormOnClick",
-            label: "Reset Form on Success",
+            label: "提交成功后重置表单",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -485,10 +479,10 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the button is clicked",
+            helpText: "点击按钮时触发",
             propertyName: "onClick",
             label: "onClick",
             controlType: "ACTION_SELECTOR",
@@ -499,12 +493,12 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "buttonColor",
-            helpText: "Changes the color of the button",
-            label: "Button Color",
+            helpText: "修改按钮颜色",
+            label: "按钮颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -513,20 +507,20 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "buttonVariant",
-            label: "Button Variant",
+            label: "按钮类型",
             controlType: "DROP_DOWN",
-            helpText: "Sets the variant of the icon button",
+            helpText: "设置图标按钮类型",
             options: [
               {
-                label: "Primary",
+                label: "主按钮",
                 value: ButtonVariantTypes.PRIMARY,
               },
               {
-                label: "Secondary",
+                label: "次级按钮",
                 value: ButtonVariantTypes.SECONDARY,
               },
               {
-                label: "Tertiary",
+                label: "文本按钮",
                 value: ButtonVariantTypes.TERTIARY,
               },
             ],
@@ -547,9 +541,8 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isBindProperty: true,
             isJSConvertible: true,
@@ -560,9 +553,8 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -571,8 +563,8 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "iconName",
-            label: "Icon",
-            helpText: "Sets the icon to be used for the button",
+            label: "图标",
+            helpText: "设置按钮图标",
             controlType: "ICON_SELECT",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -597,20 +589,20 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "placement",
-            label: "Placement",
+            label: "排列方式",
             controlType: "DROP_DOWN",
-            helpText: "Sets the space between items",
+            helpText: "设置图标与标签的排列方式",
             options: [
               {
-                label: "Start",
+                label: "向前对齐",
                 value: ButtonPlacementTypes.START,
               },
               {
-                label: "Between",
+                label: "两边对齐",
                 value: ButtonPlacementTypes.BETWEEN,
               },
               {
-                label: "Center",
+                label: "居中对齐",
                 value: ButtonPlacementTypes.CENTER,
               },
             ],
@@ -632,8 +624,8 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           },
           {
             propertyName: "iconAlign",
-            label: "Icon Alignment",
-            helpText: "Sets the icon alignment of the button",
+            label: "图标对齐",
+            helpText: "设置按钮图标对齐方向",
             controlType: "ICON_TABS",
             options: [
               {
@@ -684,7 +676,6 @@ class ButtonWidget extends BaseWidget<ButtonWidgetProps, ButtonWidgetState> {
           callback: this.handleActionComplete,
         },
       });
-      // form表单中的onReset
     } else if (this.props.resetFormOnClick && this.props.onReset) {
       this.props.onReset();
     }

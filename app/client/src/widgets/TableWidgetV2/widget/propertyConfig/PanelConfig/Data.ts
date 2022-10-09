@@ -17,15 +17,15 @@ import { AutocompleteDataType } from "utils/autocomplete/TernServer";
 import { composePropertyUpdateHook } from "widgets/WidgetUtils";
 
 export default {
-  sectionName: "Data",
+  sectionName: "数据",
   children: [
     {
       propertyName: "columnType",
-      label: "Column Type",
+      label: "列类型",
       controlType: "DROP_DOWN",
       options: [
         {
-          label: "Plain Text",
+          label: "文本",
           value: "text",
         },
         {
@@ -33,31 +33,31 @@ export default {
           value: "url",
         },
         {
-          label: "Number",
+          label: "数字",
           value: "number",
         },
         {
-          label: "Image",
+          label: "图片",
           value: "image",
         },
         {
-          label: "Video",
+          label: "视频",
           value: "video",
         },
         {
-          label: "Date",
+          label: "日期",
           value: "date",
         },
         {
-          label: "Button",
+          label: "按钮",
           value: "button",
         },
         {
-          label: "Menu Button",
+          label: "菜单按钮",
           value: "menuButton",
         },
         {
-          label: "Icon Button",
+          label: "图标按钮",
           value: "iconButton",
         },
       ],
@@ -77,7 +77,7 @@ export default {
     {
       helpText: "The alias that you use in selectedrow",
       propertyName: "alias",
-      label: "Property Name",
+      label: "属性名",
       controlType: "INPUT_TEXT",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         const columnId = propertyPath.match(/primaryColumns\.(.*)\.alias/);
@@ -116,7 +116,7 @@ export default {
     },
     {
       propertyName: "displayText",
-      label: "Display Text",
+      label: "显示文本",
       controlType: "TABLE_COMPUTE_VALUE",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         const baseProperty = getBasePropertyPath(propertyPath);
@@ -129,9 +129,9 @@ export default {
     },
     {
       helpText:
-        "The value computed & shown in each cell. Use {{currentRow}} to reference each row in the table. This property is not accessible outside the column settings.",
+        "每个单元格计算后的值，使用 {{currentRow}} 引用当前行数据，这个属性不能在这个列之外访问到",
       propertyName: "computedValue",
-      label: "Computed Value",
+      label: "计算值",
       controlType: "TABLE_COMPUTE_VALUE",
       hidden: (props: TableWidgetProps, propertyPath: string) => {
         return hideByColumnType(props, propertyPath, [
@@ -149,15 +149,15 @@ export default {
     },
     {
       propertyName: "inputFormat",
-      label: "Original Date Format",
+      label: "原始日期类型",
       controlType: "DROP_DOWN",
       options: [
         {
-          label: "UNIX timestamp (s)",
+          label: "UNIX 时间戳 (s)",
           value: DateInputFormat.EPOCH,
         },
         {
-          label: "UNIX timestamp (ms)",
+          label: "UNIX 时间戳 (ms)",
           value: DateInputFormat.MILLISECONDS,
         },
         {
@@ -277,17 +277,17 @@ export default {
     },
     {
       propertyName: "outputFormat",
-      label: "Display Date Format",
+      label: "展示日期格式",
       controlType: "DROP_DOWN",
       customJSControl: "TABLE_COMPUTE_VALUE",
       isJSConvertible: true,
       options: [
         {
-          label: "UNIX timestamp (s)",
+          label: "UNIX 时间戳 (s)",
           value: DateInputFormat.EPOCH,
         },
         {
-          label: "UNIX timestamp (ms)",
+          label: "UNIX 时间戳 (ms)",
           value: DateInputFormat.MILLISECONDS,
         },
         {

@@ -165,7 +165,7 @@ class SelectComponent extends React.Component<
   noResultsUI = (
     <MenuItem accentColor={this.props.accentColor}>
       <a className="menu-item-link">
-        <div className="menu-item-text">No Results Found</div>
+        <div className="menu-item-text">暂无内容</div>
       </a>
     </MenuItem>
   );
@@ -274,7 +274,7 @@ class SelectComponent extends React.Component<
     const value =
       !isNil(selectedOption) && selectedOption !== ""
         ? selectedOption
-        : this.props.placeholder || "-- Select --";
+        : this.props.placeholder || "-- 请选择 --";
 
     // Check if text overflows
     const tooltipText: string =
@@ -329,6 +329,9 @@ class SelectComponent extends React.Component<
             disabled={disabled}
             filterable={this.props.isFilterable}
             hasError={this.props.hasError}
+            inputProps={{
+              placeholder: "过滤",
+            }}
             isValid={this.props.isValid}
             itemListPredicate={
               !this.props.serverSideFiltering

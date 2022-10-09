@@ -8,10 +8,9 @@ import { HiddenFnParams, getSchemaItem, getStylesheetValue } from "../helper";
 const PROPERTIES = {
   general: [
     {
-      helpText:
-        "Sets the default value of the field. The array is updated when the default value changes",
+      helpText: "字段默认值，默认值修改后会自动更新字段当前值",
       propertyName: "defaultValue",
-      label: "Default Value",
+      label: "默认值",
       controlType: "JSON_FORM_COMPUTE_VALUE",
       placeholderText: "[]",
       isBindProperty: true,
@@ -27,8 +26,8 @@ const PROPERTIES = {
   accessibility: [
     {
       propertyName: "isCollapsible",
-      label: "Collapsible",
-      helpText: "Makes the array items collapsible",
+      label: "可折叠",
+      helpText: "让数组元素可折叠",
       controlType: "SWITCH",
       isJSConvertible: true,
       isBindProperty: true,
@@ -43,14 +42,14 @@ const PROPERTIES = {
 
   sections: [
     {
-      sectionName: "Array Styles",
+      sectionName: "数组样式",
       isDefaultOpen: false,
       children: [
         {
           propertyName: "backgroundColor",
-          label: "Background Color",
+          label: "背景颜色",
           controlType: "COLOR_PICKER",
-          helpText: "Changes the background color",
+          helpText: "修改背景颜色",
           isJSConvertible: true,
           isBindProperty: true,
           isTriggerProperty: false,
@@ -65,9 +64,9 @@ const PROPERTIES = {
         },
         {
           propertyName: "borderWidth",
-          helpText: "Enter value for border width",
-          label: "Border Width",
-          placeholderText: "Enter value in px",
+          helpText: "输入边框宽度",
+          label: "边框宽度",
+          placeholderText: "以 px 为单位",
           controlType: "INPUT_TEXT",
           isBindProperty: true,
           isTriggerProperty: false,
@@ -75,8 +74,8 @@ const PROPERTIES = {
         },
         {
           propertyName: "borderColor",
-          label: "Border Color",
-          helpText: "Changes the border color of Object",
+          label: "边框颜色",
+          helpText: "修改边框颜色",
           controlType: "COLOR_PICKER",
           isJSConvertible: true,
           isBindProperty: true,
@@ -92,8 +91,8 @@ const PROPERTIES = {
         },
         {
           propertyName: "borderRadius",
-          label: "Border Radius",
-          helpText: "Rounds the corners of the icon button's outer border edge",
+          label: "边框圆角",
+          helpText: "边框圆角样式",
           controlType: "BORDER_RADIUS_OPTIONS",
           customJSControl: "JSON_FORM_COMPUTE_VALUE",
           isJSConvertible: true,
@@ -105,9 +104,8 @@ const PROPERTIES = {
         },
         {
           propertyName: "boxShadow",
-          label: "Box Shadow",
-          helpText:
-            "Enables you to cast a drop shadow from the frame of the widget",
+          label: "阴影",
+          helpText: "组件轮廓投影",
           controlType: "BOX_SHADOW_OPTIONS",
           customJSControl: "JSON_FORM_COMPUTE_VALUE",
           isJSConvertible: true,
@@ -126,14 +124,14 @@ const PROPERTIES = {
       },
     },
     {
-      sectionName: "Item Styles",
+      sectionName: "数组项样式",
       isDefaultOpen: false,
       children: [
         {
           propertyName: "cellBackgroundColor",
-          label: "Background Color",
+          label: "背景颜色",
           controlType: "COLOR_PICKER",
-          helpText: "Changes the background color of the item",
+          helpText: "修改数组项背景颜色",
           isJSConvertible: true,
           isBindProperty: true,
           isTriggerProperty: false,
@@ -148,9 +146,9 @@ const PROPERTIES = {
         },
         {
           propertyName: "cellBorderWidth",
-          helpText: "Enter value for border width of the item",
-          label: "Border Width",
-          placeholderText: "Enter value in px",
+          helpText: "修改数组项边框宽度",
+          label: "边框宽度",
+          placeholderText: "以 px 为单位",
           controlType: "INPUT_TEXT",
           isBindProperty: true,
           isTriggerProperty: false,
@@ -158,8 +156,8 @@ const PROPERTIES = {
         },
         {
           propertyName: "cellBorderColor",
-          label: "Border Color",
-          helpText: "Changes the border color of the item",
+          label: "边框颜色",
+          helpText: "修改数组项边框颜色",
           controlType: "COLOR_PICKER",
           isJSConvertible: true,
           isBindProperty: true,
@@ -175,8 +173,8 @@ const PROPERTIES = {
         },
         {
           propertyName: "cellBorderRadius",
-          label: "Border Radius",
-          helpText: "Rounds the corners of the icon button's outer border edge",
+          label: "边框圆角",
+          helpText: "边框圆角样式",
           controlType: "BORDER_RADIUS_OPTIONS",
           customJSControl: "JSON_FORM_COMPUTE_VALUE",
           isJSConvertible: true,
@@ -188,9 +186,8 @@ const PROPERTIES = {
         },
         {
           propertyName: "cellBoxShadow",
-          label: "Box Shadow",
-          helpText:
-            "Enables you to cast a drop shadow from the frame of the widget",
+          label: "阴影",
+          helpText: "组件轮廓投影",
           controlType: "BOX_SHADOW_OPTIONS",
           customJSControl: "JSON_FORM_COMPUTE_VALUE",
           isJSConvertible: true,
@@ -213,10 +210,9 @@ const PROPERTIES = {
   content: {
     data: [
       {
-        helpText:
-          "Sets the default value of the field. The array is updated when the default value changes",
+        helpText: "字段默认值，默认值修改后会自动更新字段当前值",
         propertyName: "defaultValue",
-        label: "Default Value",
+        label: "默认值",
         controlType: "JSON_FORM_COMPUTE_VALUE",
         placeholderText: "[]",
         isBindProperty: true,
@@ -232,8 +228,8 @@ const PROPERTIES = {
     general: [
       {
         propertyName: "isCollapsible",
-        label: "Collapsible",
-        helpText: "Makes the array items collapsible",
+        label: "可折叠",
+        helpText: "让数组元素可折叠",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,

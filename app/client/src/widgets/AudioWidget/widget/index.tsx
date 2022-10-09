@@ -21,13 +21,13 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "url",
             label: "URL",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter url",
+            placeholderText: "请填写 url",
             inputType: "TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -46,8 +46,8 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
           },
           {
             propertyName: "autoPlay",
-            label: "Auto Play",
-            helpText: "Audio will be automatically played",
+            label: "自动播放",
+            helpText: "在组件初始化完成后自动播放音频",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -55,9 +55,9 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -66,9 +66,9 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -78,10 +78,10 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the audio is played",
+            helpText: "开始播放时触发",
             propertyName: "onPlay",
             label: "onPlay",
             controlType: "ACTION_SELECTOR",
@@ -90,7 +90,7 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the audio is paused",
+            helpText: "暂停播放时触发",
             propertyName: "onPause",
             label: "onPause",
             controlType: "ACTION_SELECTOR",
@@ -99,7 +99,7 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the audio ends",
+            helpText: "播放结束时触发",
             propertyName: "onEnd",
             label: "onEnd",
             controlType: "ACTION_SELECTOR",
@@ -115,13 +115,13 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
             propertyName: "url",
             label: "URL",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter url",
+            placeholderText: "请填写 url",
             inputType: "TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -141,12 +141,12 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "autoPlay",
-            label: "Auto Play",
-            helpText: "Audio will be automatically played",
+            label: "自动播放",
+            helpText: "在组件初始化完成后自动播放音频",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -154,9 +154,9 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -165,9 +165,9 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -177,10 +177,10 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the audio is played",
+            helpText: "开始播放时触发",
             propertyName: "onPlay",
             label: "onPlay",
             controlType: "ACTION_SELECTOR",
@@ -189,7 +189,7 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the audio is paused",
+            helpText: "暂停播放时触发",
             propertyName: "onPause",
             label: "onPause",
             controlType: "ACTION_SELECTOR",
@@ -198,7 +198,7 @@ class AudioWidget extends BaseWidget<AudioWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the audio ends",
+            helpText: "播放结束时触发",
             propertyName: "onEnd",
             label: "onEnd",
             controlType: "ACTION_SELECTOR",

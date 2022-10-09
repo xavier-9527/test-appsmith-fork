@@ -34,15 +34,14 @@ class SingleSelectTreeWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText:
-              "Allows users to select multiple options. Values must be unique",
+            helpText: "允许用户多选，每个选项的值必须唯一",
             propertyName: "options",
-            label: "Options",
+            label: "选项",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter option value",
+            placeholderText: "请输入选项数据",
             isBindProperty: true,
             isTriggerProperty: false,
             isJSConvertible: false,
@@ -108,11 +107,11 @@ class SingleSelectTreeWidget extends BaseWidget<
               EvaluationSubstitutionType.SMART_SUBSTITUTE,
           },
           {
-            helpText: "Selects the option with value by default",
+            helpText: "默认选中这个值",
             propertyName: "defaultOptionValue",
-            label: "Default Value",
+            label: "默认值",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter option value",
+            placeholderText: "请输入选项数据",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -128,19 +127,19 @@ class SingleSelectTreeWidget extends BaseWidget<
             },
           },
           {
-            helpText: "Sets a Placeholder Text",
+            helpText: "设置占位文本",
             propertyName: "placeholderText",
-            label: "Placeholder",
+            label: "占位符",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter placeholder text",
+            placeholderText: "请输入占位文本",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -148,9 +147,9 @@ class SingleSelectTreeWidget extends BaseWidget<
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -159,8 +158,8 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
-            helpText: "Disables input to this widget",
+            label: "禁用",
+            helpText: "让组件不可交互",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -169,9 +168,9 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -180,8 +179,8 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "allowClear",
-            label: "Allow Clearing Value",
-            helpText: "Enables Icon to clear all Selections",
+            label: "允许清空",
+            helpText: "显示清空按钮用来清空选择",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -190,8 +189,8 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "expandAll",
-            label: "Expand all by default",
-            helpText: "Expand All nested options",
+            label: "默认展开",
+            helpText: "默认展开所有层级的选项",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -201,10 +200,10 @@ class SingleSelectTreeWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when a user selects an option",
+            helpText: "用户选中一个选项时触发",
             propertyName: "onOptionChange",
             label: "onOptionChange",
             controlType: "ACTION_SELECTOR",
@@ -215,36 +214,36 @@ class SingleSelectTreeWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "labelText",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter label text",
+            placeholderText: "请输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -264,10 +263,9 @@ class SingleSelectTreeWidget extends BaseWidget<
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -286,11 +284,11 @@ class SingleSelectTreeWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "accentColor",
-            label: "Accent Color",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -300,9 +298,8 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,
@@ -312,9 +309,8 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -323,7 +319,7 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "labelStyle",
-            label: "Label Font Style",
+            label: "字体样式",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -342,7 +338,7 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "labelTextColor",
-            label: "Label Text Color",
+            label: "标签文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -351,7 +347,7 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "labelTextSize",
-            label: "Label Text Size",
+            label: "标签文本大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -399,15 +395,14 @@ class SingleSelectTreeWidget extends BaseWidget<
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
-            helpText:
-              "Allows users to select multiple options. Values must be unique",
+            helpText: "允许用户多选，每个选项的值必须唯一",
             propertyName: "options",
-            label: "Options",
+            label: "选项",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter option value",
+            placeholderText: "请输入选项数据",
             isBindProperty: true,
             isTriggerProperty: false,
             isJSConvertible: false,
@@ -473,11 +468,11 @@ class SingleSelectTreeWidget extends BaseWidget<
               EvaluationSubstitutionType.SMART_SUBSTITUTE,
           },
           {
-            helpText: "Selects the option with value by default",
+            helpText: "默认选中这个值",
             propertyName: "defaultOptionValue",
-            label: "Default Selected Value",
+            label: "默认选中值",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter option value",
+            placeholderText: "请输入选项数据",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -495,36 +490,36 @@ class SingleSelectTreeWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "labelText",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter label text",
+            placeholderText: "请输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -544,10 +539,9 @@ class SingleSelectTreeWidget extends BaseWidget<
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -566,12 +560,12 @@ class SingleSelectTreeWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Validations",
+        sectionName: "校验",
         children: [
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -581,22 +575,22 @@ class SingleSelectTreeWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Sets a Placeholder Text",
+            helpText: "设置占位文本",
             propertyName: "placeholderText",
-            label: "Placeholder",
+            label: "占位符",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter placeholder text",
+            placeholderText: "请输入占位文本",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -605,8 +599,8 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
-            helpText: "Disables input to this widget",
+            label: "禁用",
+            helpText: "让组件不可交互",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -615,9 +609,9 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -626,8 +620,8 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "allowClear",
-            label: "Allow Clearing Value",
-            helpText: "Enables Icon to clear all Selections",
+            label: "允许清空",
+            helpText: "显示清空按钮用来清空选择",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -636,8 +630,8 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "expandAll",
-            label: "Expand all by Default",
-            helpText: "Expand All nested options",
+            label: "默认展开",
+            helpText: "默认展开所有层级的选项",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -647,10 +641,10 @@ class SingleSelectTreeWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when a user selects an option",
+            helpText: "用户选中一个选项时触发",
             propertyName: "onOptionChange",
             label: "onOptionChange",
             controlType: "ACTION_SELECTOR",
@@ -666,11 +660,11 @@ class SingleSelectTreeWidget extends BaseWidget<
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Font Color",
+            label: "字体颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -679,7 +673,7 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "labelTextSize",
-            label: "Font Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -721,7 +715,7 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "labelStyle",
-            label: "Emphasis",
+            label: "强调",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -741,11 +735,11 @@ class SingleSelectTreeWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "accentColor",
-            label: "Accent Color",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -755,9 +749,8 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,
@@ -767,9 +760,8 @@ class SingleSelectTreeWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

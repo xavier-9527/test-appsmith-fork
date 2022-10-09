@@ -60,44 +60,44 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Sets the map type",
+            helpText: "设置地图类型",
             propertyName: "mapType",
-            label: "Map Type",
+            label: "地图类型",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "World",
+                label: "世界地图",
                 value: MapTypes.WORLD,
               },
               {
-                label: "World with Antarctica",
+                label: "世界地图（包括南极）",
                 value: MapTypes.WORLD_WITH_ANTARCTICA,
               },
               {
-                label: "Europe",
+                label: "欧洲",
                 value: MapTypes.EUROPE,
               },
               {
-                label: "North America",
+                label: "北美",
                 value: MapTypes.NORTH_AMERICA,
               },
               {
-                label: "South America",
+                label: "南美",
                 value: MapTypes.SOURTH_AMERICA,
               },
               {
-                label: "Asia",
+                label: "亚洲",
                 value: MapTypes.ASIA,
               },
               {
-                label: "Oceania",
+                label: "大洋洲",
                 value: MapTypes.OCEANIA,
               },
               {
-                label: "Africa",
+                label: "非洲",
                 value: MapTypes.AFRICA,
               },
             ],
@@ -122,10 +122,10 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
             },
           },
           {
-            helpText: "Sets the map title",
-            placeholderText: "Enter title",
+            helpText: "地图标题",
+            placeholderText: "输入标题",
             propertyName: "mapTitle",
-            label: "Title",
+            label: "标题",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -133,8 +133,8 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -144,12 +144,12 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Map Chart Data",
+        sectionName: "地图图表数据",
         children: [
           {
-            helpText: "Populates the map with the data",
+            helpText: "地图数据",
             propertyName: "data",
-            label: "Data",
+            label: "数据",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -187,8 +187,8 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
           },
           {
             propertyName: "showLabels",
-            label: "Show Labels",
-            helpText: "Sets whether entity labels will be shown or hidden",
+            label: "显示标签",
+            helpText: "设置是否显示标签",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -198,15 +198,14 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
-            helpText:
-              "Defines ranges for categorizing entities on a map based on their data values.",
+            helpText: "设置地图数据项的颜色范围",
             propertyName: "colorRange",
-            label: "Color Range",
+            label: "颜色范围",
             controlType: "INPUT_TEXT",
-            placeholderText: "Color range object",
+            placeholderText: "颜色范围对象",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -264,9 +263,8 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -275,9 +273,8 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -287,11 +284,10 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Actions",
+        sectionName: "动作",
         children: [
           {
-            helpText:
-              "Triggers an action when the map chart data point is clicked",
+            helpText: "点击地图图表数据点时触发",
             propertyName: "onDataPointClick",
             label: "onDataPointClick",
             controlType: "ACTION_SELECTOR",
@@ -307,44 +303,44 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
-            helpText: "Sets the map type",
+            helpText: "设置地图类型",
             propertyName: "mapType",
-            label: "Map Type",
+            label: "地图类型",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "World",
+                label: "世界地图",
                 value: MapTypes.WORLD,
               },
               {
-                label: "World with Antarctica",
+                label: "世界地图（包括南极）",
                 value: MapTypes.WORLD_WITH_ANTARCTICA,
               },
               {
-                label: "Europe",
+                label: "欧洲",
                 value: MapTypes.EUROPE,
               },
               {
-                label: "North America",
+                label: "北美",
                 value: MapTypes.NORTH_AMERICA,
               },
               {
-                label: "South America",
+                label: "南美",
                 value: MapTypes.SOURTH_AMERICA,
               },
               {
-                label: "Asia",
+                label: "亚洲",
                 value: MapTypes.ASIA,
               },
               {
-                label: "Oceania",
+                label: "大洋洲",
                 value: MapTypes.OCEANIA,
               },
               {
-                label: "Africa",
+                label: "非洲",
                 value: MapTypes.AFRICA,
               },
             ],
@@ -369,7 +365,7 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
             },
           },
           {
-            helpText: "Populates the map with the data",
+            helpText: "地图数据",
             propertyName: "data",
             label: "Chart Data",
             controlType: "INPUT_TEXT",
@@ -410,13 +406,13 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Sets the map title",
-            placeholderText: "Enter title",
+            helpText: "地图标题",
+            placeholderText: "输入标题",
             propertyName: "mapTitle",
-            label: "Title",
+            label: "标题",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -424,8 +420,8 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -434,8 +430,8 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
           },
           {
             propertyName: "showLabels",
-            label: "Show Labels",
-            helpText: "Sets whether entity labels will be shown or hidden",
+            label: "显示标签",
+            helpText: "设置是否显示标签",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -445,11 +441,10 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText:
-              "Triggers an action when the map chart data point is clicked",
+            helpText: "点击地图图表数据点时触发",
             propertyName: "onDataPointClick",
             label: "onDataPointClick",
             controlType: "ACTION_SELECTOR",
@@ -465,15 +460,14 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText:
-              "Defines ranges for categorizing entities on a map based on their data values.",
+            helpText: "设置地图数据项的颜色范围",
             propertyName: "colorRange",
-            label: "Color Range",
+            label: "颜色范围",
             controlType: "INPUT_TEXT",
-            placeholderText: "Color range object",
+            placeholderText: "颜色范围对象",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -532,13 +526,12 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -547,9 +540,8 @@ class MapChartWidget extends BaseWidget<MapChartWidgetProps, WidgetState> {
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

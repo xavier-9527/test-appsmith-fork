@@ -2,11 +2,11 @@ import { ValidationTypes } from "constants/WidgetValidation";
 import { updateColumnStyles } from "../propertyUtils";
 
 export default {
-  sectionName: "Styles",
+  sectionName: "样式",
   children: [
     {
       propertyName: "cellBackground",
-      label: "Cell Background Color",
+      label: "单元格背景颜色",
       controlType: "COLOR_PICKER",
       updateHook: updateColumnStyles,
       dependencies: ["primaryColumns"],
@@ -17,7 +17,7 @@ export default {
     },
     {
       propertyName: "accentColor",
-      label: "Accent Color",
+      label: "强调色",
       controlType: "COLOR_PICKER",
       isJSConvertible: true,
       isBindProperty: true,
@@ -27,7 +27,7 @@ export default {
     },
     {
       propertyName: "textColor",
-      label: "Text Color",
+      label: "文本颜色",
       controlType: "COLOR_PICKER",
       updateHook: updateColumnStyles,
       dependencies: ["primaryColumns"],
@@ -38,7 +38,7 @@ export default {
     },
     {
       propertyName: "textSize",
-      label: "Text Size",
+      label: "字体大小",
       controlType: "DROP_DOWN",
       updateHook: updateColumnStyles,
       dependencies: ["primaryColumns"],
@@ -71,7 +71,7 @@ export default {
     },
     {
       propertyName: "fontStyle",
-      label: "Font Style",
+      label: "字体样式",
       controlType: "BUTTON_TABS",
       updateHook: updateColumnStyles,
       dependencies: ["primaryColumns"],
@@ -90,7 +90,7 @@ export default {
     },
     {
       propertyName: "horizontalAlignment",
-      label: "Text Align",
+      label: "文本对齐方式",
       controlType: "ICON_TABS",
       updateHook: updateColumnStyles,
       dependencies: ["primaryColumns"],
@@ -114,7 +114,7 @@ export default {
     },
     {
       propertyName: "verticalAlignment",
-      label: "Vertical Alignment",
+      label: "垂直对齐",
       controlType: "ICON_TABS",
       updateHook: updateColumnStyles,
       dependencies: ["primaryColumns"],
@@ -138,8 +138,8 @@ export default {
     },
     {
       propertyName: "borderRadius",
-      label: "Border Radius",
-      helpText: "Rounds the corners of the icon button's outer border edge",
+      label: "边框圆角",
+      helpText: "边框圆角样式",
       controlType: "BORDER_RADIUS_OPTIONS",
       isJSConvertible: true,
       isBindProperty: true,
@@ -148,9 +148,8 @@ export default {
     },
     {
       propertyName: "boxShadow",
-      label: "Box Shadow",
-      helpText:
-        "Enables you to cast a drop shadow from the frame of the widget",
+      label: "阴影",
+      helpText: "组件轮廓投影",
       controlType: "BOX_SHADOW_OPTIONS",
       isJSConvertible: true,
       isBindProperty: true,

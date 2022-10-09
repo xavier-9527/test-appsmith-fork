@@ -20,14 +20,14 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "text",
-            helpText: "Sets the text of the widget",
-            label: "Text",
+            helpText: "设置文本内容",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Name:",
+            placeholderText: "名称：",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -37,20 +37,20 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "overflow",
-            label: "Overflow",
-            helpText: "Controls the text behavior when length of text exceeds",
+            label: "内容超出",
+            helpText: "设置文本内容超出组件区域时如何展示",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "Scroll contents",
+                label: "允许内容滚动",
                 value: OverflowTypes.SCROLL,
               },
               {
-                label: "Truncate text",
+                label: "截断文本",
                 value: OverflowTypes.TRUNCATE,
               },
               {
-                label: "No overflow",
+                label: "默认效果",
                 value: OverflowTypes.NONE,
               },
             ],
@@ -60,8 +60,8 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            helpText: "Controls the visibility of the widget",
-            label: "Visible",
+            helpText: "控制组件的显示/隐藏",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -70,9 +70,9 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -81,8 +81,8 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "disableLink",
-            helpText: "Controls parsing text as Link",
-            label: "Disable Link",
+            helpText: "不将文本解析成链接",
+            label: "不解析链接",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -92,11 +92,11 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "backgroundColor",
-            label: "Cell Background Color",
+            label: "单元格背景颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -106,7 +106,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
               params: {
                 regex: /^((?![<|{{]).+){0,1}/,
                 expected: {
-                  type: "string (HTML color name or HEX value)",
+                  type: "string (HTML 颜色名称，HEX 值)",
                   example: `red | #9C0D38`,
                   autocompleteDataType: AutocompleteDataType.STRING,
                 },
@@ -115,7 +115,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "textColor",
-            label: "Text Color",
+            label: "文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -129,7 +129,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "truncateButtonColor",
-            label: "Truncate Button Color",
+            label: "截断按钮颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -146,21 +146,20 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
             },
           },
           {
-            helpText: "Use a html color name, HEX, RGB or RGBA value",
+            helpText: "使用 html 颜色名称，HEX，RGB 或者 RGBA 值",
             placeholderText: "#FFFFFF / Gray / rgb(255, 99, 71)",
             propertyName: "borderColor",
-            label: "Border Color",
+            label: "边框颜色",
             controlType: "COLOR_PICKER",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText:
-              "Enter value for border width which can also use as margin",
+            helpText: "设置边框宽度，也可以用作外间距",
             propertyName: "borderWidth",
-            label: "Border Width",
-            placeholderText: "Enter value in px",
+            label: "边框宽度",
+            placeholderText: "以 px 为单位",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -168,7 +167,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "fontSize",
-            label: "Text Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "1rem",
             options: [
@@ -212,11 +211,11 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "fontFamily",
-            label: "Font Family",
+            label: "字体",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "System Default",
+                label: "系统默认字体",
                 value: "System Default",
               },
               {
@@ -266,7 +265,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "fontStyle",
-            label: "Font Style",
+            label: "字体样式",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -285,7 +284,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "textAlign",
-            label: "Text Align",
+            label: "文本对齐方式",
             controlType: "ICON_TABS",
             options: [
               {
@@ -315,14 +314,14 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "text",
-            helpText: "Sets the text of the widget",
-            label: "Text",
+            helpText: "设置文本内容",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Name:",
+            placeholderText: "名称：",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -332,20 +331,20 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "overflow",
-            label: "Overflow Text",
-            helpText: "Controls the text behavior when length of text exceeds",
+            label: "内容超出",
+            helpText: "设置文本内容超出组件区域时如何展示",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "Scroll contents",
+                label: "允许内容滚动",
                 value: OverflowTypes.SCROLL,
               },
               {
-                label: "Truncate text",
+                label: "截断文本",
                 value: OverflowTypes.TRUNCATE,
               },
               {
-                label: "No overflow",
+                label: "默认效果",
                 value: OverflowTypes.NONE,
               },
             ],
@@ -355,8 +354,8 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            helpText: "Controls the visibility of the widget",
-            label: "Visible",
+            helpText: "控制组件的显示/隐藏",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -365,9 +364,9 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -376,8 +375,8 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "disableLink",
-            helpText: "Controls parsing text as Link",
-            label: "Disable Link",
+            helpText: "不将文本解析成链接",
+            label: "不解析链接",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -392,15 +391,15 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "fontFamily",
-            label: "Font Family",
+            label: "字体",
             controlType: "DROP_DOWN",
             options: [
               {
-                label: "System Default",
+                label: "系统默认字体",
                 value: "System Default",
               },
               {
@@ -450,7 +449,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "fontSize",
-            label: "Font Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "1rem",
             options: [
@@ -495,11 +494,11 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [
           {
             propertyName: "textColor",
-            label: "Text Color",
+            label: "文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -513,7 +512,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "backgroundColor",
-            label: "Background Color",
+            label: "背景颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -523,7 +522,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
               params: {
                 regex: /^((?![<|{{]).+){0,1}/,
                 expected: {
-                  type: "string (HTML color name or HEX value)",
+                  type: "string (HTML 颜色名称，HEX 值)",
                   example: `red | #9C0D38`,
                   autocompleteDataType: AutocompleteDataType.STRING,
                 },
@@ -531,10 +530,10 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
             },
           },
           {
-            helpText: "Use a html color name, HEX, RGB or RGBA value",
+            helpText: "使用 html 颜色名称，HEX，RGB 或者 RGBA 值",
             placeholderText: "#FFFFFF / Gray / rgb(255, 99, 71)",
             propertyName: "borderColor",
-            label: "Border Color",
+            label: "边框颜色",
             controlType: "COLOR_PICKER",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -542,7 +541,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "truncateButtonColor",
-            label: "Truncate Button Color",
+            label: "截断按钮颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -561,11 +560,11 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Text Formatting",
+        sectionName: "文本样式",
         children: [
           {
             propertyName: "textAlign",
-            label: "Alignment",
+            label: "对齐",
             controlType: "ICON_TABS",
             options: [
               {
@@ -589,7 +588,7 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
           },
           {
             propertyName: "fontStyle",
-            label: "Emphasis",
+            label: "强调",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -609,14 +608,13 @@ class TextWidget extends BaseWidget<TextWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
-            helpText:
-              "Enter value for border width which can also use as margin",
+            helpText: "设置边框宽度，也可以用作外间距",
             propertyName: "borderWidth",
-            label: "Border Width",
-            placeholderText: "Enter value in px",
+            label: "边框宽度",
+            placeholderText: "以 px 为单位",
             controlType: "INPUT_TEXT",
             isBindProperty: true,
             isTriggerProperty: false,

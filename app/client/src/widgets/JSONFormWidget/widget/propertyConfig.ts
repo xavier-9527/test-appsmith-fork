@@ -106,8 +106,8 @@ const generateFormCTADisabled = (widgetProps: JSONFormWidgetProps) =>
 const generateButtonStyleControlsFor = (prefix: string) => [
   {
     propertyName: `${prefix}.buttonColor`,
-    helpText: "Changes the color of the button",
-    label: "Button Color",
+    helpText: "修改按钮颜色",
+    label: "按钮颜色",
     controlType: "COLOR_PICKER",
     isJSConvertible: true,
     isBindProperty: true,
@@ -116,20 +116,20 @@ const generateButtonStyleControlsFor = (prefix: string) => [
   },
   {
     propertyName: `${prefix}.buttonVariant`,
-    label: "Button Variant",
+    label: "按钮类型",
     controlType: "DROP_DOWN",
-    helpText: "Sets the variant of the icon button",
+    helpText: "设置图标按钮类型",
     options: [
       {
-        label: "Primary",
+        label: "主按钮",
         value: ButtonVariantTypes.PRIMARY,
       },
       {
-        label: "Secondary",
+        label: "次级按钮",
         value: ButtonVariantTypes.SECONDARY,
       },
       {
-        label: "Tertiary",
+        label: "文本按钮",
         value: ButtonVariantTypes.TERTIARY,
       },
     ],
@@ -150,8 +150,8 @@ const generateButtonStyleControlsFor = (prefix: string) => [
   },
   {
     propertyName: `${prefix}.borderRadius`,
-    label: "Border Radius",
-    helpText: "Rounds the corners of the icon button's outer border edge",
+    label: "边框圆角",
+    helpText: "边框圆角样式",
     controlType: "BORDER_RADIUS_OPTIONS",
     isJSConvertible: true,
     isBindProperty: true,
@@ -160,8 +160,8 @@ const generateButtonStyleControlsFor = (prefix: string) => [
   },
   {
     propertyName: `${prefix}.boxShadow`,
-    label: "Box Shadow",
-    helpText: "Enables you to cast a drop shadow from the frame of the widget",
+    label: "阴影",
+    helpText: "组件轮廓投影",
     controlType: "BOX_SHADOW_OPTIONS",
     isJSConvertible: true,
     isBindProperty: true,
@@ -172,8 +172,8 @@ const generateButtonStyleControlsFor = (prefix: string) => [
   },
   {
     propertyName: `${prefix}.iconName`,
-    label: "Icon",
-    helpText: "Sets the icon to be used for the button",
+    label: "图标",
+    helpText: "设置按钮图标",
     controlType: "ICON_SELECT",
     isJSConvertible: true,
     isBindProperty: true,
@@ -198,20 +198,20 @@ const generateButtonStyleControlsFor = (prefix: string) => [
   },
   {
     propertyName: `${prefix}.placement`,
-    label: "Placement",
+    label: "排列方式",
     controlType: "DROP_DOWN",
-    helpText: "Sets the space between items",
+    helpText: "设置图标与标签的排列方式",
     options: [
       {
-        label: "Start",
+        label: "向前对齐",
         value: ButtonPlacementTypes.START,
       },
       {
-        label: "Between",
+        label: "两边对齐",
         value: ButtonPlacementTypes.BETWEEN,
       },
       {
-        label: "Center",
+        label: "居中对齐",
         value: ButtonPlacementTypes.CENTER,
       },
     ],
@@ -233,8 +233,8 @@ const generateButtonStyleControlsFor = (prefix: string) => [
   },
   {
     propertyName: `${prefix}.iconAlign`,
-    label: "Icon Alignment",
-    helpText: "Sets the icon alignment of the button",
+    label: "图标对齐",
+    helpText: "设置按钮图标对齐方向",
     controlType: "ICON_TABS",
     options: [
       {
@@ -260,12 +260,12 @@ const generateButtonStyleControlsFor = (prefix: string) => [
 
 export const contentConfig = [
   {
-    sectionName: "Data",
+    sectionName: "数据",
     children: [
       {
         propertyName: "sourceData",
-        helpText: "Input JSON sample for default form layout",
-        label: "Source Data",
+        helpText: "样例 JSON 数据",
+        label: "源数据",
         controlType: "INPUT_TEXT",
         placeholderText: '{ "name": "John", "age": 24 }',
         isBindProperty: true,
@@ -286,8 +286,8 @@ export const contentConfig = [
       {
         propertyName: "autoGenerateForm",
         helpText:
-          "Caution: When auto generate form is enabled, the form fields would regenerate if there is any change of source data (keys change or value type changes eg from string to number). If disabled then the fields and their configuration won't change with the change of source data.",
-        label: "Auto Generate Form",
+          "注意：如果开启了自动生成表单，在源数据发生改变的时候，所有的表单字段都会重新生成。",
+        label: "自动生成表单",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -301,7 +301,7 @@ export const contentConfig = [
         controlType: "BUTTON",
         isJSConvertible: false,
         isBindProperty: false,
-        buttonLabel: "Generate Form",
+        buttonLabel: "生成表单",
         onClick: onGenerateFormClick,
         isDisabled: generateFormCTADisabled,
         isTriggerProperty: false,
@@ -315,8 +315,8 @@ export const contentConfig = [
       },
       {
         propertyName: `schema.${ROOT_SCHEMA_KEY}.children`,
-        helpText: "Field configuration",
-        label: "Field Configuration",
+        helpText: "字段配置",
+        label: "字段配置",
         controlType: "FIELD_CONFIGURATION",
         isBindProperty: false,
         isTriggerProperty: false,
@@ -326,12 +326,12 @@ export const contentConfig = [
     ],
   },
   {
-    sectionName: "General",
+    sectionName: "属性",
     children: [
       {
         propertyName: "title",
-        label: "Title",
-        helpText: "Sets the title of the form",
+        label: "标题",
+        helpText: "表单标题",
         controlType: "INPUT_TEXT",
         placeholderText: "Update Order",
         isBindProperty: true,
@@ -340,8 +340,8 @@ export const contentConfig = [
       },
       {
         propertyName: "isVisible",
-        helpText: "Controls the visibility of the widget",
-        label: "Visible",
+        helpText: "控制组件的显示/隐藏",
+        label: "是否显示",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -350,9 +350,9 @@ export const contentConfig = [
       },
       {
         propertyName: "animateLoading",
-        label: "Animate Loading",
+        label: "加载时显示动画",
         controlType: "SWITCH",
-        helpText: "Controls the loading of the widget",
+        helpText: "组件依赖的数据加载时显示加载动画",
         defaultValue: true,
         isJSConvertible: true,
         isBindProperty: true,
@@ -361,9 +361,8 @@ export const contentConfig = [
       },
       {
         propertyName: "disabledWhenInvalid",
-        helpText:
-          "Disables the submit button when the parent form has a required widget that is not filled",
-        label: "Disabled Invalid Forms",
+        helpText: "父级表单校验不通过时禁用提交按钮",
+        label: "表单校验不成功时禁用",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -372,8 +371,8 @@ export const contentConfig = [
       },
       {
         propertyName: "fixedFooter",
-        helpText: "Makes the footer always stick to the bottom of the form",
-        label: "Fixed Footer",
+        helpText: "让底部信息固定在表单底部",
+        label: "固定底部",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -382,8 +381,8 @@ export const contentConfig = [
       },
       {
         propertyName: "scrollContents",
-        helpText: "Allows scrolling of the form",
-        label: "Scroll Contents",
+        helpText: "允许表单的内容滚动",
+        label: "允许内容滚动",
         controlType: "SWITCH",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -391,8 +390,8 @@ export const contentConfig = [
       },
       {
         propertyName: "showReset",
-        helpText: "Show/Hide reset form button",
-        label: "Show Reset",
+        helpText: "显示或隐藏表单重置按钮",
+        label: "显示重置按钮",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -401,8 +400,8 @@ export const contentConfig = [
       },
       {
         propertyName: "submitButtonLabel",
-        helpText: "Changes the label of the submit button",
-        label: "Submit Button Label",
+        helpText: "修改提交按钮文案",
+        label: "提交按钮文案",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -410,8 +409,8 @@ export const contentConfig = [
       },
       {
         propertyName: "resetButtonLabel",
-        helpText: "Changes the label of the reset button",
-        label: "Reset Button Label",
+        helpText: "修改重置按钮文案",
+        label: "重置按钮文案",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -420,11 +419,11 @@ export const contentConfig = [
     ],
   },
   {
-    sectionName: "Events",
+    sectionName: "事件",
     children: [
       {
         propertyName: "onSubmit",
-        helpText: "Triggers an action when the submit button is clicked",
+        helpText: "点击提交按钮时触发",
         label: "onSubmit",
         controlType: "ACTION_SELECTOR",
         isJSConvertible: true,
@@ -437,13 +436,13 @@ export const contentConfig = [
 
 const generateButtonStyleControlsV2For = (prefix: string) => [
   {
-    sectionName: "General",
+    sectionName: "属性",
     collapsible: false,
     children: [
       {
         propertyName: `${prefix}.buttonColor`,
-        helpText: "Changes the color of the button",
-        label: "Button Color",
+        helpText: "修改按钮颜色",
+        label: "按钮颜色",
         controlType: "COLOR_PICKER",
         isJSConvertible: true,
         isBindProperty: true,
@@ -452,20 +451,20 @@ const generateButtonStyleControlsV2For = (prefix: string) => [
       },
       {
         propertyName: `${prefix}.buttonVariant`,
-        label: "Button Variant",
+        label: "按钮类型",
         controlType: "DROP_DOWN",
-        helpText: "Sets the variant of the icon button",
+        helpText: "设置图标按钮类型",
         options: [
           {
-            label: "Primary",
+            label: "主按钮",
             value: ButtonVariantTypes.PRIMARY,
           },
           {
-            label: "Secondary",
+            label: "次级按钮",
             value: ButtonVariantTypes.SECONDARY,
           },
           {
-            label: "Tertiary",
+            label: "文本按钮",
             value: ButtonVariantTypes.TERTIARY,
           },
         ],
@@ -486,8 +485,8 @@ const generateButtonStyleControlsV2For = (prefix: string) => [
       },
       {
         propertyName: `${prefix}.borderRadius`,
-        label: "Border Radius",
-        helpText: "Rounds the corners of the icon button's outer border edge",
+        label: "边框圆角",
+        helpText: "边框圆角样式",
         controlType: "BORDER_RADIUS_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -496,9 +495,8 @@ const generateButtonStyleControlsV2For = (prefix: string) => [
       },
       {
         propertyName: `${prefix}.boxShadow`,
-        label: "Box Shadow",
-        helpText:
-          "Enables you to cast a drop shadow from the frame of the widget",
+        label: "阴影",
+        helpText: "组件轮廓投影",
         controlType: "BOX_SHADOW_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -510,13 +508,13 @@ const generateButtonStyleControlsV2For = (prefix: string) => [
     ],
   },
   {
-    sectionName: "Icon",
+    sectionName: "图标配置",
     collapsible: false,
     children: [
       {
         propertyName: `${prefix}.iconName`,
-        label: "Icon",
-        helpText: "Sets the icon to be used for the button",
+        label: "图标",
+        helpText: "设置按钮图标",
         controlType: "ICON_SELECT",
         isJSConvertible: true,
         isBindProperty: true,
@@ -541,8 +539,8 @@ const generateButtonStyleControlsV2For = (prefix: string) => [
       },
       {
         propertyName: `${prefix}.iconAlign`,
-        label: "Position",
-        helpText: "Sets the icon alignment of the button",
+        label: "位置",
+        helpText: "设置按钮图标对齐方向",
         controlType: "ICON_TABS",
         options: [
           {
@@ -566,20 +564,20 @@ const generateButtonStyleControlsV2For = (prefix: string) => [
       },
       {
         propertyName: `${prefix}.placement`,
-        label: "Placement",
+        label: "排列方式",
         controlType: "DROP_DOWN",
-        helpText: "Sets the space between items",
+        helpText: "设置图标与标签的排列方式",
         options: [
           {
-            label: "Start",
+            label: "向前对齐",
             value: ButtonPlacementTypes.START,
           },
           {
-            label: "Between",
+            label: "两边对齐",
             value: ButtonPlacementTypes.BETWEEN,
           },
           {
-            label: "Center",
+            label: "居中对齐",
             value: ButtonPlacementTypes.CENTER,
           },
         ],
@@ -605,13 +603,13 @@ const generateButtonStyleControlsV2For = (prefix: string) => [
 
 export const styleConfig = [
   {
-    sectionName: "Color",
+    sectionName: "颜色配置",
     children: [
       {
         propertyName: "backgroundColor",
-        helpText: "Use a html color name, HEX, RGB or RGBA value",
+        helpText: "使用 html 颜色名称，HEX，RGB 或者 RGBA 值",
         placeholderText: "#FFFFFF / Gray / rgb(255, 99, 71)",
-        label: "Background Color",
+        label: "背景颜色",
         controlType: "COLOR_PICKER",
         isJSConvertible: true,
         isBindProperty: true,
@@ -620,9 +618,9 @@ export const styleConfig = [
       },
       {
         propertyName: "borderColor",
-        helpText: "Use a html color name, HEX, RGB or RGBA value",
+        helpText: "使用 html 颜色名称，HEX，RGB 或者 RGBA 值",
         placeholderText: "#FFFFFF / Gray / rgb(255, 99, 71)",
-        label: "Border Color",
+        label: "边框颜色",
         controlType: "COLOR_PICKER",
         isJSConvertible: true,
         isBindProperty: true,
@@ -632,13 +630,13 @@ export const styleConfig = [
     ],
   },
   {
-    sectionName: "Border and Shadow",
+    sectionName: "轮廓样式",
     children: [
       {
         propertyName: "borderWidth",
-        helpText: "Enter value for border width",
-        label: "Border Width",
-        placeholderText: "Enter value in px",
+        helpText: "输入边框宽度",
+        label: "边框宽度",
+        placeholderText: "以 px 为单位",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -647,7 +645,7 @@ export const styleConfig = [
       {
         propertyName: "borderRadius",
         helpText: "Enter value for border radius",
-        label: "Border Radius",
+        label: "边框圆角",
         controlType: "BORDER_RADIUS_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -656,9 +654,8 @@ export const styleConfig = [
       },
       {
         propertyName: "boxShadow",
-        label: "Box Shadow",
-        helpText:
-          "Enables you to cast a drop shadow from the frame of the widget",
+        label: "阴影",
+        helpText: "组件轮廓投影",
         controlType: "BOX_SHADOW_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -668,11 +665,11 @@ export const styleConfig = [
     ],
   },
   {
-    sectionName: "Submit Button Styles",
+    sectionName: "提交按钮样式",
     children: generateButtonStyleControlsV2For("submitButtonStyles"),
   },
   {
-    sectionName: "Reset Button Styles",
+    sectionName: "重置按钮样式",
     children: generateButtonStyleControlsV2For("resetButtonStyles"),
     dependencies: ["showReset"],
     hidden: (props: JSONFormWidgetProps) => !props.showReset,
@@ -681,12 +678,12 @@ export const styleConfig = [
 
 export default [
   {
-    sectionName: "General",
+    sectionName: "属性",
     children: [
       {
         propertyName: "title",
-        label: "Title",
-        helpText: "Sets the title of the form",
+        label: "标题",
+        helpText: "表单标题",
         controlType: "INPUT_TEXT",
         placeholderText: "Update Order",
         isBindProperty: true,
@@ -695,8 +692,8 @@ export default [
       },
       {
         propertyName: "sourceData",
-        helpText: "Input JSON sample for default form layout",
-        label: "Source Data",
+        helpText: "样例 JSON 数据",
+        label: "源数据",
         controlType: "INPUT_TEXT",
         placeholderText: '{ "name": "John", "age": 24 }',
         isBindProperty: true,
@@ -717,8 +714,8 @@ export default [
       {
         propertyName: "autoGenerateForm",
         helpText:
-          "Caution: When auto generate form is enabled, the form fields would regenerate if there is any change of source data (keys change or value type changes eg from string to number). If disabled then the fields and their configuration won't change with the change of source data.",
-        label: "Auto Generate Form",
+          "注意：如果开启了自动生成表单，在源数据发生改变的时候，所有的表单字段都会重新生成。",
+        label: "自动生成表单",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -732,7 +729,7 @@ export default [
         controlType: "BUTTON",
         isJSConvertible: false,
         isBindProperty: false,
-        buttonLabel: "Generate Form",
+        buttonLabel: "生成表单",
         onClick: onGenerateFormClick,
         isDisabled: generateFormCTADisabled,
         isTriggerProperty: false,
@@ -746,8 +743,8 @@ export default [
       },
       {
         propertyName: `schema.${ROOT_SCHEMA_KEY}.children`,
-        helpText: "Field configuration",
-        label: "Field Configuration",
+        helpText: "字段配置",
+        label: "字段配置",
         controlType: "FIELD_CONFIGURATION",
         isBindProperty: false,
         isTriggerProperty: false,
@@ -756,9 +753,8 @@ export default [
       },
       {
         propertyName: "disabledWhenInvalid",
-        helpText:
-          "Disables the submit button when the parent form has a required widget that is not filled",
-        label: "Disabled Invalid Forms",
+        helpText: "父级表单校验不通过时禁用提交按钮",
+        label: "表单校验不成功时禁用",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -767,9 +763,9 @@ export default [
       },
       {
         propertyName: "animateLoading",
-        label: "Animate Loading",
+        label: "加载时显示动画",
         controlType: "SWITCH",
-        helpText: "Controls the loading of the widget",
+        helpText: "组件依赖的数据加载时显示加载动画",
         defaultValue: true,
         isJSConvertible: true,
         isBindProperty: true,
@@ -778,8 +774,8 @@ export default [
       },
       {
         propertyName: "fixedFooter",
-        helpText: "Makes the footer always stick to the bottom of the form",
-        label: "Fixed Footer",
+        helpText: "让底部信息固定在表单底部",
+        label: "固定底部",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -788,8 +784,8 @@ export default [
       },
       {
         propertyName: "isVisible",
-        helpText: "Controls the visibility of the widget",
-        label: "Visible",
+        helpText: "控制组件的显示/隐藏",
+        label: "是否显示",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -798,8 +794,8 @@ export default [
       },
       {
         propertyName: "scrollContents",
-        helpText: "Allows scrolling of the form",
-        label: "Scroll Contents",
+        helpText: "允许表单的内容滚动",
+        label: "允许内容滚动",
         controlType: "SWITCH",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -807,8 +803,8 @@ export default [
       },
       {
         propertyName: "showReset",
-        helpText: "Show/Hide reset form button",
-        label: "Show Reset",
+        helpText: "显示或隐藏表单重置按钮",
+        label: "显示重置按钮",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -817,8 +813,8 @@ export default [
       },
       {
         propertyName: "submitButtonLabel",
-        helpText: "Changes the label of the submit button",
-        label: "Submit Button Label",
+        helpText: "修改提交按钮文案",
+        label: "提交按钮文案",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -826,8 +822,8 @@ export default [
       },
       {
         propertyName: "resetButtonLabel",
-        helpText: "Changes the label of the reset button",
-        label: "Reset Button Label",
+        helpText: "修改重置按钮文案",
+        label: "重置按钮文案",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -836,11 +832,11 @@ export default [
     ],
   },
   {
-    sectionName: "Actions",
+    sectionName: "动作",
     children: [
       {
         propertyName: "onSubmit",
-        helpText: "Triggers an action when the submit button is clicked",
+        helpText: "点击提交按钮时触发",
         label: "onSubmit",
         controlType: "ACTION_SELECTOR",
         isJSConvertible: true,
@@ -850,14 +846,14 @@ export default [
     ],
   },
   {
-    sectionName: "Form Styles",
+    sectionName: "表单样式",
     isDefaultOpen: false,
     children: [
       {
         propertyName: "backgroundColor",
-        helpText: "Use a html color name, HEX, RGB or RGBA value",
+        helpText: "使用 html 颜色名称，HEX，RGB 或者 RGBA 值",
         placeholderText: "#FFFFFF / Gray / rgb(255, 99, 71)",
-        label: "Background Color",
+        label: "背景颜色",
         controlType: "COLOR_PICKER",
         isJSConvertible: true,
         isBindProperty: true,
@@ -866,9 +862,9 @@ export default [
       },
       {
         propertyName: "borderColor",
-        helpText: "Use a html color name, HEX, RGB or RGBA value",
+        helpText: "使用 html 颜色名称，HEX，RGB 或者 RGBA 值",
         placeholderText: "#FFFFFF / Gray / rgb(255, 99, 71)",
-        label: "Border Color",
+        label: "边框颜色",
         controlType: "COLOR_PICKER",
         isJSConvertible: true,
         isBindProperty: true,
@@ -877,9 +873,9 @@ export default [
       },
       {
         propertyName: "borderWidth",
-        helpText: "Enter value for border width",
-        label: "Border Width",
-        placeholderText: "Enter value in px",
+        helpText: "输入边框宽度",
+        label: "边框宽度",
+        placeholderText: "以 px 为单位",
         controlType: "INPUT_TEXT",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -888,7 +884,7 @@ export default [
       {
         propertyName: "borderRadius",
         helpText: "Enter value for border radius",
-        label: "Border Radius",
+        label: "边框圆角",
         controlType: "BORDER_RADIUS_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -897,9 +893,8 @@ export default [
       },
       {
         propertyName: "boxShadow",
-        label: "Box Shadow",
-        helpText:
-          "Enables you to cast a drop shadow from the frame of the widget",
+        label: "阴影",
+        helpText: "组件轮廓投影",
         controlType: "BOX_SHADOW_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -909,12 +904,12 @@ export default [
     ],
   },
   {
-    sectionName: "Submit Button Styles",
+    sectionName: "提交按钮样式",
     isDefaultOpen: false,
     children: generateButtonStyleControlsFor("submitButtonStyles"),
   },
   {
-    sectionName: "Reset Button Styles",
+    sectionName: "重置按钮样式",
     isDefaultOpen: false,
     children: generateButtonStyleControlsFor("resetButtonStyles"),
     dependencies: ["showReset"],

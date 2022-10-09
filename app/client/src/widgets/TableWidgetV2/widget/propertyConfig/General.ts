@@ -20,13 +20,12 @@ import panelConfig from "./PanelConfig";
 import { composePropertyUpdateHook } from "widgets/WidgetUtils";
 
 export default {
-  sectionName: "General",
+  sectionName: "属性",
   children: [
     {
-      helpText:
-        "Takes in an array of objects to display rows in the table. Bind data from an API using {{}}",
+      helpText: "表格数组数据",
       propertyName: "tableData",
-      label: "Table Data",
+      label: "数据",
       controlType: "INPUT_TEXT",
       placeholderText: '[{ "name": "John" }]',
       inputType: "ARRAY",
@@ -41,10 +40,10 @@ export default {
       evaluationSubstitutionType: EvaluationSubstitutionType.SMART_SUBSTITUTE,
     },
     {
-      helpText: "Columns",
+      helpText: "表格数据列定义",
       propertyName: "primaryColumns",
       controlType: "PRIMARY_COLUMNS_V2",
-      label: "Columns",
+      label: "数据列",
       updateHook: composePropertyUpdateHook([
         updateColumnOrderHook,
         updateInlineEditingOptionDropdownVisibilityHook,
@@ -67,7 +66,7 @@ export default {
         params: {
           fn: uniqueColumnNameValidation,
           expected: {
-            type: "Unique Column Names",
+            type: "唯一列名",
             example: "abc",
             autocompleteDataType: AutocompleteDataType.STRING,
           },
@@ -77,8 +76,8 @@ export default {
     },
     {
       propertyName: "inlineEditingSaveOption",
-      helpText: "Choose the save experience to save the edited cell",
-      label: "Update Mode",
+      helpText: "选择如何保存编辑的单元格数据",
+      label: "更新模式",
       controlType: "DROP_DOWN",
       isBindProperty: true,
       isTriggerProperty: false,
@@ -98,22 +97,21 @@ export default {
       ],
       options: [
         {
-          label: "Row level",
+          label: "行更新",
           value: InlineEditingSaveOptions.ROW_LEVEL,
         },
         {
-          label: "Custom",
+          label: "自定义更新",
           value: InlineEditingSaveOptions.CUSTOM,
         },
       ],
       updateHook: updateInlineEditingSaveOptionHook,
     },
     {
-      helpText:
-        "Assigns a unique column which helps maintain selectedRows and triggeredRows based on value",
+      helpText: "数据主键值唯一，用于表格的 selectedRows 和 triggeredRows",
       propertyName: "primaryColumnId",
       dependencies: ["primaryColumns"],
-      label: "Primary key column",
+      label: "主键列",
       controlType: "PRIMARY_COLUMNS_DROPDOWN",
       isBindProperty: true,
       isTriggerProperty: false,
@@ -121,7 +119,7 @@ export default {
     },
     {
       propertyName: "defaultSearchText",
-      label: "Default Search Text",
+      label: "默认搜索内容",
       controlType: "INPUT_TEXT",
       placeholderText: "{{appsmith.user.name}}",
       isBindProperty: true,
@@ -129,9 +127,9 @@ export default {
       validation: { type: ValidationTypes.TEXT },
     },
     {
-      helpText: "Selects row(s) by default",
+      helpText: "默认选中行的序号数组",
       propertyName: "defaultSelectedRowIndices",
-      label: "Default Selected Rows",
+      label: "默认选中行",
       controlType: "INPUT_TEXT",
       placeholderText: "[0]",
       isBindProperty: true,
@@ -154,9 +152,9 @@ export default {
       dependencies: ["multiRowSelection"],
     },
     {
-      helpText: "Selects row by default",
+      helpText: "默认选中行的序号",
       propertyName: "defaultSelectedRowIndex",
-      label: "Default Selected Row",
+      label: "默认选中行",
       controlType: "INPUT_TEXT",
       placeholderText: "0",
       isBindProperty: true,
@@ -175,32 +173,32 @@ export default {
     },
     {
       propertyName: "compactMode",
-      helpText: "Selects row height",
-      label: "Default Row Height",
+      helpText: "选择行高",
+      label: "默认行高",
       controlType: "DROP_DOWN",
       defaultValue: "DEFAULT",
       isBindProperty: true,
       isTriggerProperty: false,
       options: [
         {
-          label: "Short",
+          label: "矮",
           value: "SHORT",
         },
         {
-          label: "Default",
+          label: "默认",
           value: "DEFAULT",
         },
         {
-          label: "Tall",
+          label: "高",
           value: "TALL",
         },
       ],
     },
     {
       helpText:
-        "Bind the Table.pageNo property in your API and call it onPageChange",
+        "在 API 请求参数中绑定页号 Table.pageNo，onPageChange 换页的时候调用 API",
       propertyName: "serverSidePaginationEnabled",
-      label: "Server Side Pagination",
+      label: "服务端分页",
       controlType: "SWITCH",
       isBindProperty: false,
       isTriggerProperty: false,
@@ -208,9 +206,9 @@ export default {
     {
       helpText: createMessage(TABLE_WIDGET_TOTAL_RECORD_TOOLTIP),
       propertyName: "totalRecordsCount",
-      label: "Total Record Count",
+      label: "总行数",
       controlType: "INPUT_TEXT",
-      placeholderText: "Enter total record count",
+      placeholderText: "配置表格总行数",
       isBindProperty: true,
       isTriggerProperty: false,
       validation: {
@@ -228,10 +226,10 @@ export default {
       dependencies: ["serverSidePaginationEnabled"],
     },
     {
-      helpText: "Controls the visibility of the widget",
+      helpText: "控制组件的显示/隐藏",
       propertyName: "isVisible",
       isJSConvertible: true,
-      label: "Visible",
+      label: "是否显示",
       controlType: "SWITCH",
       isBindProperty: true,
       isTriggerProperty: false,
@@ -241,9 +239,9 @@ export default {
     },
     {
       propertyName: "animateLoading",
-      label: "Animate Loading",
+      label: "加载时显示动画",
       controlType: "SWITCH",
-      helpText: "Controls the loading of the widget",
+      helpText: "组件依赖的数据加载时显示加载动画",
       defaultValue: true,
       isJSConvertible: true,
       isBindProperty: true,
@@ -251,10 +249,10 @@ export default {
       validation: { type: ValidationTypes.BOOLEAN },
     },
     {
-      helpText: "Controls sorting in View Mode",
+      helpText: "是否支持按列排序",
       propertyName: "isSortable",
       isJSConvertible: true,
-      label: "Sortable",
+      label: "支持排序",
       controlType: "SWITCH",
       isBindProperty: true,
       isTriggerProperty: false,
@@ -267,14 +265,14 @@ export default {
     },
     {
       propertyName: "multiRowSelection",
-      label: "Enable multi row selection",
+      label: "支持多选",
       controlType: "SWITCH",
       isBindProperty: false,
       isTriggerProperty: false,
     },
     {
       propertyName: "enableClientSideSearch",
-      label: "Enable client side search",
+      label: "支持前端搜索",
       controlType: "SWITCH",
       isBindProperty: false,
       isTriggerProperty: false,

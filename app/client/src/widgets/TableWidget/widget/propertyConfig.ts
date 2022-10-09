@@ -31,13 +31,12 @@ const ICON_NAMES = Object.keys(IconNames).map(
 
 export default [
   {
-    sectionName: "General",
+    sectionName: "属性",
     children: [
       {
-        helpText:
-          "Takes in an array of objects to display rows in the table. Bind data from an API using {{}}",
+        helpText: "表格数组数据",
         propertyName: "tableData",
-        label: "Table Data",
+        label: "数据",
         controlType: "INPUT_TEXT",
         placeholderText: '[{ "name": "John" }]',
         inputType: "ARRAY",
@@ -52,10 +51,10 @@ export default [
         evaluationSubstitutionType: EvaluationSubstitutionType.SMART_SUBSTITUTE,
       },
       {
-        helpText: "Columns",
+        helpText: "表格数据列定义",
         propertyName: "primaryColumns",
         controlType: "PRIMARY_COLUMNS",
-        label: "Columns",
+        label: "数据列",
         updateHook: updateDerivedColumnsHook,
         dependencies: ["derivedColumns", "columnOrder", "childStylesheet"],
         isBindProperty: false,
@@ -65,7 +64,7 @@ export default [
           params: {
             fn: uniqueColumnNameValidation,
             expected: {
-              type: "Unique Column Names",
+              type: "不重复的列名",
               example: "abc",
               autocompleteDataType: AutocompleteDataType.STRING,
             },
@@ -79,16 +78,16 @@ export default [
           dependencies: ["primaryColumns", "derivedColumns", "columnOrder"],
           children: [
             {
-              sectionName: "Column Control",
+              sectionName: "列控件",
               children: [
                 {
                   propertyName: "columnType",
-                  label: "Column Type",
+                  label: "列类型",
                   controlType: "DROP_DOWN",
                   customJSControl: "COMPUTE_VALUE",
                   options: [
                     {
-                      label: "Plain Text",
+                      label: "文本",
                       value: "text",
                     },
                     {
@@ -96,31 +95,31 @@ export default [
                       value: "url",
                     },
                     {
-                      label: "Number",
+                      label: "数字",
                       value: "number",
                     },
                     {
-                      label: "Image",
+                      label: "图片",
                       value: "image",
                     },
                     {
-                      label: "Video",
+                      label: "视频",
                       value: "video",
                     },
                     {
-                      label: "Date",
+                      label: "日期",
                       value: "date",
                     },
                     {
-                      label: "Button",
+                      label: "按钮",
                       value: "button",
                     },
                     {
-                      label: "Menu Button",
+                      label: "菜单按钮",
                       value: "menuButton",
                     },
                     {
-                      label: "Icon Button",
+                      label: "图标按钮",
                       value: "iconButton",
                     },
                   ],
@@ -136,7 +135,7 @@ export default [
                 },
                 {
                   propertyName: "displayText",
-                  label: "Display Text",
+                  label: "显示文本",
                   controlType: "COMPUTE_VALUE",
                   customJSControl: "COMPUTE_VALUE",
                   updateHook: updateDerivedColumnsHook,
@@ -159,9 +158,9 @@ export default [
                 },
                 {
                   helpText:
-                    "The value computed & shown in each cell. Use {{currentRow}} to reference each row in the table. This property is not accessible outside the column settings.",
+                    "每个单元格计算后的值，使用 {{currentRow}} 引用当前行数据，这个属性不能在这个列之外访问到",
                   propertyName: "computedValue",
-                  label: "Computed Value",
+                  label: "计算值",
                   controlType: "COMPUTE_VALUE",
                   updateHook: updateDerivedColumnsHook,
                   hidden: (props: TableWidgetProps, propertyPath: string) => {
@@ -189,8 +188,8 @@ export default [
                     "derivedColumns",
                     "columnType",
                   ],
-                  label: "Visible",
-                  helpText: "Controls the visibility of the cell in the column",
+                  label: "是否显示",
+                  helpText: "控制当前列是否显示",
                   updateHook: updateDerivedColumnsHook,
                   defaultValue: true,
                   controlType: "SWITCH",
@@ -207,7 +206,7 @@ export default [
                 },
                 {
                   propertyName: "isDisabled",
-                  label: "Disabled",
+                  label: "禁用",
                   updateHook: updateDerivedColumnsHook,
                   defaultValue: false,
                   controlType: "SWITCH",
@@ -236,9 +235,9 @@ export default [
                 },
                 {
                   propertyName: "isCompact",
-                  helpText: "Decides if menu items will consume lesser space",
+                  helpText: "菜单项占用更少的空间",
                   updateHook: updateDerivedColumnsHook,
-                  label: "Compact",
+                  label: "紧凑模式",
                   controlType: "SWITCH",
                   customJSControl: "COMPUTE_VALUE",
                   isJSConvertible: true,
@@ -263,15 +262,15 @@ export default [
                 },
                 {
                   propertyName: "inputFormat",
-                  label: "Original Date Format",
+                  label: "原始日期类型",
                   controlType: "DROP_DOWN",
                   options: [
                     {
-                      label: "UNIX timestamp (s)",
+                      label: "UNIX 时间戳 (s)",
                       value: "Epoch",
                     },
                     {
-                      label: "UNIX timestamp (ms)",
+                      label: "UNIX 时间戳 (ms)",
                       value: "Milliseconds",
                     },
                     {
@@ -400,17 +399,17 @@ export default [
                 },
                 {
                   propertyName: "outputFormat",
-                  label: "Display Date Format",
+                  label: "展示日期格式",
                   controlType: "DROP_DOWN",
                   customJSControl: "COMPUTE_VALUE",
                   isJSConvertible: true,
                   options: [
                     {
-                      label: "UNIX timestamp (s)",
+                      label: "UNIX 时间戳 (s)",
                       value: "Epoch",
                     },
                     {
-                      label: "UNIX timestamp (ms)",
+                      label: "UNIX 时间戳 (ms)",
                       value: "Milliseconds",
                     },
                     {
@@ -561,7 +560,7 @@ export default [
               ],
             },
             {
-              sectionName: "Styles",
+              sectionName: "样式",
               hidden: (props: TableWidgetProps, propertyPath: string) => {
                 return hideByColumnType(
                   props,
@@ -579,7 +578,7 @@ export default [
               children: [
                 {
                   propertyName: "horizontalAlignment",
-                  label: "Text Align",
+                  label: "文本对齐方式",
                   controlType: "ICON_TABS",
                   options: [
                     {
@@ -618,7 +617,7 @@ export default [
                 },
                 {
                   propertyName: "textSize",
-                  label: "Text Size",
+                  label: "字体大小",
                   controlType: "DROP_DOWN",
                   isJSConvertible: true,
                   customJSControl: "COMPUTE_VALUE",
@@ -661,7 +660,7 @@ export default [
                 },
                 {
                   propertyName: "fontStyle",
-                  label: "Font Style",
+                  label: "字体样式",
                   controlType: "BUTTON_TABS",
                   options: [
                     {
@@ -696,7 +695,7 @@ export default [
                 },
                 {
                   propertyName: "verticalAlignment",
-                  label: "Vertical Alignment",
+                  label: "垂直对齐",
                   controlType: "ICON_TABS",
                   options: [
                     {
@@ -735,7 +734,7 @@ export default [
                 },
                 {
                   propertyName: "textColor",
-                  label: "Text Color",
+                  label: "文本颜色",
                   controlType: "PRIMARY_COLUMNS_COLOR_PICKER",
                   isJSConvertible: true,
                   customJSControl: "COMPUTE_VALUE",
@@ -759,7 +758,7 @@ export default [
                 },
                 {
                   propertyName: "cellBackground",
-                  label: "Cell Background",
+                  label: "单元格背景颜色",
                   controlType: "PRIMARY_COLUMNS_COLOR_PICKER",
                   isJSConvertible: true,
                   customJSControl: "COMPUTE_VALUE",
@@ -784,7 +783,7 @@ export default [
               ],
             },
             {
-              sectionName: "Button Properties",
+              sectionName: "按钮属性",
               hidden: (props: TableWidgetProps, propertyPath: string) => {
                 return hideByColumnType(
                   props,
@@ -800,8 +799,8 @@ export default [
               children: [
                 {
                   propertyName: "iconName",
-                  label: "Icon",
-                  helpText: "Sets the icon to be used for the icon button",
+                  label: "图标",
+                  helpText: "设置按钮图标",
                   hidden: (props: TableWidgetProps, propertyPath: string) => {
                     return hideByColumnType(props, propertyPath, [
                       ColumnTypes.ICON_BUTTON,
@@ -831,8 +830,8 @@ export default [
                 },
                 {
                   propertyName: "iconAlign",
-                  label: "Icon Alignment",
-                  helpText: "Sets the icon alignment of the menu button",
+                  label: "图标对齐",
+                  helpText: "设置菜单按钮图标对齐方式",
                   controlType: "ICON_TABS",
                   options: [
                     {
@@ -866,9 +865,9 @@ export default [
                 },
                 {
                   propertyName: "buttonLabel",
-                  label: "Label",
+                  label: "标签",
                   controlType: "COMPUTE_VALUE",
-                  defaultValue: "Action",
+                  defaultValue: "动作",
                   updateHook: updateDerivedColumnsHook,
                   hidden: (props: TableWidgetProps, propertyPath: string) => {
                     return hideByColumnType(props, propertyPath, [
@@ -885,9 +884,9 @@ export default [
                 },
                 {
                   propertyName: "menuButtonLabel",
-                  label: "Label",
+                  label: "标签",
                   controlType: "COMPUTE_VALUE",
-                  defaultValue: "Open Menu",
+                  defaultValue: "打开菜单",
                   updateHook: updateDerivedColumnsHook,
                   hidden: (props: TableWidgetProps, propertyPath: string) => {
                     return hideByColumnType(props, propertyPath, [
@@ -905,9 +904,9 @@ export default [
                 {
                   propertyName: "buttonColor",
                   getStylesheetValue: getPrimaryColumnStylesheetValue,
-                  label: "Button Color",
+                  label: "按钮颜色",
                   controlType: "PRIMARY_COLUMNS_COLOR_PICKER",
-                  helpText: "Changes the color of the button",
+                  helpText: "修改按钮颜色",
                   isJSConvertible: true,
                   customJSControl: "COMPUTE_VALUE",
                   updateHook: updateDerivedColumnsHook,
@@ -936,12 +935,12 @@ export default [
                 },
                 {
                   propertyName: "buttonVariant",
-                  label: "Button Variant",
+                  label: "按钮类型",
                   controlType: "DROP_DOWN",
                   customJSControl: "COMPUTE_VALUE",
                   defaultValue: ButtonVariantTypes.PRIMARY,
                   isJSConvertible: true,
-                  helpText: "Sets the variant",
+                  helpText: "设置按钮类型",
                   hidden: (props: TableWidgetProps, propertyPath: string) => {
                     return hideByColumnType(props, propertyPath, [
                       ColumnTypes.BUTTON,
@@ -955,15 +954,15 @@ export default [
                   ],
                   options: [
                     {
-                      label: "Primary",
+                      label: "主按钮",
                       value: ButtonVariantTypes.PRIMARY,
                     },
                     {
-                      label: "Secondary",
+                      label: "次级按钮",
                       value: ButtonVariantTypes.SECONDARY,
                     },
                     {
-                      label: "Tertiary",
+                      label: "文本按钮",
                       value: ButtonVariantTypes.TERTIARY,
                     },
                   ],
@@ -986,12 +985,11 @@ export default [
                 },
                 {
                   propertyName: "borderRadius",
-                  label: "Border Radius",
+                  label: "边框圆角",
                   customJSControl: "COMPUTE_VALUE",
                   isJSConvertible: true,
                   getStylesheetValue: getPrimaryColumnStylesheetValue,
-                  helpText:
-                    "Rounds the corners of the icon button's outer border edge",
+                  helpText: "边框圆角样式",
                   controlType: "BORDER_RADIUS_OPTIONS",
                   hidden: (props: TableWidgetProps, propertyPath: string) => {
                     return hideByColumnType(props, propertyPath, [
@@ -1016,9 +1014,8 @@ export default [
                 },
                 {
                   propertyName: "boxShadow",
-                  label: "Box Shadow",
-                  helpText:
-                    "Enables you to cast a drop shadow from the frame of the widget",
+                  label: "阴影",
+                  helpText: "组件轮廓投影",
                   controlType: "BOX_SHADOW_OPTIONS",
                   customJSControl: "COMPUTE_VALUE",
                   isJSConvertible: true,
@@ -1046,9 +1043,8 @@ export default [
                 },
                 {
                   propertyName: "menuColor",
-                  helpText:
-                    "Sets the custom color preset based on the menu button variant",
-                  label: "Menu Color",
+                  helpText: "自定义菜单按钮颜色",
+                  label: "菜单颜色",
                   controlType: "PRIMARY_COLUMNS_COLOR_PICKER",
                   customJSControl: "COMPUTE_VALUE",
                   isJSConvertible: true,
@@ -1080,20 +1076,20 @@ export default [
                 },
                 {
                   propertyName: "menuVariant",
-                  label: "Menu Variant",
+                  label: "菜单按钮类型",
                   controlType: "DROP_DOWN",
-                  helpText: "Sets the variant of the menu button",
+                  helpText: "设置菜单按钮的风格类型",
                   options: [
                     {
-                      label: "Primary",
+                      label: "主按钮",
                       value: ButtonVariantTypes.PRIMARY,
                     },
                     {
-                      label: "Secondary",
+                      label: "次级按钮",
                       value: ButtonVariantTypes.SECONDARY,
                     },
                     {
-                      label: "Tertiary",
+                      label: "文本按钮",
                       value: ButtonVariantTypes.TERTIARY,
                     },
                   ],
@@ -1124,7 +1120,7 @@ export default [
                   },
                 },
                 {
-                  helpText: "Triggers an action when the button is clicked",
+                  helpText: "点击按钮时触发",
                   propertyName: "onClick",
                   label: "onClick",
                   controlType: "ACTION_SELECTOR",
@@ -1154,7 +1150,7 @@ export default [
               ],
             },
             {
-              sectionName: "Menu Items",
+              sectionName: "菜单配置",
               hidden: (props: TableWidgetProps, propertyPath: string) => {
                 return hideByColumnType(
                   props,
@@ -1166,7 +1162,7 @@ export default [
               updateHook: updateDerivedColumnsHook,
               children: [
                 {
-                  helpText: "Menu items",
+                  helpText: "菜单配置",
                   propertyName: "menuItems",
                   controlType: "MENU_ITEMS",
                   label: "",
@@ -1185,14 +1181,14 @@ export default [
                     ],
                     children: [
                       {
-                        sectionName: "General",
+                        sectionName: "属性",
                         children: [
                           {
                             propertyName: "label",
-                            helpText: "Sets the label of a menu item",
-                            label: "Label",
+                            helpText: "设置菜单项标签",
+                            label: "标签",
                             controlType: "INPUT_TEXT",
-                            placeholderText: "Enter label",
+                            placeholderText: "请输入标签",
                             isBindProperty: true,
                             isTriggerProperty: false,
                             validation: { type: ValidationTypes.TEXT },
@@ -1206,9 +1202,8 @@ export default [
                           },
                           {
                             propertyName: "backgroundColor",
-                            helpText:
-                              "Sets the background color of a menu item",
-                            label: "Background color",
+                            helpText: "设置菜单项背景颜色",
+                            label: "背景颜色",
                             controlType: "PRIMARY_COLUMNS_COLOR_PICKER",
                             isJSConvertible: true,
                             isBindProperty: true,
@@ -1224,8 +1219,8 @@ export default [
                           },
                           {
                             propertyName: "textColor",
-                            helpText: "Sets the text color of a menu item",
-                            label: "Text color",
+                            helpText: "设置菜单项文本颜色",
+                            label: "文本颜色",
                             controlType: "PRIMARY_COLUMNS_COLOR_PICKER",
                             isBindProperty: false,
                             isTriggerProperty: false,
@@ -1239,8 +1234,8 @@ export default [
                           },
                           {
                             propertyName: "isDisabled",
-                            helpText: "Disables input to the widget",
-                            label: "Disabled",
+                            helpText: "让组件不可交互",
+                            label: "禁用",
                             controlType: "SWITCH",
                             isJSConvertible: true,
                             isBindProperty: true,
@@ -1256,8 +1251,8 @@ export default [
                           },
                           {
                             propertyName: "isVisible",
-                            helpText: "Controls the visibility of the widget",
-                            label: "Visible",
+                            helpText: "控制组件的显示/隐藏",
+                            label: "是否显示",
                             controlType: "SWITCH",
                             isJSConvertible: true,
                             isBindProperty: true,
@@ -1274,13 +1269,12 @@ export default [
                         ],
                       },
                       {
-                        sectionName: "Icon Options",
+                        sectionName: "图标配置",
                         children: [
                           {
                             propertyName: "iconName",
-                            label: "Icon",
-                            helpText:
-                              "Sets the icon to be used for a menu item",
+                            label: "图标",
+                            helpText: "设置菜单项的图标",
                             controlType: "ICON_SELECT",
                             isBindProperty: false,
                             isTriggerProperty: false,
@@ -1294,8 +1288,8 @@ export default [
                           },
                           {
                             propertyName: "iconColor",
-                            helpText: "Sets the icon color of a menu item",
-                            label: "Icon color",
+                            helpText: "设置菜单项图标颜色",
+                            label: "图标颜色",
                             controlType: "PRIMARY_COLUMNS_COLOR_PICKER",
                             isBindProperty: false,
                             isTriggerProperty: false,
@@ -1309,8 +1303,8 @@ export default [
                           },
                           {
                             propertyName: "iconAlign",
-                            label: "Icon alignment",
-                            helpText: "Sets the icon alignment of a menu item",
+                            label: "图标对齐",
+                            helpText: "设置菜单项图标对齐方向",
                             controlType: "ICON_TABS",
                             options: [
                               {
@@ -1336,11 +1330,10 @@ export default [
                         ],
                       },
                       {
-                        sectionName: "Events",
+                        sectionName: "事件",
                         children: [
                           {
-                            helpText:
-                              "Triggers an action when the menu item is clicked",
+                            helpText: "点击菜单项时触发",
                             propertyName: "onClick",
                             label: "onItemClick",
                             controlType: "ACTION_SELECTOR",
@@ -1364,11 +1357,10 @@ export default [
         },
       },
       {
-        helpText:
-          "Assigns a unique column which helps maintain selectedRows and triggeredRows based on value",
+        helpText: "数据主键值唯一，用于表格的 selectedRows 和 triggeredRows",
         propertyName: "primaryColumnId",
         dependencies: ["primaryColumns"],
-        label: "Primary key column",
+        label: "主键列",
         controlType: "PRIMARY_COLUMNS_DROPDOWN",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -1376,7 +1368,7 @@ export default [
       },
       {
         propertyName: "defaultSearchText",
-        label: "Default Search Text",
+        label: "默认搜索内容",
         controlType: "INPUT_TEXT",
         placeholderText: "{{appsmith.user.name}}",
         isBindProperty: true,
@@ -1384,9 +1376,9 @@ export default [
         validation: { type: ValidationTypes.TEXT },
       },
       {
-        helpText: "Selects row(s) by default",
+        helpText: "默认选中行的序号或序号数组",
         propertyName: "defaultSelectedRow",
-        label: "Default Selected Row",
+        label: "默认选中行",
         controlType: "INPUT_TEXT",
         placeholderText: "0",
         isBindProperty: true,
@@ -1406,32 +1398,32 @@ export default [
       },
       {
         propertyName: "compactMode",
-        helpText: "Selects row height",
-        label: "Default Row Height",
+        helpText: "选择行高",
+        label: "默认行高",
         controlType: "DROP_DOWN",
         defaultValue: "DEFAULT",
         isBindProperty: true,
         isTriggerProperty: false,
         options: [
           {
-            label: "Short",
+            label: "矮",
             value: "SHORT",
           },
           {
-            label: "Default",
+            label: "默认",
             value: "DEFAULT",
           },
           {
-            label: "Tall",
+            label: "高",
             value: "TALL",
           },
         ],
       },
       {
         helpText:
-          "Bind the Table.pageNo property in your API and call it onPageChange",
+          "在 API 请求参数中绑定页号 Table.pageNo，onPageChange 换页的时候调用 API",
         propertyName: "serverSidePaginationEnabled",
-        label: "Server Side Pagination",
+        label: "服务端分页",
         controlType: "SWITCH",
         isBindProperty: false,
         isTriggerProperty: false,
@@ -1439,9 +1431,9 @@ export default [
       {
         helpText: createMessage(TABLE_WIDGET_TOTAL_RECORD_TOOLTIP),
         propertyName: "totalRecordsCount",
-        label: "Total Record Count",
+        label: "总行数",
         controlType: "INPUT_TEXT",
-        placeholderText: "Enter total record count",
+        placeholderText: "配置表格总行数",
         isBindProperty: true,
         isTriggerProperty: false,
         validation: {
@@ -1460,10 +1452,10 @@ export default [
         dependencies: ["serverSidePaginationEnabled"],
       },
       {
-        helpText: "Controls the visibility of the widget",
+        helpText: "控制组件的显示/隐藏",
         propertyName: "isVisible",
         isJSConvertible: true,
-        label: "Visible",
+        label: "是否显示",
         controlType: "SWITCH",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -1473,9 +1465,9 @@ export default [
       },
       {
         propertyName: "animateLoading",
-        label: "Animate Loading",
+        label: "加载时显示动画",
         controlType: "SWITCH",
-        helpText: "Controls the loading of the widget",
+        helpText: "组件依赖的数据加载时显示加载动画",
         defaultValue: true,
         isJSConvertible: true,
         isBindProperty: true,
@@ -1483,10 +1475,10 @@ export default [
         validation: { type: ValidationTypes.BOOLEAN },
       },
       {
-        helpText: "Controls sorting in View Mode",
+        helpText: "是否支持按列排序",
         propertyName: "isSortable",
         isJSConvertible: true,
-        label: "Sortable",
+        label: "支持排序",
         controlType: "SWITCH",
         isBindProperty: true,
         isTriggerProperty: false,
@@ -1499,14 +1491,14 @@ export default [
       },
       {
         propertyName: "multiRowSelection",
-        label: "Enable multi row selection",
+        label: "支持多选",
         controlType: "SWITCH",
         isBindProperty: false,
         isTriggerProperty: false,
       },
       {
         propertyName: "enableClientSideSearch",
-        label: "Enable client side search",
+        label: "支持前端搜索",
         controlType: "SWITCH",
         isBindProperty: false,
         isTriggerProperty: false,
@@ -1514,10 +1506,10 @@ export default [
     ],
   },
   {
-    sectionName: "Events",
+    sectionName: "事件",
     children: [
       {
-        helpText: "Triggers an action when a table row is selected",
+        helpText: "选中行时触发",
         propertyName: "onRowSelected",
         label: "onRowSelected",
         controlType: "ACTION_SELECTOR",
@@ -1526,7 +1518,7 @@ export default [
         isTriggerProperty: true,
       },
       {
-        helpText: "Triggers an action when a table page is changed",
+        helpText: "表格换页时触发",
         propertyName: "onPageChange",
         label: "onPageChange",
         controlType: "ACTION_SELECTOR",
@@ -1535,7 +1527,7 @@ export default [
         isTriggerProperty: true,
       },
       {
-        helpText: "Triggers an action when a table page size is changed",
+        helpText: "表格页大小改变时触发",
         propertyName: "onPageSizeChange",
         label: "onPageSizeChange",
         controlType: "ACTION_SELECTOR",
@@ -1552,7 +1544,7 @@ export default [
         isTriggerProperty: true,
       },
       {
-        helpText: "Triggers an action when a table column is sorted",
+        helpText: "表格列排序时触发",
         propertyName: "onSort",
         label: "onSort",
         controlType: "ACTION_SELECTOR",
@@ -1563,12 +1555,12 @@ export default [
     ],
   },
   {
-    sectionName: "Header options",
+    sectionName: "标题配置",
     children: [
       {
-        helpText: "Toggle visibility of the search box",
+        helpText: "是否显示的搜索框",
         propertyName: "isVisibleSearch",
-        label: "Search",
+        label: "搜索",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -1576,9 +1568,9 @@ export default [
         validation: { type: ValidationTypes.BOOLEAN },
       },
       {
-        helpText: "Toggle visibility of the filters",
+        helpText: "是否显示过滤器",
         propertyName: "isVisibleFilters",
-        label: "Filters",
+        label: "过滤",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -1586,9 +1578,9 @@ export default [
         validation: { type: ValidationTypes.BOOLEAN },
       },
       {
-        helpText: "Toggle visibility of the data download",
+        helpText: "是否显示下载按钮",
         propertyName: "isVisibleDownload",
-        label: "Download",
+        label: "下载",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -1596,9 +1588,9 @@ export default [
         validation: { type: ValidationTypes.BOOLEAN },
       },
       {
-        helpText: "Toggle visibility of the pagination",
+        helpText: "是否显示分页器",
         propertyName: "isVisiblePagination",
-        label: "Pagination",
+        label: "分页",
         controlType: "SWITCH",
         isJSConvertible: true,
         isBindProperty: true,
@@ -1607,10 +1599,10 @@ export default [
       },
       {
         propertyName: "delimiter",
-        label: "CSV Separator",
+        label: "CSV 分隔符",
         controlType: "INPUT_TEXT",
-        placeholderText: "Enter CSV separator",
-        helpText: "The character used for separating the CSV download file.",
+        placeholderText: "输入 CSV 分隔符",
+        helpText: "用于分隔 CSV 下载文件的字符",
         isBindProperty: true,
         isTriggerProperty: false,
         defaultValue: ",",
@@ -1623,11 +1615,11 @@ export default [
     ],
   },
   {
-    sectionName: "Styles",
+    sectionName: "样式",
     children: [
       {
         propertyName: "cellBackground",
-        label: "Cell Background Color",
+        label: "单元格背景颜色",
         controlType: "COLOR_PICKER",
         updateHook: updateColumnStyles,
         dependencies: ["primaryColumns", "derivedColumns"],
@@ -1638,7 +1630,7 @@ export default [
       },
       {
         propertyName: "accentColor",
-        label: "Accent Color",
+        label: "强调色",
         controlType: "COLOR_PICKER",
         isJSConvertible: true,
         isBindProperty: true,
@@ -1648,7 +1640,7 @@ export default [
       },
       {
         propertyName: "textColor",
-        label: "Text Color",
+        label: "文本颜色",
         controlType: "COLOR_PICKER",
         updateHook: updateColumnStyles,
         dependencies: ["primaryColumns", "derivedColumns"],
@@ -1659,7 +1651,7 @@ export default [
       },
       {
         propertyName: "textSize",
-        label: "Text Size",
+        label: "字体大小",
         controlType: "DROP_DOWN",
         updateHook: updateColumnStyles,
         dependencies: ["primaryColumns", "derivedColumns"],
@@ -1692,7 +1684,7 @@ export default [
       },
       {
         propertyName: "fontStyle",
-        label: "Font Style",
+        label: "字体样式",
         controlType: "BUTTON_TABS",
         updateHook: updateColumnStyles,
         dependencies: ["primaryColumns", "derivedColumns"],
@@ -1711,7 +1703,7 @@ export default [
       },
       {
         propertyName: "horizontalAlignment",
-        label: "Text Align",
+        label: "文本对齐方式",
         controlType: "ICON_TABS",
         updateHook: updateColumnStyles,
         dependencies: ["primaryColumns", "derivedColumns"],
@@ -1735,7 +1727,7 @@ export default [
       },
       {
         propertyName: "verticalAlignment",
-        label: "Vertical Alignment",
+        label: "垂直对齐",
         controlType: "ICON_TABS",
         updateHook: updateColumnStyles,
         dependencies: ["primaryColumns", "derivedColumns"],
@@ -1759,8 +1751,8 @@ export default [
       },
       {
         propertyName: "borderRadius",
-        label: "Border Radius",
-        helpText: "Rounds the corners of the icon button's outer border edge",
+        label: "边框圆角",
+        helpText: "边框圆角样式",
         controlType: "BORDER_RADIUS_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,
@@ -1769,9 +1761,8 @@ export default [
       },
       {
         propertyName: "boxShadow",
-        label: "Box Shadow",
-        helpText:
-          "Enables you to cast a drop shadow from the frame of the widget",
+        label: "阴影",
+        helpText: "组件轮廓投影",
         controlType: "BOX_SHADOW_OPTIONS",
         isJSConvertible: true,
         isBindProperty: true,

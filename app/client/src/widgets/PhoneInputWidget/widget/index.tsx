@@ -72,12 +72,12 @@ class PhoneInputWidget extends BaseInputWidget<
     return mergeWidgetConfig(
       [
         {
-          sectionName: "General",
+          sectionName: "属性",
           children: [
             {
               propertyName: "allowDialCodeChange",
-              label: "Allow country code change",
-              helpText: "Search by country",
+              label: "允许修改国家编码",
+              helpText: "使用国家名搜索",
               controlType: "SWITCH",
               isJSConvertible: false,
               isBindProperty: true,
@@ -85,13 +85,13 @@ class PhoneInputWidget extends BaseInputWidget<
               validation: { type: ValidationTypes.BOOLEAN },
             },
             {
-              helpText: "Changes the country code",
+              helpText: "修改默认的电话国家编号",
               propertyName: "defaultDialCode",
-              label: "Default Country Code",
+              label: "默认国家编号",
               enableSearch: true,
               dropdownHeight: "156px",
               controlType: "DROP_DOWN",
-              searchPlaceholderText: "Search by code or country name",
+              searchPlaceholderText: "通过国家名称或编号搜索",
               options: ISDCodeDropdownOptions,
               isJSConvertible: true,
               isBindProperty: true,
@@ -101,10 +101,9 @@ class PhoneInputWidget extends BaseInputWidget<
               },
             },
             {
-              helpText:
-                "Sets the default text of the widget. The text is updated if the default text changes",
+              helpText: "设置组件默认值，当默认值改变后，组件当前值会自动更新",
               propertyName: "defaultText",
-              label: "Default Text",
+              label: "默认值",
               controlType: "INPUT_TEXT",
               placeholderText: "(000) 000-0000",
               isBindProperty: true,
@@ -123,8 +122,8 @@ class PhoneInputWidget extends BaseInputWidget<
             },
             {
               propertyName: "allowFormatting",
-              label: "Enable Formatting",
-              helpText: "Formats the phone number as per the country selected",
+              label: "手机号格式化",
+              helpText: "按各个国家的规则格式化手机号",
               controlType: "SWITCH",
               isJSConvertible: true,
               isBindProperty: true,
@@ -142,13 +141,12 @@ class PhoneInputWidget extends BaseInputWidget<
     return mergeWidgetConfig(
       [
         {
-          sectionName: "Data",
+          sectionName: "数据",
           children: [
             {
-              helpText:
-                "Sets the default text of the widget. The text is updated if the default text changes",
+              helpText: "设置组件默认值，当默认值改变后，组件当前值会自动更新",
               propertyName: "defaultText",
-              label: "Default Value",
+              label: "默认值",
               controlType: "INPUT_TEXT",
               placeholderText: "(000) 000-0000",
               isBindProperty: true,
@@ -166,13 +164,13 @@ class PhoneInputWidget extends BaseInputWidget<
               },
             },
             {
-              helpText: "Changes the country code",
+              helpText: "修改默认的电话国家编号",
               propertyName: "defaultDialCode",
-              label: "Default Country Code",
+              label: "默认国家编号",
               enableSearch: true,
               dropdownHeight: "156px",
               controlType: "DROP_DOWN",
-              searchPlaceholderText: "Search by code or country name",
+              searchPlaceholderText: "通过国家名称或编号搜索",
               options: ISDCodeDropdownOptions,
               isJSConvertible: true,
               isBindProperty: true,
@@ -183,8 +181,8 @@ class PhoneInputWidget extends BaseInputWidget<
             },
             {
               propertyName: "allowDialCodeChange",
-              label: "Allow Country Code Change",
-              helpText: "Search by country",
+              label: "允许修改国家编码",
+              helpText: "使用国家名搜索",
               controlType: "SWITCH",
               isJSConvertible: false,
               isBindProperty: true,
@@ -194,16 +192,16 @@ class PhoneInputWidget extends BaseInputWidget<
           ],
         },
         {
-          sectionName: "Label",
+          sectionName: "标签",
           children: [],
         },
         {
-          sectionName: "Validation",
+          sectionName: "校验",
           children: [
             {
               propertyName: "isRequired",
-              label: "Required",
-              helpText: "Makes input to the widget mandatory",
+              label: "必填",
+              helpText: "强制用户填写",
               controlType: "SWITCH",
               isJSConvertible: true,
               isBindProperty: true,
@@ -213,12 +211,12 @@ class PhoneInputWidget extends BaseInputWidget<
           ],
         },
         // {
-        //   sectionName: "General",
+        //   sectionName: "属性",
         //   children: [
         //     {
         //       propertyName: "allowFormatting",
-        //       label: "Enable Formatting",
-        //       helpText: "Formats the phone number as per the country selected",
+        //       label: "手机号格式化",
+        //       helpText: "按各个国家的规则格式化手机号",
         //       controlType: "SWITCH",
         //       isJSConvertible: true,
         //       isBindProperty: true,

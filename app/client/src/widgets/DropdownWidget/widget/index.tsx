@@ -30,15 +30,14 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText:
-              "Allows users to select a single option. Values must be unique",
+            helpText: "让用户选择一项，选项值必须唯一",
             propertyName: "options",
-            label: "Options",
+            label: "选项",
             controlType: "INPUT_TEXT",
-            placeholderText: '[{ "label": "Option1", "value": "Option2" }]',
+            placeholderText: '[{ "label": "选项1", "value": "选项2" }]',
             isBindProperty: true,
             isTriggerProperty: false,
             validation: {
@@ -74,9 +73,9 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
               EvaluationSubstitutionType.SMART_SUBSTITUTE,
           },
           {
-            helpText: "Selects the option with value by default",
+            helpText: "默认选中这个值",
             propertyName: "defaultOptionValue",
-            label: "Default Option",
+            label: "默认选项",
             controlType: "INPUT_TEXT",
             placeholderText: "GREEN",
             isBindProperty: true,
@@ -95,19 +94,19 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
             dependencies: ["selectionType"],
           },
           {
-            helpText: "Sets a Placeholder Text",
+            helpText: "设置占位文本",
             propertyName: "placeholderText",
-            label: "Placeholder",
+            label: "占位符",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter placeholder text",
+            placeholderText: "请输入占位文本",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -115,9 +114,9 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -126,8 +125,8 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
-            helpText: "Disables input to this widget",
+            label: "禁用",
+            helpText: "让组件不可交互",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -136,9 +135,9 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -147,8 +146,8 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
           },
           {
             propertyName: "isFilterable",
-            label: "Filterable",
-            helpText: "Makes the dropdown list filterable",
+            label: "支持过滤",
+            helpText: "让下拉列表支持数据过滤",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -156,9 +155,9 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Enables server side filtering of the data",
+            helpText: "开启服务端数据过滤",
             propertyName: "serverSideFiltering",
-            label: "Server Side Filtering",
+            label: "服务端过滤",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -168,36 +167,36 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "labelText",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter label text",
+            placeholderText: "请输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -217,10 +216,9 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -239,11 +237,11 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Label Text Color",
+            label: "标签文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -252,7 +250,7 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelTextSize",
-            label: "Label Text Size",
+            label: "标签文本大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -294,7 +292,7 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelStyle",
-            label: "Label Font Style",
+            label: "字体样式",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -314,10 +312,10 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Actions",
+        sectionName: "动作",
         children: [
           {
-            helpText: "Triggers an action when a user selects an option",
+            helpText: "用户选中一个选项时触发",
             propertyName: "onOptionChange",
             label: "onOptionChange",
             controlType: "ACTION_SELECTOR",
@@ -326,7 +324,7 @@ class DropdownWidget extends BaseWidget<DropdownWidgetProps, WidgetState> {
             isTriggerProperty: true,
           },
           {
-            helpText: "Trigger an action on change of filterText",
+            helpText: "过滤关键字更改时触发",
             hidden: (props: DropdownWidgetProps) => !props.serverSideFiltering,
             dependencies: ["serverSideFiltering"],
             propertyName: "onFilterUpdate",

@@ -32,14 +32,13 @@ class FilePickerWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "label",
-            label: "Label",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            helpText: "Sets the label of the button",
-            placeholderText: "Enter label text",
+            placeholderText: "输入按钮文本内容",
             inputType: "TEXT",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -47,9 +46,7 @@ class FilePickerWidget extends BaseWidget<
           },
           {
             propertyName: "maxNumFiles",
-            label: "Max No. files",
-            helpText:
-              "Sets the maximum number of files that can be uploaded at once",
+            label: "最大上传数",
             controlType: "INPUT_TEXT",
             placeholderText: "Enter no. of files",
             inputType: "INTEGER",
@@ -59,10 +56,10 @@ class FilePickerWidget extends BaseWidget<
           },
           {
             propertyName: "maxFileSize",
-            helpText: "Sets the maximum size of each file that can be uploaded",
-            label: "Max file size(Mb)",
+            helpText: "每个文件的最大尺寸",
+            label: "最大文件大小(Mb)",
             controlType: "INPUT_TEXT",
-            placeholderText: "File size in mb",
+            placeholderText: "文件大小（MB）",
             inputType: "INTEGER",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -73,34 +70,34 @@ class FilePickerWidget extends BaseWidget<
           },
           {
             propertyName: "allowedFileTypes",
-            helpText: "Restricts the type of files which can be uploaded",
-            label: "Allowed File Types",
+            helpText: "限制那些类型的文件可以上传",
+            label: "支持文件类型",
             controlType: "DROP_DOWN",
             isMultiSelect: true,
-            placeholderText: "Select file types",
+            placeholderText: "选择文件类型",
             options: [
               {
-                label: "Any File",
+                label: "任意文件",
                 value: "*",
               },
               {
-                label: "Images",
+                label: "图片",
                 value: "image/*",
               },
               {
-                label: "Videos",
+                label: "视频",
                 value: "video/*",
               },
               {
-                label: "Audio",
+                label: "音频",
                 value: "audio/*",
               },
               {
-                label: "Text",
+                label: "文本",
                 value: "text/*",
               },
               {
-                label: "MS Word",
+                label: "Word文档",
                 value: ".doc",
               },
               {
@@ -134,9 +131,9 @@ class FilePickerWidget extends BaseWidget<
               EvaluationSubstitutionType.SMART_SUBSTITUTE,
           },
           {
-            helpText: "Set the format of the data read from the files",
+            helpText: "文件数据读取格式",
             propertyName: "fileDataType",
-            label: "Data Format",
+            label: "数据格式",
             controlType: "DROP_DOWN",
             options: [
               {
@@ -157,8 +154,7 @@ class FilePickerWidget extends BaseWidget<
           },
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必须",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -167,8 +163,7 @@ class FilePickerWidget extends BaseWidget<
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否可见",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -177,8 +172,7 @@ class FilePickerWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            label: "Disable",
-            helpText: "Disables input to this widget",
+            label: "是否禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -187,9 +181,9 @@ class FilePickerWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -199,11 +193,11 @@ class FilePickerWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "动作",
         children: [
           {
             helpText:
-              "Triggers an action when the user selects a file. Upload files to a CDN and stores their URLs in filepicker.files",
+              "当用户选中文件后触发，上传文件到CDN，然后存储文件地址到 filepicker.files",
             propertyName: "onFilesSelected",
             label: "onFilesSelected",
             controlType: "ACTION_SELECTOR",

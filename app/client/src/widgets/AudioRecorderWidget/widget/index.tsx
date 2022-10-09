@@ -29,13 +29,13 @@ class AudioRecorderWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables input to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -45,8 +45,8 @@ class AudioRecorderWidget extends BaseWidget<
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -57,9 +57,9 @@ class AudioRecorderWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -69,10 +69,10 @@ class AudioRecorderWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the recording starts",
+            helpText: "录音开始时触发",
             propertyName: "onRecordingStart",
             label: "onRecordingStart",
             controlType: "ACTION_SELECTOR",
@@ -81,7 +81,7 @@ class AudioRecorderWidget extends BaseWidget<
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the recording ends",
+            helpText: "录音结束后触发",
             propertyName: "onRecordingComplete",
             label: "onRecordingComplete",
             controlType: "ACTION_SELECTOR",
@@ -92,12 +92,12 @@ class AudioRecorderWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "accentColor",
-            helpText: "Changes the color of the recorder button",
-            label: "Button Color",
+            helpText: "修改录音按钮的颜色",
+            label: "按钮颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -106,9 +106,8 @@ class AudioRecorderWidget extends BaseWidget<
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -117,9 +116,8 @@ class AudioRecorderWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -128,8 +126,8 @@ class AudioRecorderWidget extends BaseWidget<
           },
           {
             propertyName: "iconColor",
-            helpText: "Sets the icon color of the widget",
-            label: "Icon color",
+            helpText: "设置组件图标的颜色",
+            label: "图标颜色",
             controlType: "COLOR_PICKER",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -142,12 +140,12 @@ class AudioRecorderWidget extends BaseWidget<
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否可见",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -158,9 +156,9 @@ class AudioRecorderWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables input to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -170,9 +168,9 @@ class AudioRecorderWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -182,10 +180,10 @@ class AudioRecorderWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the recording starts",
+            helpText: "录音开始时触发",
             propertyName: "onRecordingStart",
             label: "onRecordingStart",
             controlType: "ACTION_SELECTOR",
@@ -194,7 +192,7 @@ class AudioRecorderWidget extends BaseWidget<
             isTriggerProperty: true,
           },
           {
-            helpText: "Triggers an action when the recording ends",
+            helpText: "录音结束后触发",
             propertyName: "onRecordingComplete",
             label: "onRecordingComplete",
             controlType: "ACTION_SELECTOR",
@@ -209,20 +207,20 @@ class AudioRecorderWidget extends BaseWidget<
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "iconColor",
-            helpText: "Sets the icon color of the widget",
-            label: "Icon color",
+            helpText: "设置组件的图标颜色",
+            label: "图标颜色",
             controlType: "COLOR_PICKER",
             isBindProperty: false,
             isTriggerProperty: false,
           },
           {
             propertyName: "accentColor",
-            helpText: "Changes the color of the recorder button",
-            label: "Button Color",
+            helpText: "录音按钮的颜色",
+            label: "按钮颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -232,13 +230,11 @@ class AudioRecorderWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -247,9 +243,7 @@ class AudioRecorderWidget extends BaseWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

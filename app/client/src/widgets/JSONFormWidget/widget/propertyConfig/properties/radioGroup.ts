@@ -52,11 +52,10 @@ const PROPERTIES = {
   general: [
     {
       propertyName: "options",
-      helpText:
-        "Allows users to select from the given option(s). Values must be unique",
-      label: "Options",
+      helpText: "用户可选项，选项值必须唯一",
+      label: "选项",
       controlType: "INPUT_TEXT",
-      placeholderText: '[{ "label": "Option1", "value": "Option2" }]',
+      placeholderText: '[{ "label": "选项1", "value": "选项2" }]',
       isBindProperty: true,
       isTriggerProperty: false,
       validation: {
@@ -77,8 +76,8 @@ const PROPERTIES = {
     },
     {
       propertyName: "defaultValue",
-      helpText: "Sets a default selected option",
-      label: "Default Selected Value",
+      helpText: "设置默认选中的选项",
+      label: "默认选中值",
       placeholderText: "Y",
       controlType: "JSON_FORM_COMPUTE_VALUE",
       isBindProperty: true,
@@ -102,7 +101,7 @@ const PROPERTIES = {
   actions: [
     {
       propertyName: "onSelectionChange",
-      helpText: "Triggers an action when a user changes the selected option",
+      helpText: "选中项改变时触发",
       label: "onSelectionChange",
       controlType: "ACTION_SELECTOR",
       isJSConvertible: true,
@@ -118,11 +117,10 @@ const PROPERTIES = {
     data: [
       {
         propertyName: "options",
-        helpText:
-          "Allows users to select from the given option(s). Values must be unique",
-        label: "Options",
+        helpText: "用户可选项，选项值必须唯一",
+        label: "选项",
         controlType: "INPUT_TEXT",
-        placeholderText: '[{ "label": "Option1", "value": "Option2" }]',
+        placeholderText: '[{ "label": "选项1", "value": "选项2" }]',
         isBindProperty: true,
         isTriggerProperty: false,
         validation: {
@@ -143,8 +141,8 @@ const PROPERTIES = {
       },
       {
         propertyName: "defaultValue",
-        helpText: "Sets a default selected option",
-        label: "Default Selected Value",
+        helpText: "设置默认选中的选项",
+        label: "默认选中值",
         placeholderText: "Y",
         controlType: "JSON_FORM_COMPUTE_VALUE",
         isBindProperty: true,
@@ -168,7 +166,7 @@ const PROPERTIES = {
     events: [
       {
         propertyName: "onSelectionChange",
-        helpText: "Triggers an action when a user changes the selected option",
+        helpText: "选中项改变时触发",
         label: "onSelectionChange",
         controlType: "ACTION_SELECTOR",
         isJSConvertible: true,

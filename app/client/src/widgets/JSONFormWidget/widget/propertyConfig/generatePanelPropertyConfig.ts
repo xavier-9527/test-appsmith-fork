@@ -36,7 +36,7 @@ function generatePanelPropertyConfig(
     panelIdPropertyName: "identifier",
     children: [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           ...COMMON_PROPERTIES.fieldType,
           ...COMMON_PROPERTIES.customField,
@@ -53,7 +53,7 @@ function generatePanelPropertyConfig(
           ...ARRAY_PROPERTIES.accessibility,
           {
             propertyName: "children",
-            label: "Field Configuration",
+            label: "字段配置",
             controlType: "FIELD_CONFIGURATION",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -71,7 +71,7 @@ function generatePanelPropertyConfig(
         ],
       },
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [...COMMON_PROPERTIES.labelStyles],
         hidden: (props: JSONFormWidgetProps, propertyPath: string) => {
           const schemaItem: SchemaItem = get(props, propertyPath, {});
@@ -83,7 +83,7 @@ function generatePanelPropertyConfig(
         },
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [...COMMON_PROPERTIES.styles],
         hidden: (props: JSONFormWidgetProps, propertyPath: string) => {
           const schemaItem: SchemaItem = get(props, propertyPath, {});
@@ -98,7 +98,7 @@ function generatePanelPropertyConfig(
       ...OBJECT_PROPERTIES.sections,
       ...ARRAY_PROPERTIES.sections,
       {
-        sectionName: "Actions",
+        sectionName: "动作",
         children: [
           ...INPUT_PROPERTIES.actions,
           ...CHECKBOX_PROPERTIES.actions,
@@ -124,7 +124,7 @@ function generatePanelPropertyConfig(
     // And make use of them in PanelPropertiesEditor
     contentChildren: [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           ...COMMON_PROPERTIES.content.data,
           ...INPUT_PROPERTIES.content.data,
@@ -137,7 +137,7 @@ function generatePanelPropertyConfig(
           ...ARRAY_PROPERTIES.content.data,
           {
             propertyName: "children",
-            label: "Field Configuration",
+            label: "字段配置",
             controlType: "FIELD_CONFIGURATION",
             isBindProperty: false,
             isTriggerProperty: false,
@@ -155,7 +155,7 @@ function generatePanelPropertyConfig(
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           ...COMMON_PROPERTIES.content.label,
           ...CHECKBOX_PROPERTIES.content.label,
@@ -163,7 +163,7 @@ function generatePanelPropertyConfig(
         ],
       },
       {
-        sectionName: "Search and Filters",
+        sectionName: "搜索过滤",
         children: [
           ...SELECT_PROPERTIES.content.searchAndFilters,
           ...MULTI_SELECT_PROPERTIES.content.searchAndFilters,
@@ -177,7 +177,7 @@ function generatePanelPropertyConfig(
         },
       },
       {
-        sectionName: "Validation",
+        sectionName: "校验",
         children: [
           ...INPUT_PROPERTIES.content.validation,
           ...DATE_PROPERTIES.content.validation,
@@ -185,7 +185,7 @@ function generatePanelPropertyConfig(
         hidden: isFieldTypeArrayOrObject,
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           ...COMMON_PROPERTIES.content.general,
           ...INPUT_PROPERTIES.content.general,
@@ -198,7 +198,7 @@ function generatePanelPropertyConfig(
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           ...CHECKBOX_PROPERTIES.actions,
           ...DATE_PROPERTIES.content.events,
@@ -214,11 +214,11 @@ function generatePanelPropertyConfig(
     ],
     styleChildren: [
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [...COMMON_PROPERTIES.style.label],
       },
       {
-        sectionName: "Icon",
+        sectionName: "图标配置",
         children: [...INPUT_PROPERTIES.style.icon],
         hidden: (props: JSONFormWidgetProps, propertyPath: string) => {
           const schemaItem: SchemaItem = get(props, propertyPath, {});
@@ -231,12 +231,12 @@ function generatePanelPropertyConfig(
         },
       },
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [...COMMON_PROPERTIES.style.color],
         hidden: isFieldTypeArrayOrObject,
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [...COMMON_PROPERTIES.style.borderShadow],
         hidden: (props: JSONFormWidgetProps, propertyPath: string) => {
           const schemaItem: SchemaItem = get(props, propertyPath, {});

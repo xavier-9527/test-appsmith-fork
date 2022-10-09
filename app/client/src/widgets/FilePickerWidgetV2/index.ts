@@ -4,7 +4,7 @@ import Widget from "./widget";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "FilePicker",
+  name: "文件上传",
   iconSVG: IconSVG,
   needsMeta: true,
   searchTags: ["upload"],
@@ -13,7 +13,7 @@ export const CONFIG = {
     files: [],
     selectedFiles: [],
     allowedFileTypes: [],
-    label: "Select Files",
+    label: "选择文件",
     columns: 16,
     maxNumFiles: 1,
     maxFileSize: 5,

@@ -13,26 +13,26 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "Label",
+        sectionName: "属性",
         children: [
           {
             propertyName: "label",
-            label: "Label",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            helpText: "Displays a label next to the widget",
-            placeholderText: "Enable Option",
+            helpText: "组件旁的标签",
+            placeholderText: "开启新时代",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Right", value: LabelPosition.Right },
+              { label: "左", value: LabelPosition.Left },
+              { label: "右", value: LabelPosition.Right },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
@@ -40,8 +40,8 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "alignWidget",
-            helpText: "Sets the alignment of the widget",
-            label: "Alignment",
+            helpText: "设置组件对齐方式",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -60,13 +60,11 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "defaultSwitchState",
-            label: "Default Selected",
-            helpText:
-              "On / Off the Switch by default. Changes to the default selection update the widget state",
+            label: "默认打开",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -75,8 +73,7 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否可见",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -85,9 +82,8 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "是否禁用",
             controlType: "SWITCH",
-            helpText: "Disables input to this widget",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -95,9 +91,9 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -107,10 +103,10 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the switch state is changed",
+            helpText: "开关状态改变时触发",
             propertyName: "onChange",
             label: "onChange",
             controlType: "ACTION_SELECTOR",
@@ -121,11 +117,11 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Text Color",
+            label: "文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -139,7 +135,7 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelTextSize",
-            label: "Text Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -181,7 +177,7 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelStyle",
-            label: "Label Font Style",
+            label: "字体样式",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -201,12 +197,12 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "accentColor",
-            helpText: "Sets the background color of the widget",
-            label: "Accent color",
+            helpText: "设置组件背景颜色",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -221,26 +217,26 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
             propertyName: "label",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            helpText: "Displays a label next to the widget",
-            placeholderText: "Enable Option",
+            helpText: "组件旁的标签",
+            placeholderText: "开启新时代",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Right", value: LabelPosition.Right },
+              { label: "左", value: LabelPosition.Left },
+              { label: "右", value: LabelPosition.Right },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
@@ -248,8 +244,8 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "alignWidget",
-            helpText: "Sets the alignment of the widget",
-            label: "Alignment",
+            helpText: "设置组件对齐方式",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -268,13 +264,12 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "defaultSwitchState",
-            label: "Default State",
-            helpText:
-              "On / Off the Switch by default. Changes to the default selection update the widget state",
+            label: "默认开启",
+            helpText: "设置开关的默认状态，设置默认值会更新开关当前状态",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -283,8 +278,8 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -293,9 +288,9 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables input to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -303,9 +298,9 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -315,10 +310,10 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the switch state is changed",
+            helpText: "开关状态改变时触发",
             propertyName: "onChange",
             label: "onChange",
             controlType: "ACTION_SELECTOR",
@@ -334,11 +329,11 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Font Color",
+            label: "字体颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -352,7 +347,7 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelTextSize",
-            label: "Font Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -394,7 +389,7 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
           },
           {
             propertyName: "labelStyle",
-            label: "Emphasis",
+            label: "强调",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -414,12 +409,12 @@ class SwitchWidget extends BaseWidget<SwitchWidgetProps, WidgetState> {
         ],
       },
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [
           {
             propertyName: "accentColor",
-            helpText: "Sets the background color of the widget",
-            label: "Accent Color",
+            helpText: "设置组件背景颜色",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,

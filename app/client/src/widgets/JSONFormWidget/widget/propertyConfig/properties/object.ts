@@ -12,9 +12,9 @@ import { getStylesheetValue } from "../helper";
 const objectStyleProperties = [
   {
     propertyName: "backgroundColor",
-    label: "Background Color",
+    label: "背景颜色",
     controlType: "COLOR_PICKER",
-    helpText: "Changes the background color",
+    helpText: "修改背景颜色",
     isJSConvertible: true,
     isBindProperty: true,
     isTriggerProperty: false,
@@ -29,8 +29,8 @@ const objectStyleProperties = [
   },
   {
     propertyName: "borderColor",
-    label: "Border Color",
-    helpText: "Changes the border color of Object",
+    label: "边框颜色",
+    helpText: "修改边框颜色",
     controlType: "COLOR_PICKER",
     isJSConvertible: true,
     isBindProperty: true,
@@ -46,9 +46,9 @@ const objectStyleProperties = [
   },
   {
     propertyName: "borderWidth",
-    helpText: "Enter value for border width",
-    label: "Border Width",
-    placeholderText: "Enter value in px",
+    helpText: "输入边框宽度",
+    label: "边框宽度",
+    placeholderText: "以 px 为单位",
     controlType: "INPUT_TEXT",
     isBindProperty: true,
     isTriggerProperty: false,
@@ -56,8 +56,8 @@ const objectStyleProperties = [
   },
   {
     propertyName: "borderRadius",
-    label: "Border Radius",
-    helpText: "Rounds the corners of the icon button's outer border edge",
+    label: "边框圆角",
+    helpText: "边框圆角样式",
     controlType: "BORDER_RADIUS_OPTIONS",
     customJSControl: "JSON_FORM_COMPUTE_VALUE",
     isJSConvertible: true,
@@ -69,8 +69,8 @@ const objectStyleProperties = [
   },
   {
     propertyName: "boxShadow",
-    label: "Box Shadow",
-    helpText: "Enables you to cast a drop shadow from the frame of the widget",
+    label: "阴影",
+    helpText: "组件轮廓投影",
     controlType: "BOX_SHADOW_OPTIONS",
     customJSControl: "JSON_FORM_COMPUTE_VALUE",
     isJSConvertible: true,
@@ -85,7 +85,7 @@ const objectStyleProperties = [
 const PROPERTIES = {
   sections: [
     {
-      sectionName: "Object Styles",
+      sectionName: "对象样式",
       isDefaultOpen: false,
       children: objectStyleProperties,
       hidden: (props: JSONFormWidgetProps, propertyPath: string) => {
@@ -98,14 +98,14 @@ const PROPERTIES = {
       },
     },
     {
-      sectionName: "Item Styles",
+      sectionName: "数据项样式",
       isDefaultOpen: false,
       children: [
         {
           propertyName: "cellBackgroundColor",
-          label: "Background Color",
+          label: "背景颜色",
           controlType: "COLOR_PICKER",
-          helpText: "Changes the background color of the item",
+          helpText: "修改数据项背景颜色",
           isJSConvertible: true,
           isBindProperty: true,
           isTriggerProperty: false,
@@ -120,8 +120,8 @@ const PROPERTIES = {
         },
         {
           propertyName: "cellBorderColor",
-          label: "Border Color",
-          helpText: "Changes the border color of the item",
+          label: "边框颜色",
+          helpText: "修改数据项边框颜色",
           controlType: "COLOR_PICKER",
           isJSConvertible: true,
           isBindProperty: true,
@@ -137,9 +137,9 @@ const PROPERTIES = {
         },
         {
           propertyName: "cellBorderWidth",
-          helpText: "Enter value for border width of the item",
-          label: "Border Width",
-          placeholderText: "Enter value in px",
+          helpText: "修改数据项边框宽度",
+          label: "边框宽度",
+          placeholderText: "以 px 为单位",
           controlType: "INPUT_TEXT",
           isBindProperty: true,
           isTriggerProperty: false,
@@ -147,8 +147,8 @@ const PROPERTIES = {
         },
         {
           propertyName: "cellBorderRadius",
-          label: "Border Radius",
-          helpText: "Rounds the corners of the icon button's outer border edge",
+          label: "边框圆角",
+          helpText: "边框圆角样式",
           controlType: "BORDER_RADIUS_OPTIONS",
           customJSControl: "JSON_FORM_COMPUTE_VALUE",
           isJSConvertible: true,
@@ -160,9 +160,8 @@ const PROPERTIES = {
         },
         {
           propertyName: "cellBoxShadow",
-          label: "Box Shadow",
-          helpText:
-            "Enables you to cast a drop shadow from the frame of the widget",
+          label: "阴影",
+          helpText: "组件轮廓投影",
           controlType: "BOX_SHADOW_OPTIONS",
           customJSControl: "JSON_FORM_COMPUTE_VALUE",
           isJSConvertible: true,
@@ -187,7 +186,7 @@ const PROPERTIES = {
        * This is for an edge case where an array item is an object
        * Here we only want to change the cell** styles
        */
-      sectionName: "Styles",
+      sectionName: "样式",
       children: objectStyleProperties,
       hidden: (props: JSONFormWidgetProps, propertyPath: string) => {
         const schemaItem: SchemaItem = get(props, propertyPath, {});

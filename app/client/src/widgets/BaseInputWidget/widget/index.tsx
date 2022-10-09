@@ -24,13 +24,12 @@ class BaseInputWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText:
-              "Adds a validation to the input which displays an error on failure",
+            helpText: "对输入进行正则校验，校验失败时显示错误",
             propertyName: "regex",
-            label: "Regex",
+            label: "正则校验",
             controlType: "INPUT_TEXT",
             placeholderText: "^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$",
             isBindProperty: true,
@@ -38,9 +37,9 @@ class BaseInputWidget<
             validation: { type: ValidationTypes.REGEX },
           },
           {
-            helpText: "Sets the input validity based on a JS expression",
+            helpText: "使用 JS 表达式来校验输入的是否合法",
             propertyName: "validation",
-            label: "Valid",
+            label: "普通校验",
             controlType: "INPUT_TEXT",
             placeholderText: "{{ Input1.text.length > 0 }}",
             isBindProperty: true,
@@ -53,40 +52,39 @@ class BaseInputWidget<
             },
           },
           {
-            helpText:
-              "The error message to display if the regex or valid property check fails",
+            helpText: "普通校验或正则校验失败后显示的错误信息",
             propertyName: "errorMessage",
-            label: "Error Message",
+            label: "错误信息",
             controlType: "INPUT_TEXT",
-            placeholderText: "Not a valid value!",
+            placeholderText: "输入不符合规范",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets a placeholder text for the input",
+            helpText: "输入为空时显示的占位字符",
             propertyName: "placeholderText",
-            label: "Placeholder",
+            label: "占位符",
             controlType: "INPUT_TEXT",
-            placeholderText: "Placeholder",
+            placeholderText: "占位符",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Show help text or details about current input",
+            helpText: "显示帮助信息或者当前输入的详情",
             propertyName: "tooltip",
-            label: "Tooltip",
+            label: "提示",
             controlType: "INPUT_TEXT",
-            placeholderText: "Value must be atleast 6 chars",
+            placeholderText: "至少输入6个字符",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -94,9 +92,9 @@ class BaseInputWidget<
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -104,9 +102,9 @@ class BaseInputWidget<
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Disables input to this widget",
+            helpText: "让组件不可交互",
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -114,9 +112,9 @@ class BaseInputWidget<
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Clears the input value after submit",
+            helpText: "提交后清空输入信息",
             propertyName: "resetOnSubmit",
-            label: "Reset on submit",
+            label: "提交后重置",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -124,9 +122,9 @@ class BaseInputWidget<
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Focus input automatically on load",
+            helpText: "加载后自动聚焦到输入框",
             propertyName: "autoFocus",
-            label: "Auto Focus",
+            label: "自动聚焦",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -135,9 +133,9 @@ class BaseInputWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -146,9 +144,8 @@ class BaseInputWidget<
           },
           {
             propertyName: "isSpellCheck",
-            label: "Spellcheck",
-            helpText:
-              "Defines whether the text input may be checked for spelling errors",
+            label: "拼写检查",
+            helpText: "是否检查拼写错误",
             controlType: "SWITCH",
             isJSConvertible: false,
             isBindProperty: true,
@@ -162,10 +159,10 @@ class BaseInputWidget<
         ],
       },
       {
-        sectionName: "Actions",
+        sectionName: "动作",
         children: [
           {
-            helpText: "Triggers an action when the text is changed",
+            helpText: "文本输入改变时触发",
             propertyName: "onTextChanged",
             label: "onTextChanged",
             controlType: "ACTION_SELECTOR",
@@ -174,8 +171,7 @@ class BaseInputWidget<
             isTriggerProperty: true,
           },
           {
-            helpText:
-              "Triggers an action on submit (when the enter key is pressed)",
+            helpText: "提交时触发（用户按了回车）",
             propertyName: "onSubmit",
             label: "onSubmit",
             controlType: "ACTION_SELECTOR",
@@ -186,36 +182,36 @@ class BaseInputWidget<
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "label",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Name:",
+            placeholderText: "名称：",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -235,10 +231,9 @@ class BaseInputWidget<
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -257,11 +252,11 @@ class BaseInputWidget<
         ],
       },
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Text Color",
+            label: "文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -275,7 +270,7 @@ class BaseInputWidget<
           },
           {
             propertyName: "labelTextSize",
-            label: "Text Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -317,7 +312,7 @@ class BaseInputWidget<
           },
           {
             propertyName: "labelStyle",
-            label: "Label Font Style",
+            label: "字体样式",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -336,11 +331,11 @@ class BaseInputWidget<
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "accentColor",
-            label: "Accent Color",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -350,9 +345,8 @@ class BaseInputWidget<
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -361,9 +355,8 @@ class BaseInputWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -378,36 +371,36 @@ class BaseInputWidget<
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "label",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Name:",
+            placeholderText: "名称：",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -427,10 +420,9 @@ class BaseInputWidget<
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -449,13 +441,12 @@ class BaseInputWidget<
         ],
       },
       {
-        sectionName: "Validation",
+        sectionName: "校验",
         children: [
           {
-            helpText:
-              "Adds a validation to the input which displays an error on failure",
+            helpText: "对输入进行正则校验，校验失败时显示错误",
             propertyName: "regex",
-            label: "Regex",
+            label: "正则校验",
             controlType: "INPUT_TEXT",
             placeholderText: "^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$",
             isBindProperty: true,
@@ -463,9 +454,9 @@ class BaseInputWidget<
             validation: { type: ValidationTypes.REGEX },
           },
           {
-            helpText: "Sets the input validity based on a JS expression",
+            helpText: "使用 JS 表达式来校验输入的是否合法",
             propertyName: "validation",
-            label: "Valid",
+            label: "普通校验",
             controlType: "INPUT_TEXT",
             placeholderText: "{{ Input1.text.length > 0 }}",
             isBindProperty: true,
@@ -478,21 +469,19 @@ class BaseInputWidget<
             },
           },
           {
-            helpText:
-              "The error message to display if the regex or valid property check fails",
+            helpText: "普通校验或正则校验失败后显示的错误信息",
             propertyName: "errorMessage",
-            label: "Error Message",
+            label: "错误信息",
             controlType: "INPUT_TEXT",
-            placeholderText: "Not a valid value!",
+            placeholderText: "输入不符合规范",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
             propertyName: "isSpellCheck",
-            label: "Spellcheck",
-            helpText:
-              "Defines whether the text input may be checked for spelling errors",
+            label: "拼写检查",
+            helpText: "是否检查拼写错误",
             controlType: "SWITCH",
             isJSConvertible: false,
             isBindProperty: true,
@@ -506,32 +495,32 @@ class BaseInputWidget<
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Show help text or details about current input",
+            helpText: "显示帮助信息或者当前输入的详情",
             propertyName: "tooltip",
-            label: "Tooltip",
+            label: "提示",
             controlType: "INPUT_TEXT",
-            placeholderText: "Value must be atleast 6 chars",
+            placeholderText: "至少输入6个字符",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets a placeholder text for the input",
+            helpText: "输入为空时显示的占位字符",
             propertyName: "placeholderText",
-            label: "Placeholder",
+            label: "占位符",
             controlType: "INPUT_TEXT",
-            placeholderText: "Placeholder",
+            placeholderText: "占位符",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Controls the visibility of the widget",
+            helpText: "控制组件的显示/隐藏",
             propertyName: "isVisible",
-            label: "Visible",
+            label: "是否显示",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -539,9 +528,9 @@ class BaseInputWidget<
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Disables input to this widget",
+            helpText: "让组件不可交互",
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -550,9 +539,9 @@ class BaseInputWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -560,9 +549,9 @@ class BaseInputWidget<
             validation: { type: ValidationTypes.BOOLEAN },
           },
           {
-            helpText: "Focus input automatically on load",
+            helpText: "加载后自动聚焦到输入框",
             propertyName: "autoFocus",
-            label: "Auto Focus",
+            label: "自动聚焦",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -571,8 +560,8 @@ class BaseInputWidget<
           },
           {
             propertyName: "allowFormatting",
-            label: "Enable Formatting",
-            helpText: "Formats the phone number as per the country selected",
+            label: "手机号格式化",
+            helpText: "按各个国家的规则格式化手机号",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -585,10 +574,10 @@ class BaseInputWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the text is changed",
+            helpText: "文本输入改变时触发",
             propertyName: "onTextChanged",
             label: "onTextChanged",
             controlType: "ACTION_SELECTOR",
@@ -597,8 +586,7 @@ class BaseInputWidget<
             isTriggerProperty: true,
           },
           {
-            helpText:
-              "Triggers an action on submit (when the enter key is pressed)",
+            helpText: "提交时触发（用户按了回车）",
             propertyName: "onSubmit",
             label: "onSubmit",
             controlType: "ACTION_SELECTOR",
@@ -607,9 +595,9 @@ class BaseInputWidget<
             isTriggerProperty: true,
           },
           {
-            helpText: "Clears the input value after submit",
+            helpText: "提交后清空输入信息",
             propertyName: "resetOnSubmit",
-            label: "Reset on submit",
+            label: "提交后重置",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -624,11 +612,11 @@ class BaseInputWidget<
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Font Color",
+            label: "字体颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -642,7 +630,7 @@ class BaseInputWidget<
           },
           {
             propertyName: "labelTextSize",
-            label: "Font Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -684,7 +672,7 @@ class BaseInputWidget<
           },
           {
             propertyName: "labelStyle",
-            label: "Emphasis",
+            label: "强调",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -703,11 +691,11 @@ class BaseInputWidget<
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "accentColor",
-            label: "Accent Color",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -717,9 +705,8 @@ class BaseInputWidget<
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,
@@ -728,9 +715,8 @@ class BaseInputWidget<
           },
           {
             propertyName: "boxShadow",
-            label: "Box Shadow",
-            helpText:
-              "Enables you to cast a drop shadow from the frame of the widget",
+            label: "阴影",
+            helpText: "组件轮廓投影",
             controlType: "BOX_SHADOW_OPTIONS",
             isJSConvertible: true,
             isBindProperty: true,

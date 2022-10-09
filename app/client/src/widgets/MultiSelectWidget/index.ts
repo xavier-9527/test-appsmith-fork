@@ -5,7 +5,7 @@ import Widget from "./widget";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "MultiSelect",
+  name: "下拉多选",
   iconSVG: IconSVG,
   needsMeta: true,
   hideCard: true,
@@ -15,14 +15,14 @@ export const CONFIG = {
     rows: 7,
     columns: 20,
     animateLoading: true,
-    labelText: "Label",
+    labelText: "标签",
     labelPosition: LabelPosition.Left,
     labelAlignment: Alignment.LEFT,
     labelWidth: 5,
     options: [
-      { label: "Blue", value: "BLUE" },
-      { label: "Green", value: "GREEN" },
-      { label: "Red", value: "RED" },
+      { label: "蓝", value: "BLUE" },
+      { label: "绿", value: "GREEN" },
+      { label: "红", value: "RED" },
     ],
     widgetName: "MultiSelect",
     serverSideFiltering: false,
@@ -30,7 +30,7 @@ export const CONFIG = {
     version: 1,
     isRequired: false,
     isDisabled: false,
-    placeholderText: "Select option(s)",
+    placeholderText: "请选择",
   },
   properties: {
     derived: Widget.getDerivedPropertiesMap(),

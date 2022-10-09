@@ -58,12 +58,12 @@ class CheckboxGroupWidget extends BaseWidget<
   static getPropertyPaneConfig() {
     return [
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
-            helpText: "Displays a list of unique checkbox options",
+            helpText: "展示一列值唯一的勾选选项",
             propertyName: "options",
-            label: "Options",
+            label: "选项",
             controlType: "OPTION_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -102,9 +102,9 @@ class CheckboxGroupWidget extends BaseWidget<
               EvaluationSubstitutionType.SMART_SUBSTITUTE,
           },
           {
-            helpText: "Sets the values of the options checked by default",
+            helpText: "设置默认勾选的选项",
             propertyName: "defaultSelectedValues",
-            label: "Default Selected Values",
+            label: "默认选中值",
             placeholderText: '["apple", "orange"]',
             controlType: "INPUT_TEXT",
             isBindProperty: true,
@@ -123,8 +123,8 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -135,8 +135,8 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -147,9 +147,9 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables input to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -159,9 +159,9 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isInline",
-            label: "Inline",
+            label: "行排列",
             controlType: "SWITCH",
-            helpText: "Displays the checkboxes horizontally",
+            helpText: "水平排列勾选框",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -171,9 +171,9 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isSelectAll",
-            label: "Select All Options",
+            label: "全选",
             controlType: "SWITCH",
-            helpText: "Controls whether select all option is shown",
+            helpText: "显示所有选项是否都被选中",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -183,9 +183,9 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -195,36 +195,36 @@ class CheckboxGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "labelText",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter label text",
+            placeholderText: "请输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -244,10 +244,9 @@ class CheckboxGroupWidget extends BaseWidget<
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -266,36 +265,36 @@ class CheckboxGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Styles",
+        sectionName: "样式",
         children: [
           {
             propertyName: "optionAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "DROP_DOWN",
-            helpText: "Sets alignment between options.",
+            helpText: "选项之间的对齐方式",
             options: [
               {
-                label: "None",
+                label: "无",
                 value: CheckboxGroupAlignmentTypes.NONE,
               },
               {
-                label: "Start",
+                label: "向前对齐",
                 value: CheckboxGroupAlignmentTypes.START,
               },
               {
-                label: "End",
+                label: "向后对齐",
                 value: CheckboxGroupAlignmentTypes.END,
               },
               {
-                label: "Center",
+                label: "居中对齐",
                 value: CheckboxGroupAlignmentTypes.CENTER,
               },
               {
-                label: "Between",
+                label: "两边对齐",
                 value: CheckboxGroupAlignmentTypes.SPACE_BETWEEN,
               },
               {
-                label: "Around",
+                label: "均匀对齐",
                 value: CheckboxGroupAlignmentTypes.SPACE_AROUND,
               },
             ],
@@ -318,7 +317,7 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "labelTextColor",
-            label: "Label Text Color",
+            label: "标签文本颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -327,7 +326,7 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "labelTextSize",
-            label: "Label Text Size",
+            label: "标签文本大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -369,7 +368,7 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "labelStyle",
-            label: "Label Font Style",
+            label: "字体样式",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -388,8 +387,8 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "accentColor",
-            helpText: "Sets the checked state color of the checkbox",
-            label: "Accent Color",
+            helpText: "设置勾选框选中态颜色",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -398,9 +397,8 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,
@@ -411,10 +409,10 @@ class CheckboxGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the check state is changed",
+            helpText: "选中态改变时触发",
             propertyName: "onSelectionChange",
             label: "onSelectionChange",
             controlType: "ACTION_SELECTOR",
@@ -430,12 +428,12 @@ class CheckboxGroupWidget extends BaseWidget<
   static getPropertyPaneContentConfig() {
     return [
       {
-        sectionName: "Data",
+        sectionName: "数据",
         children: [
           {
-            helpText: "Displays a list of unique checkbox options",
+            helpText: "展示一列值唯一的勾选选项",
             propertyName: "options",
-            label: "Options",
+            label: "选项",
             controlType: "OPTION_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -474,9 +472,9 @@ class CheckboxGroupWidget extends BaseWidget<
               EvaluationSubstitutionType.SMART_SUBSTITUTE,
           },
           {
-            helpText: "Sets the values of the options checked by default",
+            helpText: "设置默认勾选的选项",
             propertyName: "defaultSelectedValues",
-            label: "Default Selected Values",
+            label: "默认选中值",
             placeholderText: '["apple", "orange"]',
             controlType: "INPUT_TEXT",
             isBindProperty: true,
@@ -496,36 +494,36 @@ class CheckboxGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Label",
+        sectionName: "标签",
         children: [
           {
-            helpText: "Sets the label text of the widget",
+            helpText: "设置组件标签文本",
             propertyName: "labelText",
-            label: "Text",
+            label: "文本",
             controlType: "INPUT_TEXT",
-            placeholderText: "Enter label text",
+            placeholderText: "请输入文本内容",
             isBindProperty: true,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label position of the widget",
+            helpText: "设置组件标签位置",
             propertyName: "labelPosition",
-            label: "Position",
+            label: "位置",
             controlType: "DROP_DOWN",
             options: [
-              { label: "Left", value: LabelPosition.Left },
-              { label: "Top", value: LabelPosition.Top },
-              { label: "Auto", value: LabelPosition.Auto },
+              { label: "左", value: LabelPosition.Left },
+              { label: "上", value: LabelPosition.Top },
+              { label: "自动", value: LabelPosition.Auto },
             ],
             isBindProperty: false,
             isTriggerProperty: false,
             validation: { type: ValidationTypes.TEXT },
           },
           {
-            helpText: "Sets the label alignment of the widget",
+            helpText: "设置组件标签的对齐方式",
             propertyName: "labelAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "LABEL_ALIGNMENT_OPTIONS",
             options: [
               {
@@ -545,10 +543,9 @@ class CheckboxGroupWidget extends BaseWidget<
             dependencies: ["labelPosition"],
           },
           {
-            helpText:
-              "Sets the label width of the widget as the number of columns",
+            helpText: "设置组件标签占用的列数",
             propertyName: "labelWidth",
-            label: "Width (in columns)",
+            label: "宽度（所占列数）",
             controlType: "NUMERIC_INPUT",
             isJSConvertible: true,
             isBindProperty: true,
@@ -567,12 +564,12 @@ class CheckboxGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Validations",
+        sectionName: "校验",
         children: [
           {
             propertyName: "isRequired",
-            label: "Required",
-            helpText: "Makes input to the widget mandatory",
+            label: "必填",
+            helpText: "强制用户填写",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -584,12 +581,12 @@ class CheckboxGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "isVisible",
-            label: "Visible",
-            helpText: "Controls the visibility of the widget",
+            label: "是否显示",
+            helpText: "控制组件的显示/隐藏",
             controlType: "SWITCH",
             isJSConvertible: true,
             isBindProperty: true,
@@ -600,9 +597,9 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isDisabled",
-            label: "Disabled",
+            label: "禁用",
             controlType: "SWITCH",
-            helpText: "Disables input to this widget",
+            helpText: "让组件不可交互",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -612,9 +609,9 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isInline",
-            label: "Inline",
+            label: "行排列",
             controlType: "SWITCH",
-            helpText: "Displays the checkboxes horizontally",
+            helpText: "水平排列勾选框",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -624,9 +621,9 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "isSelectAll",
-            label: "Select All Options",
+            label: "全选",
             controlType: "SWITCH",
-            helpText: "Controls whether select all option is shown",
+            helpText: "显示所有选项是否都被选中",
             isJSConvertible: true,
             isBindProperty: true,
             isTriggerProperty: false,
@@ -636,9 +633,9 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "animateLoading",
-            label: "Animate Loading",
+            label: "加载时显示动画",
             controlType: "SWITCH",
-            helpText: "Controls the loading of the widget",
+            helpText: "组件依赖的数据加载时显示加载动画",
             defaultValue: true,
             isJSConvertible: true,
             isBindProperty: true,
@@ -648,10 +645,10 @@ class CheckboxGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Events",
+        sectionName: "事件",
         children: [
           {
-            helpText: "Triggers an action when the check state is changed",
+            helpText: "选中态改变时触发",
             propertyName: "onSelectionChange",
             label: "onSelectionChange",
             controlType: "ACTION_SELECTOR",
@@ -667,11 +664,11 @@ class CheckboxGroupWidget extends BaseWidget<
   static getPropertyPaneStyleConfig() {
     return [
       {
-        sectionName: "Label Styles",
+        sectionName: "标签样式",
         children: [
           {
             propertyName: "labelTextColor",
-            label: "Font Color",
+            label: "字体颜色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -680,7 +677,7 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "labelTextSize",
-            label: "Font Size",
+            label: "字体大小",
             controlType: "DROP_DOWN",
             defaultValue: "0.875rem",
             options: [
@@ -722,7 +719,7 @@ class CheckboxGroupWidget extends BaseWidget<
           },
           {
             propertyName: "labelStyle",
-            label: "Emphasis",
+            label: "强调",
             controlType: "BUTTON_TABS",
             options: [
               {
@@ -742,36 +739,36 @@ class CheckboxGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "General",
+        sectionName: "属性",
         children: [
           {
             propertyName: "optionAlignment",
-            label: "Alignment",
+            label: "对齐",
             controlType: "DROP_DOWN",
-            helpText: "Sets alignment between options.",
+            helpText: "选项之间的对齐方式",
             options: [
               {
-                label: "None",
+                label: "无",
                 value: CheckboxGroupAlignmentTypes.NONE,
               },
               {
-                label: "Start",
+                label: "向前对齐",
                 value: CheckboxGroupAlignmentTypes.START,
               },
               {
-                label: "End",
+                label: "向后对齐",
                 value: CheckboxGroupAlignmentTypes.END,
               },
               {
-                label: "Center",
+                label: "居中对齐",
                 value: CheckboxGroupAlignmentTypes.CENTER,
               },
               {
-                label: "Between",
+                label: "两边对齐",
                 value: CheckboxGroupAlignmentTypes.SPACE_BETWEEN,
               },
               {
-                label: "Around",
+                label: "均匀对齐",
                 value: CheckboxGroupAlignmentTypes.SPACE_AROUND,
               },
             ],
@@ -795,12 +792,12 @@ class CheckboxGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Color",
+        sectionName: "颜色配置",
         children: [
           {
             propertyName: "accentColor",
-            helpText: "Sets the checked state color of the checkbox",
-            label: "Accent Color",
+            helpText: "设置勾选框选中态颜色",
+            label: "强调色",
             controlType: "COLOR_PICKER",
             isJSConvertible: true,
             isBindProperty: true,
@@ -810,13 +807,12 @@ class CheckboxGroupWidget extends BaseWidget<
         ],
       },
       {
-        sectionName: "Border and Shadow",
+        sectionName: "轮廓样式",
         children: [
           {
             propertyName: "borderRadius",
-            label: "Border Radius",
-            helpText:
-              "Rounds the corners of the icon button's outer border edge",
+            label: "边框圆角",
+            helpText: "边框圆角样式",
             controlType: "BORDER_RADIUS_OPTIONS",
 
             isJSConvertible: true,
