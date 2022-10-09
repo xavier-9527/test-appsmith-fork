@@ -175,7 +175,7 @@ function copyContent(content: any) {
 
   copy(stringifiedContent);
   Toaster.show({
-    text: `Evaluated value copied to clipboard`,
+    text: `解析值已复制`,
     variant: Variant.success,
   });
 }
@@ -332,7 +332,7 @@ export const CurrentValueViewer = memo(
             data-testid="evaluated-value-popup-title"
             onClick={toggleEvaluatedValue}
           >
-            Evaluated Value
+            解析值
             <CollapseToggle isOpen={openEvaluatedValue} />
           </StyledTitle>
         )}
@@ -401,7 +401,7 @@ function PopoverContent(props: PopoverContentProps) {
           <span className="t--evaluatedPopup-error">
             {/* errorMessage could be an empty string */}
             {error.errorMessage ||
-              `This value does not evaluate to type "${expected?.type}".`}
+              `当前表达式不能解析成数据类型 "${expected?.type}".`}
           </span>
           <EvaluatedValueDebugButton
             entity={props.entity}
@@ -412,7 +412,7 @@ function PopoverContent(props: PopoverContentProps) {
       {props.expected && props.expected.type !== UNDEFINED_VALIDATION && (
         <>
           <StyledTitle onClick={toggleExpectedDataType}>
-            Expected Structure
+            数据结构
             <CollapseToggle isOpen={openExpectedDataType} />
           </StyledTitle>
           <Collapse isOpen={openExpectedDataType}>
@@ -425,7 +425,7 @@ function PopoverContent(props: PopoverContentProps) {
       {props.expected && props.expected.type !== UNDEFINED_VALIDATION && (
         <>
           <StyledTitle onClick={toggleExpectedExample}>
-            Expected Structure - Example
+            数据结构 - 例子
             <CollapseToggle isOpen={openExpectedExample} />
           </StyledTitle>
           <Collapse isOpen={openExpectedExample}>

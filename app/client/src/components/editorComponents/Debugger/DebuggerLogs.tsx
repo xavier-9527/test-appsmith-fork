@@ -33,12 +33,12 @@ type Props = {
 
 const LOGS_FILTER_OPTIONS = [
   {
-    label: "All",
+    label: "全部",
     value: "",
   },
-  { label: "Success", value: Severity.INFO },
-  { label: "Warnings", value: Severity.WARNING },
-  { label: "Errors", value: Severity.ERROR },
+  { label: "成功", value: Severity.INFO },
+  { label: "警告", value: Severity.WARNING },
+  { label: "错误", value: Severity.ERROR },
 ];
 
 function DebbuggerLogs(props: Props) {

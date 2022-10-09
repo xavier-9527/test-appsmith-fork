@@ -87,7 +87,7 @@ function FilterHeader(props: FilterHeaderProps) {
           defaultValue={props.defaultValue}
           height="28px"
           onChange={props.onChange}
-          placeholder="Filter"
+          placeholder="过滤"
           ref={searchRef}
           width="160px"
         />
