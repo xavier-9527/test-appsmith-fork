@@ -71,7 +71,7 @@ export default function DeployPreview(props: { showSuccess: boolean }) {
         {
           lessThanAMinute: true,
         },
-      )} ago`
+      )} 前`
     : "";
   return lastDeployedAt ? (
     <Container className="t--git-deploy-preview">

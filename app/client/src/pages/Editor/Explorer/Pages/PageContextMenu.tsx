@@ -110,7 +110,7 @@ export function PageContextMenu(props: {
       // Possibly support ReactNode in TreeOption
       label: ((
         <CustomLabel>
-          {props.isHidden ? "Show" : "Hide"}
+          {props.isHidden ? "显示" : "隐藏"}
           <Icon icon={props.isHidden ? "eye-open" : "eye-off"} iconSize={14} />
         </CustomLabel>
       ) as ReactNode) as string,

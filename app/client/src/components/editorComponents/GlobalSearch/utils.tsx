@@ -145,25 +145,25 @@ export function getOptionalFilters(optionalFilterMeta: any) {
 
 export const filterCategories: Record<SEARCH_CATEGORY_ID, SearchCategory> = {
   [SEARCH_CATEGORY_ID.NAVIGATION]: {
-    title: "Navigate",
+    title: "导航",
     kind: SEARCH_ITEM_TYPES.category,
     id: SEARCH_CATEGORY_ID.NAVIGATION,
     desc: createMessage(NAV_DESCRIPTION),
   },
   [SEARCH_CATEGORY_ID.ACTION_OPERATION]: {
-    title: "Create New",
+    title: "新建",
     kind: SEARCH_ITEM_TYPES.category,
     id: SEARCH_CATEGORY_ID.ACTION_OPERATION,
     desc: createMessage(ACTION_OPERATION_DESCRIPTION),
   },
   [SEARCH_CATEGORY_ID.SNIPPETS]: {
-    title: "Use Snippets",
+    title: "代码片段",
     kind: SEARCH_ITEM_TYPES.category,
     id: SEARCH_CATEGORY_ID.SNIPPETS,
     desc: createMessage(SNIPPET_DESCRIPTION),
   },
   [SEARCH_CATEGORY_ID.DOCUMENTATION]: {
-    title: "Search Documentation",
+    title: "查询文档",
     kind: SEARCH_ITEM_TYPES.category,
     id: SEARCH_CATEGORY_ID.DOCUMENTATION,
     desc: createMessage(DOC_DESCRIPTION),

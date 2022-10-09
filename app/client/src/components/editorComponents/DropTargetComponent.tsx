@@ -45,11 +45,37 @@ const StyledDropTarget = styled.div`
   z-index: 1;
 `;
 
+const EmptyContainer = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -100px;
+  margin-left: -200px;
+  text-align: center;
+  opacity: 0.5;
+
+  & h2 {
+    color: #666;
+    margin-top: 28px;
+  }
+
+  & img {
+    height: 100%;
+    width: 70%;
+  }
+`;
+
 function Onboarding() {
   return (
-    <h2 className="absolute top-0 left-0 right-0 flex items-end h-108 justify-center text-2xl font-bold text-gray-300">
-      Drag and drop a widget here
-    </h2>
+    <EmptyContainer>
+      {/* <CanvasEmpty /> */}
+      {/* <img src={EmptyCanvas} /> */}
+      <h2>开始构建你的应用</h2>
+      <p style={{ margin: "18px 0 0" }}>点击“组件”右侧 + 按钮添加组件</p>
+      <p>点击“数据源”右侧 + 按钮添加数据源</p>
+    </EmptyContainer>
   );
 }
 

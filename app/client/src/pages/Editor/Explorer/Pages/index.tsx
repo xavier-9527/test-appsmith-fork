@@ -123,7 +123,7 @@ function Pages() {
 
   const createPageCallback = useCallback(() => {
     const name = getNextEntityName(
-      "Page",
+      "页面",
       pages.map((page: Page) => page.pageName),
     );
     // Default layout is extracted by adding dynamically computed properties like min-height.
@@ -223,7 +223,7 @@ function Pages() {
         entityId="Pages"
         icon={""}
         isDefaultExpanded={isPagesOpen === null ? true : isPagesOpen}
-        name="PAGES"
+        name="页面"
         onClickPreRightIcon={onPin}
         onClickRightIcon={onClickRightIcon}
         onCreate={createPageCallback}

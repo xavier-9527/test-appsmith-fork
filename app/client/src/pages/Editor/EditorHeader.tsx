@@ -461,11 +461,7 @@ export function EditorHeader(props: EditorHeaderProps) {
                 bgColor: Colors.GEYSER_LIGHT,
               }}
               isOpen={showAppInviteUsersDialog}
-              title={
-                currentApplication
-                  ? currentApplication.name
-                  : "Share Application"
-              }
+              title={currentApplication ? currentApplication.name : "分享应用"}
               trigger={
                 <TooltipComponent
                   content={
@@ -497,7 +493,7 @@ export function EditorHeader(props: EditorHeaderProps) {
                   isLoading={isPublishing}
                   onClick={() => handleClickDeploy(true)}
                   size={Size.small}
-                  text={"Deploy"}
+                  text={"发布应用"}
                 />
               </TooltipComponent>
 

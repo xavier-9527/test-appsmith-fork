@@ -714,14 +714,14 @@ export enum ONBOARDING_CHECKLIST_ACTIONS {
 }
 
 export const ONBOARDING_CHECKLIST_BANNER_HEADER = () =>
-  "太棒了！看来你已经学会怎么用 PagePlug 啦";
+  "太棒了！看来你已经学会怎么用 Appsmith 啦";
 export const ONBOARDING_CHECKLIST_BANNER_BODY = () =>
   "你可以去主页看看你创建的应用";
 export const ONBOARDING_CHECKLIST_BANNER_BUTTON = () => "探索主页";
 
-export const ONBOARDING_CHECKLIST_HEADER = () => "👋 欢迎来到 PagePlug ！";
+export const ONBOARDING_CHECKLIST_HEADER = () => "👋 欢迎来到 Appsmith ！";
 export const ONBOARDING_CHECKLIST_BODY = () =>
-  "开始你的第一个应用吧，你可以自由探索，或者跟随指引了解 PagePlug 的基本用法";
+  "开始你的第一个应用吧，你可以自由探索，或者跟随指引了解 Appsmith 的基本用法";
 export const ONBOARDING_CHECKLIST_COMPLETE_TEXT = () => "完成";
 
 export const ONBOARDING_CHECKLIST_CONNECT_DATA_SOURCE = {
@@ -753,7 +753,7 @@ export const ONBOARDING_CHECKLIST_FOOTER = () =>
   "不知道从何下手？请跟随我们的指引进行操作吧";
 
 //Introduction modal
-export const HOW_APPSMITH_WORKS = () => "这是 PagePlug 的功能概述";
+export const HOW_APPSMITH_WORKS = () => "这是 Appsmith 的功能概述";
 export const ONBOARDING_INTRO_CONNECT_YOUR_DATABASE = () =>
   "连接你的数据源或者 API";
 export const DRAG_AND_DROP = () => "拖拽预置的组件构建 UI";
@@ -765,7 +765,7 @@ export const CHOOSE_ACCESS_CONTROL_ROLES = () =>
 export const BUILD_MY_FIRST_APP = () => "我来部署";
 export const ONBOARDING_INTRO_FOOTER = () => "让我们开始构建你的第一个应用吧";
 export const START_TUTORIAL = () => "开始";
-export const WELCOME_TO_APPSMITH = () => "欢迎来到 PagePlug ！";
+export const WELCOME_TO_APPSMITH = () => "欢迎来到 Appsmith ！";
 export const QUERY_YOUR_DATABASE = () =>
   "查询你的数据库或 API，使用 JS 构建动态查询";
 
@@ -840,7 +840,7 @@ export const WELCOME_FORM_DATA_COLLECTION_BODY = () =>
   "分享匿名的使用数据来帮助我们提升产品质量";
 export const WELCOME_FORM_DATA_COLLECTION_LINK = () => "看看分享了哪些数据";
 export const WELCOME_FORM_DATA_COLLECTION_LABEL_ENABLE = () =>
-  "分享数据让 PagePlug 变得更好！";
+  "分享数据让 Appsmith 变得更好！";
 export const WELCOME_FORM_DATA_COLLECTION_LABEL_DISABLE = () =>
   "不分享任何数据";
 export const WELCOME_FORM_NEWLETTER_HEADER = () => "保持联系";
@@ -859,7 +859,7 @@ export const HELP_RESOURCE_TOOLTIP = () => "帮助资源";
 export const COPY_ELEMENT = () => "复制元素";
 export const LAYOUT_DROPDOWN_TOOLTIP = () => "选择你的应用宽度";
 export const DEPLOY_BUTTON_TOOLTIP = () => "发布应用的当前版本";
-export const SHARE_BUTTON_TOOLTIP = () => "邀请你的团队到 PagePlug";
+export const SHARE_BUTTON_TOOLTIP = () => "邀请你的团队到 Appsmith";
 export const SHARE_BUTTON_TOOLTIP_WITH_USER = (length: number) => () =>
   `和 ${length} 位小伙伴共享`;
 export const DEBUGGER_TOOLTIP = () => "打开调试器";
@@ -889,7 +889,7 @@ export const RESTART_ERROR_BODY = () =>
 export const RESTART_ERROR_HEADER = () => "重启失败";
 export const RETRY_BUTTON = () => "重试";
 export const INFO_VERSION_MISMATCH_FOUND_RELOAD_REQUEST = () =>
-  "发现 PagePlug 新版本，请刷新页面试试";
+  "发现 Appsmith 新版本，请刷新页面试试";
 export const TEST_EMAIL_SUCCESS = (email: string) => () =>
   `测试邮件已发送完毕，请前往 ${email} 查收`;
 export const TEST_EMAIL_SUCCESS_TROUBLESHOOT = () => "疑难杂症";
@@ -901,7 +901,7 @@ export const WELCOME_FORM_NON_SUPER_USER_ROLE_DROPDOWN = () =>
   "请告诉我们你的工作角色是？";
 export const WELCOME_FORM_NON_SUPER_USER_ROLE = () => "角色";
 export const WELCOME_FORM_NON_SUPER_USER_USE_CASE = () =>
-  "请问你打算用 PagePlug 来做什么应用呢？";
+  "请问你打算用 Appsmith 来做什么应用呢？";
 export const QUERY_CONFIRMATION_MODAL_MESSAGE = () => `确定运行吗？`;
 export const ENTITY_EXPLORER_TITLE = () => "导航";
 export const MULTI_SELECT_PROPERTY_PANE_MESSAGE = () =>
@@ -998,7 +998,7 @@ export const DESCRIPTION = () =>
 export const BUTTON_TEXT = () => "开始吧";
 // -- Rating --
 export const RATING_TITLE = () =>
-  "恭喜！你已经用 PagePlug 构建出了你的第一个应用！";
+  "恭喜！你已经用 Appsmith 构建出了你的第一个应用！";
 export const RATING_DESCRIPTION = () =>
   "现在你可以邀请其他小伙伴加入到这个应用";
 export const RATING_TEXT = () => "体验评分";

@@ -91,7 +91,7 @@ export const GetNavigationMenuData = ({
       history.push(APPLICATIONS_URL);
     } else {
       Toaster.show({
-        text: "Error while deleting Application",
+        text: "删除应用时发生了错误",
         variant: Variant.danger,
       });
     }
@@ -131,25 +131,25 @@ export const GetNavigationMenuData = ({
 
   return [
     {
-      text: "Edit Name",
+      text: "重命名",
       onClick: editMode,
       type: MenuTypes.MENU,
       isVisible: true,
     },
     {
-      text: "Edit",
+      text: "视图模式",
       type: MenuTypes.PARENT,
       isVisible: true,
       children: [
         {
-          text: "Undo",
+          text: "撤回",
           labelElement: undoShortCut(),
           onClick: () => dispatch(undoAction()),
           type: MenuTypes.MENU,
           isVisible: true,
         },
         {
-          text: "Redo",
+          text: "重做",
           labelElement: redoShortCut(),
           onClick: () => dispatch(redoAction()),
           type: MenuTypes.MENU,
@@ -158,7 +158,7 @@ export const GetNavigationMenuData = ({
       ],
     },
     {
-      text: "Pages",
+      text: "页面配置",
       onClick: () => {
         history.push(pageListEditorURL({ pageId: params.pageId }));
       },
@@ -166,26 +166,26 @@ export const GetNavigationMenuData = ({
       isVisible: true,
     },
     {
-      text: "Deploy",
+      text: "发布",
       type: MenuTypes.PARENT,
       isVisible: true,
       children: deployOptions,
       className: "t--app-name-menu-deploy-parent",
     },
     {
-      text: "Help",
+      text: "帮助",
       type: MenuTypes.PARENT,
       isVisible: true,
       children: [
         {
-          text: "Community Forum",
+          text: "社区论坛",
           onClick: () => openExternalLink("https://community.appsmith.com/"),
           type: MenuTypes.MENU,
           isVisible: true,
           isOpensNewWindow: true,
         },
         {
-          text: "Discord Channel",
+          text: "Discord 频道",
           onClick: () => openExternalLink("https://discord.gg/rBTTVJp"),
           type: MenuTypes.MENU,
           isVisible: true,
@@ -200,7 +200,7 @@ export const GetNavigationMenuData = ({
           isOpensNewWindow: true,
         },
         {
-          text: "Documentation",
+          text: "文档",
           onClick: () => openExternalLink("https://docs.appsmith.com/"),
           type: MenuTypes.MENU,
           isVisible: true,
@@ -209,15 +209,15 @@ export const GetNavigationMenuData = ({
       ],
     },
     {
-      text: "Export Application",
+      text: "导出应用",
       onClick: () =>
         applicationId && openExternalLink(getExportAppAPIRoute(applicationId)),
       type: MenuTypes.MENU,
       isVisible: isApplicationIdPresent && hasExportPermission,
     },
     {
-      text: "Delete Application",
-      confirmText: "Are you sure?",
+      text: "删除应用",
+      confirmText: "确认删除吗？",
       onClick: deleteApplication,
       type: MenuTypes.RECONFIRM,
       isVisible: isApplicationIdPresent,

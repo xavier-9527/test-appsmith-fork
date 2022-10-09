@@ -135,9 +135,9 @@ function EntityExplorer({ isActive }: { isActive: boolean }) {
       {noResults && (
         <NoResult
           className={Classes.DARK}
-          description="Try modifying the search keyword."
+          description="试试其他关键字吧"
           icon={<NoEntityFoundSvg />}
-          title="No entities found"
+          title="没有找到相关实体"
         />
       )}
       <StyledDivider />

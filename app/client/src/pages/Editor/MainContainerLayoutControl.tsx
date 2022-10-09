@@ -28,27 +28,27 @@ export const AppsmithDefaultLayout: AppLayoutConfig = {
 
 const AppsmithLayouts: AppsmithLayoutConfigOption[] = [
   {
-    name: "Fluid Width",
+    name: "自适应宽度",
     type: "FLUID",
     icon: "fluid",
   },
   {
-    name: "Desktop",
+    name: "桌面宽度",
     type: "DESKTOP",
     icon: "desktop",
   },
   {
-    name: "Tablet(Large)",
+    name: "大平板宽度",
     type: "TABLET_LARGE",
     icon: "tablet",
   },
   {
-    name: "Tablet",
+    name: "平板宽度",
     type: "TABLET",
     icon: "tablet",
   },
   {
-    name: "Mobile Device",
+    name: "手机宽度",
     type: "MOBILE",
     icon: "mobile",
   },

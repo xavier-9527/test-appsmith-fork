@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import moment from "moment/moment";
+// import moment from "moment/moment";
+import { howMuchTimeBeforeText } from "utils/helpers";
 
 import { AppState } from "reducers";
 import { TooltipComponent } from "design-system";
@@ -14,6 +15,7 @@ import {
 } from "@appsmith/constants/messages";
 import { Colors } from "constants/Colors";
 import Icon from "components/ads/Icon";
+import Data from "widgets/TableWidgetV2/widget/propertyConfig/PanelConfig/Data";
 
 const SaveStatusContainer = styled.div`
   border-radius: 50%;
@@ -49,7 +51,9 @@ export function EditorSaveIndicator() {
     const savedMessage = createMessage(EDITOR_HEADER_SAVE_INDICATOR);
     setLastUpdatedTimeMessage(
       lastUpdatedTime
-        ? `${savedMessage} ${moment(lastUpdatedTime * 1000).fromNow()}`
+        ? `${savedMessage} ${howMuchTimeBeforeText(
+            new Date(lastUpdatedTime * 1000).toString(),
+          )}`
         : savedMessage,
     );
   };
