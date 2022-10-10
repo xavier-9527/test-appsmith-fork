@@ -41,12 +41,10 @@ function ServerTimeout() {
         src={AppTimeoutImage}
       />
       <div>
-        <p className="bold-text">
-          Appsmith server is taking too long to respond
-        </p>
-        <p>Please retry after some time</p>
+        <p className="bold-text">服务器长时间无响应</p>
+        <p>请稍后重试</p>
         <RetryButton onClick={() => window.location.reload()}>
-          {"Retry"}
+          {"重试"}
         </RetryButton>
       </div>
     </Wrapper>

@@ -151,7 +151,7 @@ export function MoreJSCollectionsMenu(props: EntityContextMenuProps) {
                         moveJSCollectionToPage(props.id, props.name, page.id),
                     };
                   })
-              : [{ value: "No Pages", onSelect: noop, label: "No Pages" }],
+              : [{ value: "No Pages", onSelect: noop, label: "暂无页面" }],
         },
         {
           value: "prettify",
@@ -170,7 +170,7 @@ export function MoreJSCollectionsMenu(props: EntityContextMenuProps) {
             dispatch(updateJSCollectionBody(editor.getValue(), props.id));
             AnalyticsUtil.logEvent("PRETTIFY_CODE_MANUAL_TRIGGER");
           },
-          label: "Prettify Code",
+          label: "美化代码",
         },
         {
           confirmDelete: confirmDelete,

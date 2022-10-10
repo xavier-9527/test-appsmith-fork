@@ -521,7 +521,7 @@ class EmbeddedDatasourcePathComponent extends React.Component<
             }}
           >
             <Icon name="edit-line" size={IconSize.XXL} />
-            <Text type={TextType.P1}>Edit Datasource</Text>
+            <Text type={TextType.P1}>编辑数据源</Text>
           </DatasourceIcon>
         ) : null}
       </DatasourceContainer>

@@ -253,7 +253,7 @@ function NewApiScreen(props: Props) {
                 src={PlusLogo}
               />
             </div>
-            <p className="textBtn">Create new API</p>
+            <p className="textBtn">新建 API</p>
           </CardContentWrapper>
           {isCreating && <Spinner className="cta" size={25} />}
         </ApiCard>
@@ -269,7 +269,7 @@ function NewApiScreen(props: Props) {
                 src={CurlLogo}
               />
             </div>
-            <p className="textBtn">CURL import</p>
+            <p className="textBtn">CURL 导入</p>
           </CardContentWrapper>
         </ApiCard>
         {authApiPlugin && (
@@ -285,7 +285,7 @@ function NewApiScreen(props: Props) {
                   src={authApiPlugin.iconLocation}
                 />
               </div>
-              <p className="textBtn">Authenticated API</p>
+              <p className="textBtn">鉴权 API</p>
             </CardContentWrapper>
           </ApiCard>
         )}

@@ -484,7 +484,7 @@ function renderHelpSection(
               onClick={handleClickLearnHow}
             >
               <Text case={Case.UPPERCASE} type={TextType.H6}>
-                Learn How
+                立即了解
               </Text>
               <Icon name="right-arrow" size={IconSize.XL} />
             </Link>
@@ -606,7 +606,7 @@ function ApiEditorForm(props: Props) {
                 }}
                 size={Size.medium}
                 tag="button"
-                text="Run"
+                text="运行"
                 type="button"
               />
             </ActionButtons>

@@ -382,7 +382,7 @@ function useModalDropdownList() {
 
   let finalList: TreeDropdownOption[] = [
     {
-      label: "New Modal",
+      label: "新建弹窗",
       value: "Modal",
       id: "create",
       icon: "plus",
@@ -419,7 +419,7 @@ function getIntegrationOptionsWithChildren(
 ) {
   const { JS_EDITOR: isJSEditorEnabled } = featureFlags;
   const createJSObject: TreeDropdownOption = {
-    label: "New JS Object",
+    label: "新建 JS 对象",
     value: "JSObject",
     id: "create",
     icon: "plus",
@@ -547,7 +547,7 @@ function useIntegrationsOptionTree() {
     actions,
     jsActions,
     {
-      label: "New Query",
+      label: "新建查询",
       value: "datasources",
       id: "create",
       icon: "plus",

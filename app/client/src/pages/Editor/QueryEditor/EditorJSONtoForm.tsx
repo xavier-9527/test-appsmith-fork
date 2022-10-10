@@ -150,7 +150,7 @@ export const TabbedViewContainer = styled.div`
   }
   .react-tabs__tab-list {
     margin: 0px;
-   
+
   }
   &&& {
     ul.react-tabs__tab-list {
@@ -764,7 +764,7 @@ export function EditorJSONtoForm(props: Props) {
   const responseTabs = [
     {
       key: "Response",
-      title: "Response",
+      title: "响应",
       panelComponent: (
         <ResponseContentWrapper>
           {error && (
@@ -828,7 +828,7 @@ export function EditorJSONtoForm(props: Props) {
                   onClick={responeTabOnRunClick}
                   size={Size.medium}
                   tag="button"
-                  text="Run"
+                  text="运行"
                   type="button"
                 />
                 {createMessage(ACTION_RUN_BUTTON_MESSAGE_SECOND_HALF)}
@@ -916,7 +916,7 @@ export function EditorJSONtoForm(props: Props) {
                 maxMenuHeight={200}
                 name="datasource.id"
                 options={DATASOURCES_OPTIONS}
-                placeholder="Datasource"
+                placeholder="数据源"
                 width={232}
               />
             </DropdownSelect>
@@ -927,7 +927,7 @@ export function EditorJSONtoForm(props: Props) {
               onClick={onRunClick}
               size={Size.medium}
               tag="button"
-              text="Run"
+              text="运行"
               type="button"
             />
           </ActionsWrapper>
@@ -963,7 +963,7 @@ export function EditorJSONtoForm(props: Props) {
                 tabs={[
                   {
                     key: EDITOR_TABS.QUERY,
-                    title: "Query",
+                    title: "查询",
                     panelComponent: (
                       <SettingsWrapper>
                         {editorConfig && editorConfig.length > 0 ? (
@@ -995,7 +995,7 @@ export function EditorJSONtoForm(props: Props) {
                               intent="primary"
                               onClick={() => onCreateDatasourceClick()}
                               size="small"
-                              text="Add a Datasource"
+                              text="添加数据源"
                             />
                           </NoDataSourceContainer>
                         )}
@@ -1004,7 +1004,7 @@ export function EditorJSONtoForm(props: Props) {
                   },
                   {
                     key: EDITOR_TABS.SETTINGS,
-                    title: "Settings",
+                    title: "设置",
                     panelComponent: (
                       <SettingsWrapper>
                         <ActionSettings
@@ -1045,7 +1045,7 @@ export function EditorJSONtoForm(props: Props) {
                         }}
                         size={Size.medium}
                         tag="button"
-                        text="Cancel Request"
+                        text="取消请求"
                         type="button"
                       />
                     </div>
@@ -1056,10 +1056,8 @@ export function EditorJSONtoForm(props: Props) {
               {output && !!output.length && (
                 <ResultsCount>
                   <Text type={TextType.P3}>
-                    Result:
-                    <Text type={TextType.H5}>{`${output.length} Record${
-                      output.length > 1 ? "s" : ""
-                    }`}</Text>
+                    结果:
+                    <Text type={TextType.H5}>{`${output.length} 条记录`}</Text>
                   </Text>
                 </ResultsCount>
               )}

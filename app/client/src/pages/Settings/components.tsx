@@ -63,7 +63,7 @@ export function BackButton() {
       onClick={onBack}
     >
       <Icon name="chevron-left" size={IconSize.XS} />
-      <BackButtonText>Back</BackButtonText>
+      <BackButtonText>返回</BackButtonText>
     </StyledBackButton>
   );
 }

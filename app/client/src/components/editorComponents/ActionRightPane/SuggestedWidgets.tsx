@@ -64,7 +64,7 @@ type WidgetBindingInfo = {
 
 export const WIDGET_DATA_FIELD_MAP: Record<string, WidgetBindingInfo> = {
   LIST_WIDGET: {
-    label: "items",
+    label: "数据项",
     propertyName: "listData",
     widgetName: "List",
     image: "https://assets.appsmith.com/widgetSuggestion/list.svg",
@@ -88,19 +88,19 @@ export const WIDGET_DATA_FIELD_MAP: Record<string, WidgetBindingInfo> = {
     image: "https://assets.appsmith.com/widgetSuggestion/chart.svg",
   },
   SELECT_WIDGET: {
-    label: "options",
+    label: "选项",
     propertyName: "options",
     widgetName: "Select",
     image: "https://assets.appsmith.com/widgetSuggestion/dropdown.svg",
   },
   TEXT_WIDGET: {
-    label: "text",
+    label: "文本",
     propertyName: "text",
     widgetName: "Text",
     image: "https://assets.appsmith.com/widgetSuggestion/text.svg",
   },
   INPUT_WIDGET_V2: {
-    label: "text",
+    label: "文本",
     propertyName: "defaultText",
     widgetName: "Input",
     image: "https://assets.appsmith.com/widgetSuggestion/input.svg",

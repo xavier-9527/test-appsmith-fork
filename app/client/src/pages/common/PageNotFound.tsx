@@ -47,11 +47,7 @@ function PageNotFound(props: Props) {
       />
       <div className="space-y-2">
         <p className="bold-text">{createMessage(PAGE_NOT_FOUND)}</p>
-        <p>
-          Either this page doesn&apos;t exist, or you don&apos;t have access to{" "}
-          <br />
-          this page.
-        </p>
+        <p>这个页面不存在，或者您没有访问这个页面的权限。</p>
         <Button
           className="button-position"
           filled

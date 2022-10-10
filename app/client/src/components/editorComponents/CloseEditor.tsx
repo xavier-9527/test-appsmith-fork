@@ -81,7 +81,7 @@ function CloseEditor() {
     <IconContainer className="t--close-editor" onClick={handleClose}>
       <Icon icon="chevron-left" iconSize={16} />
       <Text style={{ color: "#0c0000", lineHeight: "14px" }} type={TextType.P1}>
-        Back
+        返回
       </Text>
     </IconContainer>
   );

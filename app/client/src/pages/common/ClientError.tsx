@@ -35,8 +35,8 @@ function ClientError(props: Props) {
         src={PageUnavailableImage}
       />
       <div>
-        <p className="bold-text">Whoops something went wrong!</p>
-        <p>This is embarrassing, please contact Appsmith support for help</p>
+        <p className="bold-text">哎呀，出错了！</p>
+        <p>真是太尴尬了, 请联系 Appsmith 支持获取帮助</p>
         <Button
           className="button-position"
           filled

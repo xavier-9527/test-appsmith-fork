@@ -41,7 +41,7 @@ function BackButton() {
         style={{ color: Colors.DIESEL, lineHeight: "14px" }}
         type={TextType.P1}
       >
-        Back
+        返回
       </Text>
     </Back>
   );
