@@ -69,7 +69,7 @@ function EntityNotFoundPane(props: Props) {
           onClick={props.goBackFn ? props.goBackFn : history.goBack}
           size={Size.large}
           tag="button"
-          text="Go Back"
+          text="返回"
         />
       </div>
     </Wrapper>

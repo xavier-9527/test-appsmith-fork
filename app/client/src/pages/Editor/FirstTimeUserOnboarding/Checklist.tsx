@@ -271,7 +271,7 @@ export default function OnboardingChecklist() {
       >
         <Icon color={Colors.DIESEL} icon="chevron-left" iconSize={16} />
         <Text style={{ lineHeight: "14px" }} type={TextType.P1}>
-          Back
+          返回
         </Text>
       </Backbutton>
       {isCompleted && (

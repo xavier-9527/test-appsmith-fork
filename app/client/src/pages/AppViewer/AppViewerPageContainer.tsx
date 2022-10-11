@@ -49,13 +49,13 @@ function AppViewerPageContainer(props: AppViewerPageContainerProps) {
     ) {
       return (
         <p>
-          Please add widgets to this page in the&nbsp;
+          想给页面添加组件？立即前往&nbsp;
           <Link
             to={builderURL({
               pageId: props.match.params.pageId as string,
             })}
           >
-            Appsmith Editor
+            页面编辑
           </Link>
         </p>
       );
@@ -73,7 +73,7 @@ function AppViewerPageContainer(props: AppViewerPageContainerProps) {
             iconSize={theme.fontSizes[9]}
           />
         }
-        title="This page seems to be blank"
+        title="页面空空如也😅"
       />
     </Centered>
   );
