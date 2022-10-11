@@ -39,7 +39,7 @@ function UserProfile() {
   const tabs: TabProp[] = [
     {
       key: "general",
-      title: "General",
+      title: "基本信息",
       panelComponent: <General />,
       icon: "general",
     },
@@ -48,7 +48,7 @@ function UserProfile() {
   if (featureFlags.GIT) {
     tabs.push({
       key: "gitConfig",
-      title: "Git user config",
+      title: "Git 用户信息",
       panelComponent: <GitConfig />,
       icon: "git-branch",
     });
@@ -60,11 +60,11 @@ function UserProfile() {
   const [selectedTabIndex, setSelectedTabIndex] = useState(initialTabIndex);
 
   return (
-    <PageWrapper displayName={"Profile"}>
+    <PageWrapper displayName={"个人信息"}>
       <ProfileWrapper>
         <LinkToApplications className="t--back" onClick={() => history.back()}>
           <Icon color={Colors.SILVER_CHALICE} icon="chevron-left" />
-          <Text type={TextType.H1}>Profile</Text>
+          <Text type={TextType.H1}>个人信息</Text>
         </LinkToApplications>
         <TabComponent
           onSelect={setSelectedTabIndex}

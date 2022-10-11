@@ -65,7 +65,7 @@ const Container = styled.div`
   }
 `;
 
-const defaultLabel = "Upload Display Picture";
+const defaultLabel = "上传图片";
 
 export default function DisplayImageUpload({
   onChange,
@@ -190,7 +190,7 @@ export default function DisplayImageUpload({
       >
         <Dashboard
           id="uppy-img-upload-dashboard"
-          note="File size must not exceed 3 MB"
+          note="上传图片的大小不能超过 3 MB"
           plugins={["ImageEditor"]}
           uppy={uppy}
         />

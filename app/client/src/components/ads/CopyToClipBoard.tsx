@@ -59,7 +59,7 @@ function CopyToClipboard(props: {
           copyToClipboard(copyText);
         }}
         size={Size.large}
-        text={isCopied ? "Copied" : "Copy"}
+        text={isCopied ? "复制成功" : "复制"}
         width={props.btnWidth || "110px"}
       />
     </Wrapper>

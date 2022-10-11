@@ -352,7 +352,7 @@ export const Steps: StepsType = {
           }),
         );
       },
-      buttonText: "GOT IT",
+      buttonText: "好的",
     },
   },
   [GUIDED_TOUR_STEPS.NAME_INPUT_BINDING]: {

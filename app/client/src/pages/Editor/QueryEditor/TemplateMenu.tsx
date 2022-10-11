@@ -83,7 +83,7 @@ class TemplateMenu extends React.Component<Props> {
         tabIndex={0}
       >
         <div style={{ fontSize: 14 }}>
-          Click here to start with a blank state or select a template.
+          点击这里，以空白声明开始，或者选择一个模板，自动生成一段声明。
         </div>
         <div style={{ marginTop: "6px" }}>
           {Object.entries(pluginTemplates).map((template) => {

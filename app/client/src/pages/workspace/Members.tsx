@@ -251,15 +251,15 @@ export default function MemberSettings(props: PageProps) {
 
   const columns = [
     {
-      Header: "Name",
+      Header: "姓名",
       accessor: "name",
     },
     {
-      Header: "Email",
+      Header: "邮箱",
       accessor: "username",
     },
     {
-      Header: "Role",
+      Header: "角色",
       accessor: "roleName",
       Cell: function DropdownCell(cellProps: any) {
         const allRoles = useSelector(getAllRoles);
@@ -302,11 +302,11 @@ export default function MemberSettings(props: PageProps) {
       },
     },
     {
-      Header: "Status",
+      Header: "状态",
       accessor: "status",
     },
     {
-      Header: "Actions",
+      Header: "操作",
       accessor: "delete",
       disableSortBy: true,
       Cell: function DeleteCell(cellProps: any) {
@@ -352,11 +352,11 @@ export default function MemberSettings(props: PageProps) {
   return (
     <MembersWrapper isMobile={isMobile}>
       <PageSectionHeader>
-        <SettingsHeading type={TextType.H1}>Manage Users</SettingsHeading>
+        <SettingsHeading type={TextType.H1}>管理成员</SettingsHeading>
         <FormDialogComponent
           Form={WorkspaceInviteUsersForm}
           canOutsideClickClose
-          title={`Invite Users to ${currentWorkspaceName}`}
+          title={`邀请小伙伴到 ${currentWorkspaceName}`}
           trigger={
             <ButtonWrapper>
               <Button
@@ -364,7 +364,7 @@ export default function MemberSettings(props: PageProps) {
                 icon="plus"
                 size={Size.medium}
                 tag="button"
-                text="Invite Users"
+                text="邀请"
                 variant={Variant.info}
               />
             </ButtonWrapper>

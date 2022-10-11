@@ -49,7 +49,7 @@ function ManageUsers({ workspaceId }: { workspaceId: string }) {
         history.push(`/workspace/${workspaceId}/settings/members`);
       }}
     >
-      <Text type={TextType.H6}>MANAGE USERS</Text>
+      <Text type={TextType.H6}>管理组员</Text>
       <Icon name="manage" size={IconSize.XS} />
     </StyledManageUsers>
   ) : null;

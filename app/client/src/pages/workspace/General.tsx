@@ -159,14 +159,14 @@ export function GeneralSettings() {
     <GeneralWrapper isMobile={isMobile} isPortrait={isPortrait}>
       <SettingsHeading type={TextType.H1}>
         <Row>
-          <Col>General Settings</Col>
+          <Col>基本设置</Col>
         </Row>
       </SettingsHeading>
       <SettingWrapper>
         <Row>
           <Col>
             <InputLabelWrapper>
-              <Text type={TextType.P1}>Workspace Name</Text>
+              <Text type={TextType.P1}>应用组名称</Text>
             </InputLabelWrapper>
             {isFetchingApplications && <Loader className={Classes.SKELETON} />}
             {!isFetchingApplications && (
@@ -175,7 +175,7 @@ export function GeneralSettings() {
                 defaultValue={currentWorkspace && currentWorkspace.name}
                 fill
                 onChange={onWorkspaceNameChange}
-                placeholder="Workspace Name"
+                placeholder="应用组名称"
                 validator={notEmptyValidator}
               />
             )}
@@ -187,7 +187,7 @@ export function GeneralSettings() {
         <Row className="t--workspace-settings-filepicker">
           <Col>
             <InputLabelWrapper>
-              <Text type={TextType.P1}>Upload Logo</Text>
+              <Text type={TextType.P1}>上传图标</Text>
             </InputLabelWrapper>
             {isFetchingWorkspace && (
               <FilePickerLoader className={Classes.SKELETON} />
@@ -209,7 +209,7 @@ export function GeneralSettings() {
         <Row>
           <Col>
             <InputLabelWrapper>
-              <Text type={TextType.P1}>Website</Text>
+              <Text type={TextType.P1}>网站</Text>
             </InputLabelWrapper>
             {isFetchingApplications && <Loader className={Classes.SKELETON} />}
             {!isFetchingApplications && (
@@ -220,7 +220,7 @@ export function GeneralSettings() {
                 }
                 fill
                 onChange={onWebsiteChange}
-                placeholder="Your website"
+                placeholder="你的网站"
               />
             )}
           </Col>
@@ -231,7 +231,7 @@ export function GeneralSettings() {
         <Row>
           <Col>
             <InputLabelWrapper>
-              <Text type={TextType.P1}>Email</Text>
+              <Text type={TextType.P1}>邮箱</Text>
             </InputLabelWrapper>
             {isFetchingApplications && <Loader className={Classes.SKELETON} />}
             {!isFetchingApplications && (
@@ -242,7 +242,7 @@ export function GeneralSettings() {
                 }
                 fill
                 onChange={onEmailChange}
-                placeholder="Email"
+                placeholder="邮箱"
                 validator={emailValidator}
               />
             )}

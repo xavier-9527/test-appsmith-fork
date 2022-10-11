@@ -1082,7 +1082,7 @@ export function* generateTemplatePageSaga(
       );
       // TODO : Add it to onSuccessCallback
       Toaster.show({
-        text: "Successfully generated a page",
+        text: "页面创建成功！",
         variant: Variant.success,
       });
 

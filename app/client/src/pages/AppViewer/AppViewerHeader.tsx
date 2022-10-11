@@ -141,7 +141,7 @@ export function AppViewerHeader(props: AppViewerHeaderProps) {
                         }
                         buttonVariant="SECONDARY"
                         className="h-8"
-                        text="Share"
+                        text="共享应用"
                       />
                     }
                     workspaceId={currentWorkspaceId}

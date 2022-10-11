@@ -45,10 +45,10 @@ class ErrorBoundary extends React.Component<Props, State> {
       <ErrorBoundaryContainer>
         {this.state.hasError ? (
           <p>
-            Oops, Something went wrong.
+            出现错误了
             <br />
             <RetryLink onClick={() => this.setState({ hasError: false })}>
-              Click here to retry
+              点击重试
             </RetryLink>
           </p>
         ) : (

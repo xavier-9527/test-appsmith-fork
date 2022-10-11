@@ -80,13 +80,13 @@ function General() {
     <Wrapper>
       <FieldWrapper>
         <LabelWrapper>
-          <Text type={TextType.H4}>Display Picture</Text>
+          <Text type={TextType.H4}>头像</Text>
         </LabelWrapper>
         <UserProfileImagePicker />
       </FieldWrapper>
       <FieldWrapper>
         <LabelWrapper>
-          <Text type={TextType.H4}>Display name</Text>
+          <Text type={TextType.H4}>昵称</Text>
         </LabelWrapper>
         {isFetchingUser && <Loader className={Classes.SKELETON} />}
         {!isFetchingUser && (
@@ -96,7 +96,7 @@ function General() {
               defaultValue={user?.name}
               fill={false}
               onChange={onNameChange}
-              placeholder="Display name"
+              placeholder="昵称"
               validator={notEmptyValidator}
             />
           </div>
@@ -104,16 +104,14 @@ function General() {
       </FieldWrapper>
       <FieldWrapper>
         <LabelWrapper>
-          <Text type={TextType.H4}>Email</Text>
+          <Text type={TextType.H4}>邮箱</Text>
         </LabelWrapper>
         <div style={{ flexDirection: "column", display: "flex" }}>
           {isFetchingUser && <TextLoader className={Classes.SKELETON} />}
           {!isFetchingUser && <Text type={TextType.P1}>{user?.email}</Text>}
 
           {!disableLoginForm && (
-            <ForgotPassword onClick={forgotPassword}>
-              Reset Password
-            </ForgotPassword>
+            <ForgotPassword onClick={forgotPassword}>重置密码</ForgotPassword>
           )}
         </div>
       </FieldWrapper>
