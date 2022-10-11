@@ -202,7 +202,7 @@ function DatasourceCard(props: DatasourceCardProps) {
 
   const currentFormConfig: Array<any> =
     datasourceFormConfigs[datasource?.pluginId ?? ""];
-  const QUERY = queriesWithThisDatasource > 1 ? "queries" : "query";
+  const QUERY = queriesWithThisDatasource > 1 ? "查询" : "查询";
 
   const editDatasource = useCallback(() => {
     AnalyticsUtil.logEvent("DATASOURCE_CARD_EDIT_ACTION");
@@ -274,7 +274,7 @@ function DatasourceCard(props: DatasourceCardProps) {
             <DatasourceNameWrapper>
               <DatasourceIconWrapper data-testid="active-datasource-icon-wrapper">
                 <DatasourceImage
-                  alt="Datasource"
+                  alt="数据源"
                   data-testid="active-datasource-image"
                   src={pluginImages[datasource.pluginId]}
                 />
@@ -288,8 +288,8 @@ function DatasourceCard(props: DatasourceCardProps) {
               data-testid="active-datasource-queries"
             >
               {queriesWithThisDatasource
-                ? `${queriesWithThisDatasource} ${QUERY} on this page`
-                : "No query in this application is using this datasource"}
+                ? `被 ${queriesWithThisDatasource} 个${QUERY}使用`
+                : "未被使用"}
             </Queries>
           </div>
           {datasource.isConfigured && (
@@ -300,7 +300,7 @@ function DatasourceCard(props: DatasourceCardProps) {
                   className="t--generate-template"
                   disabled={!supportTemplateGeneration}
                   onClick={routeToGeneratePage}
-                  text="GENERATE NEW PAGE"
+                  text="自动生成页面"
                 />
               )}
               <NewActionButton
@@ -332,7 +332,7 @@ function DatasourceCard(props: DatasourceCardProps) {
                     className="t--datasource-option-edit"
                     icon="edit"
                     onSelect={editDatasource}
-                    text="Edit"
+                    text="编辑"
                   />
                   <RedMenuItem
                     className="t--datasource-option-delete"
@@ -357,7 +357,7 @@ function DatasourceCard(props: DatasourceCardProps) {
                 category={Category.tertiary}
                 className="t--reconnect-btn"
                 onClick={editDatasource}
-                text="RECONNECT"
+                text="重新连接"
               />
 
               <MenuWrapper
@@ -384,7 +384,7 @@ function DatasourceCard(props: DatasourceCardProps) {
                     className="t--datasource-option-edit"
                     icon="edit"
                     onSelect={editDatasource}
-                    text="Edit"
+                    text="编辑"
                   />
                   <RedMenuItem
                     className="t--datasource-option-delete"
@@ -411,7 +411,7 @@ function DatasourceCard(props: DatasourceCardProps) {
             e.stopPropagation();
           }}
         >
-          <CollapseComponent title="Show More" titleStyle={{ maxWidth: 120 }}>
+          <CollapseComponent title="详情" titleStyle={{ maxWidth: 120 }}>
             <DatasourceInfo>
               {renderDatasourceSection(currentFormConfig[0], datasource)}
             </DatasourceInfo>

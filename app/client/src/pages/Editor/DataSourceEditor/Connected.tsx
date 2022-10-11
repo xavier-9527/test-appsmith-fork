@@ -62,7 +62,7 @@ function Connected() {
             width={30}
           />
 
-          <div style={{ marginLeft: "12px" }}>Datasource Saved</div>
+          <div style={{ marginLeft: "12px" }}>数据源已连接</div>
         </ConnectedText>
 
         <NewActionButton

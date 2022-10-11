@@ -59,7 +59,7 @@ export function DatasourceStructure(props: DatasourceStructureProps) {
       <IconWrapper {...iconProps}>
         <LightningIcon />
       </IconWrapper>
-      <span>Add</span>
+      <span>新建查询</span>
     </Wrapper>
   );
 

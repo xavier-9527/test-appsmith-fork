@@ -296,7 +296,7 @@ class DatasourceRestAPIEditor extends React.Component<
       !datasource.datasourceConfiguration.url
     ) {
       Toaster.show({
-        text: "Unable to create API. Try adding a url to the datasource",
+        text: "无法创建 API, 请添加数据源地址",
         variant: Variant.danger,
       });
       return;
@@ -357,7 +357,7 @@ class DatasourceRestAPIEditor extends React.Component<
     return !hiddenHeader ? (
       <Header>
         <FormTitleContainer>
-          <PluginImage alt="Datasource" src={pluginImage} />
+          <PluginImage alt="数据源" src={pluginImage} />
           <FormTitle focusOnMount={isNewDatasource} />
         </FormTitleContainer>
       </Header>
@@ -402,7 +402,7 @@ class DatasourceRestAPIEditor extends React.Component<
           loading={isSaving}
           onClick={() => this.save()}
           size="small"
-          text="Save"
+          text="保存"
         />
       </SaveButtonContainer>
     );
@@ -445,7 +445,7 @@ class DatasourceRestAPIEditor extends React.Component<
         <FormInputContainer data-replay-id={btoa("headers")}>
           {this.renderKeyValueControlViaFormControl(
             "headers",
-            "Headers",
+            "请求头",
             "",
             false,
           )}
@@ -453,7 +453,7 @@ class DatasourceRestAPIEditor extends React.Component<
         <FormInputContainer data-replay-id={btoa("queryParameters")}>
           {this.renderKeyValueControlViaFormControl(
             "queryParameters",
-            "Query Parameters",
+            "查询参数",
             "",
             false,
           )}
@@ -463,15 +463,15 @@ class DatasourceRestAPIEditor extends React.Component<
             "isSendSessionEnabled",
             [
               {
-                label: "Yes",
+                label: "是",
                 value: true,
               },
               {
-                label: "No",
+                label: "否",
                 value: false,
               },
             ],
-            "Send Appsmith signature header",
+            "发送带有签名的请求头",
             "",
             true,
             "Header key: X-APPSMITH-SIGNATURE",
@@ -481,7 +481,7 @@ class DatasourceRestAPIEditor extends React.Component<
           <FormInputContainer data-replay-id={btoa("sessionSignatureKey")}>
             {this.renderInputTextControlViaFormControl(
               "sessionSignatureKey",
-              "Session Details Signature Key",
+              "会话详情签名Key",
               "",
               "TEXT",
               false,
@@ -514,14 +514,14 @@ class DatasourceRestAPIEditor extends React.Component<
                 value: AuthType.bearerToken,
               },
             ],
-            "Authentication Type",
+            "认证类型",
             "",
             false,
             "",
           )}
         </FormInputContainer>
         {this.renderAuthFields()}
-        <Collapsible title="Advanced Settings">
+        <Collapsible title="高级配置">
           {this.renderOauth2AdvancedSettings()}
         </Collapsible>
         {this.renderSelfSignedCertificateFields()}
@@ -545,9 +545,7 @@ class DatasourceRestAPIEditor extends React.Component<
                   )
                 }
                 size="small"
-                text={
-                  isAuthorized ? "Save and Re-Authorize" : "Save and Authorize"
-                }
+                text={isAuthorized ? "保存并重新鉴权" : "保存并鉴权"}
               />
             </FormInputContainer>
           )}
@@ -559,10 +557,10 @@ class DatasourceRestAPIEditor extends React.Component<
     const { connection } = this.props.formData;
     if (connection?.ssl.authType === SSLType.SELF_SIGNED_CERTIFICATE) {
       return (
-        <Collapsible defaultIsOpen title="Certificate Details">
+        <Collapsible defaultIsOpen title="证书详情">
           {this.renderFilePickerControlViaFormControl(
             "connection.ssl.certificateFile",
-            "Upload Certificate",
+            "上传证书",
             "",
             false,
             true,
@@ -623,15 +621,15 @@ class DatasourceRestAPIEditor extends React.Component<
             "authentication.addTo",
             [
               {
-                label: "Query Params",
+                label: "查询参数",
                 value: ApiKeyAuthType.QueryParams,
               },
               {
-                label: "Header",
+                label: "请求头",
                 value: ApiKeyAuthType.Header,
               },
             ],
-            "Add To",
+            "添加到",
             "",
             false,
             "",
@@ -643,8 +641,8 @@ class DatasourceRestAPIEditor extends React.Component<
           >
             {this.renderInputTextControlViaFormControl(
               "authentication.headerPrefix",
-              "Header Prefix",
-              "eg: Bearer ",
+              "请求头前缀",
+              "例如：Bearer ",
               "TEXT",
               false,
               false,
@@ -676,8 +674,8 @@ class DatasourceRestAPIEditor extends React.Component<
         <FormInputContainer data-replay-id={btoa("authentication.username")}>
           {this.renderInputTextControlViaFormControl(
             "authentication.username",
-            "Username",
-            "Username",
+            "用户名",
+            "用户名",
             "TEXT",
             false,
             false,
@@ -686,8 +684,8 @@ class DatasourceRestAPIEditor extends React.Component<
         <FormInputContainer data-replay-id={btoa("authentication.password")}>
           {this.renderInputTextControlViaFormControl(
             "authentication.password",
-            "Password",
-            "Password",
+            "密码",
+            "密码",
             "PASSWORD",
             true,
             false,
@@ -717,15 +715,15 @@ class DatasourceRestAPIEditor extends React.Component<
             "authentication.grantType",
             [
               {
-                label: "Client Credentials",
+                label: "客户端鉴权",
                 value: GrantType.ClientCredentials,
               },
               {
-                label: "Authorization Code",
+                label: "鉴权码",
                 value: GrantType.AuthorizationCode,
               },
             ],
-            "Grant Type",
+            "授权类型",
             "",
             false,
             "",
@@ -747,15 +745,15 @@ class DatasourceRestAPIEditor extends React.Component<
             "authentication.isTokenHeader",
             [
               {
-                label: "Request Header",
+                label: "请求头",
                 value: true,
               },
               {
-                label: "Request URL",
+                label: "请求URL",
                 value: false,
               },
             ],
-            "Add Access Token To",
+            "添加 Access Token 到",
             "",
             false,
             "",
@@ -767,8 +765,8 @@ class DatasourceRestAPIEditor extends React.Component<
           >
             {this.renderInputTextControlViaFormControl(
               "authentication.headerPrefix",
-              "Header Prefix",
-              "eg: Bearer ",
+              "请求头前缀",
+              "例如：Bearer ",
               "TEXT",
               false,
               false,
@@ -907,15 +905,15 @@ class DatasourceRestAPIEditor extends React.Component<
             "connection.ssl.authType",
             [
               {
-                label: "No",
+                label: "不",
                 value: "DEFAULT",
               },
               {
-                label: "Yes",
+                label: "是",
                 value: "SELF_SIGNED_CERTIFICATE",
               },
             ],
-            "Use Self-signed certificate",
+            "使用自签名证书",
             "",
             true,
             "",
@@ -926,7 +924,7 @@ class DatasourceRestAPIEditor extends React.Component<
           <FormInputContainer data-replay-id={btoa("selfsignedcert")}>
             {this.renderCheckboxViaFormControl(
               "authentication.useSelfSignedCert",
-              "Use Self-Signed Certificate for Authorization requests",
+              "使用自签名证书来给请求鉴权",
               "",
               false,
             )}
@@ -995,11 +993,9 @@ class DatasourceRestAPIEditor extends React.Component<
         <FormInputContainer>
           <div style={{ width: "20vw" }}>
             <FormLabel>
-              Redirect URL
+              重定向 URL
               <br />
-              <StyledInfo>
-                Url that the oauth server should redirect to
-              </StyledInfo>
+              <StyledInfo>oauth 服务器重定向Url</StyledInfo>
             </FormLabel>
             <CopyToClipBoard copyText={redirectURL} />
           </div>
@@ -1009,7 +1005,7 @@ class DatasourceRestAPIEditor extends React.Component<
         >
           {this.renderKeyValueControlViaFormControl(
             "authentication.customAuthenticationParameters",
-            "Custom Authentication Parameters",
+            "自定义鉴权参数",
             "",
             false,
           )}

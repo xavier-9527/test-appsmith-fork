@@ -112,12 +112,12 @@ type Props = IntegrationsHomeScreenProps &
 const PRIMARY_MENU: TabProp[] = [
   {
     key: "ACTIVE",
-    title: "Active",
+    title: "已保存",
     panelComponent: <div />,
   },
   {
     key: "CREATE_NEW",
-    title: "Create New",
+    title: "添加",
     panelComponent: <div />,
     icon: "plus",
     iconSize: IconSize.XS,
@@ -132,12 +132,12 @@ const PRIMARY_MENU_IDS = {
 const SECONDARY_MENU: TabProp[] = [
   {
     key: "API",
-    title: "API",
+    title: "API接口",
     panelComponent: <div />,
   },
   {
     key: "DATABASE",
-    title: "Database",
+    title: "数据库",
     panelComponent: <div />,
   },
 ];
@@ -145,7 +145,7 @@ const SECONDARY_MENU: TabProp[] = [
 const getSecondaryMenu = (hasActiveSources: boolean) => {
   const mockDbMenu = {
     key: "MOCK_DATABASE",
-    title: "Sample Databases",
+    title: "样例数据库",
     panelComponent: <div />,
   };
   return hasActiveSources
@@ -202,7 +202,7 @@ function UseMockDatasources({ active, mockDatasources }: MockDataSourcesProps) {
   }, [active]);
   return (
     <div id="mock-database" ref={useMockRef}>
-      <Text type={TextType.H2}>Sample Databases</Text>
+      <Text type={TextType.H2}>样例数据库</Text>
       <MockDataSources mockDatasources={mockDatasources} />
     </div>
   );
@@ -232,7 +232,7 @@ function CreateNewAPI({
   }, [active]);
   return (
     <div id="new-api" ref={newAPIRef}>
-      <Text type={TextType.H2}>APIs</Text>
+      <Text type={TextType.H2}>API接口</Text>
       <NewApiScreen
         history={history}
         isCreating={isCreating}
@@ -264,7 +264,7 @@ function CreateNewDatasource({
   }, [active]);
   return (
     <div id="new-datasources" ref={newDatasourceRef}>
-      <Text type={TextType.H2}>Databases</Text>
+      <Text type={TextType.H2}>数据库</Text>
       <NewQueryScreen
         history={history}
         isCreating={isCreating}
@@ -489,7 +489,7 @@ class IntegrationsHomeScreen extends React.Component<
           style={{ overflow: "auto" }}
         >
           <HeaderFlex>
-            <p className="sectionHeadings">Datasources</p>
+            <p className="sectionHeadings">数据源</p>
           </HeaderFlex>
           <SectionGrid
             isActiveTab={

@@ -134,18 +134,18 @@ export const generateQuickCommands = (
   entityId: any,
   propertyPath: any,
 ) => {
-  const suggestionsHeader: CommandsCompletion = commandsHeader("Bind Data");
-  const createNewHeader: CommandsCompletion = commandsHeader("Create a Query");
+  const suggestionsHeader: CommandsCompletion = commandsHeader("绑定数据");
+  const createNewHeader: CommandsCompletion = commandsHeader("新建查询");
   recentEntities.reverse();
   const newBinding: CommandsCompletion = generateCreateNewCommand({
     text: "{{}}",
-    displayText: "New Binding",
+    displayText: "添加绑定",
     shortcut: Shortcuts.BINDING,
     triggerCompletionsPostPick: true,
   });
   const insertSnippet: CommandsCompletion = generateCreateNewCommand({
     text: "",
-    displayText: "Insert Snippet",
+    displayText: "快捷插入",
     shortcut: Shortcuts.FUNCTION,
     action: () =>
       executeCommand({
@@ -160,7 +160,7 @@ export const generateQuickCommands = (
   });
   const newIntegration: CommandsCompletion = generateCreateNewCommand({
     text: "",
-    displayText: "New Datasource",
+    displayText: "新建数据源",
     action: () =>
       executeCommand({
         actionType: SlashCommand.NEW_INTEGRATION,
