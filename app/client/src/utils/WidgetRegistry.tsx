@@ -150,7 +150,12 @@ import TableWidgetV2, {
   CONFIG as TABLE_WIDGET_CONFIG_V2,
 } from "widgets/TableWidgetV2";
 
+import EchartsTestWidget, {
+  CONFIG as ECHARTS_TEST_WIDGET_CONFIG,
+} from "widgets/EchartsTestWidget";
+
 export const ALL_WIDGETS_AND_CONFIG = [
+  [EchartsTestWidget, ECHARTS_TEST_WIDGET_CONFIG],
   [CanvasWidget, CANVAS_WIDGET_CONFIG],
   [SkeletonWidget, SKELETON_WIDGET_CONFIG],
   [ContainerWidget, CONTAINER_WIDGET_CONFIG],

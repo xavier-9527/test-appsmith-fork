@@ -15,7 +15,6 @@ import {
 } from "@appsmith/constants/messages";
 import { Colors } from "constants/Colors";
 import Icon from "components/ads/Icon";
-import Data from "widgets/TableWidgetV2/widget/propertyConfig/PanelConfig/Data";
 
 const SaveStatusContainer = styled.div`
   border-radius: 50%;
