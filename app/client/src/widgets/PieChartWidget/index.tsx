@@ -3,7 +3,7 @@ import Widget, { PIE_OPTION } from "./widget";
 
 export const CONFIG = {
   type: Widget.getWidgetType(),
-  name: "Echarts 饼图",
+  name: "Echarts 饼图01",
   iconSVG: IconSVG,
   needsMeta: true,
   isCanvas: false,
