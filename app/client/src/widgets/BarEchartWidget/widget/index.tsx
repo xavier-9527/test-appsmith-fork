@@ -2,7 +2,7 @@
  * @Author: Narcissus 577008637@qq.com
  * @Date: 2022-10-13 15:35:27
  * @LastEditors: Narcissus 577008637@qq.com
- * @LastEditTime: 2022-10-14 16:55:32
+ * @LastEditTime: 2022-10-17 11:38:49
  * @FilePath: \test-appsmith-fork\app\client\src\widgets\barEchartWidget\widget\index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -99,7 +99,9 @@ class BarEchartWidget extends BaseWidget<BarEchartWidgetProps, WidgetState> {
             propertyName: "seriesData",
             controlType: "INPUT_TEXT",
             label: "数据源",
-            placeholderText: '[{ "Direct": "200" }]',
+            placeholderText: '[{ "Direct": 200 }]',
+            defaultValue:
+              '[{ "Search Engine": 120 },{ "Direct": 200 },{ "Email": 150 },{ "Union Ads": 80 },{ "Video Ads": 70 }]',
             inputType: "ARRAY",
             isBindProperty: true,
             isTriggerProperty: false,
@@ -133,11 +135,11 @@ class BarEchartWidget extends BaseWidget<BarEchartWidgetProps, WidgetState> {
   }
 
   getPageView() {
-    const { mainTitle, subTitle } = this.props;
+    const { mainTitle, seriesData, subTitle } = this.props;
     return (
       <BarEchartComponent
         BarChartOption={BarChartOption}
-        PaneProps={{ mainTitle, subTitle }}
+        PaneProps={{ mainTitle, subTitle, seriesData }}
       />
     );
   }
