@@ -158,9 +158,14 @@ import PieChartWidget, {
   CONFIG as PIE_CHART_WIDGET_CONFIG,
 } from "widgets/PieChartWidget";
 
+import BarEchartWidget, {
+  CONFIG as BAR_ECHARTS_WIDGET_CONFIG,
+} from "widgets/BarEchartWidget";
+
 export const ALL_WIDGETS_AND_CONFIG = [
   [EchartsTestWidget, ECHARTS_TEST_WIDGET_CONFIG],
   [PieChartWidget, PIE_CHART_WIDGET_CONFIG],
+  [BarEchartWidget, BAR_ECHARTS_WIDGET_CONFIG],
   [CanvasWidget, CANVAS_WIDGET_CONFIG],
   [SkeletonWidget, SKELETON_WIDGET_CONFIG],
   [ContainerWidget, CONTAINER_WIDGET_CONFIG],
