@@ -162,7 +162,12 @@ import BarEchartWidget, {
   CONFIG as BAR_ECHARTS_WIDGET_CONFIG,
 } from "widgets/BarEchartWidget";
 
+import ThreeTestDemoWidget, {
+  CONFIG as THREE_TEST_WIDGET_CONFIG,
+} from "widgets/ThreeTestDemoWidget";
+
 export const ALL_WIDGETS_AND_CONFIG = [
+  [ThreeTestDemoWidget, THREE_TEST_WIDGET_CONFIG],
   [EchartsTestWidget, ECHARTS_TEST_WIDGET_CONFIG],
   [PieChartWidget, PIE_CHART_WIDGET_CONFIG],
   [BarEchartWidget, BAR_ECHARTS_WIDGET_CONFIG],

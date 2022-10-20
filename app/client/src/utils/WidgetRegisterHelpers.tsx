@@ -13,6 +13,7 @@ import { memoize } from "lodash";
 import { WidgetFeatureProps } from "./WidgetFeatures";
 import { WidgetConfiguration } from "widgets/constants";
 
+// memoize 缓存结果
 const generateWidget = memoize(function getWidgetComponent(
   Widget: typeof BaseWidget,
   needsMeta: boolean,

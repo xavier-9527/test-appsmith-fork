@@ -58,6 +58,7 @@ class WidgetFactory {
     Partial<WidgetProps> & WidgetConfigProps & { type: string }
   > = new Map();
 
+  //#region set方法
   static registerWidgetBuilder(
     widgetType: string,
     widgetBuilder: WidgetBuilder<WidgetProps, WidgetState>,
@@ -144,6 +145,7 @@ class WidgetFactory {
   ) {
     this.widgetConfigMap.set(widgetType, Object.freeze(config));
   }
+  //#endregion
 
   static createWidget(
     widgetData: WidgetDataProps,
@@ -170,6 +172,7 @@ class WidgetFactory {
     }
   }
 
+  //#region get方法
   static getWidgetTypes(): WidgetType[] {
     return Array.from(this.widgetMap.keys());
   }
@@ -249,6 +252,7 @@ class WidgetFactory {
     });
     return typeConfigMap;
   }
+  //#endregion
 }
 
 export type WidgetTypeConfigMap = Record<
