@@ -2,13 +2,16 @@
  * @Author: Narcissus 577008637@qq.com
  * @Date: 2022-10-20 09:24:29
  * @LastEditors: Narcissus 577008637@qq.com
- * @LastEditTime: 2022-10-20 17:30:42
+ * @LastEditTime: 2022-10-21 11:37:25
  * @FilePath: \react-demo\src\pages\widgets\3DTestDemoWidget\component\index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { DDSLoader } from "three/examples/jsm/loaders/DDSLoader";
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 
 const ThreeTestDemoWidget = (props: ThreeTestDemoProps) => {
   const { BoxSizeOption } = props;
@@ -32,7 +35,7 @@ const ThreeTestDemoWidget = (props: ThreeTestDemoProps) => {
     // geometry.rotateY(Math.PI / 4);
 
     const material = new THREE.MeshLambertMaterial({
-      color: 0xff00ff,
+      color: 0x553de9,
     });
     const mesh = new THREE.Mesh(geometry, material);
     return mesh;
@@ -79,6 +82,7 @@ const ThreeTestDemoWidget = (props: ThreeTestDemoProps) => {
   }, [renderer, CreateCubeModel]);
 
   useEffect(() => {
+    console.log("===Loader===", DDSLoader, OBJLoader, MTLLoader);
     Three3DInit();
   }, [Three3DInit]);
 

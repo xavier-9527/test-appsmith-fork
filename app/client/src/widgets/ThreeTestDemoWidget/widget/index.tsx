@@ -2,7 +2,7 @@
  * @Author: Narcissus 577008637@qq.com
  * @Date: 2022-10-20 14:52:42
  * @LastEditors: Narcissus 577008637@qq.com
- * @LastEditTime: 2022-10-20 17:34:16
+ * @LastEditTime: 2022-10-20 17:48:13
  * @FilePath: \test-appsmith-fork\app\client\src\widgets\ThreeTestDemoWidget\widget\index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -13,7 +13,7 @@ import BaseWidget, { WidgetProps, WidgetState } from "widgets/BaseWidget";
 import { DerivedPropertiesMap } from "utils/WidgetFactory";
 
 import ThreeTestDemoComponent from "../component";
-// import { ValidationTypes } from "constants/WidgetValidation";
+import { ValidationTypes } from "constants/WidgetValidation";
 // import { EvaluationSubstitutionType } from "entities/DataTree/dataTreeFactory";
 
 class ThreeTestDemoWidget extends BaseWidget<
@@ -71,6 +71,26 @@ class ThreeTestDemoWidget extends BaseWidget<
           // },
         ],
       },
+      {
+        sectionName: "环境设置",
+        children: [
+          {
+            propertyName: "buttonColor",
+            helpText: "设置按钮颜色",
+            label: "按钮颜色",
+            controlType: "COLOR_PICKER",
+            isJSConvertible: true,
+            isBindProperty: true,
+            isTriggerProperty: false,
+            validation: {
+              type: ValidationTypes.TEXT,
+              params: {
+                regex: /^(?![<|{{]).+/,
+              },
+            },
+          },
+        ],
+      },
     ];
   }
 
@@ -87,7 +107,8 @@ class ThreeTestDemoWidget extends BaseWidget<
   }
 
   getPageView() {
-    const { xAxis, yAxis, zAxis } = this.props;
+    const { buttonColor, xAxis, yAxis, zAxis } = this.props;
+    console.log("===buttonColor===", buttonColor);
     const BoxSize = { xAxis, yAxis, zAxis };
     return <ThreeTestDemoComponent BoxSizeOption={BoxSize} />;
   }
