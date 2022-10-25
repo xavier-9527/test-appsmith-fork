@@ -158,9 +158,9 @@ import PieChartWidget, {
   CONFIG as PIE_CHART_WIDGET_CONFIG,
 } from "widgets/PieChartWidget";
 
-import GaoDeWidget, {
-  CONFIG as GaoDeMap_WIDGET_CONFIG,
-} from "widgets/GaoDeMapWidget";
+import GAODEMapWidget, {
+  CONFIG as GAODEMAPWIDGET_CONFIG,
+} from "widgets/GAODEMapWidgetWidget";
 
 export const ALL_WIDGETS_AND_CONFIG = [
   [EchartsTestWidget, ECHARTS_TEST_WIDGET_CONFIG],
@@ -210,7 +210,7 @@ export const ALL_WIDGETS_AND_CONFIG = [
   [CurrencyInputWidget, CURRENCY_INPUT_WIDGET_V2_CONFIG],
   [JSONFormWidget, JSON_FORM_WIDGET_CONFIG],
   [TableWidgetV2, TABLE_WIDGET_CONFIG_V2],
-  [GaoDeWidget, GaoDeMap_WIDGET_CONFIG],
+  [GAODEMapWidget, GAODEMAPWIDGET_CONFIG],
 
   //Deprecated Widgets
   [InputWidget, INPUT_WIDGET_CONFIG],
