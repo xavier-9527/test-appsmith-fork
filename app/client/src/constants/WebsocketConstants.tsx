@@ -18,5 +18,5 @@ export const websocketConnectedEvent = () => ({
 
 export const RTS_BASE_PATH = "/rts";
 export const WEBSOCKET_NAMESPACE = {
-  PAGE_EDIT: "/page/edit",
+  PAGE_EDIT: "ws://localhost:8081/page/edit",
 };

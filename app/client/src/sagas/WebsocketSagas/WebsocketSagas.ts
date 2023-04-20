@@ -127,7 +127,7 @@ function* openAppLevelSocketConnection() {
        * We only need to retry incase the socket connection isn't made
        * in the first attempt itself
        */
-      const socket: Socket = yield call(connect);
+      const socket: Socket = yield call(connect, "ws://localhost:8081");
       const task: Task = yield fork(handleAppSocketIO, socket);
       yield put(setIsAppLevelWebsocketConnected(true));
       yield take([ReduxActionTypes.LOGOUT_USER_INIT]);

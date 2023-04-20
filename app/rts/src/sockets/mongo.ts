@@ -1,8 +1,8 @@
-import type mongodb from "mongodb";
-import log from "loglevel";
-import { MongoClient } from "mongodb";
-import { CommentThread, Comment } from "../utils/models";
-import { findPolicyEmails } from "../controllers/socket";
+import type mongodb from 'mongodb';
+import log from 'loglevel';
+import { MongoClient } from 'mongodb';
+import { CommentThread, Comment } from '../utils/models';
+import { findPolicyEmails } from '../controllers/socket';
 
 const MONGODB_URI = process.env.APPSMITH_MONGODB_URI;
 
@@ -10,29 +10,29 @@ export async function watchMongoDB(io) {
   const client = await MongoClient.connect(MONGODB_URI, {
     useUnifiedTopology: true,
   });
-  const db = client.db();
+  const db = client.db('appsmith');
 
   const threadCollection: mongodb.Collection<CommentThread> =
-    db.collection("commentThread");
+    db.collection('commentThread');
 
-  const commentChangeStream = db.collection("comment").watch(
+  const commentChangeStream = db.collection('comment').watch(
     [
       // Prevent server-internal fields from being sent to the client.
       {
-        $unset: ["deletedAt", "_class"].map((f) => "fullDocument." + f),
+        $unset: ['deletedAt', '_class'].map((f) => 'fullDocument.' + f),
       },
     ],
-    { fullDocument: "updateLookup" }
+    { fullDocument: 'updateLookup' }
   );
 
   commentChangeStream.on(
-    "change",
+    'change',
     async (event: mongodb.ChangeEventCR<Comment>) => {
-      let eventName = event.operationType + ":" + event.ns.coll;
+      let eventName = event.operationType + ':' + event.ns.coll;
 
       const comment: Comment = event.fullDocument;
       if (comment.deleted) {
-        eventName = "delete" + ":" + event.ns.coll; // emit delete event if deleted=true
+        eventName = 'delete' + ':' + event.ns.coll; // emit delete event if deleted=true
       }
 
       comment.creationTime = comment.createdAt;
@@ -45,9 +45,9 @@ export async function watchMongoDB(io) {
       let target = io;
       let shouldEmit = false;
 
-      for (const email of findPolicyEmails(comment.policies, "read:comments")) {
+      for (const email of findPolicyEmails(comment.policies, 'read:comments')) {
         shouldEmit = true;
-        target = target.to("email:" + email);
+        target = target.to('email:' + email);
       }
 
       if (shouldEmit) {
@@ -60,23 +60,23 @@ export async function watchMongoDB(io) {
     [
       // Prevent server-internal fields from being sent to the client.
       {
-        $unset: ["deletedAt", "_class"].map((f) => "fullDocument." + f),
+        $unset: ['deletedAt', '_class'].map((f) => 'fullDocument.' + f),
       },
     ],
-    { fullDocument: "updateLookup" }
+    { fullDocument: 'updateLookup' }
   );
 
-  threadChangeStream.on("change", async (event: mongodb.ChangeEventCR) => {
-    let eventName = event.operationType + ":" + event.ns.coll;
+  threadChangeStream.on('change', async (event: mongodb.ChangeEventCR) => {
+    let eventName = event.operationType + ':' + event.ns.coll;
 
     const thread = event.fullDocument;
     if (thread.deleted) {
-      eventName = "delete" + ":" + event.ns.coll; // emit delete event if deleted=true
+      eventName = 'delete' + ':' + event.ns.coll; // emit delete event if deleted=true
     }
 
     if (thread === null) {
       // This happens when `event.operationType === "drop"`, when a comment is deleted.
-      log.error("Null document recieved for comment change event", event);
+      log.error('Null document recieved for comment change event', event);
       return;
     }
 
@@ -94,10 +94,10 @@ export async function watchMongoDB(io) {
 
     for (const email of findPolicyEmails(
       thread.policies,
-      "read:commentThreads"
+      'read:commentThreads'
     )) {
       shouldEmit = true;
-      target = target.to("email:" + email);
+      target = target.to('email:' + email);
     }
 
     if (shouldEmit) {
@@ -105,53 +105,53 @@ export async function watchMongoDB(io) {
     }
   });
 
-  const notificationsStream = db.collection("notification").watch(
+  const notificationsStream = db.collection('notification').watch(
     [
       // Prevent server-internal fields from being sent to the client.
       {
-        $unset: ["deletedAt", "deleted"].map((f) => "fullDocument." + f),
+        $unset: ['deletedAt', 'deleted'].map((f) => 'fullDocument.' + f),
       },
     ],
-    { fullDocument: "updateLookup" }
+    { fullDocument: 'updateLookup' }
   );
 
-  notificationsStream.on("change", async (event: mongodb.ChangeEventCR) => {
+  notificationsStream.on('change', async (event: mongodb.ChangeEventCR) => {
     const notification = event.fullDocument;
 
     if (notification === null) {
       // This happens when `event.operationType === "drop"`, when a notification is deleted.
-      log.error("Null document recieved for notification change event", event);
+      log.error('Null document recieved for notification change event', event);
       return;
     }
 
     // set the type from _class attribute
     notification.type = notification._class.slice(
-      notification._class.lastIndexOf(".") + 1
+      notification._class.lastIndexOf('.') + 1
     );
     delete notification._class;
 
-    const eventName = event.operationType + ":" + event.ns.coll;
-    io.to("email:" + notification.forUsername).emit(eventName, {
+    const eventName = event.operationType + ':' + event.ns.coll;
+    io.to('email:' + notification.forUsername).emit(eventName, {
       notification,
     });
   });
 
-  process.on("uncaughtExceptionMonitor", (err, origin) => {
+  process.on('uncaughtExceptionMonitor', (err, origin) => {
     log.error(`Caught exception: ${err}\n` + `Exception origin: ${origin}`);
   });
 
-  process.on("unhandledRejection", (reason, promise) => {
-    log.debug("Unhandled Rejection at:", promise, "reason:", reason);
+  process.on('unhandledRejection', (reason, promise) => {
+    log.debug('Unhandled Rejection at:', promise, 'reason:', reason);
   });
 
-  process.on("exit", () => {
+  process.on('exit', () => {
     (commentChangeStream != null
       ? commentChangeStream.close()
       : Promise.bind(client).resolve()
     )
       .then(client.close.bind(client))
-      .finally("Fin");
+      .finally('Fin');
   });
 
-  log.debug("Watching MongoDB");
+  log.debug('Watching MongoDB');
 }
